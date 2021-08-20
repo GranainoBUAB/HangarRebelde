@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
 
             $table->string('title');
             $table->float('price', 5, 2);
-            $table->float('priceFlash', 5, 2)->nullable();
             $table->string('author');
             $table->string('collection');
             $table->integer('stock')->nullable();

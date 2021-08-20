@@ -12,7 +12,6 @@ class Product extends Model
     protected $fillable = [
         'title',
         'price',
-        'priceFlash',
         'author',
         'collection',
         'stock',
@@ -24,6 +23,6 @@ class Product extends Model
         'image1',
         'image2',
         'image3',
-    ];
+        ];
 }
 
