@@ -48,6 +48,14 @@ class CrudTest extends TestCase
 
     public function test_list_of_posts_can_be_retrived(){
 
+        $this->withoutExceptionHandling();
+
+        Product::all();
         
+        $response = $this->get('/');
+        
+        $response->assertStatus(200)
+            ->assertViewIs('home');
+            
     }
 }
