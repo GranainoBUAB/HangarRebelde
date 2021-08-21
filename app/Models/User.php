@@ -18,9 +18,27 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'isAdmin',
         'name',
+        'surname',
         'email',
         'password',
+        'dni',
+        'phone',
+        'address',
+        'zipCode',
+        'city',
+        'region',
+        'country',
+        'notes',
+
+        'deliveryName',
+        'deliverySurname',
+        'deliveryAddress',
+        'deliveryZipCode',
+        'deliveryCity',
+        'deliveryRegion',
+        'deliveryCountry',
     ];
 
     /**
