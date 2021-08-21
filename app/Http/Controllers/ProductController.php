@@ -35,7 +35,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create([
+            'title'=> 'Test Title',
+            'description'=> 'Test Description',
+            'price'=> 10,5,
+            'author'=> 'Test author',
+            'editorial'=> 'Test editorial',
+            'isAvailable'=> true,
+            'canReserve'=> true,
+            'categoryMain'=> 'Test categoryMain',
+            'image1'=> 'Test image1',
+            'format'=> 'Test format',
+            'pages'=> 'Test pages',
+        ]);
+
+
+        
     }
 
     /**
