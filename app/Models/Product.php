@@ -13,9 +13,10 @@ class Product extends Model
         'title',
         'price',
         'author',
-        'collection',
-        'stock',
-        'sku',
+        'editorial',
+        'isAvailable',
+        'canReserve',
+        'isbn',
         'categoryMain',
         'categorySecondary',
         'description',
@@ -23,6 +24,10 @@ class Product extends Model
         'image1',
         'image2',
         'image3',
+        'dateSale',
+        'format',
+        'pages',
+        'tag',
         ];
 }
 

@@ -19,9 +19,10 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->float('price', 5, 2);
             $table->string('author');
-            $table->string('collection');
-            $table->integer('stock')->nullable();
-            $table->string('sku')->nullable();
+            $table->string('editorial');
+            $table->boolean('isAvailable');
+            $table->boolean('canReserve');
+            $table->string('isbn')->nullable();
             $table->string('categoryMain');
             $table->string('categorySecondary')->nullable();
             $table->string('description');
@@ -29,6 +30,12 @@ class CreateProductsTable extends Migration
             $table->string('image1');
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();
+            $table->string('dateSale')->nullable();
+            $table->string('format');
+            $table->string('pages');
+            $table->string('tag')->nullable();
+            
+            
 
             $table->timestamps();
         });
