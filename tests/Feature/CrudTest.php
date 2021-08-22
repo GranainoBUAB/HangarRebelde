@@ -58,4 +58,19 @@ class CrudTest extends TestCase
             ->assertViewIs('home');
             
     }
+
+    public function test_a_posts_can_be_retrived(){
+
+        $this->withoutExceptionHandling();
+
+        $product = Product::first();
+        
+        $response = $this->get($product->id);
+        
+        $response->assertStatus(200);
+            
+            
+    }
+
+    
 }
