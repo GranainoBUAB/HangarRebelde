@@ -40,18 +40,25 @@ class ProductController extends Controller
         Product::create($newProduct);
         
         /* Product::create([
-            'title'=> 'Test Title',
-            'description'=> 'Test Description',
-            'price'=> 10,5,
-            'author'=> 'Test author',
-            'editorial'=> 'Test editorial',
-            'isAvailable'=> true,
-            'canReserve'=> true,
-            'categoryMain'=> 'Test categoryMain',
-            'image1'=> 'Test image1',
-            'format'=> 'Test format',
-            'pages'=> 'Test pages',
-        ]);  */
+            'title'=> $request->title,
+            'description'=> $request->description,
+            'price'=> $request->price,
+            'author'=> $request->author,
+            'editorial'=> $request->editorial,
+            'isAvailable'=> $request->isAvailable,
+            'canReserve'=> $request->canReserve,
+            'isbn'=> $request->isbn,
+            'categoryMain'=> $request->categoryMain,
+            'categorySecondary'=> $request->categorySecondary,
+            'rating'=> $request->rating,
+            'image1'=> $request->image1,
+            'image2'=> $request->image2,
+            'image3'=> $request->image3,
+            'dateSale'=> $request->dateSale,
+            'format'=> $request->format,
+            'tag'=> $request->tag,
+            'pages'=> $request->pages
+        ]); */ 
 
 
         
