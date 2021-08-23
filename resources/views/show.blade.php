@@ -6,7 +6,7 @@
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{{$products->image}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Id.{{$products->id}} {{$products->description}}</h5>
+                <h5 class="card-title">Id.{{$products->id}}</h5>
                 <h5 class="card-title">Description: {{$products->description}}</h5>
                 <h5 class="card-title">Price: {{$products->price}}</h5>
                 <h5 class="card-title">Author: {{$products->author}}</h5>
@@ -17,6 +17,7 @@
                 <h5 class="card-title">Image1: {{$products->image1}}</h5>
                 <h5 class="card-title">Format: {{$products->format}}</h5>
                 <h5 class="card-title">Pages: {{$products->pages}}</h5>
+                <h3 class="card-title">Productos relacionados:</h3>
             </div>
         </div>
     </div>
