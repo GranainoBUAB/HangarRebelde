@@ -83,9 +83,23 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $product = Product::whereId($id);
+        
+        $product->update([
+            'title'=> $request->title,
+            'description'=> $request->description,
+            'price'=> $request->price,
+            'author'=> $request->author,
+            'editorial'=> $request->editorial,
+            'isAvailable'=> $request->isAvailable,
+            'canReserve'=> $request->canReserve,
+            'categoryMain'=> $request->categoryMain,
+            'image1'=> $request->image1,
+            'format'=> $request->format,
+            'pages'=> $request->pages
+        ]);
     }
 
     /**
@@ -94,8 +108,8 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        Product::destroy($id);
     }
 }
