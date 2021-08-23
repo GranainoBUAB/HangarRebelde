@@ -70,6 +70,8 @@ class CrudTest extends TestCase
 
         $response = $this->get('/');
         //dd($response);
+        $response->assertOk();
+
         $this->assertCount(1, Product::all());
         
         $response = $this->delete('/products/1');
@@ -86,6 +88,8 @@ class CrudTest extends TestCase
 
         $response = $this->get('/');
         //dd($response);
+        $response->assertOk();
+
         $this->assertCount(1, Product::all());
 
         $response = $this->patch('/products/1', [
@@ -93,7 +97,6 @@ class CrudTest extends TestCase
 
         ]);
         //dd($response);
-        
         $this->assertEquals(Product::first()->title,'Update Title');
     }
 }
