@@ -4,9 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{$products->image}}" alt="Card image cap">
+            <img class="card-img-top" src="{{$products->image1}}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Id.{{$products->id}}</h5>
+                <h5 class="card-title">Titulo: {{$products->title}}</h5>
                 <h5 class="card-title">Description: {{$products->description}}</h5>
                 <h5 class="card-title">Price: {{$products->price}}</h5>
                 <h5 class="card-title">Author: {{$products->author}}</h5>
