@@ -40,10 +40,10 @@ class CrudTest extends TestCase
 
         $this->assertCount(1, Product::all());
 
-        $post =  Product::first();
+        $product =  Product::first();
 
-        $this->assertEquals($post->title, 'Test Title');
-        $this->assertEquals($post->description, 'Test Description');
+        $this->assertEquals($product->title, 'Test Title');
+        $this->assertEquals($product->description, 'Test Description');
     }
 
     public function test_list_of_posts_can_be_retrived(){
@@ -59,7 +59,7 @@ class CrudTest extends TestCase
             
     }
 
-    public function test_a_posts_can_be_retrived(){
+    public function test_a_posts_can_be_retrived($id){
 
         $this->withoutExceptionHandling();
 
