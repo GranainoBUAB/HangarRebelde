@@ -36,7 +36,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create([
+        $newProduct = request()->except('_token');
+        Product::create($newProduct);
+        
+        /* Product::create([
             'title'=> 'Test Title',
             'description'=> 'Test Description',
             'price'=> 10,5,
@@ -48,7 +51,7 @@ class ProductController extends Controller
             'image1'=> 'Test image1',
             'format'=> 'Test format',
             'pages'=> 'Test pages',
-        ]);
+        ]);  */
 
 
         
@@ -85,7 +88,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::whereId($id);
+        $updateProduct = request()->except(['_token', '_method']);
+        Product::findOrFail($id)->update($updateProduct);
+        
+        /* $product = Product::whereId($id);
         
         $product->update([
             'title'=> $request->title,
@@ -95,11 +101,18 @@ class ProductController extends Controller
             'editorial'=> $request->editorial,
             'isAvailable'=> $request->isAvailable,
             'canReserve'=> $request->canReserve,
+            'isbn'=> $request->isbn,
             'categoryMain'=> $request->categoryMain,
+            'categorySecondary'=> $request->categorySecondary,
+            'rating'=> $request->rating,
             'image1'=> $request->image1,
+            'image2'=> $request->image2,
+            'image3'=> $request->image3,
+            'dateSale'=> $request->dateSale,
             'format'=> $request->format,
+            'tag'=> $request->tag,
             'pages'=> $request->pages
-        ]);
+        ]); */
     }
 
     /**

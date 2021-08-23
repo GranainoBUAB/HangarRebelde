@@ -81,14 +81,14 @@ class CrudTest extends TestCase
 
         Product::factory(1)->create([
             'id'=> 1,
-            'title'=> 'Update Title'
+            'title'=> 'Test Title'
         ]);
 
         $response = $this->get('/');
         //dd($response);
         $this->assertCount(1, Product::all());
 
-        $response = $this->put('/products/1', [
+        $response = $this->patch('/products/1', [
             'title'=> 'Update Title',
             'description'=> 'Test Description',
             'price'=> 10,5,
