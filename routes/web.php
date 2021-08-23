@@ -25,10 +25,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-Route::post('/products', [ProductController::class, 'store'])->name('products');
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
+
+Route::post('/products', [ProductController::class, 'store'])->name('products');
 
 Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');

@@ -17,7 +17,7 @@
                     <td>{{ $product->categorySecondary }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->rating }}</td>
-                    <td><img src="{{ $product->image1 }}" width=90 alt=""></td>
+                    <td><img src="{{ asset('storage').'/'.$product->image1}}" width=90 alt=""></td>
                     <td><img src="{{ $product->image2 }}" width=90 alt=""></td>
                     <td><img src="{{ $product->image3 }}" width=90 alt=""></td>
                     <td>{{ $product->dateSale }}</td>
