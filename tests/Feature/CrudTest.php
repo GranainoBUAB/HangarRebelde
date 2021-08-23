@@ -90,16 +90,7 @@ class CrudTest extends TestCase
 
         $response = $this->patch('/products/1', [
             'title'=> 'Update Title',
-            'description'=> 'Test Description',
-            'price'=> 10,5,
-            'author'=> 'Test author',
-            'editorial'=> 'Test editorial',
-            'isAvailable'=> true,
-            'canReserve'=> true,
-            'categoryMain'=> 'Test categoryMain',
-            'image1'=> 'Test image1',
-            'format'=> 'Test format',
-            'pages'=> 'Test pages'
+
         ]);
         //dd($response);
         
