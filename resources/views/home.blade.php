@@ -4,7 +4,10 @@
     <table class="table">
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-danger">Create</button></a>
-
+            {{-- //<a href="{{ route('edit', $products->id) }}"><button type="text" class="btn btn-danger">Edit</button></a> --}}
+          
+            {{-- <a href="{{ route('show', $products->id) }}"><button type="submit" class="btn btn-primary">Show</button></a>
+ --}}
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>

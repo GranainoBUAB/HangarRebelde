@@ -25,7 +25,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view ('create');
+        
     }
 
     /**
@@ -82,9 +83,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('edit', compact('product'));
     }
 
     /**
@@ -99,7 +101,7 @@ class ProductController extends Controller
         $updateProduct = request()->except(['_token', '_method']);
         Product::findOrFail($id)->update($updateProduct);
         
-        /* $product = Product::whereId($id);
+    /*  $product = Product::whereId($id);
         
         $product->update([
             'title'=> $request->title,
@@ -121,6 +123,8 @@ class ProductController extends Controller
             'tag'=> $request->tag,
             'pages'=> $request->pages
         ]); */
+
+        return redirect()->route('home');
     }
 
     /**
@@ -132,5 +136,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
+        
+        return redirect()->route('home');
     }
 }
