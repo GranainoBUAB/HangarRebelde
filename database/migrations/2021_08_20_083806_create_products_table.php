@@ -24,13 +24,13 @@ class CreateProductsTable extends Migration
             $table->string('isbn',13)->nullable();
             $table->string('categoryMain',50);
             $table->string('categorySecondary',50)->nullable();
-            $table->string('description', 600);
+            $table->text('description');
             $table->float('rating', 2, 1)->nullable();
             $table->string('image1');
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();
             $table->string('dateSale')->nullable();
-            $table->string('format');
+            $table->string('format',50);
             $table->integer('pages');
             $table->string('tag')->nullable();
             $table->timestamps();
