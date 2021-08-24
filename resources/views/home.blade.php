@@ -10,7 +10,7 @@
  --}}
             @foreach ($products as $product)
                 <tr>
-                    <td>{{ $product->id }}</td>
+                    <td>{{ $product->id }} <a href="{{ route('delete',['id'=>$product->id]) }}">Delete</a></td>
                     <td>{{ $product->title }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->author }}</td>
@@ -29,6 +29,8 @@
                     <td>{{ $product->format }}</td>
                     <td>{{ $product->pages }}</td>
                     <td>{{ $product->tag }}</td>
+                   
+
                 </tr>
             @endforeach
         </tbody>
