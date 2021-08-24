@@ -137,8 +137,9 @@ class ProductController extends Controller
             $changesProduct['image1']=$request->file('image1')->store('img', 'public');
         }
 
-        Product::where('id', '=', $id)->update($changesProduct);
 
+        Product::where('id', '=', $id)->update($changesProduct);
+        
         $product = Product::findOrFail($id);
         
         return redirect()->route('home');
