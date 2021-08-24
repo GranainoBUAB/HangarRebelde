@@ -34,7 +34,7 @@ Route::get('/products/{id}', [ProductController::class, 'destroy'])->name('delet
 Route::patch('/products/{id}', [ProductController::class, 'update'])->name('update');
 Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('edit');
 
-Route::get('/products/create', [ProductController::class, 'create'])->name('create');
+Route::get('/create', [ProductController::class, 'create'])->name('create');
 
 
 
