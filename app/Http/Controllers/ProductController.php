@@ -36,10 +36,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $newProduct = request()->except('_token');
-        Product::create($newProduct);
+        /* $newProduct = request()->except('_token');
+        Product::create($newProduct); */
         
-        /* Product::create([
+        Product::create([
             'title'=> $request->title,
             'description'=> $request->description,
             'price'=> $request->price,
@@ -58,9 +58,9 @@ class ProductController extends Controller
             'format'=> $request->format,
             'tag'=> $request->tag,
             'pages'=> $request->pages
-        ]); */ 
+        ]);
 
-
+        return redirect()->route('home');
         
     }
 
@@ -70,9 +70,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view('show', compact('product'));
     }
 
     /**

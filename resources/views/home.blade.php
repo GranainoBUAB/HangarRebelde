@@ -3,6 +3,8 @@
 @section('content')
     <table class="table">
         <tbody>
+            <a href="{{ route('create') }}"><button type="text" class="btn btn-danger">Create</button></a>
+
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
