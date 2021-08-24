@@ -36,7 +36,7 @@ class CrudTest extends TestCase
             
         ]);
 
-        $response->assertOk();
+        $response->assertStatus(302);
 
         $this->assertCount(1, Product::all());
 
@@ -74,7 +74,7 @@ class CrudTest extends TestCase
 
         $this->assertCount(1, Product::all());
         
-        $response = $this->delete('/products/1');
+        $response = $this->get('/products/1');
         //dd($response);
         $this->assertCount(0, Product::all());
     }

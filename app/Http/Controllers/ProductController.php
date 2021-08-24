@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -39,8 +40,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        /* $newProduct = request()->except('_token');
-        Product::create($newProduct); */
         
         $product = Product::create([
             'title'=> $request->title,
@@ -61,7 +60,8 @@ class ProductController extends Controller
             'format'=> $request->format,
             'tag'=> $request->tag,
             'pages'=> $request->pages
-        ]); 
+        ]);  
+        
 
         if ($request->hasFile('image1')){
             $product['image1'] = $request->file('image1')->store('img', 'public');
@@ -69,7 +69,6 @@ class ProductController extends Controller
         
         $product->save();
         return redirect()->route('home');
-        
     }
 
     /**
@@ -105,8 +104,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $updateProduct = request()->except(['_token', '_method']);
-        Product::findOrFail($id)->update($updateProduct);
+        
+        /* $updateProduct = request()->except(['_token', '_method']);
+        Product::findOrFail($id)->update($updateProduct); */
         
     /*  $product = Product::whereId($id);
         
@@ -131,6 +131,18 @@ class ProductController extends Controller
             'pages'=> $request->pages
         ]); */
 
+        $changesProduct = request()->except(['_token', '_method']);
+
+        if($request->hasFile('image1')) {
+            $product=Product::findOrFail($id);
+            Storage::delete('public/'.$product->image);
+            $changesProduct['image1']=$request->file('image1')->store('img', 'public');
+        }
+
+        Product::where('id', '=', $id)->update($changesProduct);
+
+        $product = Product::findOrFail($id);
+        
         return redirect()->route('home');
     }
 
