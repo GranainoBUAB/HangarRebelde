@@ -159,4 +159,10 @@ class ProductController extends Controller
         
         return redirect()->route('home');
     }
+
+    public function search(Request $request)
+    {
+        $data=Product::where('title', 'like', '%'.$request->input('query').'%')->get();
+        return view('search', ['products'=>$data]);
+    }
 }

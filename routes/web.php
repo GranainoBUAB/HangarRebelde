@@ -36,6 +36,8 @@ Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('edi
 
 Route::get('/create', [ProductController::class, 'create'])->name('create');
 
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+
 
 
 

@@ -5,9 +5,6 @@
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
             
-          
-            
-
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}  
@@ -33,7 +30,7 @@
                     <td>{{ $product->format }}</td>
                     <td>{{ $product->pages }}</td>
                     <td>{{ $product->tag }}</td>
-                   
+
 
                 </tr>
             @endforeach
