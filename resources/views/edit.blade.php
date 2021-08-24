@@ -2,7 +2,7 @@
 
 @section('content')
   
-<form method="post" action="{{route('update', $product->id)}}">
+<form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
 @method('patch')
     @csrf
         <div class="input-group mb-3">
@@ -52,7 +52,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecundary" value="{{$product->categorySecundary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="categorySecondary" value="{{$product->categorySecundary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -62,7 +62,8 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-          <input type="text" name="image1" value="{{$product->image1}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          {{$product->image1}}
+          <input type="file" name="image1" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -77,7 +78,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Fecha de venta</span>
-          <input type="text" name="dateSave" value="{{$product->dateSave}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="dateSale" value="{{$product->dateSave}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">

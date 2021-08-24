@@ -2,7 +2,7 @@
 
 @section('content')
   
-<form method="post" action="{{route('store')}}">
+<form method="post" action="{{route('store')}}" enctype="multipart/form-data">
     @csrf
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
@@ -51,7 +51,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecundary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="categorySecondary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -62,7 +62,7 @@
         <div class="input-group mb-3">
           <label for="image1" class="col-md-4 col-form-label text-md-right">Imagen Portada</label>
             <div class="col-md-6">
-                <input  type="file" class="form-control" name="image1" required>
+                <input  type="file" class="form-control" name="image1" id="image1">
             </div>
         </div>
 
@@ -78,7 +78,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Fecha de venta</span>
-          <input type="text" name="dateSave" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="dateSale" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
