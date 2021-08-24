@@ -60,18 +60,20 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-          <input type="text" name="image1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <label for="image1" class="col-md-4 col-form-label text-md-right">Imagen Portada</label>
+            <div class="col-md-6">
+                <input  type="file" class="form-control" name="image1" required>
+            </div>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
-          <input type="text" name="image2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="file" name="image2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
-          <input type="text" name="image3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="file" name="image3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">

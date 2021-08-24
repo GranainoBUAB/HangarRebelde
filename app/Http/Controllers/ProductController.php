@@ -40,7 +40,7 @@ class ProductController extends Controller
         /* $newProduct = request()->except('_token');
         Product::create($newProduct); */
         
-        Product::create([
+        $product = Product::create([
             'title'=> $request->title,
             'description'=> $request->description,
             'price'=> $request->price,
@@ -59,8 +59,13 @@ class ProductController extends Controller
             'format'=> $request->format,
             'tag'=> $request->tag,
             'pages'=> $request->pages
-        ]);
+        ]); 
 
+        if ($request->hasFile('image1')){
+            $product['image1'] = $request->file('image1')->store('img', 'public');
+        }
+        
+        $product->save();
         return redirect()->route('home');
         
     }

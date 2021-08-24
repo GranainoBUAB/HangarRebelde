@@ -3,14 +3,18 @@
 @section('content')
     <table class="table">
         <tbody>
-            <a href="{{ route('create') }}"><button type="text" class="btn btn-danger">Create</button></a>
-            {{-- //<a href="{{ route('edit', $products->id) }}"><button type="text" class="btn btn-danger">Edit</button></a> --}}
+            <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
+            
           
-            {{-- <a href="{{ route('show', $products->id) }}"><button type="submit" class="btn btn-primary">Show</button></a>
- --}}
+            
+
             @foreach ($products as $product)
                 <tr>
-                    <td>{{ $product->id }} <a href="{{ route('delete',['id'=>$product->id]) }}">Delete</a></td>
+                    <td>{{ $product->id }}  
+                        <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
+                        <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn btn-primary">Edit</button></a>
+                        <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn btn-danger">Delete</button></a>
+                    </td>
                     <td>{{ $product->title }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->author }}</td>
