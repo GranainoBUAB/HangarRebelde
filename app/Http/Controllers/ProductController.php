@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryMain;
+use App\Models\CategorySecondary;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -13,6 +15,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function category()
+    {
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+
+        return view('category', compact('categoryMains','categorySecondaries'));
+
+    }
+
     public function index()
     {
         /*  $products = Product::all(); */
@@ -28,8 +40,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('create');
-        
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+        return view ('create', compact('categoryMains','categorySecondaries'));
+
     }
 
     /**
@@ -40,7 +54,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $product = Product::create([
             'title'=> $request->title,
             'description'=> $request->description,
@@ -60,13 +74,22 @@ class ProductController extends Controller
             'format'=> $request->format,
             'tag'=> $request->tag,
             'pages'=> $request->pages
-        ]);  
-        
+        ]);
+
 
         if ($request->hasFile('image1')){
             $product['image1'] = $request->file('image1')->store('img', 'public');
         }
-        
+
+        if ($request->hasFile('image2')){
+            $product['image2'] = $request->file('image2')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image3')){
+            $product['image3'] = $request->file('image3')->store('img', 'public');
+        }
+
+
         $product->save();
         return redirect()->route('home');
     }
@@ -91,8 +114,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
         $product = Product::find($id);
-        return view('edit', compact('product'));
+        return view('edit', compact('product', 'categoryMains','categorySecondaries'));
     }
 
     /**
@@ -104,12 +129,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         /* $updateProduct = request()->except(['_token', '_method']);
         Product::findOrFail($id)->update($updateProduct); */
-        
+
     /*  $product = Product::whereId($id);
-        
+
         $product->update([
             'title'=> $request->title,
             'description'=> $request->description,
@@ -139,11 +164,23 @@ class ProductController extends Controller
             $changesProduct['image1']=$request->file('image1')->store('img', 'public');
         }
 
+        if($request->hasFile('image2')) {
+            $product=Product::findOrFail($id);
+            Storage::delete('public/'.$product->image);
+            $changesProduct['image2']=$request->file('image2')->store('img', 'public');
+        }
+
+        if($request->hasFile('image3')) {
+            $product=Product::findOrFail($id);
+            Storage::delete('public/'.$product->image);
+            $changesProduct['image3']=$request->file('image3')->store('img', 'public');
+        }
+
 
         Product::where('id', '=', $id)->update($changesProduct);
-        
+
         $product = Product::findOrFail($id);
-        
+
         return redirect()->route('home');
     }
 
@@ -156,17 +193,18 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
-        
+
         return redirect()->route('home');
     }
 
     public function search(Request $request)
     {
-        $data=Product::where('title', 'like', '%'.$request->input('query').'%')
+        $products=Product::where('title', 'like', '%'.$request->input('query').'%')
                         ->orWhere('author', 'like', '%'.$request->input('query').'%')
                         ->orWhere('isbn', 'like', '%'.$request->input('query').'%')
                         ->orWhere('editorial', 'like', '%'.$request->input('query').'%')
                         ->get();
-        return view('search', ['products'=>$data]);
+        //return view('search', ['products'=>$data]);
+        return view('search', compact('products'));
     }
 }
