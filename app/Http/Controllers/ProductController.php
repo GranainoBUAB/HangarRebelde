@@ -40,8 +40,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('create');
-        
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+        return view ('create', compact('categoryMains','categorySecondaries'));
+
     }
 
     /**
@@ -52,7 +54,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $product = Product::create([
             'title'=> $request->title,
             'description'=> $request->description,
@@ -72,13 +74,13 @@ class ProductController extends Controller
             'format'=> $request->format,
             'tag'=> $request->tag,
             'pages'=> $request->pages
-        ]);  
-        
+        ]);
+
 
         if ($request->hasFile('image1')){
             $product['image1'] = $request->file('image1')->store('img', 'public');
         }
-        
+
         $product->save();
         return redirect()->route('home');
     }
@@ -116,12 +118,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         /* $updateProduct = request()->except(['_token', '_method']);
         Product::findOrFail($id)->update($updateProduct); */
-        
+
     /*  $product = Product::whereId($id);
-        
+
         $product->update([
             'title'=> $request->title,
             'description'=> $request->description,
@@ -153,9 +155,9 @@ class ProductController extends Controller
 
 
         Product::where('id', '=', $id)->update($changesProduct);
-        
+
         $product = Product::findOrFail($id);
-        
+
         return redirect()->route('home');
     }
 
@@ -168,7 +170,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
-        
+
         return redirect()->route('home');
     }
 
