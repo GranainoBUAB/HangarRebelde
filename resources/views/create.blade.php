@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  
+
 <form method="post" action="{{route('store')}}" enctype="multipart/form-data">
     @csrf
         <div class="input-group mb-3">
@@ -99,7 +99,7 @@
         <button type="submit" class="btn btn-primary">Create</button>
         <button type="submit" class="btn btn-primary">Cancel</button>
 
-    
+
   </form>
 
 @endsection
