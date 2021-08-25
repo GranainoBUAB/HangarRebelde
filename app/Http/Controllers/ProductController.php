@@ -92,14 +92,32 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
-        $productrelation2 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
-        $productrelation3 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
-        $productrelation4 = Product::inRandomOrder()->take(1)->get();
-        $productrelation12 = $productrelation1 -> concat($productrelation2);
-        $productrelation34 = $productrelation3 -> concat($productrelation4);
-        $productrelations = $productrelation12 -> concat($productrelation34);
-/*         dd($productrelations);  */
+        /* var_dump($product->id); */
+
+        do {
+            $arrayId = array();
+            $arrayId[] = $product->id;
+            $repeat = false;
+
+            $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
+            $productrelation2 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
+            $productrelation3 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
+            $productrelation4 = Product::inRandomOrder()->take(1)->get();
+
+            $productrelation12 = $productrelation1->concat($productrelation2);
+            $productrelation34 = $productrelation3->concat($productrelation4);
+            $productrelations = $productrelation12->concat($productrelation34);
+
+            foreach ($productrelations as $productrelation) {
+                $lenght = count($arrayId);
+                for ($i = 0; $i != $lenght; $i += 1) {
+                    if ($arrayId[$i] === $productrelation->id) {
+                        $repeat = true;
+                    }
+                }
+                $arrayId[] = $productrelation->id;
+            }
+        } while ($repeat);
 
         return view('show', compact('product', 'productrelations'));
     }
@@ -115,7 +133,7 @@ class ProductController extends Controller
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();
         $product = Product::find($id);
-        return view('edit', compact('product', 'categoryMains','categorySecondaries'));
+        return view('edit', compact('product', 'categoryMains', 'categorySecondaries'));
     }
 
     /**
@@ -186,12 +204,11 @@ class ProductController extends Controller
     public function search(Request $request)
     {
 
-        $data=Product::where('title', 'like', '%'.$request->input('query').'%')
-                        ->orWhere('author', 'like', '%'.$request->input('query').'%')
-                        ->orWhere('isbn', 'like', '%'.$request->input('query').'%')
-                        ->orWhere('editorial', 'like', '%'.$request->input('query').'%')
-                        ->get();
-        return view('search', ['products'=>$data]);
-
+        $data = Product::where('title', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
+            ->get();
+        return view('search', ['products' => $data]);
     }
 }
