@@ -176,7 +176,11 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $data=Product::where('title', 'like', '%'.$request->input('query').'%')->get();
+        $data=Product::where('title', 'like', '%'.$request->input('query').'%')
+                        ->orWhere('author', 'like', '%'.$request->input('query').'%')
+                        ->orWhere('isbn', 'like', '%'.$request->input('query').'%')
+                        ->orWhere('editorial', 'like', '%'.$request->input('query').'%')
+                        ->get();
         return view('search', ['products'=>$data]);
     }
 }
