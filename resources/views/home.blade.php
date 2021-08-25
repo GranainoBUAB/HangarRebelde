@@ -29,7 +29,7 @@
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
             
-          
+            @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}  
                         <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
@@ -54,7 +54,7 @@
                     <td>{{ $product->format }}</td>
                     <td>{{ $product->pages }}</td>
                     <td>{{ $product->tag }}</td>
-                   
+
 
                 </tr>
             @endforeach

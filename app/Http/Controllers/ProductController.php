@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryMain;
+use App\Models\CategorySecondary;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -13,6 +15,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function category()
+    {
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+
+        return view('category', compact('categoryMains','categorySecondaries'));
+
+    }
+
     public function index()
     {
         /*  $products = Product::all(); */
@@ -139,8 +151,9 @@ class ProductController extends Controller
             $changesProduct['image1']=$request->file('image1')->store('img', 'public');
         }
 
-        Product::where('id', '=', $id)->update($changesProduct);
 
+        Product::where('id', '=', $id)->update($changesProduct);
+        
         $product = Product::findOrFail($id);
         
         return redirect()->route('home');
@@ -157,5 +170,11 @@ class ProductController extends Controller
         Product::destroy($id);
         
         return redirect()->route('home');
+    }
+
+    public function search(Request $request)
+    {
+        $data=Product::where('title', 'like', '%'.$request->input('query').'%')->get();
+        return view('search', ['products'=>$data]);
     }
 }
