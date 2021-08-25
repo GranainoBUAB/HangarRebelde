@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+<x-header />
+
     <table class="table">
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+<x-header />
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="card" style="width: 18rem;">
