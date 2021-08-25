@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryMain;
+use App\Models\CategorySecondary;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,6 +14,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function category()
+    {
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+
+        return view('category', compact('categoryMains','categorySecondaries'));
+
+    }
+
     public function index()
     {
         /*  $products = Product::all(); */
