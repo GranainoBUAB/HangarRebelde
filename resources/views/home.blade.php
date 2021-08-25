@@ -1,14 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <table class="table">
+    
+        
+@foreach ($products as $product)
+
+    <body>
+        <div class="card">
+            <div class="card">
+                <img src="{{ asset('storage').'/'.$product->image1}}" width=90 alt="">
+            </div>
+            <div class="card-body">
+                <div>
+                    <h6 class="txtCard">Titulo: {{ $product->title }}</h6>
+                    <h6>Precio: {{ $product->price }}</h6>
+                </div>
+                <hr>
+                <img src="" alt="">
+            </div>
+        </div>
+    </body>
+@endforeach
+
+
+{{-- 
+
+<table class="table">
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
             
           
-            
-
-            @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}  
                         <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
@@ -38,7 +59,7 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table> --}}
 
     {{-- <div class="container">
     <div class="row justify-content-center">
