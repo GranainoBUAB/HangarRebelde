@@ -445,16 +445,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         CategorySecondary::factory()->create([
+            'categoryMain_id' => '1',
             'position'  => '10',
             'category'  => 'Comic Marvel',
         ]);
 
         CategorySecondary::factory()->create([
+            'categoryMain_id' => '1',
             'position'  => '11',
             'category'  => 'Comic DC',
         ]);
 
         CategorySecondary::factory()->create([
+            'categoryMain_id' => '2',
             'position'  => '20',
             'category'  => 'Comic Español',
         ]);

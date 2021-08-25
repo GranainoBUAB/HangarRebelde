@@ -10,7 +10,13 @@ class CategorySecondary extends Model
     use HasFactory;
 
     protected $fillable = [
+        'categoryMain_id',
         'position',
         'category',
-        ];
+    ];
+
+    public function categoryMain()
+    {
+        return $this->belongsTo(CategoryMain::class);
+    }
 }

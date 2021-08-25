@@ -17,18 +17,16 @@
         <ul>
             @foreach ($categoryMains as $categoryMain)
                 <li>{{ $categoryMain->position }} -> {{ $categoryMain->category }}</li>
+                @foreach ($categorySecondaries as $categorySecondary)
+                    @if ($categoryMain->id === $categorySecondary->categoryMain_id)
+                        <li>--------->{{ $categorySecondary->position }} -> {{ $categorySecondary->category }}</li>
+                    @endif
+                @endforeach
 
             @endforeach
         </ul>
     </div>
-    <div>
-        <ul>
-            @foreach ($categorySecondaries as $categorySecondary)
-                <li>{{ $categorySecondary->position }} -> {{ $categorySecondary->category }}</li>
 
-            @endforeach
-        </ul>
-    </div>
 
     {{-- <div class="container">
     <div class="row justify-content-center">
