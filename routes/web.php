@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +29,17 @@ Auth::routes();
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::get('/category', [ProductController::class, 'category']);
+Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
+Route::post('/products', [ProductController::class, 'store'])->name('store');
+Route::get('/products/{id}', [ProductController::class, 'destroy'])->name('delete');
+Route::patch('/products/{id}', [ProductController::class, 'update'])->name('update');
+Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('edit');
+
+Route::get('/create', [ProductController::class, 'create'])->name('create');
+
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+
+
+
+
+

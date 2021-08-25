@@ -22,7 +22,17 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'=> $this->faker->company(),
+            'description'=> $this->faker->realText(),
+            'price'=> $this ->faker->numberBetween($min = 5, $max = 30),
+            'author'=> $this->faker->name(),
+            'editorial'=> $this->faker->name(),
+            'isAvailable'=> true,
+            'canReserve'=> true,
+            'categoryMain'=> $this->faker->name(),
+            'image1'=> $this->faker->image(),
+            'format'=> 'Test format',
+            'pages'=> $this->faker->numberBetween($min = 200, $max = 500)
         ];
     }
 }
