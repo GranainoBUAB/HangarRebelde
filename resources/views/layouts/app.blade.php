@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <input type="text" name="query" class="form-control search-box-w" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Serach</button>
+                    <button type="submit" class="btn btn-default">Search</button>
                 </form>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
