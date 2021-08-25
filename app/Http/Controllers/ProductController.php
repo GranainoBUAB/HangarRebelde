@@ -79,6 +79,14 @@ class ProductController extends Controller
             $product['image1'] = $request->file('image1')->store('img', 'public');
         }
 
+        if ($request->hasFile('image2')) {
+            $product['image2'] = $request->file('image2')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image3')) {
+            $product['image3'] = $request->file('image3')->store('img', 'public');
+        }
+
         $product->save();
         return redirect()->route('home');
     }
@@ -146,10 +154,9 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
-        /* $updateProduct = request()->except(['_token', '_method']);
-        Product::findOrFail($id)->update($updateProduct); */
-
-        /*  $product = Product::whereId($id);
+        /*  
+                
+        $product = Product::whereId($id);
 
         $product->update([
             'title'=> $request->title,
@@ -180,6 +187,19 @@ class ProductController extends Controller
             $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
         }
 
+        if ($request->hasFile('image2')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image2'] = $request->file('image2')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image3')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
+        }
+
+        
 
         Product::where('id', '=', $id)->update($changesProduct);
 
