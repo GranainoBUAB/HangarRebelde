@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  
+
 <form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
 @method('patch')
     @csrf
@@ -99,7 +99,7 @@
         <button type="submit" class="btn btn-primary">Edit</button>
         <button type="submit" class="btn btn-primary">Cancel</button>
 
-    
-  </form>
 
+  </form>
+  <x-footer/>
 @endsection
