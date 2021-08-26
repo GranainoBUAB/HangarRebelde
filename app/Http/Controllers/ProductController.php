@@ -16,18 +16,18 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function filter($catMain,$catSec)
+    public function filter($catMain, $catSec = null)
     {
-        
-    }
-    public function category()
-    {
-        $categoryMains = CategoryMain::all();
-        $categorySecondaries = CategorySecondary::all();
+        if ($catSec === null) {
 
-        return view('category', compact('categoryMains', 'categorySecondaries'));
-    }
+            $products = Product::where('categoryMain', '=', $catMain)->get();
+        } else {
+            $products = Product::where('categorySecondary', '=', $catSec)->get();
+        }
 
+        return view('home', compact('products'));
+    }
+    
     public function index()
     {
         /*  $products = Product::all(); */
