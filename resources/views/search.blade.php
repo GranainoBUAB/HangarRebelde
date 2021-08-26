@@ -9,8 +9,8 @@
       <div class="card" style="width: 18rem;">
         <table class="table">
             <tbody>
-              <div class=""> 
-                <h2>Result for Products</h2>           
+              <div class="">
+                <h2>Result for Products</h2>
                 @foreach ($products as $product)
                     <tr>
                           <img src="{{ asset('storage').'/'.$product->image1}}" alt="">
@@ -38,5 +38,5 @@
       </div>
     </div>
   </div>
-
+  <x-footer/>
 @endsection

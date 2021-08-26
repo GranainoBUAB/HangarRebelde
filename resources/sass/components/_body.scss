@@ -1,0 +1,130 @@
+@mixin ctImg {
+    width: 40vw;
+    height: 59vw;
+    @media screen and (min-width: $breakpointTable) {
+        width: 14vw;
+        height: 20vw;
+    }
+}
+
+@mixin ctInfo {
+    width: 40vw;
+    height: 12vw;
+    @media screen and (min-width: $breakpointTable) {
+        width: 14vw;
+        height: 4.5vw;
+    }
+}
+
+@mixin ctText {
+    width: 28vw;
+    height: 10vw;
+    @media screen and (min-width: $breakpointTable) {
+        width: 9vw;
+        height: 3vw;
+    }
+    @media screen and (min-width: $breakpointLaptop) {
+        width: 10vw;
+        height: 4vw;
+    }
+}
+
+@mixin txtPrice {
+    width: 25vw;
+    height: 5vw;
+    @media screen and (min-width: $breakpointTable) {
+        width: 9vw;
+        height: 2vw;
+    }
+    @media screen and (min-width: $breakpointLaptop) {
+        font-size: 1rem;
+    }
+}
+
+@mixin txtTitle {
+    width: 25vw;
+    height: 5vw;
+    font-size: 0.7rem;
+    @media screen and (min-width: $breakpointTable) {
+        width: 7vw;
+        height: 2vw;
+    }
+    @media screen and (min-width: $breakpointLaptop) {
+        width: 8.5vw;
+        font-size: 1rem;
+    }
+}
+
+@mixin txtPoints {
+    font-size: 0.7rem;
+    height: 5vw;
+    @media screen and (min-width: $breakpointTable) {
+        height: 2vw;
+    }
+    @media screen and (min-width: $breakpointLaptop) {
+        font-size: 1rem;
+        height: 2vw;
+    }
+}
+
+.ct-product {
+    width: auto;
+    height: auto;
+    padding: 0px;
+}
+
+.ct-img {
+    @include ctImg;
+    border: 3px solid $colorOrange;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+
+.ct-info {
+    @include ctInfo;
+    border: 3px solid #FF8300;
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+}
+
+.ct-txt {
+    @include ctText;
+}
+
+.txtPrice {
+    @include txtPrice;
+    font-size: 0.7rem;
+    margin: 0px;
+}
+
+.txtInfoTitle {
+    @include txtTitle;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+    text-transform: lowercase;
+}
+
+.txtTitle {
+    @include txtTitle;
+}
+
+.txtPoints {
+    @include txtPoints;
+}
+
+.imgCard {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.separator {
+    width: 2px;
+    height: 90%;
+    background-color: $colorOrange;
+}
+
+.icoCard {
+    width: 15%;
+    filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
