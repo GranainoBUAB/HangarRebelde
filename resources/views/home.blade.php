@@ -20,7 +20,7 @@
                 <p class="txtPrice">{{ $product->price }} &#8364</p>
             </div>
             <div class="separator"></div>
-            <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg')?>" alt="Flaticon">
+            <img class="icoCard m-1" src="<?php echo asset('storage/img/carrito-negro.png')?>" alt="Flaticon">
         </div>
     </div>
 
