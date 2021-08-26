@@ -1,5 +1,53 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+.showOnClick .showOnClick:hover {
+  text-decoration: none !important;
+  color: #FF8300;
+}
+
+.containerHeader {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.containerLogo {
+  display: flex;
+  justify-content: center;
+}
+
+.imgLogin {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+}
+
+.line {
+  height: 1px;
+  color: #FF8300;
+  margin-bottom: 12px;
+}
+
+.imgcarrito {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+}
+
+.btn-carrito {
+  height: 25px;
+  margin: 4px;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: #FCE8C2;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
