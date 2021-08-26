@@ -190,6 +190,34 @@
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+/* .ct-img-show{
+    @include ctImg();
+    border: 3px solid $colorOrange;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    position: absolute;
+    width: 83vw;
+    height: 124vw;
+    left: 38px;
+    top: 142px;
+}
+
+
+.ct-info-show {
+    @include ctInfo();
+    width: 83vw;
+    height: 12vw;
+    border: 3px solid #FF8300;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 77%;
+    margin-left: 2%;
+}
+
+
+.icoCardShow {
+        width: 10%;
+        filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+} */
 .container {
   justify-content: space-around;
   align-content: flex-end;
