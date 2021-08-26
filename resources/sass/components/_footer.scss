@@ -1,6 +1,6 @@
 .container{
-    justify-content: space-between;
-
+    justify-content: space-around;
+    align-content: flex-end;
 }
 
 hr{
@@ -9,8 +9,62 @@ hr{
     margin-right: 5%;
 }
 
+.left-link{
+    position: relative;
+    margin-top: 2%;
+}
+.right-link{
+    display: flex;
+    flex-direction: column;
+}
+
+.left-link a {
+    color: black;
+    }
+    
+.right-link a {
+color: black;
+}
+
+.follow{
+    margin-top: 15%;
+}
+.follow_icon{
+    display: none;
+}
+
 .icons{
-    width: 40%;
+    width: 35%;
     height: auto;
 }
 
+.icon_location{
+    align-self: center;
+    width: 30%;
+    height: auto;
+}
+
+
+@media (min-width: 320px) and (max-width: 567px) {
+    .icons{
+        align-content: center;
+        width:60%;
+        height: auto;
+    }
+
+    .icon_location{
+        margin-top: 10%;
+        width:50%;
+    }
+    .text_location{
+        display: none;
+    }
+
+    .follow{
+        display: none;
+        margin-left: 10%;
+
+    }
+
+
+}
