@@ -1,6 +1,6 @@
 <header>
         <div class="containerLogo">
-            <img class="logo" src="<?php echo asset('storage/img/logoHome.jpeg')?>" alt="">
+            <img class="logo" src="<?php echo asset('storage/img/logo.png')?>" alt="">
         </div>
             <div class="navbar navbar-expand-md navbar-light">
                 <!-- Right Side Of Navbar -->
