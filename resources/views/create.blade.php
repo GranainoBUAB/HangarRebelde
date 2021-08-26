@@ -46,16 +46,24 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Principal</span>
-          <input type="text" name="categoryMain" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <label class="input-group-text">Categoría Principal</label>
+          <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categoryMains as $categoryMain)
+            <option>{{ $categoryMain->category }}</option>
+            @endforeach
+          </select>
         </div>
+      </div>
 
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecondary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          <input type="text" name="categorySecondary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          <h6>Categoria</h6>
+      <div class="input-group mb-3">
+          <label class="input-group-text">Categoría Principal</label>
+          <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categoryMains as $categoryMain)
+            <option>{{ $categoryMain->category }}</option>
+            @endforeach
+          </select>
         </div>
+      </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Valoración</span>
