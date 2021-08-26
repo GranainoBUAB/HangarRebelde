@@ -27,11 +27,11 @@ class ProductController extends Controller
 
         return view('home', compact('products'));
     }
-    
+
     public function index()
     {
         /*  $products = Product::all(); */
-        $products = Product::orderBy('id', 'desc')->take(5)->get();
+        $products = Product::orderBy('id', 'desc')->take(10)->get();
 
         return view('home', compact('products'));
     }
@@ -112,8 +112,8 @@ class ProductController extends Controller
             $repeat = false;
 
             $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
-            $productrelation2 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
-            $productrelation3 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
+            $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
+            $productrelation3 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
             $productrelation4 = Product::inRandomOrder()->take(1)->get();
 
             $productrelation12 = $productrelation1->concat($productrelation2);

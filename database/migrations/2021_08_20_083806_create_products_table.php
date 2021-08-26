@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title',100);
-            $table->float('price', 8, 2);
+            $table->decimal('price', 8, 2);
             $table->string('author',100);
             $table->string('editorial',50);
             $table->boolean('isAvailable');
