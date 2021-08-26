@@ -2,6 +2,7 @@
 @charset "UTF-8";
 .container {
   justify-content: space-between;
+  align-content: flex-end;
 }
 
 hr {
@@ -10,11 +11,69 @@ hr {
   margin-right: 5%;
 }
 
+.left-link {
+  position: relative;
+  margin-top: 2%;
+}
+
+.right-link {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-link a {
+  color: green;
+}
+
+a {
+  font-size: 20px;
+}
+
+.follow {
+  margin-top: 15%;
+}
+
+.follow_icon {
+  display: none;
+}
+
 .icons {
-  width: 40%;
+  width: 50%;
   height: auto;
 }
 
+.icon_location {
+  align-self: center;
+  width: 30%;
+  height: auto;
+}
+
+@media (min-width: 320px) and (max-width: 567px) {
+  .icons {
+    width: 60%;
+    height: auto;
+  }
+
+  .icon_location {
+    margin-top: 10%;
+    width: 70%;
+  }
+
+  .text_location {
+    display: none;
+  }
+
+  .follow {
+    display: none;
+  }
+
+  .follow_icon {
+    display: block;
+    width: 40px;
+    height: auto;
+    margin-top: -10%;
+  }
+}
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
