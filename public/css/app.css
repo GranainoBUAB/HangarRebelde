@@ -1,7 +1,129 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
-.table {
-  background-color: white;
+.ct-product {
+  margin: 3%;
+}
+
+.ct-img {
+  width: 40vw;
+  height: 59vw;
+  border: 3px solid #FF8300;
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .ct-img {
+    width: 14vw;
+    height: 20vw;
+  }
+}
+
+.ct-info {
+  width: 40vw;
+  height: 12vw;
+  border: 3px solid #FF8300;
+  border-radius: 0px 0px 10px 10px;
+  border-top: none;
+}
+@media screen and (min-width: 768px) {
+  .ct-info {
+    width: 14vw;
+    height: 4.5vw;
+  }
+}
+
+.ct-txt {
+  width: 28vw;
+  height: 10vw;
+}
+@media screen and (min-width: 768px) {
+  .ct-txt {
+    width: 9vw;
+    height: 3vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .ct-txt {
+    width: 10vw;
+    height: 4vw;
+  }
+}
+
+.txtInfo {
+  width: 25vw;
+  height: 5vw;
+  font-size: 0.7rem;
+  margin: 0px;
+}
+@media screen and (min-width: 768px) {
+  .txtInfo {
+    width: 9vw;
+    height: 2vw;
+  }
+}
+
+.txtInfoTitle {
+  width: 25vw;
+  height: 5vw;
+  /* text-overflow: ellipsis; */
+  overflow: hidden;
+  text-transform: lowercase;
+}
+@media screen and (min-width: 768px) {
+  .txtInfoTitle {
+    width: 7vw;
+    height: 2vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .txtInfoTitle {
+    width: 8.5vw;
+    font-size: 1rem;
+  }
+}
+
+.txtTitle {
+  width: 25vw;
+  height: 5vw;
+}
+@media screen and (min-width: 768px) {
+  .txtTitle {
+    width: 7vw;
+    height: 2vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .txtTitle {
+    width: 8.5vw;
+    font-size: 1rem;
+  }
+}
+
+.txtPoints {
+  font-size: 0.7rem;
+}
+@media screen and (min-width: 1200px) {
+  .txtPoints {
+    font-size: 1rem;
+  }
+}
+
+.imgCard {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.separator {
+  width: 2px;
+  height: 90%;
+  background-color: #FF8300;
+}
+
+.icoCard {
+  width: 15%;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
 /*!

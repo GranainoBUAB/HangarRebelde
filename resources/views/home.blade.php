@@ -1,6 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="d-flex flex-wrap row justify-content-center">
+
+@foreach ($products as $product)
+    <div class="ct-product">
+        <div class="ct-img">
+            <a href="{{ route('show', ['id'=>$product->id]) }}">
+                <img class="imgCard" src="{{ asset('storage').'/'.$product->image1}}" alt="">
+            </a>
+        </div>
+        <div class="ct-info d-flex flex-row align-items-center p-1">
+            <div class="ct-txt d-flex flex-column justify-content-center">
+                <div class="txtTitle d-flex flex-row">
+                    <p class="txtInfoTitle">{{ $product->title }} </p>
+                    <p class="txtPoints">...</p>
+                </div>
+                <p class="txtInfo">{{ $product->price }} &#8364</p>
+            </div>
+            <div class="separator"></div>
+            <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg')?>" alt="Flaticon">
+        </div>
+    </div>
+
+@endforeach
+</div>
+
+{{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
+
+{{-- 
     <table class="table">
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
@@ -35,7 +64,11 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table> --}}
+
+
+
+
 
     {{-- <div class="container">
     <div class="row justify-content-center">
