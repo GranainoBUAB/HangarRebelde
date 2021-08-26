@@ -36,13 +36,9 @@ Route::patch('/products/{id}', [ProductController::class, 'update'])->name('upda
 Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('edit');
 
 Route::get('/create', [ProductController::class, 'create'])->name('create');
+
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+
 Route::get('/filter/{catMain}/{catSub}', [ProductController::class, 'filter'])->name('filter');
-
-
-
-
-
-
-
 
 
