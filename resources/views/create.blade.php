@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  
+
 <form method="post" action="{{route('store')}}" enctype="multipart/form-data">
     @csrf
         <div class="input-group mb-3">
@@ -60,7 +60,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <label for="image1" class="col-md-4 col-form-label text-md-right">Imagen Portada</label>
+          <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
             <div class="col-md-6">
                 <input  type="file" class="form-control" name="image1" id="image1">
             </div>
@@ -99,7 +99,7 @@
         <button type="submit" class="btn btn-primary">Create</button>
         <button type="submit" class="btn btn-primary">Cancel</button>
 
-    
+
   </form>
 
 @endsection

@@ -16,13 +16,16 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function filter($catMain,$catSec)
+    {
+        
+    }
     public function category()
     {
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();
 
-        return view('category', compact('categoryMains','categorySecondaries'));
-
+        return view('category', compact('categoryMains', 'categorySecondaries'));
     }
 
     public function index()
@@ -42,8 +45,7 @@ class ProductController extends Controller
     {
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();
-        return view ('create', compact('categoryMains','categorySecondaries'));
-
+        return view('create', compact('categoryMains', 'categorySecondaries'));
     }
 
     /**
@@ -56,39 +58,38 @@ class ProductController extends Controller
     {
 
         $product = Product::create([
-            'title'=> $request->title,
-            'description'=> $request->description,
-            'price'=> $request->price,
-            'author'=> $request->author,
-            'editorial'=> $request->editorial,
-            'isAvailable'=> $request->isAvailable,
-            'canReserve'=> $request->canReserve,
-            'isbn'=> $request->isbn,
-            'categoryMain'=> $request->categoryMain,
-            'categorySecondary'=> $request->categorySecondary,
-            'rating'=> $request->rating,
-            'image1'=> $request->image1,
-            'image2'=> $request->image2,
-            'image3'=> $request->image3,
-            'dateSale'=> $request->dateSale,
-            'format'=> $request->format,
-            'tag'=> $request->tag,
-            'pages'=> $request->pages
+            'title' => $request->title,
+            'description' => $request->description,
+            'price' => $request->price,
+            'author' => $request->author,
+            'editorial' => $request->editorial,
+            'isAvailable' => $request->isAvailable,
+            'canReserve' => $request->canReserve,
+            'isbn' => $request->isbn,
+            'categoryMain' => $request->categoryMain,
+            'categorySecondary' => $request->categorySecondary,
+            'rating' => $request->rating,
+            'image1' => $request->image1,
+            'image2' => $request->image2,
+            'image3' => $request->image3,
+            'dateSale' => $request->dateSale,
+            'format' => $request->format,
+            'tag' => $request->tag,
+            'pages' => $request->pages
         ]);
 
 
-        if ($request->hasFile('image1')){
+        if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
         }
 
-        if ($request->hasFile('image2')){
+        if ($request->hasFile('image2')) {
             $product['image2'] = $request->file('image2')->store('img', 'public');
         }
 
-        if ($request->hasFile('image3')){
+        if ($request->hasFile('image3')) {
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
-
 
         $product->save();
         return redirect()->route('home');
@@ -103,7 +104,34 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('show', compact('product'));
+        /* var_dump($product->id); */
+
+        do {
+            $arrayId = array();
+            $arrayId[] = $product->id;
+            $repeat = false;
+
+            $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
+            $productrelation2 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
+            $productrelation3 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
+            $productrelation4 = Product::inRandomOrder()->take(1)->get();
+
+            $productrelation12 = $productrelation1->concat($productrelation2);
+            $productrelation34 = $productrelation3->concat($productrelation4);
+            $productrelations = $productrelation12->concat($productrelation34);
+
+            foreach ($productrelations as $productrelation) {
+                $lenght = count($arrayId);
+                for ($i = 0; $i != $lenght; $i += 1) {
+                    if ($arrayId[$i] === $productrelation->id) {
+                        $repeat = true;
+                    }
+                }
+                $arrayId[] = $productrelation->id;
+            }
+        } while ($repeat);
+
+        return view('show', compact('product', 'productrelations'));
     }
 
     /**
@@ -117,7 +145,7 @@ class ProductController extends Controller
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();
         $product = Product::find($id);
-        return view('edit', compact('product', 'categoryMains','categorySecondaries'));
+        return view('edit', compact('product', 'categoryMains', 'categorySecondaries'));
     }
 
     /**
@@ -130,10 +158,9 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
-        /* $updateProduct = request()->except(['_token', '_method']);
-        Product::findOrFail($id)->update($updateProduct); */
+        /*
 
-    /*  $product = Product::whereId($id);
+        $product = Product::whereId($id);
 
         $product->update([
             'title'=> $request->title,
@@ -158,23 +185,24 @@ class ProductController extends Controller
 
         $changesProduct = request()->except(['_token', '_method']);
 
-        if($request->hasFile('image1')) {
-            $product=Product::findOrFail($id);
-            Storage::delete('public/'.$product->image);
-            $changesProduct['image1']=$request->file('image1')->store('img', 'public');
+        if ($request->hasFile('image1')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
         }
 
-        if($request->hasFile('image2')) {
-            $product=Product::findOrFail($id);
-            Storage::delete('public/'.$product->image);
-            $changesProduct['image2']=$request->file('image2')->store('img', 'public');
+        if ($request->hasFile('image2')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image2'] = $request->file('image2')->store('img', 'public');
         }
 
-        if($request->hasFile('image3')) {
-            $product=Product::findOrFail($id);
-            Storage::delete('public/'.$product->image);
-            $changesProduct['image3']=$request->file('image3')->store('img', 'public');
+        if ($request->hasFile('image3')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
+
 
 
         Product::where('id', '=', $id)->update($changesProduct);
@@ -199,12 +227,13 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $data=Product::where('title', 'like', '%'.$request->input('query').'%')
-                        ->orWhere('author', 'like', '%'.$request->input('query').'%')
-                        ->orWhere('isbn', 'like', '%'.$request->input('query').'%')
-                        ->orWhere('editorial', 'like', '%'.$request->input('query').'%')
-                        ->get();
-        return view('search', ['products'=>$data]);
-        
+
+        $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
+            ->get();
+
+        return view('search', compact('products'));
     }
 }
