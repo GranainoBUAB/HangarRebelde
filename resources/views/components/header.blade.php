@@ -89,6 +89,14 @@
                     </div> --}}
                 </div>
                 <form class="d-flex">
+
+                    <form class="navbar-form navbar-left" action="{{route('search')}}">
+                        <div class="form-group">
+                            <input type="text" name="query" class="form-control search-box-w mt-1" placeholder="Search">
+                        </div>
+                        <button class="btn-carrito position-relative mt-3" type="submit" class="btn btn-default">Search</button>
+                    </form>
+
                     <img class="imgcarrito" src="<?php echo asset('storage/img/carrito.png'); ?>" alt="" href="#">
                     <button class="btn-carrito position-relative">
                         2 productos - 34,21€
