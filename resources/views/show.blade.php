@@ -27,7 +27,37 @@
                 <h3 class="card-title">Productos relacionados:</h3>
             </div>
         </div>
+        <center>
+            <div>---------------------------------------------------------------------------------------</div>
+            <div>------------------------------------- Productos relacionados---------------------------</div>
+            <div>---------------------------------------------------------------------------------------</div>
+        </center>
+        <div class="row justify-content-center">
+
+            @foreach ($productrelations as $productrelation)
+                <div class="card" style="width: 18rem;">
+
+                    <img src="{{ asset('storage') . '/' . $productrelation->image1 }}" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Id.{{ $productrelation->id }}</h5>
+                        <h5 class="card-title">Titulo: {{ $productrelation->title }}</h5>
+                        <h5 class="card-title">Price: {{ $productrelation->price }}</h5>
+                        <h5 class="card-title">Author: {{ $productrelation->author }}</h5>
+                        <h5 class="card-title">Editorial: {{ $productrelation->editorial }}</h5>
+                        <img src="{{ asset('storage') . '/' . $productrelation->image2 }}" width=90 alt="">
+                        <img src="{{ asset('storage') . '/' . $productrelation->image3 }}" width=90 alt="">
+                        <td>
+                            <a href="{{ route('show', ['id' => $productrelation->id]) }}"><button type="submit"
+                                    class="btn btn-primary">Show</button></a>
+                        </td>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
+<<<<<<< HEAD
 </div>
 <x-footer/>
+=======
+>>>>>>> 6897fb0c4487e927539e1ee753fec9e6dbebccc3
 @endsection

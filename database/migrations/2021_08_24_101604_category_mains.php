@@ -19,6 +19,8 @@ class CategoryMains extends Migration
             $table->integer('position');
             $table->string('category', 50);
 
+            
+
             $table->timestamps();
         });
     }

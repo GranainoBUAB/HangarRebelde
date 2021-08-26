@@ -28,6 +28,7 @@ class Product extends Model
         'format',
         'pages',
         'tag',
-        ];
-}
+    ];
 
+    
+}

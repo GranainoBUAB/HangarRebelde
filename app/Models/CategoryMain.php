@@ -12,6 +12,10 @@ class CategoryMain extends Model
     protected $fillable = [
         'position',
         'category',
-        ];
+    ];
 
+    public function categorySecondaries()
+    {
+        return $this->hasMany(CategorySecondary::class);
+    }
 }

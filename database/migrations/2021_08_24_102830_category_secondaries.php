@@ -16,6 +16,8 @@ class CategorySecondaries extends Migration
         Schema::create('category_secondaries', function (Blueprint $table) {
             $table->id();
 
+            $table->foreignId('categoryMain_id')->references('id')->on('category_mains');
+
             $table->integer('position');
             $table->string('category', 50);
 
