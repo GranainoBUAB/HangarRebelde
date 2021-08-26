@@ -12,7 +12,7 @@
             <div class="card-body">
                 <h5 class="card-title">Id.{{$product->id}}</h5>
                 <h5 class="card-title">Titulo: {{$product->title}}</h5>
-                <h5 class="card-title">Description: {{$product->description}}</h5>
+                {{-- <h5 class="card-title">Description: {{$product->description}}</h5> --}}
                 <h5 class="card-title">Price: {{$product->price}}</h5>
                 <h5 class="card-title">Author: {{$product->author}}</h5>
                 <h5 class="card-title">Editorial: {{$product->editorial}}</h5>
