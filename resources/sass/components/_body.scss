@@ -29,12 +29,15 @@
     }
 }
 
-@mixin txtInfo {
+@mixin txtPrice {
     width: 25vw;
     height: 5vw;
     @media screen and (min-width: $breakpointTable) {
         width: 9vw;
         height: 2vw;
+    }
+    @media screen and (min-width: $breakpointLaptop) {
+        font-size: 1rem;
     }
 }
 
@@ -88,8 +91,8 @@
     @include ctText;
 }
 
-.txtInfo {
-    @include txtInfo;
+.txtPrice {
+    @include txtPrice;
     font-size: 0.7rem;
     margin: 0px;
 }

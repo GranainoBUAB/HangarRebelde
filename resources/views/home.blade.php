@@ -17,7 +17,7 @@
                     <p class="txtInfoTitle m-0">{{ $product->title }} </p>
                     <p class="txtPoints m-0">...</p>
                 </div>
-                <p class="txtInfo">{{ $product->price }} &#8364</p>
+                <p class="txtPrice">{{ $product->price }} &#8364</p>
             </div>
             <div class="separator"></div>
             <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg')?>" alt="Flaticon">

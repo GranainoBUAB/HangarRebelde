@@ -51,16 +51,21 @@
   }
 }
 
-.txtInfo {
+.txtPrice {
   width: 25vw;
   height: 5vw;
   font-size: 0.7rem;
   margin: 0px;
 }
 @media screen and (min-width: 768px) {
-  .txtInfo {
+  .txtPrice {
     width: 9vw;
     height: 2vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .txtPrice {
+    font-size: 1rem;
   }
 }
 
