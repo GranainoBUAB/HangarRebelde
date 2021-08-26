@@ -88,9 +88,12 @@
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
                     </div> --}}
                 </div>
-                <form class="d-flex">
 
-                    <form class="navbar-form navbar-left" action="{{route('search')}}">
+                
+                
+                <form class="d-flex" action="{{route('search')}}">
+
+                    <form class="navbar-form navbar-left" >
                         <div class="form-group">
                             <input type="text" name="query" class="form-control search-box-w mt-1" placeholder="Search">
                         </div>
