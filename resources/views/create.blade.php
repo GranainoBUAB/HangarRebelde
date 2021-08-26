@@ -101,5 +101,5 @@
 
 
   </form>
-
+  <x-footer/>
 @endsection

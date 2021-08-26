@@ -16,14 +16,18 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function category()
+    public function filter($catMain, $catSec = null)
     {
-        $categoryMains = CategoryMain::all();
-        $categorySecondaries = CategorySecondary::all();
+        if ($catSec === null) {
 
-        return view('category', compact('categoryMains', 'categorySecondaries'));
+            $products = Product::where('categoryMain', '=', $catMain)->get();
+        } else {
+            $products = Product::where('categorySecondary', '=', $catSec)->get();
+        }
+
+        return view('home', compact('products'));
     }
-
+    
     public function index()
     {
         /*  $products = Product::all(); */
@@ -154,8 +158,8 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
-        /*  
-                
+        /*
+
         $product = Product::whereId($id);
 
         $product->update([
@@ -199,7 +203,7 @@ class ProductController extends Controller
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
 
-        
+
 
         Product::where('id', '=', $id)->update($changesProduct);
 
@@ -229,6 +233,7 @@ class ProductController extends Controller
             ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
             ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
             ->get();
+
         return view('search', ['products' => $data]);
     }
 }

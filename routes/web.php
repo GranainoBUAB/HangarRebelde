@@ -28,7 +28,7 @@ Auth::routes();
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
-Route::get('/category', [ProductController::class, 'category']);
+
 Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
 Route::post('/products', [ProductController::class, 'store'])->name('store');
 Route::get('/products/{id}', [ProductController::class, 'destroy'])->name('delete');
@@ -39,7 +39,6 @@ Route::get('/create', [ProductController::class, 'create'])->name('create');
 
 Route::get('/search', [ProductController::class, 'search'])->name('search');
 
-
-
+Route::get('/filter/{catMain}/{catSub?}', [ProductController::class, 'filter'])->name('filter');
 
 
