@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<x-header />
 <div class="d-flex flex-wrap row justify-content-center">
 
 @foreach ($products as $product)
