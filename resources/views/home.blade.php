@@ -5,7 +5,7 @@
 <div class="d-flex flex-wrap row justify-content-center">
 
 @foreach ($products as $product)
-    <div class="ct-product">
+    <div class="ct-product m-3">
         <div class="ct-img">
             <a href="{{ route('show', ['id'=>$product->id]) }}">
                 <img class="imgCard" src="{{ asset('storage').'/'.$product->image1}}" alt="">
@@ -33,10 +33,10 @@
     <table class="table">
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
-            
+
             @foreach ($products as $product)
                 <tr>
-                    <td>{{ $product->id }}  
+                    <td>{{ $product->id }}
                         <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
                         <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn btn-primary">Edit</button></a>
                         <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn btn-danger">Delete</button></a>
@@ -89,4 +89,5 @@
         </div>
     </div>
 </div> --}}
+<x-footer/>
 @endsection
