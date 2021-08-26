@@ -190,6 +190,13 @@
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+.card-body {
+  width: 315px;
+  height: 342px;
+  left: 24px;
+  top: 9px;
+}
+
 /* .ct-img-show{
     @include ctImg();
     border: 3px solid $colorOrange;
