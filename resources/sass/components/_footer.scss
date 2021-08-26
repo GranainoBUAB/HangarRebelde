@@ -1,5 +1,5 @@
 .container{
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: flex-end;
 }
 
@@ -17,15 +17,15 @@ hr{
     display: flex;
     flex-direction: column;
 }
-.right-link a{
 
-    color: green;
+.left-link a {
+    color: black;
+    }
+    
+.right-link a {
+color: black;
 }
 
-a{
-    font-size: 20px;
-
-}
 .follow{
     margin-top: 15%;
 }
@@ -34,7 +34,7 @@ a{
 }
 
 .icons{
-    width: 50%;
+    width: 35%;
     height: auto;
 }
 
@@ -47,13 +47,14 @@ a{
 
 @media (min-width: 320px) and (max-width: 567px) {
     .icons{
+        align-content: center;
         width:60%;
         height: auto;
     }
 
     .icon_location{
-margin-top: 10%;
-        width:70%;
+        margin-top: 10%;
+        width:50%;
     }
     .text_location{
         display: none;
@@ -61,12 +62,9 @@ margin-top: 10%;
 
     .follow{
         display: none;
+        margin-left: 10%;
+
     }
-    .follow_icon{
-        display: block;
-        width: 40px;
-        height: auto;
-        margin-top: -10%;
-    }
+
 
 }
