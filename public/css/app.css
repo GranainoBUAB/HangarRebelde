@@ -67,6 +67,7 @@
 .txtInfoTitle {
   width: 25vw;
   height: 5vw;
+  font-size: 0.7rem;
   /* text-overflow: ellipsis; */
   overflow: hidden;
   text-transform: lowercase;
@@ -87,6 +88,7 @@
 .txtTitle {
   width: 25vw;
   height: 5vw;
+  font-size: 0.7rem;
 }
 @media screen and (min-width: 768px) {
   .txtTitle {
@@ -103,10 +105,17 @@
 
 .txtPoints {
   font-size: 0.7rem;
+  height: 5vw;
+}
+@media screen and (min-width: 768px) {
+  .txtPoints {
+    height: 2vw;
+  }
 }
 @media screen and (min-width: 1200px) {
   .txtPoints {
     font-size: 1rem;
+    height: 2vw;
   }
 }
 

@@ -41,6 +41,7 @@
 @mixin txtTitle {
     width: 25vw;
     height: 5vw;
+    font-size: 0.7rem;
     @media screen and (min-width: $breakpointTable) {
         width: 7vw;
         height: 2vw;
@@ -53,8 +54,13 @@
 
 @mixin txtPoints {
     font-size: 0.7rem;
+    height: 5vw;
+    @media screen and (min-width: $breakpointTable) {
+        height: 2vw;
+    }
     @media screen and (min-width: $breakpointLaptop) {
         font-size: 1rem;
+        height: 2vw;
     }
 }
 
