@@ -44,9 +44,13 @@
           <input type="text" name="isbn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Principal</span>
-          <input type="text" name="categoryMain" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <div class="input-group mb-3">
+          <label class="input-group-text">Categoría Principal</label>
+          <select class="form-control" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categoryMains as $categoryMain)
+            <option>{{ $categoryMain->category }}</option>
+            @endforeach
+          </select>
         </div>
 
         <div class="input-group mb-3">
