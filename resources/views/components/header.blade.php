@@ -8,7 +8,7 @@
 
         <div>
             <a href="{{ route('create') }}">
-                <button type="text" class="btn btn-primary">Create</button>
+                <button type="text" class="btn-carrito position-relative">Create</button>
             </a>
         </div>
 
