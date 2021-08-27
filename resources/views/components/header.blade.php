@@ -5,6 +5,7 @@
         </a>
     </div>
     <div class="navbar navbar-expand-md navbar-light">
+        
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
@@ -57,7 +58,7 @@
                                 aria-selected="true">🏠 Inicio</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link calendar-link" id="profile-tab" data-bs-toggle="tab"
+                            <button class="nav-link calendar-link " id="profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
                                 aria-selected="false">📅 Calendario</button>
                         </li>
@@ -88,7 +89,18 @@
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
                     </div> --}}
                 </div>
-                <form class="d-flex">
+
+                
+                
+                <form class="d-flex" action="{{route('search')}}">
+
+                    <form class="navbar-form navbar-left" >
+                        <div class="form-group">
+                            <input type="text" name="query" class="form-control search-box-w mt-1" placeholder="Search">
+                        </div>
+                        <button class="btn-carrito position-relative mt-3" type="submit" class="btn btn-default">Search</button>
+                    </form>
+
                     <img class="imgcarrito" src="<?php echo asset('storage/img/carrito.png'); ?>" alt="" href="#">
                     <button class="btn-carrito position-relative">
                         2 productos - 34,21€
@@ -101,5 +113,6 @@
 
             </div>
         </nav>
+
     </div>
 </header>
