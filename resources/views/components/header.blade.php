@@ -11,7 +11,7 @@
                 <button type="text" class="btn btn-primary">Create</button>
             </a>
         </div>
-        
+
         <div class="navbar navbar-expand-md navbar-light">
             
             <!-- Right Side Of Navbar -->
@@ -121,6 +121,27 @@
 
             </div>
         </nav>
+
+        <div class="btn-group d-flex flex-row flex-wrap justify-content-center" role="group" aria-label="Basic mixed styles example">
+            <a href="{{ route('filter', ['Comic Americano']) }}">
+                <button type="button" class="btn-carrito">Comics Americano</button>
+            </a>
+            <a href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">
+                <button type="button" class="btn-carrito">Comics Marvel</button>
+            </a>
+            <a href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">
+                <button type="button" class="btn-carrito">Comics DC</button>
+            </a>
+            <a href="{{ route('filter', ['Comic Europeo']) }}">
+                <button type="button" class="btn-carrito">Comics Europeo</button>
+            </a>
+            <a href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">
+                <button type="button" class="btn-carrito">Comics Español</button>
+            </a>
+            <a href="{{ route('filter', ['Comic Manga']) }}">
+                <button type="button" class="btn-carrito">Comics Manga</button>
+            </a>
+        </div>
 
     </div>
 </header>
