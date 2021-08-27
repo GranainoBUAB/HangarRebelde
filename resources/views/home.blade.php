@@ -1,37 +1,63 @@
 @extends('layouts.app')
 
 @section('content')
-    
-        
-@foreach ($products as $product)
+    <x-header />
 
-    <body>
-        <div class="card">
-            <div class="card">
-                <img src="{{ asset('storage').'/'.$product->image1}}" width=90 alt="">
-            </div>
-            <div class="card-body">
-                <div>
-                    <h6 class="txtCard">Titulo: {{ $product->title }}</h6>
-                    <h6>Precio: {{ $product->price }}</h6>
+    <div class="btn-group d-flex flex-row flex-wrap justify-content-center" role="group" aria-label="Basic mixed styles example">
+        <a href="{{ route('filter', ['Comic Americano']) }}">
+            <button type="button" class="btn-carrito">Comics Americano</button>
+        </a>
+        <a href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">
+            <button type="button" class="btn-carrito">Comics Marvel</button>
+        </a>
+        <a href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">
+            <button type="button" class="btn-carrito">Comics DC</button>
+        </a>
+        <a href="{{ route('filter', ['Comic Europeo']) }}">
+            <button type="button" class="btn-carrito">Comics Europeo</button>
+        </a>
+        <a href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">
+            <button type="button" class="btn-carrito">Comics Español</button>
+        </a>
+        <a href="{{ route('filter', ['Comic Manga']) }}">
+            <button type="button" class="btn-carrito">Comics Manga</button>
+        </a>
+    </div>
+
+    <div class="d-flex flex-wrap row justify-content-center">
+
+        @foreach ($products as $product)
+            <div class="ct-product m-3">
+                <div class="ct-img">
+                    <a href="{{ route('show', ['id' => $product->id]) }}">
+                        <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                    </a>
                 </div>
-                <hr>
-                <img src="" alt="">
+                <div class="ct-info d-flex flex-row align-items-center p-1">
+                    <div class="ct-txt d-flex flex-column justify-content-center">
+                        <div class="txtTitle d-flex flex-row align-items-center">
+                            <p class="txtInfoTitle m-0">{{ $product->title }} </p>
+                            <p class="txtPoints m-0">...</p>
+                        </div>
+                        <p class="txtPrice">{{ $product->price }} &#8364</p>
+                    </div>
+                    <div class="separator"></div>
+                    <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                </div>
             </div>
-        </div>
-    </body>
-@endforeach
 
+        @endforeach
+    </div>
 
-{{-- 
+    {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
 
-<table class="table">
+    {{-- <table class="table">
         <tbody>
             <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
-            
+
             @foreach ($products as $product)
                 <tr>
-                    <td>{{ $product->id }}  
+                    <td>{{ $product->id }}
                         <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
                         <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn btn-primary">Edit</button></a>
                         <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn btn-danger">Delete</button></a>
@@ -61,6 +87,10 @@
         </tbody>
     </table> --}}
 
+
+
+
+
     {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -80,4 +110,5 @@
         </div>
     </div>
 </div> --}}
+    <x-footer />
 @endsection
