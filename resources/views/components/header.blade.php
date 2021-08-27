@@ -5,6 +5,7 @@
         </a>
     </div>
     <div class="navbar navbar-expand-md navbar-light">
+        
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
@@ -57,7 +58,7 @@
                                 aria-selected="true">🏠 Inicio</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link calendar-link" id="profile-tab" data-bs-toggle="tab"
+                            <button class="nav-link calendar-link " id="profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
                                 aria-selected="false">📅 Calendario</button>
                         </li>
@@ -112,5 +113,6 @@
 
             </div>
         </nav>
+
     </div>
 </header>
