@@ -102,8 +102,8 @@
           <input type="text" name="pages" value="{{$product->pages}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="submit" class="btn btn-primary">Edit</button>
-        <button type="submit" class="btn btn-primary">Cancel</button>
+        <button type="submit" class="btn-carrito position-relative">Edit</button>
+        <button type="submit" class="btn-carrito position-relative">Cancel</button>
 
 
   </form>
