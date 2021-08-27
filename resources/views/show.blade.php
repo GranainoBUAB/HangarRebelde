@@ -23,7 +23,7 @@
                     <img src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
                     <h5 class="card-title">Format: {{ $product->format }}</h5>
                     <h5 class="card-title">Pages: {{ $product->pages }}</h5>
-                    <h3 class="card-title">Productos relacionados:</h3>
+                    
                 </div>
             </div>
             <center>
