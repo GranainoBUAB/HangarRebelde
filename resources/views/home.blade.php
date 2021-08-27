@@ -3,7 +3,7 @@
 @section('content')
     <x-header />
 
-    <div class="btn-group d-flex flex-row flex-wrap justify-content-center" role="group" aria-label="Basic mixed styles example">
+    {{-- <div class="btn-group d-flex flex-row flex-wrap justify-content-center" role="group" aria-label="Basic mixed styles example">
         <a href="{{ route('filter', ['Comic Americano']) }}">
             <button type="button" class="btn-carrito">Comics Americano</button>
         </a>
@@ -22,7 +22,7 @@
         <a href="{{ route('filter', ['Comic Manga']) }}">
             <button type="button" class="btn-carrito">Comics Manga</button>
         </a>
-    </div>
+    </div> --}}
 
     <div class="d-flex flex-wrap row justify-content-center">
 
@@ -43,6 +43,10 @@
                     </div>
                     <div class="separator"></div>
                     <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                </div>
+                <div>
+                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn-carrito position-relative">Edit</button></a>
+                    <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn-carrito position-relative">Delete</button></a>
                 </div>
             </div>
 

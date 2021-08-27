@@ -100,8 +100,8 @@
           <input type="text" name="pages" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="submit" class="btn btn-primary">Create</button>
-        <button type="submit" class="btn btn-primary">Cancel</button>
+        <button type="submit" class="btn-carrito position-relative">Create</button>
+        <button type="submit" class="btn-carrito position-relative">Cancel</button>
 
 
   </form>
