@@ -44,6 +44,10 @@
                     <div class="separator"></div>
                     <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                 </div>
+                <div>
+                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn-carrito position-relative">Edit</button></a>
+                    <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn-carrito position-relative">Delete</button></a>
+                </div>
             </div>
 
         @endforeach
