@@ -157,32 +157,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        /*
-
-        $product = Product::whereId($id);
-
-        $product->update([
-            'title'=> $request->title,
-            'description'=> $request->description,
-            'price'=> $request->price,
-            'author'=> $request->author,
-            'editorial'=> $request->editorial,
-            'isAvailable'=> $request->isAvailable,
-            'canReserve'=> $request->canReserve,
-            'isbn'=> $request->isbn,
-            'categoryMain'=> $request->categoryMain,
-            'categorySecondary'=> $request->categorySecondary,
-            'rating'=> $request->rating,
-            'image1'=> $request->image1,
-            'image2'=> $request->image2,
-            'image3'=> $request->image3,
-            'dateSale'=> $request->dateSale,
-            'format'=> $request->format,
-            'tag'=> $request->tag,
-            'pages'=> $request->pages
-        ]); */
-
         $changesProduct = request()->except(['_token', '_method']);
 
         if ($request->hasFile('image1')) {
@@ -202,8 +176,6 @@ class ProductController extends Controller
             Storage::delete('public/' . $product->image);
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
-
-
 
         Product::where('id', '=', $id)->update($changesProduct);
 
