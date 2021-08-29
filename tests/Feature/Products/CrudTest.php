@@ -19,24 +19,16 @@ class CrudTest extends TestCase
     public function test_a_product_can_be_created(){
 
         $this->withoutExceptionHandling();
-
-
-        $response = $this->post('/products',[
+        
+        Product::factory(1)->create([
+            'id'=> 1,
             'title'=> 'Test Title',
-            'description'=> 'Test Description',
-            'price'=> 10,5,
-            'author'=> 'Test author',
-            'editorial'=> 'Test editorial',
-            'isAvailable'=> true,
-            'canReserve'=> true,
-            'categoryMain'=> 'Test categoryMain',
-            'image1'=> 'Test image1',
-            'format'=> 'Test format',
-            'pages'=> 'Test pages'
-            
+            'description'=> 'Test Description'
         ]);
 
-        $response->assertStatus(302);
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
 
         $this->assertCount(1, Product::all());
 
