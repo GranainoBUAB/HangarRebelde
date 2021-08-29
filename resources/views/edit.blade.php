@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  
+
 <form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
 @method('patch')
     @csrf
@@ -46,13 +46,17 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Principal</span>
-          <input type="text" name="categoryMain" value="{{$product->categoryMain}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <label class="input-group-text">Categoría Principal</label>
+          <select class="form-control" name="categoryMain" value="{{$product->categoryMain}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categoryMains as $categoryMain)
+            <option>{{ $categoryMain->category }}</option>
+            @endforeach
+          </select>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecondary" value="{{$product->categorySecundary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="categorySecondary" value="{{$product->categorySecondary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -68,12 +72,14 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
-          <input type="file" name="image2" value="{{$product->image2}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          {{$product->image2}}
+          <input type="file" name="image2" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
-          <input type="file" name="image3" value="{{$product->image3}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          {{$product->image3}}
+          <input type="file" name="image3" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -96,10 +102,10 @@
           <input type="text" name="pages" value="{{$product->pages}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="submit" class="btn btn-primary">Edit</button>
-        <button type="submit" class="btn btn-primary">Cancel</button>
+        <button type="submit" class="btn-carrito position-relative">Edit</button>
+        <button type="submit" class="btn-carrito position-relative">Cancel</button>
 
-    
+
   </form>
-
+  <x-footer/>
 @endsection

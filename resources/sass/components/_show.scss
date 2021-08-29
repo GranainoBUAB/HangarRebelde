@@ -1,0 +1,27 @@
+@mixin imgShow {
+    width: 70vw;
+    border: 3px solid #FF8300;
+    border-radius: 10px;
+    @media screen and (min-width: $breakpointTable) {
+        width: 30vw;
+        border: 5px solid #FF8300;
+        border-radius: 15px;
+    }
+}
+
+.ct-infoShow {
+    width: 80%;
+}
+
+.imgShow {
+    @include imgShow;
+}
+
+.txtTitleShow {
+    color: $colorOrange;
+}
+
+.extraShow {
+    padding: 0px !important;
+    margin: 0px !important;
+}
