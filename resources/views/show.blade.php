@@ -22,8 +22,11 @@
                     <h6 class="card-title font-weight-bold">Descripción:</h6>
                     <p class="card-title">{{$product->description}}</p>
                     <div class="d-flex flex-row flex-wrap align-items-center">
-                        <h6 class="extraShow font-weight-bold mr-2">Disponibles:</h6>
-                        <p class="card-title extraShow">{{ $product->isAvailable }}</p>
+                        @if($product->isAvailable)
+                        <h6 class="extraShow font-weight-bold mr-2">Disponible</h6>
+                        @else
+                        <h6 class="extraShow font-weight-bold mr-2">No Disponible</h6>
+                        @endif
                         <h6 class="extraShow font-weight-bold mx-2"> | Para Reservar:</h6>
                         <p class="card-title extraShow">{{ $product->canReserve }}</p>
                         <h6 class="extraShow font-weight-bold mx-2"> | Categoría Principal:</h6>
