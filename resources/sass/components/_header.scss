@@ -1,0 +1,51 @@
+.showOnClick .showOnClick:hover {
+    text-decoration: none !important;
+    color: $colorOrange;
+}
+
+.containerHeader {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.containerLogo {
+    display: flex;
+    justify-content: center;
+}
+
+.imgLogin {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+}
+
+.line {
+    height: 1px;
+    color: $colorOrange;
+    margin-bottom: 12px;
+}
+
+.imgcarrito {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.btn-carrito {
+    height: auto;
+    margin: 4px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #FCE8C2;
+}
+
+.ct-search {
+    margin: 0px !important;
+}

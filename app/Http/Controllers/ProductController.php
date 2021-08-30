@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryMain;
+use App\Models\CategorySecondary;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -12,9 +15,24 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function filter($catMain, $catSec = null)
+    {
+        if ($catSec === null) {
+
+            $products = Product::where('categoryMain', '=', $catMain)->get();
+        } else {
+            $products = Product::where('categorySecondary', '=', $catSec)->get();
+        }
+
+        return view('home', compact('products'));
+    }
+
     public function index()
     {
-        $products = Product::all();
+        /*  $products = Product::all(); */
+        $products = Product::orderBy('id', 'desc')->take(12)->get();
+
         return view('home', compact('products'));
     }
 
@@ -25,7 +43,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+        return view('create', compact('categoryMains', 'categorySecondaries'));
     }
 
     /**
@@ -36,7 +56,43 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $product = Product::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'price' => $request->price,
+            'author' => $request->author,
+            'editorial' => $request->editorial,
+            'isAvailable' => $request->isAvailable,
+            'canReserve' => $request->canReserve,
+            'isbn' => $request->isbn,
+            'categoryMain' => $request->categoryMain,
+            'categorySecondary' => $request->categorySecondary,
+            'rating' => $request->rating,
+            'image1' => $request->image1,
+            'image2' => $request->image2,
+            'image3' => $request->image3,
+            'dateSale' => $request->dateSale,
+            'format' => $request->format,
+            'tag' => $request->tag,
+            'pages' => $request->pages
+        ]);
+
+
+        if ($request->hasFile('image1')) {
+            $product['image1'] = $request->file('image1')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image2')) {
+            $product['image2'] = $request->file('image2')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image3')) {
+            $product['image3'] = $request->file('image3')->store('img', 'public');
+        }
+
+        $product->save();
+        return redirect()->route('home');
     }
 
     /**
@@ -45,9 +101,37 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+        /* var_dump($product->id); */
+
+        do {
+            $arrayId = array();
+            $arrayId[] = $product->id;
+            $repeat = false;
+
+            $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
+            $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
+            $productrelation3 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
+            $productrelation4 = Product::inRandomOrder()->take(1)->get();
+
+            $productrelation12 = $productrelation1->concat($productrelation2);
+            $productrelation34 = $productrelation3->concat($productrelation4);
+            $productrelations = $productrelation12->concat($productrelation34);
+
+            foreach ($productrelations as $productrelation) {
+                $lenght = count($arrayId);
+                for ($i = 0; $i != $lenght; $i += 1) {
+                    if ($arrayId[$i] === $productrelation->id) {
+                        $repeat = true;
+                    }
+                }
+                $arrayId[] = $productrelation->id;
+            }
+        } while ($repeat);
+
+        return view('show', compact('product', 'productrelations'));
     }
 
     /**
@@ -56,9 +140,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)    
     {
-        //
+        $categoryMains = CategoryMain::all();
+        $categorySecondaries = CategorySecondary::all();
+        $product = Product::find($id);
+        return view('edit', compact('product', 'categoryMains', 'categorySecondaries'));
     }
 
     /**
@@ -68,9 +155,33 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $changesProduct = request()->except(['_token', '_method']);
+
+        if ($request->hasFile('image1')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image2')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image2'] = $request->file('image2')->store('img', 'public');
+        }
+
+        if ($request->hasFile('image3')) {
+            $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image);
+            $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
+        }
+
+        Product::where('id', '=', $id)->update($changesProduct);
+
+        $product = Product::findOrFail($id);
+
+        return redirect()->route('home');
     }
 
     /**
@@ -79,8 +190,22 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        Product::destroy($id);
+
+        return redirect()->route('home');
+    }
+
+    public function search(Request $request)
+    {
+
+        $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
+            ->get();
+
+        return view('search', compact('products'));
     }
 }

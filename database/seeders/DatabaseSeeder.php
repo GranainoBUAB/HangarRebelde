@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\CategoryMain;
+use App\Models\CategorySecondary;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 
@@ -427,5 +429,37 @@ class DatabaseSeeder extends Seeder
             'tag' => ''
         ]);
 
+        CategoryMain::factory()->create([
+            'position'  => '1',
+            'category'  => 'Comic Americano',
+        ]);
+
+        CategoryMain::factory()->create([
+            'position'  => '2',
+            'category'  => 'Comic Europeo',
+        ]);
+
+        CategoryMain::factory()->create([
+            'position'  => '3',
+            'category'  => 'Comic Manga',
+        ]);
+
+        CategorySecondary::factory()->create([
+            'categoryMain_id' => '1',
+            'position'  => '10',
+            'category'  => 'Comic Marvel',
+        ]);
+
+        CategorySecondary::factory()->create([
+            'categoryMain_id' => '1',
+            'position'  => '11',
+            'category'  => 'Comic DC',
+        ]);
+
+        CategorySecondary::factory()->create([
+            'categoryMain_id' => '2',
+            'position'  => '20',
+            'category'  => 'Comic Español',
+        ]);
     }
 }
