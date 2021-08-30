@@ -6,9 +6,7 @@
 
         <div class="left-link">
             <a class="follow" href="#">Siguenos</a>
-            <a href=""> ➡️</a>
-
-
+            <a href=""><img class="icons" src="<?php echo asset('storage/img/right-arrow.svg')?>" alt=""></a>
         </div>
 
     <div class="icons d-flex ">

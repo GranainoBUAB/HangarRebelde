@@ -10,7 +10,8 @@ hr{
 }
 
 .left-link{
-    position: relative;
+    display: flex;
+
     margin-top: 2%;
 }
 .right-link{
@@ -19,9 +20,9 @@ hr{
 }
 
 .left-link a {
-    color: black;
+    color: blue;
     }
-    
+
 .right-link a {
 color: black;
 }
