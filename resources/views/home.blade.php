@@ -2,28 +2,16 @@
 
 @section('content')
     <x-header />
-
-    {{-- <div class="btn-group d-flex flex-row flex-wrap justify-content-center" role="group" aria-label="Basic mixed styles example">
-        <a href="{{ route('filter', ['Comic Americano']) }}">
-            <button type="button" class="btn-carrito">Comics Americano</button>
-        </a>
-        <a href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">
-            <button type="button" class="btn-carrito">Comics Marvel</button>
-        </a>
-        <a href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">
-            <button type="button" class="btn-carrito">Comics DC</button>
-        </a>
-        <a href="{{ route('filter', ['Comic Europeo']) }}">
-            <button type="button" class="btn-carrito">Comics Europeo</button>
-        </a>
-        <a href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">
-            <button type="button" class="btn-carrito">Comics Español</button>
-        </a>
-        <a href="{{ route('filter', ['Comic Manga']) }}">
-            <button type="button" class="btn-carrito">Comics Manga</button>
-        </a>
-    </div> --}}
-
+    <x-navbar />
+    <x-categories />
+    
+    <div>
+        <div class="btn ps-3">
+            <a href="{{ route('create') }}">
+                <button type="text" class="btn-carrito position-relative">Create</button>
+            </a>
+        </div>
+    </div>
     <div class="d-flex flex-wrap row justify-content-center">
 
         @foreach ($products as $product)

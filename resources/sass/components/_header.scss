@@ -1,35 +1,15 @@
-.showOnClick .showOnClick:hover {
-    text-decoration: none !important;
-    color: $colorOrange;
-}
-
-.containerHeader {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.containerLogo {
-    display: flex;
-    justify-content: center;
-}
-
-.imgLogin {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: flex-end;
-}
-
 .logo {
-    width: 250px;
-    height: auto;
+    width: 400px;
 }
 
-.line {
-    height: 1px;
-    color: $colorOrange;
-    margin-bottom: 12px;
+.imgLogo{
+    width: 400px;
+}
+
+.logoImg{
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
 }
 
 .imgcarrito {
@@ -46,6 +26,16 @@
     background-color: #FCE8C2;
 }
 
-.ct-search {
-    margin: 0px !important;
+.loginNav {
+    display: flex;
+    align-self: flex-end;
+    color: $colorOrange;
+}
+
+.gridLogin{
+    width: 200px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    background-color: $colorOrange !important;
 }
