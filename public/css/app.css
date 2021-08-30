@@ -52,6 +52,11 @@
   margin: 0px !important;
 }
 
+.icoCardHeader {
+  width: 3%;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
 .ct-product {
   width: auto;
   height: auto;
@@ -127,7 +132,7 @@
   font-size: 0.7rem;
   /* text-overflow: ellipsis; */
   overflow: hidden;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 @media screen and (min-width: 768px) {
   .txtInfoTitle {
@@ -284,9 +289,19 @@ hr {
   color: #FF8300;
 }
 
+.txtPriceShow {
+  color: #FF8300;
+  font-size: 1rem;
+}
+
 .extraShow {
   padding: 0px !important;
   margin: 0px !important;
+}
+
+.icoCardShow {
+  width: 4%;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
 /*!

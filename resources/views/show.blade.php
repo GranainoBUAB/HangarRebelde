@@ -6,29 +6,35 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
-                {{-- @dd($product->image1) --}}
                 <div class="ct-imgShow">
                     <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
                 </div>
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
-                    {{-- <h5 class="card-title">Id.{{ $product->id }}</h5> --}}
                     <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
-                    <h6 class="card-title font-weight-bold">Autor:</h6>
+                    <div class="d-flex flex-row flex-wrap align-items-center">
+                        <h6 class="extraShow font-weight-bold mr-2">Precio: </h6>
+                        <p class="card-title extraShow font-weight-bold txtPriceShow">{{ $product->price }} &#8364 </p>
+                        @if($product->isAvailable)
+                        <h6 class="extraShow font-weight-bold mx-2"> | Disponible: Sí</h6>
+                        @else
+                        <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
+                        @endif
+                        <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
+                        <img class="icoCardShow m-1 mb-2" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                        @if($product->canReserve)
+                        <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6>
+                        @endif
+                        
+                    </div>
+                    <h6 class="card-title font-weight-bold mt-3">Autor:</h6>
                     <p class="card-title">{{ $product->author }}</p>
                     <h6 class="card-title font-weight-bold">Editorial:</h6>
                     <p class="card-title">{{ $product->editorial }}</p>
-                    <h6 class="card-title font-weight-bold">Precio:</h6>
-                    <p class="card-title">{{ $product->price }}</p>
                     <h6 class="card-title font-weight-bold">Descripción:</h6>
                     <p class="card-title">{{$product->description}}</p>
                     <div class="d-flex flex-row flex-wrap align-items-center">
-                        @if($product->isAvailable)
-                        <h6 class="extraShow font-weight-bold mr-2">Disponible</h6>
-                        @else
-                        <h6 class="extraShow font-weight-bold mr-2">No Disponible</h6>
-                        @endif
-                        <h6 class="extraShow font-weight-bold mx-2"> | Para Reservar:</h6>
-                        <p class="card-title extraShow">{{ $product->canReserve }}</p>
+                        <h6 class="extraShow font-weight-bold mr-2">ISBN</h6>
+                        <p class="card-title extraShow">{{ $product->isbn }}</p>
                         <h6 class="extraShow font-weight-bold mx-2"> | Categoría Principal:</h6>
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
