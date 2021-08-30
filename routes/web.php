@@ -31,7 +31,7 @@ Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
 Route::post('/products', [ProductController::class, 'store'])->name('store');
-Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
+Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
 Route::patch('/products/{id}', [ProductController::class, 'update'])->name('update');
 Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
 
