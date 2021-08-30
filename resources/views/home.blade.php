@@ -46,7 +46,11 @@
                 </div>
                 <div>
                     <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn-carrito position-relative">Edit</button></a>
-                    <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn-carrito position-relative">Delete</button></a>
+                    <form action="{{ url('/delete/'.$product->id)}}" method="post">
+                    @method('delete')
+                    @csrf 
+                        <input type="submit" class="btn-carrito position-relative" onclick="return confirm('Are you sure you want to permanently remove this item?')" value="Delete">
+                    </form>
                 </div>
             </div>
 

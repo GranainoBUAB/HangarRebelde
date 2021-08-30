@@ -31,7 +31,12 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-          <input type="text" name="isAvailable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          {{-- <input type="text" name="isAvailable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
+          <input type="radio" name="isAvailable" value="1">
+          <span>Disponible</span>
+
+          <input type="radio" name="isAvailable" value="0">
+          <span>No Disponible</span>
         </div>
 
         <div class="input-group mb-3">
@@ -44,7 +49,7 @@
           <input type="text" name="isbn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-          <div class="input-group mb-3">
+        <div class="input-group mb-3">
           <label class="input-group-text">Categoría Principal</label>
           <select class="form-control" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categoryMains as $categoryMain)
