@@ -4,28 +4,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item fs-6">
-            <a class="nav-link active" aria-current="page" href="#">Comics americano</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comics americano</a>
             </li>
             <li class="nav-item fs-6">
-            <a class="nav-link active" href="#">Comics Marvel</a>
+            <a class="nav-link active" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comics Marvel</a>
             </li>
             <li class="nav-item fs-6">
-            <a class="nav-link active" href="#">Comics DC</a>
+            <a class="nav-link active" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comics DC</a>
             </li>
             <li class="nav-item fs-6">
-                <a class="nav-link active" href="#">Comics Europeo</a>
+                <a class="nav-link active" href="{{ route('filter', ['Comic Europeo']) }}">Comics Europeo</a>
             </li>
             <li class="nav-item fs-6">
-                <a class="nav-link active" href="#">Comics Español</a>
+                <a class="nav-link active" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comics Español</a>
             </li>
             <li class="nav-item fs-6">
-                <a class="nav-link active" href="#">Comics Manga</a>
+                <a class="nav-link active" href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
             </li>
         </ul>
         </div>
     </div>
 <form class="d-flex align-items-center" action="{{route('search')}}">
-    <form class="navbar-form" >
+    <form class="navbar-form ">
         <div class="form-group ct-search">
             <input type="text" name="query" class="form-control search-box-w" placeholder="Buscar">
         </div>
