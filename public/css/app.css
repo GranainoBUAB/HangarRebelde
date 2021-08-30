@@ -263,6 +263,32 @@ hr {
     margin-left: 10%;
   }
 }
+.ct-infoShow {
+  width: 80%;
+}
+
+.imgShow {
+  width: 70vw;
+  border: 3px solid #FF8300;
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .imgShow {
+    width: 30vw;
+    border: 5px solid #FF8300;
+    border-radius: 15px;
+  }
+}
+
+.txtTitleShow {
+  color: #FF8300;
+}
+
+.extraShow {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
