@@ -2,8 +2,12 @@
 
 @section('content')
 
+
+<div class = "ct-form d-flex justify-content-center">
 <form method="post" action="{{route('store')}}" enctype="multipart/form-data">
     @csrf
+    <div>
+      <h5>Formulario para crear un nuevo Comic</h5>
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
             <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -107,8 +111,9 @@
 
         <button type="submit" class="btn-carrito position-relative">Create</button>
         <button type="submit" class="btn-carrito position-relative">Cancel</button>
-
+      </div>
 
   </form>
+</div>
   <x-footer/>
 @endsection

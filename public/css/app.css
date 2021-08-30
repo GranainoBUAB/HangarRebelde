@@ -289,6 +289,16 @@ hr {
   margin: 0px !important;
 }
 
+.input-group-text {
+  background-color: #FF8300 !important;
+  color: white !important;
+}
+
+.ct-form {
+  margin: 10%;
+  width: 80vw;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

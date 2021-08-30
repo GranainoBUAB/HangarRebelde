@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class = "form m-5">
 <form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
 @method('patch')
     @csrf
@@ -112,5 +112,6 @@
 
 
   </form>
+</div>
   <x-footer/>
 @endsection
