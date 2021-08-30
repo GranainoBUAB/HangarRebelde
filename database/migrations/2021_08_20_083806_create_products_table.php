@@ -17,8 +17,13 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title',100);
             $table->decimal('price', 8, 2);
-            $table->string('author',100);
-            $table->string('editorial',50);
+            $table->string('author1',50);
+            $table->string('author2',50)->nullable();
+            $table->string('author3',50)->nullable();
+            $table->string('author4',50)->nullable();
+            $table->string('author5',50)->nullable();
+            $table->string('author6',50)->nullable();
+            $table->string('editorial',50)->nullable();
             $table->boolean('isAvailable');
             $table->boolean('canReserve');
             $table->string('isbn',13)->nullable();

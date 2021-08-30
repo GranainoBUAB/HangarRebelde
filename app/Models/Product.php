@@ -12,7 +12,7 @@ class Product extends Model
     protected $fillable = [
         'title',
         'price',
-        'author',
+        'author1', 'author2', 'author3', 'author4', 'author5', 'author6',
         'editorial',
         'isAvailable',
         'canReserve',
@@ -21,16 +21,15 @@ class Product extends Model
         'categorySecondary',
         'description',
         'rating',
-        'image1',
-        'image2',
-        'image3',
+        'image1', 'image2', 'image3',
         'dateSale',
         'format',
         'pages',
         'tag',
     ];
 
-    public function productRelationed ($product){
+    public function productRelationed($product)
+    {
         /* $index=0; */
         do {
             /* $index++; */
@@ -41,11 +40,9 @@ class Product extends Model
             $productrelation1 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
             $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
             $productrelation3 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
-            /* $productrelation4 = Product::inRandomOrder()->take(1)->get(); */
 
             $productrelation12 = $productrelation1->concat($productrelation2);
             $productrelations = $productrelation12->concat($productrelation3);
-            /* $productrelations = $productrelation12->concat($productrelation34); */
 
             foreach ($productrelations as $productrelation) {
                 $lenght = count($arrayId);

@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'EL IMPARABLE SPIDERMAN 01 (Serie bimestral)',
             'price'  => '3.33',
-            'author'  => 'Chris Bachalo, Joe Kelly',
+            'author1'  => 'Chris Bachalo',
+            'author2'  => 'Joe Kelly',
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -43,7 +44,9 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'INVENCIBLE IRON MAN 02: INTERNACIONAL (Marvel Now! Deluxe)',
             'price'  => '22.80',
-            'author'  => 'Alex Maleev, Brian Michael Bendis, Mike Deodato',
+            'author1'  => 'Alex Maleev',
+            'author2'  => 'Brian Michael Bendis',
+            'author3'  => 'Mike Deodato',
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -63,7 +66,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'STAR WARS: OBJETIVO VADER',
             'price'  => '16.10',
-            'author'  => 'Varios autores',
+            'author1'  => 'Varios autores',
             'editorial'  => 'Planeta Cómic',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -85,7 +88,10 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'LA SALVAJE HULKA 02: LA SAGA TERMINA (Marvel Limited Edition)',
             'price'  => '37.95',
-            'author'  => 'John Buscema, Mike Vosburg, Stan Lee, Varios autores',
+            'author1'  => 'John Buscema',
+            'author2'  => 'Mike Vosburg',
+            'author3'  => 'Stan Lee',
+            'author4'  => 'Varios autores',
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -105,7 +111,10 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'EL INMORTAL HULK 02 (Marvel premiere)',
             'price'  => '9.50',
-            'author'  => 'Al Ewing, Joe Bennett, Lee Garbett, Rafa Fonteriz',
+            'author1'  => 'Al Ewing',
+            'author2'  => 'Joe Bennett',
+            'author3'  => 'Lee Garbett',
+            'author4'  => 'Rafa Fonteriz',
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -125,7 +134,12 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'SUPERMAN 110 / 31',
             'price'  => '2.80',
-            'author'  => 'Dave Wielgosz, Kenny Porter, Michael Moreci, Riley Rossmo, Scott Kolins, Thony Silas',
+            'author1'  => 'Dave Wielgosz',
+            'author2'  => 'Kenny Porter',
+            'author3'  => 'Michael Moreci',
+            'author4'  => 'Riley Rossmo',
+            'author5'  => 'Scott Kolins',
+            'author6'  => 'Thony Silas',
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -145,7 +159,11 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'WONDER WOMAN: SANGRE (Edición integral)',
             'price'  => '57.00',
-            'author'  => 'Amilcar Pinna, Brian Azzarello, Cliff Chiang, Goran Sudzuka, Tony Akins',
+            'author1'  => 'Amilcar Pinna',
+            'author2'  => 'Brian Azzarello',
+            'author3'  => 'Cliff Chiang',
+            'author4'  => 'Goran Sudzuka',
+            'author5'  => 'Tony Akins',
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -165,7 +183,8 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'BATMAN / CATWOMAN 01 (De 12)',
             'price'  => '2.80',
-            'author'  => 'Clay Mann, Tom King',
+            'author1'  => 'Clay Mann',
+            'author2'  => 'Tom King',
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -185,7 +204,9 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'BATMAN DE TOM KING 11: DÍAS FRÍOS (Héroes en crisis parte 1)',
             'price'  => '18.95',
-            'author'  => 'Joelle Jones, Mikel Janín, Tom King',
+            'author1'  => 'Joelle Jones',
+            'author2'  => 'Mikel Janín',
+            'author3'  => 'Tom King',
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -205,7 +226,8 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'SUPERMAN: AÑO UNO (Edición integral)',
             'price'  => '24.70',
-            'author'  => 'Frank Miller, John Romita Jr.',
+            'author1'  => 'Frank Miller',
+            'author2'  => 'John Romita Jr.',
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -227,7 +249,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 207: LOS INFLUYENTES INFLUENCERS (SUPER LOPEZ)',
             'price'  => '14.16',
-            'author'  => 'Jan',
+            'author1'  => 'Jan',
             'editorial'  => 'Ediciones B',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -247,7 +269,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 203: VIENTO EN LOS DEDOS (SUPERLOPEZ)',
             'price'  => '14.16',
-            'author'  => 'Jan',
+            'author1'  => 'Jan',
             'editorial'  => 'Ediciones B',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -267,7 +289,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 14: EL TONEL DEL TIEMPO (ZIPI Y ZAPE)',
             'price'  => '14.16',
-            'author'  => 'Josep Escobar',
+            'author1'  => 'Josep Escobar',
             'editorial'  => 'Bruguera',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -287,7 +309,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 27: APRENDICES AL TUN TUN (ZIPI Y ZAPE)',
             'price'  => '14.16',
-            'author'  => 'Josep Escobar',
+            'author1'  => 'Josep Escobar',
             'editorial'  => 'Bruguera',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -307,7 +329,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 18: EL GRAN SAFARI (ZIPI Y ZAPE)',
             'price'  => '14.16',
-            'author'  => 'Josep Escobar',
+            'author1'  => 'Josep Escobar',
             'editorial'  => 'Bruguera',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -328,7 +350,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'DRAGON BALL SUPER 57 (SERIE ROJA Nº 268)',
             'price'  => '2.80',
-            'author'  => 'Akira Toriyama',
+            'author1'  => 'Akira Toriyama',
             'editorial'  => 'Planeta Cómic',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -348,7 +370,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'RANMA 1/2 (Edición integral) 19 (de 19)',
             'price'  => '14.20',
-            'author'  => 'Rumiko Takahashi',
+            'author1'  => 'Rumiko Takahashi',
             'editorial'  => 'Planeta Cómic',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -369,7 +391,8 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'POKÉMON SOL Y LUNA 01',
             'price'  => '8.55',
-            'author'  => 'Hidenori Kusaka, Satoshi Yamamoto',
+            'author1'  => 'Hidenori Kusaka',
+            'author2'  => 'Satoshi Yamamoto',
             'editorial'  => 'NORMA Editorial',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -390,7 +413,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'KOMI-SAN NO PUEDE COMUNICARSE 02',
             'price'  => '13.30',
-            'author'  => 'Tomohito Oda',
+            'author1'  => 'Tomohito Oda',
             'editorial'  => 'Ivréa',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -410,7 +433,9 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'MACBETH',
             'price'  => '17.10',
-            'author'  => 'Crystal S. Chan, Julien Choy, William Shakespeare',
+            'author1'  => 'Crystal S. Chan',
+            'author2'  => 'Julien Choy',
+            'author3'  => 'William Shakespeare',
             'editorial'  => 'NORMA Editorial',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -463,3 +488,4 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+
