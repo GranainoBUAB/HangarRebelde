@@ -105,33 +105,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         /* var_dump($product->id); */
-        $index=0;
-        do {
-            $index++;
-            $arrayId = array();
-            $arrayId[] = $product->id;
-            $repeat = false;
-
-            $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
-            $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
-            $productrelation3 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
-            /* $productrelation4 = Product::inRandomOrder()->take(1)->get(); */
-
-            $productrelation12 = $productrelation1->concat($productrelation2);
-            $productrelations = $productrelation12->concat($productrelation3);
-            /* $productrelations = $productrelation12->concat($productrelation34); */
-
-            foreach ($productrelations as $productrelation) {
-                $lenght = count($arrayId);
-                for ($i = 0; $i != $lenght; $i += 1) {
-                    if ($arrayId[$i] === $productrelation->id) {
-                        $repeat = true;
-                    }
-                }
-                $arrayId[] = $productrelation->id;
-            }
-        } while ($repeat);
-        /* dd($index); */
+        $productrelations = $product->productRelationed($product);
         return view('show', compact('product', 'productrelations'));
     }
 
