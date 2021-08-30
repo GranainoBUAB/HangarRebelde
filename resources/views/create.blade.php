@@ -33,14 +33,14 @@
           <input type="text" name="editorial" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
+        <div class="input-group mb-3 d-flex align-items-center" >
+          <span class="input-group-text mr-3" id="inputGroup-sizing-default">Stock</span>
           {{-- <input type="text" name="isAvailable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
-          <input type="radio" name="isAvailable" value="1">
-          <span>Disponible</span>
+          <input type="radio" class="ml-2" name="isAvailable" value="1">
+          <span class="ml-2">Disponible</span>
 
-          <input type="radio" name="isAvailable" value="0">
-          <span>No Disponible</span>
+          <input type="radio" class="ml-2" name="isAvailable" value="0">
+          <span class="ml-2">No Disponible</span>
         </div>
 
         <div class="input-group mb-3">
@@ -74,7 +74,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-            <div class="col-md-6">
+      
                 <input  type="file" class="form-control" name="image1" id="image1">
             </div>
         </div>
