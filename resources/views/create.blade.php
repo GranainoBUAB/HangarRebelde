@@ -57,17 +57,22 @@
           <label class="input-group-text">Categoría Principal</label>
           <select class="form-control" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categoryMains as $categoryMain)
-            <option>{{ $categoryMain->category }}</option>
+            <option>{{ $categoryMain->position}}. {{ $categoryMain->category }}</option>
             @endforeach
           </select>
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecondary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <label class="input-group-text">Categoría Secundaria</label>
+          <select class="form-control" name="categorySecondary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categorySecondaries as $categorySecondary)
+            <option>{{ $categorySecondary->position }}. {{ $categorySecondary->category }}</option>
+            @endforeach
+            <option>{{-- <input type="text" name="isbn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}</option>
+          </select>
         </div>
 
-       {{--  <div class="input-group mb-3">
+      {{--  <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Valoración</span>
           <input type="text" name="rating" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div> --}}
@@ -108,10 +113,11 @@
           <span class="input-group-text" id="inputGroup-sizing-default">Num páginas</span>
           <input type="text" name="pages" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-
-        <button type="submit" class="btn-carrito position-relative">Create</button>
-        <button type="submit" class="btn-carrito position-relative">Cancel</button>
+      <div class="input-group mb-3">
+        <button type="submit" class="btn btn-success">Crear</button>
+        <button type="submit" class="btn btn-danger ml-3">Cancelar</button>
       </div>
+    </div>
 
   </form>
 </div>
