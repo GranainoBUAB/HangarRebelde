@@ -44,6 +44,12 @@
                             Sobre Nosotros
                         </button>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <img class="imgcarrito me-1" src="<?php echo asset('storage/img/carrito.png'); ?>" alt="" href="#">
+                        <button class="btn-products position-relative me-5">
+                            (2) 34,21€
+                        </button>
+                    </li>
                 </ul>
                 {{-- <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>

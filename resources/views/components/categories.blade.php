@@ -16,7 +16,7 @@
 </nav>
 
 
-<nav class="navbar navbar-expand-lg navbar-light p-0 mx-4 mt-4">
+<nav class="navbar navbar-expand-lg navbar-light p-0 mx-5 mt-4">
     <div class="container-fluid px-2">
         
         <div class="navbar p-0" id="navbarNav">
@@ -42,14 +42,5 @@
         </ul>
         </div>
     </div>
-
-    <img class="imgcarrito me-1" src="<?php echo asset('storage/img/carrito.png'); ?>" alt="" href="#">
-    <button class="btn-products position-relative me-4">
-        (2) 34,21€
-        <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger visually-hidden">
-            02
-        </span>
-    </button>
 </form>
 </nav>

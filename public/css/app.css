@@ -56,6 +56,10 @@
   margin: 0px !important;
 }
 
+.ct-search {
+  margin: 0px !important;
+}
+
 .ct-product {
   width: auto;
   height: auto;
@@ -311,6 +315,12 @@ hr {
 .input-group-text-cancel {
   background-color: green !important;
   color: white !important;
+}
+
+.createbtn {
+  background-color: #FF8300 !important;
+  color: white !important;
+  width: 150px;
 }
 
 /*!

@@ -5,44 +5,42 @@
     <x-navbar />
     <x-categories />
     
-    <div>
-        <div class="btn ps-3">
+    <div class="d-flex flex-wrap row justify-content-center">
+        <div class="position-relative me-4">
             <a href="{{ route('create') }}">
-                <button type="text" class="btn-carrito position-relative">Create</button>
+                <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
             </a>
         </div>
-    </div>
-    <div class="d-flex flex-wrap row justify-content-center">
-        <a href="{{ route('create') }}"><button type="text" class="input-group-text">Crear nuevo Comic</button></a>
-        @foreach ($products as $product)
-            <div class="ct-product m-4">
-                <div class="ct-img">
-                    <a href="{{ route('show', ['id' => $product->id]) }}">
-                        <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
-                    </a>
-                </div>
-                <div class="ct-info d-flex flex-row align-items-center p-1">
-                    <div class="ct-txt d-flex flex-column justify-content-center">
-                        <div class="txtTitle d-flex flex-row align-items-center">
-                            <p class="txtInfoTitle m-0">{{ $product->title }} </p>
-                            <p class="txtPoints m-0">...</p>
-                        </div>
-                        <p class="txtPrice">{{ $product->price }} &#8364</p>
+        <div class="d-flex flex-wrap row justify-content-center">
+            @foreach ($products as $product)
+                <div class="ct-product m-4">
+                    <div class="ct-img">
+                        <a href="{{ route('show', ['id' => $product->id]) }}">
+                            <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                        </a>
                     </div>
-                    <div class="separator"></div>
-                    <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                    <div class="ct-info d-flex flex-row align-items-center p-1">
+                        <div class="ct-txt d-flex flex-column justify-content-center">
+                            <div class="txtTitle d-flex flex-row align-items-center">
+                                <p class="txtInfoTitle m-0">{{ $product->title }} </p>
+                                <p class="txtPoints m-0">...</p>
+                            </div>
+                            <p class="txtPrice">{{ $product->price }} &#8364</p>
+                        </div>
+                        <div class="separator"></div>
+                        <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                    </div>
+                    <div class="input-group mb-3">
+                        <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
+                        <form action="{{ url('/delete/'.$product->id)}}" method="post">
+                        @method('delete')
+                        @csrf 
+                            <input type="submit" class="input-group-text ml-2" onclick="return confirm('Are you sure you want to permanently remove this item?')" value="Eliminar">
+                        </form>
+                    </div>
                 </div>
-                <div class="input-group mb-3">
-                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                    <form action="{{ url('/delete/'.$product->id)}}" method="post">
-                    @method('delete')
-                    @csrf 
-                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('Are you sure you want to permanently remove this item?')" value="Eliminar">
-                    </form>
-                </div>
-            </div>
-
-        @endforeach
+            @endforeach
+        </div>
     </div>
 
     {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
