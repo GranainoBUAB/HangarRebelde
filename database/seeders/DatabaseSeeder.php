@@ -43,7 +43,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '1/7/2021',
             'format' => 'Tapa blanda',
             'pages' => '32',
-            'tag1' => ''
+            'tag1' => 'Spiderman',
+            'tag2' => 'Araña',
+            'tag3' => ''
         ]);
 
         Product::factory()->create([
@@ -69,7 +71,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/8/2021',
             'format' => 'Tapa dura',
             'pages' => '240',
-            'tag1' => ''
+            'tag1' => 'Iron Man',
+            'tag2' => 'Marvel',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'STAR WARS: OBJETIVO VADER',
@@ -96,7 +100,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/7/2021',
             'format' => 'Tapa dura',
             'pages' => '144',
-            'tag1' => ''
+            'tag1' => 'Marvel',
+            'tag2' => 'Stars Wars',
+            'tag3' => 'Vader'
         ]);
         Product::factory()->create([
             'title'  => 'LA SALVAJE HULKA 02: LA SAGA TERMINA (Marvel Limited Edition)',
@@ -121,7 +127,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '12/8/2021',
             'format' => 'Tapa dura',
             'pages' => '320',
-            'tag1' => ''
+            'tag1' => 'Hulka',
+            'tag2' => 'Hulk',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'EL INMORTAL HULK 02 (Marvel premiere)',
@@ -146,7 +154,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '15/4/2021',
             'format' => 'Tapa dura',
             'pages' => '120',
-            'tag1' => ''
+            'tag1' => 'Marvel',
+            'tag2' => 'Hulk',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'SUPERMAN 110 / 31',
@@ -171,7 +181,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '3/8/2021',
             'format' => 'Grapa',
             'pages' => '32',
-            'tag1' => ''
+            'tag1' => 'Superman',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'WONDER WOMAN: SANGRE (Edición integral)',
@@ -196,7 +208,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '26/1/2021',
             'format' => 'Tapa dura',
             'pages' => '816',
-            'tag1' => ''
+            'tag1' => 'Wonder Woman',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'BATMAN / CATWOMAN 01 (De 12)',
@@ -221,7 +235,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '27/7/2021',
             'format' => 'Grapa',
             'pages' => '32',
-            'tag1' => ''
+            'tag1' => 'Batman',
+            'tag2' => '',
+            'tag3' => 'Catwoman'
         ]);
         Product::factory()->create([
             'title'  => 'BATMAN DE TOM KING 11: DÍAS FRÍOS (Héroes en crisis parte 1)',
@@ -246,7 +262,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '3/8/2021',
             'format' => 'Tapa dura',
             'pages' => '176',
-            'tag1' => ''
+            'tag1' => 'Batman',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'SUPERMAN: AÑO UNO (Edición integral)',
@@ -273,7 +291,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '27/10/2020',
             'format' => 'Tapa dura',
             'pages' => '224',
-            'tag1' => ''
+            'tag1' => 'DC integral',
+            'tag2' => 'Superman',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 207: LOS INFLUYENTES INFLUENCERS (SUPER LOPEZ)',
@@ -298,7 +318,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/6/2021',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag1' => ''
+            'tag1' => 'Super Lopez',
+            'tag2' => 'Magos del Humor',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 203: VIENTO EN LOS DEDOS (SUPERLOPEZ)',
@@ -323,7 +345,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '9/3/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag1' => ''
+            'tag1' => 'SuperLopez',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 14: EL TONEL DEL TIEMPO (ZIPI Y ZAPE)',
@@ -348,7 +372,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '4/4/2019',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag1' => ''
+            'tag1' => 'Zipi y Zape',
+            'tag2' => 'Magos del humor',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 27: APRENDICES AL TUN TUN (ZIPI Y ZAPE)',
@@ -373,7 +399,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '14/12/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag1' => ''
+            'tag1' => '',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 18: EL GRAN SAFARI (ZIPI Y ZAPE)',
@@ -399,7 +427,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '30/6/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag1' => ''
+            'tag1' => 'Safari',
+            'tag2' => 'Español',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'DRAGON BALL SUPER 57 (SERIE ROJA Nº 268)',
@@ -424,7 +454,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '14/7/2021',
             'format' => 'Tapa blanda',
             'pages' => '32',
-            'tag1' => ''
+            'tag1' => 'Dragon Ball',
+            'tag2' => 'Serie Roja',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'RANMA 1/2 (Edición integral) 19 (de 19)',
@@ -450,7 +482,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '24/7/2018',
             'format' => 'Tapa blanda con sobrecubierta',
             'pages' => '360',
-            'tag1' => ''
+            'tag1' => 'Ranma',
+            'tag2' => 'Edition integral',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'POKÉMON SOL Y LUNA 01',
@@ -476,7 +510,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/8/2021',
             'format' => 'Tapa blanda con solapas',
             'pages' => '180',
-            'tag1' => ''
+            'tag1' => 'Pokemon',
+            'tag2' => 'Sol y Luna',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'KOMI-SAN NO PUEDE COMUNICARSE 02',
@@ -501,7 +537,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/8/2021',
             'format' => 'Tapa blanda con sobrecubierta',
             'pages' => '400',
-            'tag1' => ''
+            'tag1' => 'Komi-San',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MACBETH',
@@ -527,7 +565,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/8/2021',
             'format' => 'Tapa blanda con solapas',
             'pages' => '320',
-            'tag1' => ''
+            'tag1' => 'MacBeth',
+            'tag2' => 'Shakespeare',
+            'tag3' => ''
         ]);
 
         CategoryMain::factory()->create([
