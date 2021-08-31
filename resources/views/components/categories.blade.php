@@ -3,11 +3,6 @@
         <a class="navbar-brand mx-4" href="#">NOVEDADES</a>
         </button>
         <div class="navbar" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Próximamente</a>
-            </li>
-        </ul>
         <form class="d-flex align-items-center" action="{{route('search')}}">
             <div class="form-group ct-search">
                 <input type="text" name="query" class="form-control search-box-w" placeholder="Buscar">
