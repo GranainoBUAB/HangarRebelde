@@ -14,7 +14,7 @@
                     {{-- <h5 class="card-title">Id.{{ $product->id }}</h5> --}}
                     <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
                     <h6 class="card-title font-weight-bold">Autor:</h6>
-                    <p class="card-title">{{ $product->author }}</p>
+                    <p class="card-title">{{ $product->author1 }}</p>
                     <h6 class="card-title font-weight-bold">Editorial:</h6>
                     <p class="card-title">{{ $product->editorial }}</p>
                     <h6 class="card-title font-weight-bold">Precio:</h6>
