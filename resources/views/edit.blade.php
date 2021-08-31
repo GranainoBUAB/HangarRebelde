@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class = "form m-5">
+<div class = "ct-form d-flex justify-content-center">
 <form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
 @method('patch')
     @csrf
@@ -12,7 +12,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
-          <input type="text" name="description" value="{{$product->description}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <textarea type="text" name="description"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">{{$product->description}}</textarea>
         </div>
 
         <div class="input-group mb-3">
@@ -33,11 +33,11 @@
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
           {{-- <input type="text" name="isAvailable" value="{{$product->isAvailable}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
-          <input type="radio" name="isAvailable" value="1">
-          <span>Disponible</span>
+          <input type="radio" class="ml-2" name="isAvailable" value="1">
+          <span class="ml-2">Disponible</span>
 
-          <input type="radio" name="isAvailable" value="0">
-          <span>No Disponible</span>
+          <input type="radio" class="ml-2" name="isAvailable" value="0">
+          <span class="ml-2">No Disponible</span>
         </div>
 
         <div class="input-group mb-3">
@@ -64,10 +64,10 @@
           <input type="text" name="categorySecondary" value="{{$product->categorySecondary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
+       {{--  <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Valoración</span>
           <input type="text" name="rating" value="{{$product->rating}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+        </div> --}}
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
@@ -107,7 +107,7 @@
           <input type="text" name="pages" value="{{$product->pages}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="submit" class="btn-carrito position-relative">Edit</button>
+        <button type="submit" class="btn-carrito position-relative">Ok</button>
         <button type="submit" class="btn-carrito position-relative">Cancel</button>
 
 

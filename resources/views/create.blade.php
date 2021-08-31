@@ -15,7 +15,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
-          <input type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <textarea type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></textarea>
         </div>
 
         <div class="input-group mb-3">
@@ -67,10 +67,10 @@
           <input type="text" name="categorySecondary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
+       {{--  <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Valoración</span>
           <input type="text" name="rating" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+        </div> --}}
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
