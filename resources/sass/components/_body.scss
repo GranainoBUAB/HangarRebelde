@@ -71,6 +71,7 @@
     width: auto;
     height: auto;
     padding: 0px;
+    
 }
 
 .ct-img {
@@ -101,7 +102,7 @@
     @include txtTitle;
     /* text-overflow: ellipsis; */
     overflow: hidden;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
 }
 
 .txtTitle {
