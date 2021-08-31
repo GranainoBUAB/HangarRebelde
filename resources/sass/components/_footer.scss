@@ -19,7 +19,7 @@ hr{
 }
 
 .icons{
-    margin-left: 10%;
+    margin-left: -7%;
     width:65%;
     height: auto;
 }
@@ -31,7 +31,7 @@ hr{
 
 .icon_location{
     align-self: center;
-    width: 16%;
+    width: 24%;
     height: auto;
 }
 
@@ -40,6 +40,20 @@ hr{
 
 }
 
+@media (min-width: 960px) and (max-width: 1400px){
+    .icon_location{
+        width: 30%;
+    }
+}
+
+@media (min-width: 567px) and (max-width: 960px){
+.icon_location{
+    width: 20%;
+}
+.icons{
+    margin-left: 5%;
+}
+}
 
 @media (min-width: 120px) and (max-width: 566px) {
     .container{
@@ -49,7 +63,7 @@ hr{
 
     .icons{
 
-        justify-content: center;
+        justify-content: space-between;
         width:25px;
         height: auto;
 
