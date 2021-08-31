@@ -108,7 +108,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <button type="submit" class="btn btn-success">Ok</button>
+          <button type="submit" class="btn btn-success">Validar</button>
           <button type="submit" class="btn btn-danger ml-3">Cancelar</button>
         </div>
       </div>

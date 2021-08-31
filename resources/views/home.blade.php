@@ -25,7 +25,7 @@
     </div> --}}
 
     <div class="d-flex flex-wrap row justify-content-center">
-
+        <a href="{{ route('create') }}"><button type="text" class="input-group-text">Crear nuevo Comic</button></a>
         @foreach ($products as $product)
             <div class="ct-product m-4">
                 <div class="ct-img">
@@ -44,12 +44,12 @@
                     <div class="separator"></div>
                     <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                 </div>
-                <div>
-                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn-carrito position-relative">Edit</button></a>
+                <div class="input-group mb-3">
+                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
                     <form action="{{ url('/delete/'.$product->id)}}" method="post">
                     @method('delete')
                     @csrf 
-                        <input type="submit" class="btn-carrito position-relative" onclick="return confirm('Are you sure you want to permanently remove this item?')" value="Delete">
+                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('Are you sure you want to permanently remove this item?')" value="Eliminar">
                     </form>
                 </div>
             </div>

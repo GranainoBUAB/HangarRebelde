@@ -68,7 +68,7 @@
             @foreach ($categorySecondaries as $categorySecondary)
             <option>{{ $categorySecondary->position }}. {{ $categorySecondary->category }}</option>
             @endforeach
-            <option>{{-- <input type="text" name="isbn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}</option>
+            <option></option>
           </select>
         </div>
 
