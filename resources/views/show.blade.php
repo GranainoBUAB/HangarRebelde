@@ -21,9 +21,9 @@
                         @endif
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
                         <img class="icoCardShow m-1 mb-2" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
-                        @if($product->canReserve)
+                        {{-- @if($product->canReserve) --}}
                         <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6>
-                        @endif
+                        {{-- @endif --}}
                         
                     </div>
                     <h6 class="card-title font-weight-bold mt-3">Autor:</h6>
