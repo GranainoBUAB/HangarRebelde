@@ -53,7 +53,7 @@
                 <br>
                 <br>
                 <div>
-                    <h2>Productos relacionados</h2>
+                    <h2 class="card-title font-weight-bold txtTitleShow">Productos relacionados</h2>
                 </div>
 
             </center>
