@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '1/7/2021',
             'format' => 'Tapa blanda',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => ''
         ]);
 
         Product::factory()->create([
@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/8/2021',
             'format' => 'Tapa dura',
             'pages' => '240',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'STAR WARS: OBJETIVO VADER',
@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/7/2021',
             'format' => 'Tapa dura',
             'pages' => '144',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'LA SALVAJE HULKA 02: LA SAGA TERMINA (Marvel Limited Edition)',
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '12/8/2021',
             'format' => 'Tapa dura',
             'pages' => '320',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'EL INMORTAL HULK 02 (Marvel premiere)',
@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '15/4/2021',
             'format' => 'Tapa dura',
             'pages' => '120',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'SUPERMAN 110 / 31',
@@ -146,7 +146,7 @@ class DatabaseSeeder extends Seeder
             'isbn' => '9788418784392',
             'categoryMain' => 'Comic Americano',
             'categorySecondary' => 'Comic DC',
-            'description' => 'Dos historias autoconclusivas protagonizadas por el Último Hijo de Krypton. En la primera, Superman se enfrenta a Darkseid. El dictador loco de Apokolips está dispuesto a usar la ecuación de la Antivida en el corazón de Metropolis. En el segundo relato, el Hombre de Acero acaba peleando por su vida en una brutal arena de gladiadores, ¡con el mismísimo Lobo como invitado especial!',
+            'description' => 'Dos historias autoconclusivas protag1onizadas por el Último Hijo de Krypton. En la primera, Superman se enfrenta a Darkseid. El dictador loco de Apokolips está dispuesto a usar la ecuación de la Antivida en el corazón de Metropolis. En el segundo relato, el Hombre de Acero acaba peleando por su vida en una brutal arena de gladiadores, ¡con el mismísimo Lobo como invitado especial!',
             'rating' => '3.5',
             'image1' => 'img/superman_110.jpg',
             'image2' => '',
@@ -154,7 +154,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '3/8/2021',
             'format' => 'Grapa',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'WONDER WOMAN: SANGRE (Edición integral)',
@@ -178,7 +178,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '26/1/2021',
             'format' => 'Tapa dura',
             'pages' => '816',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'BATMAN / CATWOMAN 01 (De 12)',
@@ -199,7 +199,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '27/7/2021',
             'format' => 'Grapa',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'BATMAN DE TOM KING 11: DÍAS FRÍOS (Héroes en crisis parte 1)',
@@ -221,7 +221,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '3/8/2021',
             'format' => 'Tapa dura',
             'pages' => '176',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'SUPERMAN: AÑO UNO (Edición integral)',
@@ -244,7 +244,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '27/10/2020',
             'format' => 'Tapa dura',
             'pages' => '224',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 207: LOS INFLUYENTES INFLUENCERS (SUPER LOPEZ)',
@@ -264,7 +264,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/6/2021',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 203: VIENTO EN LOS DEDOS (SUPERLOPEZ)',
@@ -284,7 +284,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '9/3/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 14: EL TONEL DEL TIEMPO (ZIPI Y ZAPE)',
@@ -304,7 +304,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '4/4/2019',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 27: APRENDICES AL TUN TUN (ZIPI Y ZAPE)',
@@ -324,7 +324,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '14/12/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 18: EL GRAN SAFARI (ZIPI Y ZAPE)',
@@ -345,7 +345,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '30/6/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'DRAGON BALL SUPER 57 (SERIE ROJA Nº 268)',
@@ -365,7 +365,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '14/7/2021',
             'format' => 'Tapa blanda',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'RANMA 1/2 (Edición integral) 19 (de 19)',
@@ -386,7 +386,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '24/7/2018',
             'format' => 'Tapa blanda con sobrecubierta',
             'pages' => '360',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'POKÉMON SOL Y LUNA 01',
@@ -408,7 +408,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/8/2021',
             'format' => 'Tapa blanda con solapas',
             'pages' => '180',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'KOMI-SAN NO PUEDE COMUNICARSE 02',
@@ -428,7 +428,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/8/2021',
             'format' => 'Tapa blanda con sobrecubierta',
             'pages' => '400',
-            'tag' => ''
+            'tag1' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MACBETH',
@@ -451,7 +451,7 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/8/2021',
             'format' => 'Tapa blanda con solapas',
             'pages' => '320',
-            'tag' => ''
+            'tag1' => ''
         ]);
 
         CategoryMain::factory()->create([

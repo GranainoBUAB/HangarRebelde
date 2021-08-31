@@ -25,7 +25,7 @@ class Product extends Model
         'dateSale',
         'format',
         'pages',
-        'tag',
+        'tag1','tag2','tag3',
     ];
 
     public function productRelationed($product)
