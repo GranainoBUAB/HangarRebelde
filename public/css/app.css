@@ -127,7 +127,7 @@
   font-size: 0.7rem;
   /* text-overflow: ellipsis; */
   overflow: hidden;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 @media screen and (min-width: 768px) {
   .txtInfoTitle {
@@ -287,6 +287,26 @@ hr {
 .extraShow {
   padding: 0px !important;
   margin: 0px !important;
+}
+
+.input-group-text {
+  background-color: #FF8300 !important;
+  color: white !important;
+}
+
+.ct-form {
+  margin: 10%;
+  width: 80vw;
+}
+
+.input-group-text-create {
+  background-color: red !important;
+  color: white !important;
+}
+
+.input-group-text-cancel {
+  background-color: green !important;
+  color: white !important;
 }
 
 /*!
