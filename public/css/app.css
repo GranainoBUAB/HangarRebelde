@@ -56,6 +56,10 @@
   margin: 0px !important;
 }
 
+.novelties {
+  font-size: 25px !important;
+}
+
 .ct-search {
   margin: 0px !important;
 }
@@ -200,6 +204,10 @@
 .icoCard {
   width: 15%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.listCat {
+  color: #FF8300 !important;
 }
 
 .container {

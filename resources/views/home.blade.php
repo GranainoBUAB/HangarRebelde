@@ -6,11 +6,11 @@
     <x-categories />
     
     <div class="d-flex flex-wrap row justify-content-center">
-        <div class="position-relative me-4">
+        {{-- <div class="position-relative me-4">
             <a href="{{ route('create') }}">
                 <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
             </a>
-        </div>
+        </div> --}}
         <div class="d-flex flex-wrap row justify-content-center">
             @foreach ($products as $product)
                 <div class="ct-product m-4">
