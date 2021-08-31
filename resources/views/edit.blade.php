@@ -21,9 +21,35 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Autor</span>
-          <input type="text" name="author" value="{{$product->author}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text" id="inputGroup-sizing-default">Autor 1</span>
+          <input type="text" name="author" value="{{$product->author1}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Autor 2</span>
+          <input type="text" name="author" value="{{$product->author2}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Autor 3</span>
+          <input type="text" name="author" value="{{$product->author3}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Autor 4</span>
+          <input type="text" name="author" value="{{$product->author4}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Autor 5</span>
+          <input type="text" name="author" value="{{$product->author5}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Autor 6</span>
+          <input type="text" name="author" value="{{$product->author6}}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Editorial</span>
