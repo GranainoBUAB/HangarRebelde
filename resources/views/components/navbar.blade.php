@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                             <img class="imgcarrito" src="<?php echo asset('storage/img/home.png'); ?>" alt="">
                             Inicio
                         </button>
@@ -33,7 +33,7 @@
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                        <button class="nav-link active text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
                             <img class="imgcarrito" src="<?php echo asset('storage/img/tienda-b.png'); ?>" alt="">
                             Tienda
                         </button>

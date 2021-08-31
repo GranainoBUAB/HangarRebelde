@@ -19,7 +19,17 @@
 }
 
 .btn-carrito {
-    height: auto;
+    width: 85px;
+    height: 35px;
+    margin: 4px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #FCE8C2;
+}
+
+.btn-products{
+    width: 100px;
+    height: 35px;
     margin: 4px;
     border-radius: 5px;
     border-color: transparent;
@@ -38,4 +48,8 @@
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
     background-color: $colorOrange !important;
+}
+
+@media screen and (min-width: $breakpointTable) {
+
 }
