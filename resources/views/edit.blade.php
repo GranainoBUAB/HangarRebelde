@@ -90,26 +90,26 @@
           <input type="text" name="categorySecondary" value="{{$product->categorySecondary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-       {{--  <div class="input-group mb-3">
+      {{--  <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Valoración</span>
           <input type="text" name="rating" value="{{$product->rating}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div> --}}
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-          {{$product->image1}}
+          <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
           <input type="file" name="image1" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
-          {{$product->image2}}
+          <img class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
           <input type="file" name="image2" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
-          {{$product->image3}}
+          {{$product->image3}}<img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
           <input type="file" name="image3" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
