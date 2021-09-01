@@ -1,13 +1,16 @@
 <header>
-    <div class=" d-flex bd-highlight mx-4">
-        <div class="d-flex p-0 w-100 bd-highlight logoImg">
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+            </div>
+        <div class="col d-flex justify-content-center">
             <a href="{{ route('home') }}">
                 <img class="logo" src="<?php echo asset('storage/img/logo.png'); ?>" alt="">
+                <img class="letrasSinFondo" src="<?php echo asset('storage/img/logoLetras.jpg'); ?>" alt="">
             </a>
         </div>
-        <div class="p-0 flex-shrink-0 bd-highlight loginNav">
-            <div class="col-sm justify-content-md-flex-end">
-                <div class="navbar navbar-expand  text-decoration-none">
+        <div class="col d-flex justify-content-end aligh-items-flex-end">
+            <div class="navbar navbar-expand  text-decoration-none">
                 <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -41,18 +44,22 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+        </div>
         </div>
     </div>
-
-
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-sm justify-content-md-flex-end">
-
+    <div class=" d-flex bd-highlight mx-4">
+        <div class="p-0 flex-shrink-0 bd-highlight loginNav">
+            <div class="col-sm justify-content-md-flex-center border-light" style="width: 200px;">
             </div>
+        </div>
+        <div class="d-flex p-0 w-100 bd-highlight logoImg">
             
         </div>
+        <div class="p-0 flex-shrink-0 bd-highlight loginNav">
+            <div class="col-sm justify-content-md-flex-end">
+                
+            </div>
+        </div>
     </div>
-    <hr>
+<hr>
 </header>

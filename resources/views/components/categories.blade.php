@@ -1,19 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light p-0 mt-1" style="height: 10px;">
-    <div class="container-fluid">
-        <a class="navbar-brand mx-4 novelties" href="{{ route('home') }}">NOVEDADES</a>
-        </button>
-        <div class="navbar" id="navbarSupportedContent">
-        <form class="d-flex align-items-center" action="{{route('search')}}">
-            <div class="form-group ct-search">
-                <input type="text" name="query" class="form-control search-box-w" placeholder="Buscar">
-            </div>
-            <button class="btn-carrito position-relative" type="submit" class="btn btn-default">
-                <img class="imgcarrito" src="<?php echo asset('storage/img/lupa.png'); ?>" alt="">
-            </button>
-        </form>
-    </div>
-    </div>
-</nav>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light p-0 mx-5 mt-4">

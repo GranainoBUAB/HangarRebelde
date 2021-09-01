@@ -2,16 +2,19 @@
 @charset "UTF-8";
 .logo {
   width: 400px;
+  display: none;
 }
 
-.imgLogo {
-  width: 400px;
+.letrasSinFondo {
+  display: block;
+  width: 200px;
+  height: 172px;
 }
 
 .logoImg {
   display: flex;
   justify-content: center;
-  margin-left: 150px;
+  margin-left: 60px;
 }
 
 .imgcarrito {
@@ -30,9 +33,9 @@
 }
 
 .btn-products {
-  width: 100px;
+  width: 96px;
   height: 35px;
-  margin: 4px;
+  margin: 2px;
   border-radius: 5px;
   border-color: transparent;
   background-color: #FCE8C2;
@@ -60,6 +63,19 @@
   font-size: 25px !important;
 }
 
+@media screen and (min-width: 768px) {
+  .logo {
+    display: block;
+  }
+
+  .letrasSinFondo {
+    display: none;
+  }
+
+  .logoImg {
+    margin-left: 150px;
+  }
+}
 .ct-search {
   margin: 0px !important;
 }
