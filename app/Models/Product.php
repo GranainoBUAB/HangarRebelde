@@ -58,7 +58,7 @@ class Product extends Model
         return ($productrelations);
     }
 
-    public function filterAuthor($author)
+    static function filterAuthor($author)
     {
         $productsFilteredByAuthor = Product::where('author1', 'like', '%' . $author . '%')
             ->orWhere('author2', 'like', '%' . $author . '%')
@@ -69,5 +69,16 @@ class Product extends Model
             ->get();
 
         return ($productsFilteredByAuthor);
+    }
+
+
+    static function filterTag($tag)
+    {
+        $productsFilteredBytag = Product::where('tag1', 'like', '%' . $tag . '%')
+            ->orWhere('tag2', 'like', '%' . $tag . '%')
+            ->orWhere('tag3', 'like', '%' . $tag . '%')
+            ->get();
+
+        return ($productsFilteredBytag);
     }
 }
