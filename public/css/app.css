@@ -2,16 +2,19 @@
 @charset "UTF-8";
 .logo {
   width: 400px;
+  display: block;
 }
 
-.imgLogo {
-  width: 400px;
+.letrasSinFondo {
+  display: none;
+  width: 200px;
+  height: 172px;
 }
 
 .logoImg {
   display: flex;
   justify-content: center;
-  margin-left: 150px;
+  margin-left: 60px;
 }
 
 .imgcarrito {
@@ -30,9 +33,9 @@
 }
 
 .btn-products {
-  width: 100px;
+  width: 96px;
   height: 35px;
-  margin: 4px;
+  margin: 2px;
   border-radius: 5px;
   border-color: transparent;
   background-color: #FCE8C2;
@@ -59,6 +62,14 @@
 .icoCardHeader {
   width: 3%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.letrasSinFondo {
+  display: none;
+}
+
+.logoImg {
+  margin-left: 150px;
 }
 
 .ct-search {
@@ -205,6 +216,10 @@
 .icoCard {
   width: 15%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.listCat {
+  color: #FF8300 !important;
 }
 
 .container {
@@ -374,6 +389,12 @@ hr {
 .input-group-text-cancel {
   background-color: green !important;
   color: white !important;
+}
+
+.createbtn {
+  background-color: #FF8300 !important;
+  color: white !important;
+  width: 150px;
 }
 
 /*!
