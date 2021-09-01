@@ -75,6 +75,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="input-group mb-3">
+                <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Edit</button></a>
+                <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
+                @method('delete')
+                @csrf 
+                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('Estás seguro de que quieres borrar este item?')" value="Delete">
+                </form>
+            </div>
             <center>
                 <br>
                 <br>

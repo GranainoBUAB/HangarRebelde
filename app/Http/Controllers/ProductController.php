@@ -156,7 +156,8 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
-        return redirect()->route('home');
+        //return redirect()->route('home');
+        return redirect()->back();
     }
 
     /**
@@ -170,6 +171,7 @@ class ProductController extends Controller
         Product::destroy($id);
 
         return redirect()->route('home');
+        //return redirect()->back();
     }
 
     public function search(Request $request)

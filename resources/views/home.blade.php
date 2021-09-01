@@ -32,18 +32,20 @@
                     <div class="separator"></div>
                     <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                 </div>
-                <div>
-                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn-carrito position-relative">Edit</button></a>
+                <div class="input-group mb-3">
+                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Edit</button></a>
                     <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
                     @method('delete')
                     @csrf 
-                        <input type="submit" class="btn-carrito position-relative" onclick="return confirm('Estás seguro de que quieres borrar este item?')" value="Delete">
+                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('Estás seguro de que quieres borrar este item?')" value="Delete">
                     </form>
                 </div>
             </div>
 
         @endforeach
     </div>
+
+
 
     {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
 
