@@ -25,7 +25,7 @@ class Product extends Model
         'dateSale',
         'format',
         'pages',
-        'tag1','tag2','tag3',
+        'tag1', 'tag2', 'tag3',
     ];
 
     public function productRelationed($product)
@@ -56,5 +56,18 @@ class Product extends Model
         } while ($repeat);
         /* dd($index); */
         return ($productrelations);
+    }
+
+    public function filterAuthor($author)
+    {
+        $productsFilteredByAuthor = Product::where('author1', 'like', '%' . $author . '%')
+            ->orWhere('author2', 'like', '%' . $author . '%')
+            ->orWhere('author3', 'like', '%' . $author . '%')
+            ->orWhere('author4', 'like', '%' . $author . '%')
+            ->orWhere('author5', 'like', '%' . $author . '%')
+            ->orWhere('author6', 'like', '%' . $author . '%')
+            ->get();
+
+        return ($productsFilteredByAuthor);
     }
 }
