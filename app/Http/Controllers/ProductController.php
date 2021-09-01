@@ -69,7 +69,9 @@ class ProductController extends Controller
             'image3' => $request->image3,
             'dateSale' => $request->dateSale,
             'format' => $request->format,
-            'tag' => $request->tag,
+            'tag1' => $request->tag1,
+            'tag2' => $request->tag2,
+            'tag3' => $request->tag3,
             'pages' => $request->pages
         ]);
 
