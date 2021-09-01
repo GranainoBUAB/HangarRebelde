@@ -71,7 +71,7 @@
                         </form>
                     </li>
                     <li class="nav-item me-2" role="presentation">
-                        <img class="imgcarrito" src="<?php echo asset('storage/img/carrito.png'); ?>" alt="" href="#">
+                        <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#">
                         <button class="btn-products position-relative">
                             (12) 034,21€
                         </button>
