@@ -41,4 +41,7 @@ Route::get('/search', [ProductController::class, 'search'])->name('search');
 
 Route::get('/filter/{catMain}/{catSub?}', [ProductController::class, 'filter'])->name('filter');
 
+Route::get('/viewByAuthor/{author}', [ProductController::class, 'viewByAuthor'])->name('viewByAuthor');
+Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('viewByTag');
+
 
