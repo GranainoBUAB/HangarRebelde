@@ -105,32 +105,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         /* var_dump($product->id); */
-
-        do {
-            $arrayId = array();
-            $arrayId[] = $product->id;
-            $repeat = false;
-
-            $productrelation1 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
-            $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
-            $productrelation3 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
-            $productrelation4 = Product::inRandomOrder()->take(1)->get();
-
-            $productrelation12 = $productrelation1->concat($productrelation2);
-            $productrelation34 = $productrelation3->concat($productrelation4);
-            $productrelations = $productrelation12->concat($productrelation34);
-
-            foreach ($productrelations as $productrelation) {
-                $lenght = count($arrayId);
-                for ($i = 0; $i != $lenght; $i += 1) {
-                    if ($arrayId[$i] === $productrelation->id) {
-                        $repeat = true;
-                    }
-                }
-                $arrayId[] = $productrelation->id;
-            }
-        } while ($repeat);
-
+        $productrelations = $product->productRelationed($product);
         return view('show', compact('product', 'productrelations'));
     }
 
@@ -140,7 +115,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)    
+    public function edit($id)
     {
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();

@@ -1,37 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
-.showOnClick .showOnClick:hover {
-  text-decoration: none !important;
-  color: #FF8300;
-}
-
-.containerHeader {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
-.containerLogo {
-  display: flex;
-  justify-content: center;
-}
-
-.imgLogin {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: flex-end;
-}
-
 .logo {
-  width: 250px;
-  height: auto;
+  width: 400px;
 }
 
-.line {
-  height: 1px;
-  color: #FF8300;
-  margin-bottom: 12px;
+.imgLogo {
+  width: 400px;
+}
+
+.logoImg {
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
 }
 
 .imgcarrito {
@@ -41,11 +21,35 @@
 }
 
 .btn-carrito {
-  height: auto;
+  width: 85px;
+  height: 35px;
   margin: 4px;
   border-radius: 5px;
   border-color: transparent;
   background-color: #FCE8C2;
+}
+
+.btn-products {
+  width: 100px;
+  height: 35px;
+  margin: 4px;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: #FCE8C2;
+}
+
+.loginNav {
+  display: flex;
+  align-self: flex-end;
+  color: #FF8300;
+}
+
+.gridLogin {
+  width: 200px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #FF8300 !important;
 }
 
 .ct-search {
@@ -55,6 +59,10 @@
 .icoCardHeader {
   width: 3%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.ct-search {
+  margin: 0px !important;
 }
 
 .ct-product {
@@ -200,63 +208,63 @@
 }
 
 .container {
-  justify-content: space-around;
-  align-content: flex-end;
+  justify-content: space-between;
+  width: 100%;
 }
 
 hr {
   color: #FF8300;
-  margin-left: 5%;
-  margin-right: 5%;
+  height: 1px !important;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 0 !important;
+  margin-bottom: 1% !important;
 }
 
 .left-link {
-  position: relative;
-  margin-top: 2%;
-}
-
-.right-link {
-  display: flex;
-  flex-direction: column;
-}
-
-.left-link a {
-  color: black;
-}
-
-.right-link a {
-  color: black;
-}
-
-.follow {
-  margin-top: 15%;
-}
-
-.follow_icon {
-  display: none;
+  width: 40%;
+  margin-right: 10%;
 }
 
 .icons {
-  width: 35%;
+  margin-left: 10%;
+  width: 65%;
   height: auto;
+}
+
+.right-link {
+  margin-left: 10%;
+  width: 300px;
 }
 
 .icon_location {
   align-self: center;
-  width: 30%;
+  width: 16%;
   height: auto;
 }
 
-@media (min-width: 320px) and (max-width: 567px) {
+.icon_follow {
+  width: 20%;
+}
+
+@media (min-width: 120px) and (max-width: 566px) {
+  .container {
+    margin-left: 40%;
+    justify-content: space-between;
+  }
+
   .icons {
-    align-content: center;
-    width: 60%;
+    justify-content: center;
+    width: 25px;
     height: auto;
   }
 
+  .icon_follow {
+    width: 40%;
+  }
+
   .icon_location {
-    margin-top: 10%;
-    width: 50%;
+    width: 20%;
   }
 
   .text_location {
@@ -304,6 +312,26 @@ hr {
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+.input-group-text {
+  background-color: #FF8300 !important;
+  color: white !important;
+}
+
+.ct-form {
+  margin: 10%;
+  width: 80vw;
+}
+
+.input-group-text-create {
+  background-color: red !important;
+  color: white !important;
+}
+
+.input-group-text-cancel {
+  background-color: green !important;
+  color: white !important;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -337,7 +365,7 @@ hr {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -360,7 +388,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -5889,7 +5917,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5991,7 +6019,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;

@@ -2,8 +2,12 @@
 
 @section('content')
 
+
+<div class = "ct-form d-flex justify-content-center">
 <form method="post" action="{{route('store')}}" enctype="multipart/form-data">
     @csrf
+    <div>
+      <h5>Formulario para crear un nuevo Comic</h5>
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
             <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -11,7 +15,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
-          <input type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <textarea type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></textarea>
         </div>
 
         <div class="input-group mb-3">
@@ -29,14 +33,14 @@
           <input type="text" name="editorial" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
+        <div class="input-group mb-3 d-flex align-items-center" >
+          <span class="input-group-text mr-3" id="inputGroup-sizing-default">Stock</span>
           {{-- <input type="text" name="isAvailable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
-          <input type="radio" name="isAvailable" value="1">
-          <span>Disponible</span>
+          <input type="radio" class="ml-2" name="isAvailable" value="1">
+          <span class="ml-2">Disponible</span>
 
-          <input type="radio" name="isAvailable" value="0">
-          <span>No Disponible</span>
+          <input type="radio" class="ml-2" name="isAvailable" value="0">
+          <span class="ml-2">No Disponible</span>
         </div>
 
         <div class="input-group mb-3">
@@ -53,24 +57,29 @@
           <label class="input-group-text">Categoría Principal</label>
           <select class="form-control" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categoryMains as $categoryMain)
-            <option>{{ $categoryMain->category }}</option>
+            <option>{{ $categoryMain->position}}. {{ $categoryMain->category }}</option>
             @endforeach
           </select>
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecondary" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <label class="input-group-text">Categoría Secundaria</label>
+          <select class="form-control" name="categorySecondary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categorySecondaries as $categorySecondary)
+            <option>{{ $categorySecondary->position }}. {{ $categorySecondary->category }}</option>
+            @endforeach
+            <option></option>
+          </select>
         </div>
 
-        <div class="input-group mb-3">
+      {{--  <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Valoración</span>
           <input type="text" name="rating" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+        </div> --}}
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-            <div class="col-md-6">
+      
                 <input  type="file" class="form-control" name="image1" id="image1">
             </div>
         </div>
@@ -104,11 +113,13 @@
           <span class="input-group-text" id="inputGroup-sizing-default">Num páginas</span>
           <input type="text" name="pages" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-
-        <button type="submit" class="btn-carrito position-relative">Create</button>
-        <button type="submit" class="btn-carrito position-relative">Cancel</button>
-
+      <div class="input-group mb-3">
+        <button type="submit" class="btn btn-success">Crear</button>
+        <button type="submit" class="btn btn-danger ml-3">Cancelar</button>
+      </div>
+    </div>
 
   </form>
+</div>
   <x-footer/>
 @endsection

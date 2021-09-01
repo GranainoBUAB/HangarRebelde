@@ -22,7 +22,13 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'title'  => 'EL IMPARABLE SPIDERMAN 01 (Serie bimestral)',
             'price'  => '3.33',
-            'author'  => 'Chris Bachalo, Joe Kelly',
+            'author1'  => 'Chris Bachalo',
+            'author2'  => 'Joe Kelly',
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
+
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -37,13 +43,20 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '1/7/2021',
             'format' => 'Tapa blanda',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => 'Spiderman',
+            'tag2' => 'Araña',
+            'tag3' => ''
         ]);
 
         Product::factory()->create([
             'title'  => 'INVENCIBLE IRON MAN 02: INTERNACIONAL (Marvel Now! Deluxe)',
             'price'  => '22.80',
-            'author'  => 'Alex Maleev, Brian Michael Bendis, Mike Deodato',
+            'author1'  => 'Alex Maleev',
+            'author2'  => 'Brian Michael Bendis',
+            'author3'  => 'Mike Deodato',
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -58,12 +71,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/8/2021',
             'format' => 'Tapa dura',
             'pages' => '240',
-            'tag' => ''
+            'tag1' => 'Iron Man',
+            'tag2' => 'Marvel',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'STAR WARS: OBJETIVO VADER',
             'price'  => '16.10',
-            'author'  => 'Varios autores',
+            'author1'  => 'Varios autores',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Planeta Cómic',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -80,12 +100,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/7/2021',
             'format' => 'Tapa dura',
             'pages' => '144',
-            'tag' => ''
+            'tag1' => 'Marvel',
+            'tag2' => 'Stars Wars',
+            'tag3' => 'Vader'
         ]);
         Product::factory()->create([
             'title'  => 'LA SALVAJE HULKA 02: LA SAGA TERMINA (Marvel Limited Edition)',
             'price'  => '37.95',
-            'author'  => 'John Buscema, Mike Vosburg, Stan Lee, Varios autores',
+            'author1'  => 'John Buscema',
+            'author2'  => 'Mike Vosburg',
+            'author3'  => 'Stan Lee',
+            'author4'  => 'Varios autores',
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -100,12 +127,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '12/8/2021',
             'format' => 'Tapa dura',
             'pages' => '320',
-            'tag' => ''
+            'tag1' => 'Hulka',
+            'tag2' => 'Hulk',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'EL INMORTAL HULK 02 (Marvel premiere)',
             'price'  => '9.50',
-            'author'  => 'Al Ewing, Joe Bennett, Lee Garbett, Rafa Fonteriz',
+            'author1'  => 'Al Ewing',
+            'author2'  => 'Joe Bennett',
+            'author3'  => 'Lee Garbett',
+            'author4'  => 'Rafa Fonteriz',
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Panini Comics',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -120,19 +154,26 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '15/4/2021',
             'format' => 'Tapa dura',
             'pages' => '120',
-            'tag' => ''
+            'tag1' => 'Marvel',
+            'tag2' => 'Hulk',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'SUPERMAN 110 / 31',
             'price'  => '2.80',
-            'author'  => 'Dave Wielgosz, Kenny Porter, Michael Moreci, Riley Rossmo, Scott Kolins, Thony Silas',
+            'author1'  => 'Dave Wielgosz',
+            'author2'  => 'Kenny Porter',
+            'author3'  => 'Michael Moreci',
+            'author4'  => 'Riley Rossmo',
+            'author5'  => 'Scott Kolins',
+            'author6'  => 'Thony Silas',
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
             'isbn' => '9788418784392',
             'categoryMain' => 'Comic Americano',
             'categorySecondary' => 'Comic DC',
-            'description' => 'Dos historias autoconclusivas protagonizadas por el Último Hijo de Krypton. En la primera, Superman se enfrenta a Darkseid. El dictador loco de Apokolips está dispuesto a usar la ecuación de la Antivida en el corazón de Metropolis. En el segundo relato, el Hombre de Acero acaba peleando por su vida en una brutal arena de gladiadores, ¡con el mismísimo Lobo como invitado especial!',
+            'description' => 'Dos historias autoconclusivas protag1onizadas por el Último Hijo de Krypton. En la primera, Superman se enfrenta a Darkseid. El dictador loco de Apokolips está dispuesto a usar la ecuación de la Antivida en el corazón de Metropolis. En el segundo relato, el Hombre de Acero acaba peleando por su vida en una brutal arena de gladiadores, ¡con el mismísimo Lobo como invitado especial!',
             'rating' => '3.5',
             'image1' => 'img/superman_110.jpg',
             'image2' => '',
@@ -140,12 +181,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '3/8/2021',
             'format' => 'Grapa',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => 'Superman',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'WONDER WOMAN: SANGRE (Edición integral)',
             'price'  => '57.00',
-            'author'  => 'Amilcar Pinna, Brian Azzarello, Cliff Chiang, Goran Sudzuka, Tony Akins',
+            'author1'  => 'Amilcar Pinna',
+            'author2'  => 'Brian Azzarello',
+            'author3'  => 'Cliff Chiang',
+            'author4'  => 'Goran Sudzuka',
+            'author5'  => 'Tony Akins',
+            'author6'  => null,
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -160,12 +208,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '26/1/2021',
             'format' => 'Tapa dura',
             'pages' => '816',
-            'tag' => ''
+            'tag1' => 'Wonder Woman',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'BATMAN / CATWOMAN 01 (De 12)',
             'price'  => '2.80',
-            'author'  => 'Clay Mann, Tom King',
+            'author1'  => 'Clay Mann',
+            'author2'  => 'Tom King',
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -180,12 +235,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '27/7/2021',
             'format' => 'Grapa',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => 'Batman',
+            'tag2' => '',
+            'tag3' => 'Catwoman'
         ]);
         Product::factory()->create([
             'title'  => 'BATMAN DE TOM KING 11: DÍAS FRÍOS (Héroes en crisis parte 1)',
             'price'  => '18.95',
-            'author'  => 'Joelle Jones, Mikel Janín, Tom King',
+            'author1'  => 'Joelle Jones',
+            'author2'  => 'Mikel Janín',
+            'author3'  => 'Tom King',
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -200,12 +262,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '3/8/2021',
             'format' => 'Tapa dura',
             'pages' => '176',
-            'tag' => ''
+            'tag1' => 'Batman',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'SUPERMAN: AÑO UNO (Edición integral)',
             'price'  => '24.70',
-            'author'  => 'Frank Miller, John Romita Jr.',
+            'author1'  => 'Frank Miller',
+            'author2'  => 'John Romita Jr.',
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'ECC Ediciones',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -222,12 +291,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '27/10/2020',
             'format' => 'Tapa dura',
             'pages' => '224',
-            'tag' => ''
+            'tag1' => 'DC integral',
+            'tag2' => 'Superman',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 207: LOS INFLUYENTES INFLUENCERS (SUPER LOPEZ)',
             'price'  => '14.16',
-            'author'  => 'Jan',
+            'author1'  => 'Jan',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Ediciones B',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -242,12 +318,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/6/2021',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => 'Super Lopez',
+            'tag2' => 'Magos del Humor',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 203: VIENTO EN LOS DEDOS (SUPERLOPEZ)',
             'price'  => '14.16',
-            'author'  => 'Jan',
+            'author1'  => 'Jan',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Ediciones B',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -262,12 +345,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '9/3/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => 'SuperLopez',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 14: EL TONEL DEL TIEMPO (ZIPI Y ZAPE)',
             'price'  => '14.16',
-            'author'  => 'Josep Escobar',
+            'author1'  => 'Josep Escobar',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Bruguera',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -282,12 +372,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '4/4/2019',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => 'Zipi y Zape',
+            'tag2' => 'Magos del humor',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 27: APRENDICES AL TUN TUN (ZIPI Y ZAPE)',
             'price'  => '14.16',
-            'author'  => 'Josep Escobar',
+            'author1'  => 'Josep Escobar',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Bruguera',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -302,12 +399,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '14/12/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => '',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MAGOS DEL HUMOR 18: EL GRAN SAFARI (ZIPI Y ZAPE)',
             'price'  => '14.16',
-            'author'  => 'Josep Escobar',
+            'author1'  => 'Josep Escobar',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Bruguera',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -323,12 +427,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '30/6/2020',
             'format' => 'Tapa dura',
             'pages' => '48',
-            'tag' => ''
+            'tag1' => 'Safari',
+            'tag2' => 'Español',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'DRAGON BALL SUPER 57 (SERIE ROJA Nº 268)',
             'price'  => '2.80',
-            'author'  => 'Akira Toriyama',
+            'author1'  => 'Akira Toriyama',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Planeta Cómic',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -343,12 +454,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '14/7/2021',
             'format' => 'Tapa blanda',
             'pages' => '32',
-            'tag' => ''
+            'tag1' => 'Dragon Ball',
+            'tag2' => 'Serie Roja',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'RANMA 1/2 (Edición integral) 19 (de 19)',
             'price'  => '14.20',
-            'author'  => 'Rumiko Takahashi',
+            'author1'  => 'Rumiko Takahashi',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Planeta Cómic',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -364,12 +482,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '24/7/2018',
             'format' => 'Tapa blanda con sobrecubierta',
             'pages' => '360',
-            'tag' => ''
+            'tag1' => 'Ranma',
+            'tag2' => 'Edition integral',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'POKÉMON SOL Y LUNA 01',
             'price'  => '8.55',
-            'author'  => 'Hidenori Kusaka, Satoshi Yamamoto',
+            'author1'  => 'Hidenori Kusaka',
+            'author2'  => 'Satoshi Yamamoto',
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'NORMA Editorial',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -385,12 +510,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/8/2021',
             'format' => 'Tapa blanda con solapas',
             'pages' => '180',
-            'tag' => ''
+            'tag1' => 'Pokemon',
+            'tag2' => 'Sol y Luna',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'KOMI-SAN NO PUEDE COMUNICARSE 02',
             'price'  => '13.30',
-            'author'  => 'Tomohito Oda',
+            'author1'  => 'Tomohito Oda',
+            'author2'  => null,
+            'author3'  => null,
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'Ivréa',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -405,12 +537,19 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '19/8/2021',
             'format' => 'Tapa blanda con sobrecubierta',
             'pages' => '400',
-            'tag' => ''
+            'tag1' => 'Komi-San',
+            'tag2' => '',
+            'tag3' => ''
         ]);
         Product::factory()->create([
             'title'  => 'MACBETH',
             'price'  => '17.10',
-            'author'  => 'Crystal S. Chan, Julien Choy, William Shakespeare',
+            'author1'  => 'Crystal S. Chan',
+            'author2'  => 'Julien Choy',
+            'author3'  => 'William Shakespeare',
+            'author4'  => null,
+            'author5'  => null,
+            'author6'  => null,
             'editorial'  => 'NORMA Editorial',
             'isAvailable'  => true,
             'canReserve' => true,
@@ -426,7 +565,9 @@ class DatabaseSeeder extends Seeder
             'dateSale' => '6/8/2021',
             'format' => 'Tapa blanda con solapas',
             'pages' => '320',
-            'tag' => ''
+            'tag1' => 'MacBeth',
+            'tag2' => 'Shakespeare',
+            'tag3' => ''
         ]);
 
         CategoryMain::factory()->create([
