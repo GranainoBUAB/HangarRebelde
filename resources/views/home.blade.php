@@ -33,17 +33,19 @@
                     <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                 </div>
                 <div class="input-group mb-3">
-                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                    <form action="{{ url('/delete/'.$product->id)}}" method="post">
+                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Edit</button></a>
+                    <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
                     @method('delete')
                     @csrf 
-                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('Are you sure you want to permanently remove this item?')" value="Eliminar">
+                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('Estás seguro de que quieres borrar este item?')" value="Delete">
                     </form>
                 </div>
             </div>
 
         @endforeach
     </div>
+
+
 
     {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
 
