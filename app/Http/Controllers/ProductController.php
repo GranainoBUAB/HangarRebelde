@@ -16,17 +16,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function filter($catMain, $catSec = null)
-    {
-        if ($catSec === null) {
 
-            $products = Product::where('categoryMain', '=', $catMain)->get();
-        } else {
-            $products = Product::where('categorySecondary', '=', $catSec)->get();
-        }
-
-        return view('home', compact('products'));
-    }
 
     public function index()
     {
@@ -189,5 +179,30 @@ class ProductController extends Controller
             ->get();
 
         return view('search', compact('products'));
+    }
+
+    public function filter($catMain, $catSec = null)
+    {
+        if ($catSec === null) {
+
+            $products = Product::where('categoryMain', '=', $catMain)->get();
+        } else {
+            $products = Product::where('categorySecondary', '=', $catSec)->get();
+        }
+
+        return view('home', compact('products'));
+    }
+
+    public function viewByAuthor($author)
+    {
+
+        $products = Product::filterAuthor($author);
+        return view('home', compact('products'));
+    }
+
+    public function viewByTag($tag)
+    {
+        $products = Product::filterTag($tag);
+        return view('home', compact('products'));
     }
 }
