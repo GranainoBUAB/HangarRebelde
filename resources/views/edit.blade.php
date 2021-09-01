@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<x-header />
+<x-navbar />
+
 <div class = "ct-form d-flex justify-content-center">
 <form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
 @method('patch')
