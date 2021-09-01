@@ -57,14 +57,10 @@
     margin: 0px !important;
 }
 
-.novelties{
-    font-size: 25px !important;
+.icoCardHeader {
+    width: 3%;
+    filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
-
-@media screen and (min-width: $breakpointTable){
-    .logo{
-        display: block;
-    }
 
     .letrasSinFondo{
         display: none;

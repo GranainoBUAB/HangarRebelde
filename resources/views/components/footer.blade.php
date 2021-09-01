@@ -19,7 +19,7 @@
 
     <div class="right-link">
 
-        <div class="text_location"><img class="icon_location" src="<?php echo asset('storage/img/locacion-orange.png')?>" alt="">Como llegar</div>
+        <div class="location"><img class="icon_location" src="<?php echo asset('storage/img/locacion-orange.png')?>" alt=""><div class="text_location">Como llegar</div> </div>
     </div>
 </div>
 

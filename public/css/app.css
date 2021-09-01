@@ -59,23 +59,11 @@
   margin: 0px !important;
 }
 
-.novelties {
-  font-size: 25px !important;
+.icoCardHeader {
+  width: 3%;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
-@media screen and (min-width: 768px) {
-  .logo {
-    display: block;
-  }
-
-  .letrasSinFondo {
-    display: none;
-  }
-
-  .logoImg {
-    margin-left: 150px;
-  }
-}
 .ct-search {
   margin: 0px !important;
 }
@@ -246,7 +234,7 @@ hr {
 }
 
 .icons {
-  margin-left: 10%;
+  margin-left: -7%;
   width: 65%;
   height: auto;
 }
@@ -258,7 +246,7 @@ hr {
 
 .icon_location {
   align-self: center;
-  width: 16%;
+  width: 24%;
   height: auto;
 }
 
@@ -266,6 +254,49 @@ hr {
   width: 20%;
 }
 
+.location {
+  display: flex;
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .icon_location {
+    width: 10%;
+  }
+
+  .icons {
+    width: 40%;
+  }
+
+  .icon_follow {
+    width: 5%;
+  }
+
+  .follow {
+    margin-left: 10%;
+  }
+}
+@media (min-width: 960px) and (max-width: 1199px) {
+  .icon_location {
+    width: 15%;
+  }
+
+  .icons {
+    width: 50%;
+  }
+
+  .icon_follow {
+    width: 10%;
+  }
+}
+@media (min-width: 567px) and (max-width: 960px) {
+  .icon_location {
+    width: 15%;
+  }
+
+  .icons {
+    margin-left: 5%;
+  }
+}
 @media (min-width: 120px) and (max-width: 566px) {
   .container {
     margin-left: 40%;
@@ -273,7 +304,7 @@ hr {
   }
 
   .icons {
-    justify-content: center;
+    justify-content: space-between;
     width: 25px;
     height: auto;
   }
@@ -283,7 +314,8 @@ hr {
   }
 
   .icon_location {
-    width: 20%;
+    width: 25px;
+    margin-left: 75px;
   }
 
   .text_location {
@@ -316,9 +348,19 @@ hr {
   color: #FF8300;
 }
 
+.txtPriceShow {
+  color: #FF8300;
+  font-size: 1rem;
+}
+
 .extraShow {
   padding: 0px !important;
   margin: 0px !important;
+}
+
+.icoCardShow {
+  width: 4%;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
 .input-group-text {
