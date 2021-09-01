@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
-<x-header />
+    <x-header />
+    <x-navbar />
+    <x-categories />
 
   <div class="d-flex flex-wrap row justify-content-center">
 

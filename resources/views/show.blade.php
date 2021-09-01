@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
     <x-header />
+    <x-navbar />
+    <x-categories />
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
