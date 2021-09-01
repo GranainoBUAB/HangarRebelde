@@ -51,7 +51,12 @@ class ProductController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'price' => $request->price,
-            'author' => $request->author,
+            'author1' => $request->author1,
+            'author2' => $request->author2,
+            'author3' => $request->author3,
+            'author4' => $request->author4,
+            'author5' => $request->author5,
+            'author6' => $request->author6,
             'editorial' => $request->editorial,
             'isAvailable' => $request->isAvailable,
             'canReserve' => $request->canReserve,
@@ -64,7 +69,9 @@ class ProductController extends Controller
             'image3' => $request->image3,
             'dateSale' => $request->dateSale,
             'format' => $request->format,
-            'tag' => $request->tag,
+            'tag1' => $request->tag1,
+            'tag2' => $request->tag2,
+            'tag3' => $request->tag3,
             'pages' => $request->pages
         ]);
 
