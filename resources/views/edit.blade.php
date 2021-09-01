@@ -97,7 +97,8 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-          <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+          <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="" value = "{{$product->image1}}">
+          
           <input type="file" name="image1" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 

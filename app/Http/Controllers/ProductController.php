@@ -61,7 +61,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'price' => $request->price,
-            'author' => $request->author,
+            'author1' => $request->author,
             'editorial' => $request->editorial,
             'isAvailable' => $request->isAvailable,
             'canReserve' => $request->canReserve,
