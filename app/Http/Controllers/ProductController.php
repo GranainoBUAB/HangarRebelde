@@ -176,7 +176,12 @@ class ProductController extends Controller
     {
 
         $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author1', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author2', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author3', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author4', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author5', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author6', 'like', '%' . $request->input('query') . '%')
             ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
             ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
             ->get();

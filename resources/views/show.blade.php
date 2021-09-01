@@ -26,7 +26,27 @@
                         {{-- @endif --}}
                         
                     </div>
-                    <h6 class="card-title font-weight-bold mt-3">Autor:</h6>
+                    <h6 class="card-title font-weight-bold mt-3">Autores:</h6>
+                    <div class="d-flex flex-row flex-wrap align-items-center">
+                        <h6 class="extraShow mr-1">{{ $product->author1 }}  </h6>
+                        {{-- <p class="card-title extraShow">{{ $product->isbn }}</p> --}}
+                        @if($product->author2)
+                        <h6 class="extraShow mr-1">,  {{ $product->author2 }}  </h6>
+                        @endif
+                        @if($product->author3)
+                        <h6 class="extraShow mr-1">,  {{ $product->author3 }}  </h6>
+                        @endif
+                        @if($product->author3)
+                        <h6 class="extraShow mr-1">,  {{ $product->author4 }}  </h6>
+                        @endif
+                        @if($product->author3)
+                        <h6 class="extraShow mr-1">,  {{ $product->author5 }}  </h6>
+                        @endif
+                        @if($product->author3)
+                        <h6 class="extraShow mr-1">,  {{ $product->author6 }}  </h6>
+                        @endif
+                        {{-- <p class="card-title extraShow">{{ $product->categoryMain }}</p> --}}
+                    </div>
                     <p class="card-title">{{ $product->author }}</p>
                     <h6 class="card-title font-weight-bold">Editorial:</h6>
                     <p class="card-title">{{ $product->editorial }}</p>
