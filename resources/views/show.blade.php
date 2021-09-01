@@ -14,7 +14,7 @@
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
                     <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
                     <div class="d-flex flex-row flex-wrap align-items-center">
-                        <h6 class="extraShow font-weight-bold mr-2">Precio: </h6>
+                        <h6 class="extraShow font-weight-bold mr-2"></h6>
                         <p class="card-title extraShow font-weight-bold txtPriceShow">{{ $product->price }} &#8364 </p>
                         @if($product->isAvailable)
                         <h6 class="extraShow font-weight-bold mx-2"> | Disponible: Sí</h6>
@@ -33,24 +33,38 @@
                     </div>
                     <h6 class="card-title font-weight-bold mt-3">Autores:</h6>
                     <div class="d-flex flex-row flex-wrap align-items-center">
-                        <h6 class="extraShow mr-1">{{ $product->author1 }}  </h6>
-                        {{-- <p class="card-title extraShow">{{ $product->isbn }}</p> --}}
+                        <a href="{{ route('viewByAuthor', ['author'=>$product->author1]) }}" class="text-reset"><h6 class="extraShow mr-1">{{ $product->author1 }}  </h6></a>
+                        
                         @if($product->author2)
-                        <h6 class="extraShow mr-1">,  {{ $product->author2 }}  </h6>
+
+                        <a href="{{ route('viewByAuthor', ['author'=>$product->author2]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author2 }}  </h6></a>
+
                         @endif
+
                         @if($product->author3)
-                        <h6 class="extraShow mr-1">,  {{ $product->author3 }}  </h6>
+
+                        <a href="{{ route('viewByAuthor', ['author'=>$product->author3]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author3}}  </h6></a>
+
                         @endif
-                        @if($product->author3)
-                        <h6 class="extraShow mr-1">,  {{ $product->author4 }}  </h6>
+
+                        @if($product->author4)
+
+                        <a href="{{ route('viewByAuthor', ['author'=>$product->author4]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author4}}  </h6></a>
+
                         @endif
-                        @if($product->author3)
-                        <h6 class="extraShow mr-1">,  {{ $product->author5 }}  </h6>
+
+                        @if($product->author5)
+
+                        <a href="{{ route('viewByAuthor', ['author'=>$product->author5]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author5}}  </h6></a>
+
                         @endif
-                        @if($product->author3)
-                        <h6 class="extraShow mr-1">,  {{ $product->author6 }}  </h6>
+
+                        @if($product->author6)
+
+                        <a href="{{ route('viewByAuthor', ['author'=>$product->author6]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author6}}  </h6></a>
+
                         @endif
-                        {{-- <p class="card-title extraShow">{{ $product->categoryMain }}</p> --}}
+                        
                     </div>
                     <p class="card-title">{{ $product->author }}</p>
                     <h6 class="card-title font-weight-bold">Editorial:</h6>
@@ -75,6 +89,21 @@
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold mx-2">Páginas:</h6>
                                 <p class="card-title extraShow">{{ $product->pages }}</p>
+                            </div>
+                            <div class="d-flex flex-row align-items-center flex-wrap">
+
+                                @if($product->tag1)
+                                <h6 class="extraShow font-weight-bold mx-2">Etiquetas:</h6>
+                                <a href="{{ route('viewByTag', ['tag'=>$product->tag1]) }}" class="text-reset"><h6 class="extraShow mr-1"> {{ $product->tag1}}  </h6></a>
+                                @endif
+
+                                @if($product->tag2)
+                                <a href="{{ route('viewByTag', ['tag'=>$product->tag2]) }}" class="text-reset"><h6 class="extraShow mr-1"> , {{ $product->tag2}}  </h6></a>
+                                @endif
+
+                                @if($product->tag3)
+                                <a href="{{ route('viewByTag', ['tag'=>$product->tag3]) }}" class="text-reset"><h6 class="extraShow mr-1"> , {{ $product->tag3}}  </h6></a>
+                                @endif
                             </div>
                         </div>
                     </div>
