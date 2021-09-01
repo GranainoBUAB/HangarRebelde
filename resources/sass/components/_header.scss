@@ -1,10 +1,10 @@
 .logo {
     width: 400px;
-    display: none;
+    display: block;
 }
 
 .letrasSinFondo{
-    display: block;
+    display: none;
     width: 200px;
     height: 172px;
 }
@@ -69,5 +69,4 @@
     .logoImg{
         margin-left: 150px;
     }
-}
 
