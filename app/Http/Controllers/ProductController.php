@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryMain;
-use App\Models\CategorySecondary;
 use App\Models\Product;
+use App\Models\CategoryMain;
 use Illuminate\Http\Request;
+use App\Models\CategorySecondary;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
@@ -153,8 +154,11 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
+
         return redirect()->route('home');
         //return redirect()->back();
+
+
     }
 
     /**
