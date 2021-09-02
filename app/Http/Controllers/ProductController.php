@@ -22,7 +22,7 @@ class ProductController extends Controller
     public function index()
     {
         /*  $products = Product::all(); */
-        $products = Product::orderBy('id', 'desc')->take(12)->get();
+        $products = Product::orderBy('id', 'desc')->take(15)->get();
 
         return view('home', compact('products'));
     }
