@@ -37,14 +37,42 @@ class Product extends Model
             $arrayId[] = $product->id;
             $repeat = false;
 
-            $productrelation1 = Product::where('editorial', 'like', '%' . $product->editorial . '%')->inRandomOrder()->take(1)->get();
+            if ($product->tag3 != null){
+                $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag1', 'like', '%' . $product->tag2 . '%')
+                ->orwhere('tag2', 'like', '%' . $product->tag2 . '%')
+                ->orwhere('tag3', 'like', '%' . $product->tag2 . '%')
+                ->orwhere('tag1', 'like', '%' . $product->tag3 . '%')
+                ->orwhere('tag2', 'like', '%' . $product->tag3 . '%')
+                ->orwhere('tag3', 'like', '%' . $product->tag3 . '%')
+                ->inRandomOrder()->take(1)->get();
+            }
+            if ($product->tag3 == null){
+                $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag1', 'like', '%' . $product->tag2 . '%')
+                ->orwhere('tag2', 'like', '%' . $product->tag2 . '%')
+                ->orwhere('tag3', 'like', '%' . $product->tag2 . '%')
+                ->inRandomOrder()->take(1)->get();
+            }
+            if ($product->tag2 == null){
+                $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
+                ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
+                ->inRandomOrder()->take(1)->get();
+            }
+
+
             $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
             $productrelation3 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
 
             $productrelation12 = $productrelation1->concat($productrelation2);
             $productrelations = $productrelation12->concat($productrelation3);
 
-            foreach ($productrelations as $productrelation) {
+           /*  foreach ($productrelations as $productrelation) {
                 $lenght = count($arrayId);
                 for ($i = 0; $i != $lenght; $i += 1) {
                     if ($arrayId[$i] === $productrelation->id) {
@@ -52,7 +80,7 @@ class Product extends Model
                     }
                 }
                 $arrayId[] = $productrelation->id;
-            }
+            } */
         } while ($repeat);
         /* dd($index); */
         return ($productrelations);
