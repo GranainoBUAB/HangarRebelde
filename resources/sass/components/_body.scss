@@ -67,10 +67,6 @@
     }
 }
 
-.ct-search {
-    margin: 0px !important;
-}
-
 .ct-product {
     width: auto;
     height: auto;
@@ -106,7 +102,7 @@
     @include txtTitle;
     /* text-overflow: ellipsis; */
     overflow: hidden;
-    /* text-transform: lowercase; */
+    text-transform: lowercase;
 }
 
 .txtTitle {

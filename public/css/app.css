@@ -89,10 +89,6 @@
     justify-content: space-evenly;
   }
 }
-.ct-search {
-  margin: 0px !important;
-}
-
 .ct-product {
   width: auto;
   height: auto;
@@ -168,7 +164,7 @@
   font-size: 0.7rem;
   /* text-overflow: ellipsis; */
   overflow: hidden;
-  /* text-transform: lowercase; */
+  text-transform: lowercase;
 }
 @media screen and (min-width: 768px) {
   .txtInfoTitle {
