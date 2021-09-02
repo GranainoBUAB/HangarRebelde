@@ -83,7 +83,7 @@
           <label class="input-group-text">Categoría Principal</label>
           <select class="form-control" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categoryMains as $categoryMain)
-            <option>{{ $categoryMain->position}}. {{ $categoryMain->category }}</option>
+            <option>{{ $categoryMain->category }}</option>
             @endforeach
           </select>
         </div>
@@ -92,7 +92,7 @@
           <label class="input-group-text">Categoría Secundaria</label>
           <select class="form-control" name="categorySecondary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categorySecondaries as $categorySecondary)
-            <option>{{ $categorySecondary->position }}. {{ $categorySecondary->category }}</option>
+            <option>{{ $categorySecondary->category }}</option>
             @endforeach
             <option></option>
           </select>
