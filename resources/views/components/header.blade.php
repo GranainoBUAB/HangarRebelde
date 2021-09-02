@@ -29,7 +29,7 @@
                         @else
                             <li class="nav-item">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img class="loginImg" src="<?php echo asset('storage/img/logo.png');?>" alt="">
+                                {{-- <img class="loginImg" src="<?php echo asset('storage/img/logo.png');?>" alt=""> --}}
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
