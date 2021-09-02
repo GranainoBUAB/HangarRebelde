@@ -137,3 +137,11 @@
 .listCat{
     color: $colorOrange !important;
 }
+
+@media screen and (max-width: $breakpointPhone){
+
+    .listCat{
+        color: $colorOrange !important;
+        flex-wrap: row wrap;
+    }
+}
