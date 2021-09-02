@@ -100,7 +100,7 @@
 
 .txtInfoTitle {
     @include txtTitle;
-    /* text-overflow: ellipsis; */
+    text-overflow: ellipsis;
     overflow: hidden;
     text-transform: lowercase;
 }

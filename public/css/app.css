@@ -162,7 +162,7 @@
   width: 25vw;
   height: 5vw;
   font-size: 0.7rem;
-  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
   overflow: hidden;
   text-transform: lowercase;
 }
