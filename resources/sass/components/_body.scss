@@ -67,10 +67,6 @@
     }
 }
 
-.ct-search {
-    margin: 0px !important;
-}
-
 .ct-product {
     width: auto;
     height: auto;
@@ -104,9 +100,9 @@
 
 .txtInfoTitle {
     @include txtTitle;
-    /* text-overflow: ellipsis; */
+    text-overflow: ellipsis;
     overflow: hidden;
-    /* text-transform: lowercase; */
+    text-transform: lowercase;
 }
 
 .txtTitle {
@@ -136,4 +132,12 @@
 
 .listCat{
     color: $colorOrange !important;
+}
+
+@media screen and (max-width: $breakpointPhone){
+
+    .listCat{
+        color: $colorOrange !important;
+        flex-wrap: row wrap;
+    }
 }

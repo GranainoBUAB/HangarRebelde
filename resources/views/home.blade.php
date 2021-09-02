@@ -3,7 +3,6 @@
 @section('content')
     <x-header />
     <x-navbar />
-    <x-categories />
     
     <div class="d-flex flex-wrap row justify-content-center">
         @if(Auth::check() && Auth::user()->isadmin())
@@ -15,7 +14,7 @@
         @endif
         <div class="d-flex flex-wrap row justify-content-center">
             @foreach ($products as $product)
-                <div class="ct-product m-4">
+                <div class="ct-product m-3">
                     <div class="ct-img">
                         <a href="{{ route('show', ['id' => $product->id]) }}">
                             <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">

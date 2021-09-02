@@ -1,12 +1,13 @@
 .logo {
+    display: block;
     width: 400px;
     display: block;
 }
 
 .letrasSinFondo{
     display: none;
-    width: 200px;
-    height: 172px;
+    width: 100px;
+    height: 90px;
 }
 
 .logoImg{
@@ -42,11 +43,14 @@
 .loginNav {
     display: flex;
     align-self: flex-end;
-    color: $colorOrange;
+    
 }
 
-.gridLogin{
-    width: 200px;
+.logingrid{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: $colorOrange;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
@@ -64,11 +68,29 @@
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+    
+
+@media screen and (max-width: $breakpointTable){
     .letrasSinFondo{
+        display: block;
+    }
+
+    .logo{
         display: none;
     }
 
-    .logoImg{
-        margin-left: 150px;
+    .categorycontainer{
+        width: 300px !important;
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
     }
 
+}
+
+@media screen and (max-width: $breakpointPhone){
+    .navbar-expand-xs {
+        flex-flow: row wrap !important;
+        justify-content: space-evenly;
+    }
+}

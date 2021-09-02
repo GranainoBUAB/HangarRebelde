@@ -1,14 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 .logo {
+  display: block;
   width: 400px;
   display: block;
 }
 
 .letrasSinFondo {
   display: none;
-  width: 200px;
-  height: 172px;
+  width: 100px;
+  height: 90px;
 }
 
 .logoImg {
@@ -44,11 +45,13 @@
 .loginNav {
   display: flex;
   align-self: flex-end;
-  color: #FF8300;
 }
 
-.gridLogin {
-  width: 200px;
+.logingrid {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #FF8300;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -66,18 +69,28 @@
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
-.letrasSinFondo {
-  display: none;
-}
+@media screen and (max-width: 768px) {
+  .letrasSinFondo {
+    display: block;
+  }
 
-.logoImg {
-  margin-left: 150px;
-}
+  .logo {
+    display: none;
+  }
 
-.ct-search {
-  margin: 0px !important;
+  .categorycontainer {
+    width: 300px !important;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+  }
 }
-
+@media screen and (max-width: 375px) {
+  .navbar-expand-xs {
+    flex-flow: row wrap !important;
+    justify-content: space-evenly;
+  }
+}
 .ct-product {
   width: auto;
   height: auto;
@@ -151,9 +164,9 @@
   width: 25vw;
   height: 5vw;
   font-size: 0.7rem;
-  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
   overflow: hidden;
-  /* text-transform: lowercase; */
+  text-transform: lowercase;
 }
 @media screen and (min-width: 768px) {
   .txtInfoTitle {
@@ -224,6 +237,12 @@
   color: #FF8300 !important;
 }
 
+@media screen and (max-width: 375px) {
+  .listCat {
+    color: #FF8300 !important;
+    flex-wrap: row wrap;
+  }
+}
 .container {
   justify-content: space-between;
   width: 100%;

@@ -9,7 +9,7 @@
                 <img class="letrasSinFondo" src="<?php echo asset('storage/img/logoLetras.jpg'); ?>" alt="">
             </a>
         </div>
-        <div class="col d-flex justify-content-end aligh-items-flex-end">
+        <div class="col logingrid">
             <div class="navbar navbar-expand  text-decoration-none">
                 <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
