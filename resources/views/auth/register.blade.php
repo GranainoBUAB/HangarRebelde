@@ -167,7 +167,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="deliveryName" class="border col-md-4 col-form-label text-md-center" >{{ __('deliveryName') }}</label>
+                            <label for="deliveryName" class="border col-md-4 col-form-label text-md-center" >{{ __('Nombre de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliveryName" type="text" class="form-control @error('deliveryName') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
@@ -180,7 +180,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="deliverySurname" class="border col-md-4 col-form-label text-md-center" >{{ __('deliverySurname') }}</label>
+                            <label for="deliverySurname" class="border col-md-4 col-form-label text-md-center" >{{ __('Apellido de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliverySurname" type="text" class="form-control @error('deliverySurname') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
@@ -193,7 +193,7 @@
                             </div>
                         </div>
                         <div class="form-group row ">
-                            <label for="deliveryAddress" class="border col-md-4 col-form-label text-md-center" >{{ __('deliveryAddress') }}</label>
+                            <label for="deliveryAddress" class="border col-md-4 col-form-label text-md-center" >{{ __('Direction de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliveryAddress" type="text" class="form-control @error('deliveryAddress') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
@@ -206,7 +206,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="deliveryZipCode" class="border col-md-4 col-form-label text-md-center" >{{ __('deliveryZipCode') }}</label>
+                            <label for="deliveryZipCode" class="border col-md-4 col-form-label text-md-center" >{{ __('Codigo postal de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliveryZipCode" type="text" class="form-control @error('deliveryZipCode') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
@@ -219,7 +219,7 @@
                             </div>
                         </div>
                         <div class="form-group row ">
-                            <label for="deliveryCity" class="border col-md-4 col-form-label text-md-center" >{{ __('deliveryCity') }}</label>
+                            <label for="deliveryCity" class="border col-md-4 col-form-label text-md-center" >{{ __('Ciudad de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliveryCity" type="text" class="form-control @error('deliveryCity') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
@@ -232,7 +232,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="deliveryRegion" class="border col-md-4 col-form-label text-md-center" >{{ __('deliveryRegion') }}</label>
+                            <label for="deliveryRegion" class="border col-md-4 col-form-label text-md-center" >{{ __('Region de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliveryRegion" type="text" class="form-control @error('deliveryRegion') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
@@ -245,7 +245,7 @@
                             </div>
                         </div>
                         <div class="form-group row ">
-                            <label for="deliveryCountry" class="border col-md-4 col-form-label text-md-center" >{{ __('deliveryCountry') }}</label>
+                            <label for="deliveryCountry" class="border col-md-4 col-form-label text-md-center" >{{ __('Pais de entrega') }}</label>
 
                             <div class="col-md-8 m-0">
                                 <input id="deliveryCountry" type="text" class="form-control @error('deliveryCountry') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
