@@ -115,7 +115,7 @@
                 <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
                 @method('delete')
                 @csrf 
-                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('Estás seguro de que quieres borrar este item?')" value="Eliminar">
+                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
                 </form>
             </div>
 
