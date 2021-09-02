@@ -29,8 +29,7 @@ class viewByAuthorOrTagTest extends TestCase
 
         $products = Product::filterAuthor($product1->author1);
 
-        $this->assertEquals($products->count(),2);
-
+        $this->assertEquals($products->count(), 2);
     }
 
     public function test_returnAllProductContainThisTag()
@@ -47,7 +46,6 @@ class viewByAuthorOrTagTest extends TestCase
 
         $products = Product::filterTag($product1->tag1);
 
-        $this->assertEquals($products->count(),2);
-
+        $this->assertEquals($products->count(), 2);
     }
 }
