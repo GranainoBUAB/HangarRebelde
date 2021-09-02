@@ -110,14 +110,16 @@
                 </div>
             </div>
 
-            <div class="input-group mb-3">
-                <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
-                @method('delete')
-                @csrf 
-                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
-                </form>
-            </div>
+            @if(Auth::check() && Auth::user()->isadmin())
+                <div class="input-group mb-3">
+                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
+                    <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
+                    @method('delete')
+                    @csrf 
+                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
+                    </form>
+                </div>
+            @endif
 
             <center>
                 <br>
