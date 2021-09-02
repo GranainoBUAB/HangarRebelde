@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\CategoryMain;
-use App\Models\CategorySecondary;
+use App\Models\User;
 use App\Models\Product;
+use App\Models\CategoryMain;
 use Illuminate\Database\Seeder;
+use App\Models\CategorySecondary;
+//use Illuminate\Foundation\Auth\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        User::factory()->create(['isAdmin'=>true, 'name' => 'admin', 'surname' => 'admin', 'email' => 'admin@admin.com']);
 
         Product::factory()->create([
             'title'  => 'EL IMPARABLE SPIDERMAN 01 (Serie bimestral)',

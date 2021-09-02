@@ -6,11 +6,13 @@
     <x-categories />
     
     <div class="d-flex flex-wrap row justify-content-center">
-        <div class="position-relative me-4">
-            <a href="{{ route('create') }}">
-                <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
-            </a>
-        </div>
+        @if(Auth::check() && Auth::user()->isadmin())
+            <div class="position-relative me-4">
+                <a href="{{ route('create') }}">
+                    <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
+                </a>
+            </div>
+        @endif
         <div class="d-flex flex-wrap row justify-content-center">
             @foreach ($products as $product)
                 <div class="ct-product m-4">
@@ -30,14 +32,17 @@
                         <div class="separator"></div>
                         <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                     </div>
-                    <div class="input-group mb-3">
-                        <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                        <form action="{{ url('/delete/'.$product->id)}}" method="post">
-                        @method('delete')
-                        @csrf 
-                            <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
-                        </form>
-                    </div>
+
+                    @if(Auth::check() && Auth::user()->isadmin())
+                        <div class="input-group mb-3">
+                            <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
+                            <form action="{{ url('/delete/'.$product->id)}}" method="post">
+                            @method('delete')
+                            @csrf 
+                                <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
+                            </form>
+                        </div>
+                    @endif
                 </div>
             @endforeach
         </div>
