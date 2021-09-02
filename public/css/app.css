@@ -399,6 +399,29 @@ hr {
   width: 150px;
 }
 
+.btn-log {
+  background-color: #FF8300 !important;
+  color: white;
+}
+
+.border {
+  border: 6px solid #FF8300 !important;
+  border-radius: 10px;
+  background-color: #FF8300 !important;
+  margin: 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  color: white;
+}
+
+.card-header {
+  color: black;
+  background: #FF8300 !important;
+  font-size: 30px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

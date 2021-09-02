@@ -24,3 +24,27 @@
     color: white !important;
     width: 150px;
 }
+
+.btn-log{
+
+    background-color: $colorOrange !important;
+    color: white;
+}
+
+.border{
+    border: 6px solid $colorOrange !important;
+    border-radius: 10px;
+    background-color: $colorOrange !important;
+    margin: 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color:white;
+}
+
+.card-header{
+    color:black;
+    background:$colorOrange !important;
+    font-size: 30px;
+}
