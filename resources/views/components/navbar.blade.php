@@ -1,6 +1,6 @@
-<div class="navInicio ms-2">
+<div class="container-fluid navInicio">
     <nav class="navbar navbar-expand-lg navbar-light p-0">
-        <div class="container-fluid navbar">
+        <div class="container-fluid navbar d-flex justify-content-space-between">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="navbar-collapse p-0" id="navbarSupportedContent">
+            <div class="navbar-collapse p-0 d-flex justify-content-flex-end" id="navbarSupportedContent">
                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
                     <li class="nav-item  me-2" role="presentation">
                         <form class="d-flex align-items-center" action="{{route('search')}}">
@@ -80,26 +80,26 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs p-0 mx-5 mt-4">
-        <div class="d-sm-flex flex-row bd-highlight mb-3">
-            <ul class="navbar-nav">
-                <li class="nav-item fs-6">
-                <a class="nav-link active d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comics americano</a>
+    <nav class="navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs p-0 mx-4 mt-3 rounded"  style="background-color: #FF8300">
+        <div class="d-sm-flex flex-row bd-highlight mb-3 p-2">
+            <ul class="nav nav-pills text-decoation-none" id="pills-tab" role="tablist">
+                <li class="nav-item fs-6" type="button">
+                <a class="text-decoation-none text-reset d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comics americano</a>
                 </li>
-                <li class="nav-item fs-6">
-                <a class="nav-link active d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comics Marvel</a>
+                <li class="nav-item fs-6 mx-2" type="button">
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comics Marvel</a>
                 </li>
-                <li class="nav-item fs-6">
-                <a class="nav-link active d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comics DC</a>
+                <li class="nav-item fs-6 mx-2" type="button">
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comics DC</a>
                 </li>
-                <li class="nav-item fs-6">
-                    <a class="nav-link active d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comics Europeo</a>
+                <li class="nav-item fs-6 mx-2" type="button">
+                    <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comics Europeo</a>
                 </li>
-                <li class="nav-item fs-6">
-                    <a class="nav-link active d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comics Español</a>
+                <li class="nav-item fs-6 mx-2" type="button">
+                    <a class=" text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comics Español</a>
                 </li>
-                <li class="nav-item fs-6">
-                    <a class="nav-link active listCat" href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
+                <li class="nav-item fs-6 mx-2" type="button">
+                    <a class=" navbar-nav text-reset d-flex flex-wrap listCat" href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
                 </li>
             </ul>
         </div>
