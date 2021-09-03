@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\CategoryMain;
+use App\Models\CategoryMain;                                
 use Illuminate\Http\Request;
 use App\Models\CategorySecondary;
 use Illuminate\Support\Facades\Auth;
