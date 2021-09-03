@@ -3,7 +3,7 @@
 @section('content')
     <x-header />
     <x-navbar />
-    <x-categories />
+    {{-- <x-categories /> --}}
 
     <div class="container">
         <div class="row justify-content-center">
