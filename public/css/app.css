@@ -52,14 +52,21 @@
   justify-content: flex-end;
   align-items: flex-end;
   color: #FF8300;
+  font-weight: bold;
 }
 
 .nav-link.active, .show > .nav-link {
   background-color: #FF8300 !important;
 }
 
+.ct-search {
+  margin: 0px !important;
+}
+
 .icoCardHeader {
-  width: 3%;
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
@@ -70,19 +77,6 @@
 
   .logo {
     display: none;
-  }
-
-  .categorycontainer {
-    width: 300px !important;
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 375px) {
-  .navbar-expand-xs {
-    flex-flow: row wrap !important;
-    justify-content: space-evenly;
   }
 }
 .ct-product {

@@ -51,18 +51,22 @@
     justify-content: flex-end;
     align-items: flex-end;
     color: $colorOrange;
+    font-weight: bold;
 }
 
 .nav-link.active, .show > .nav-link{
     background-color: $colorOrange !important;
 }
-
-.icoCardHeader {
-    width: 3%;
-    filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+.ct-search {
+    margin: 0px !important;
 }
 
-    
+.icoCardHeader {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
 
 @media screen and (max-width: $breakpointTable){
     .letrasSinFondo{
@@ -71,20 +75,5 @@
 
     .logo{
         display: none;
-    }
-
-    .categorycontainer{
-        width: 300px !important;
-        display: flex;
-        position: relative;
-        flex-wrap: wrap;
-    }
-
-}
-
-@media screen and (max-width: $breakpointPhone){
-    .navbar-expand-xs {
-        flex-flow: row wrap !important;
-        justify-content: space-evenly;
     }
 }
