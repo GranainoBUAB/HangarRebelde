@@ -49,7 +49,7 @@ class Product extends Model
                 ->orwhere('tag3', 'like', '%' . $product->tag3 . '%')
                 ->inRandomOrder()->take(1)->get();
             }
-            if ($product->tag3 == null){
+            if ($product->tag3 == null && $product->tag2 != null){
                 $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
