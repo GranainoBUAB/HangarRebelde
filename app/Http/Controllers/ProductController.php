@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryMain;
-use App\Models\CategorySecondary;
 use App\Models\Product;
+use App\Models\CategoryMain;                                
 use Illuminate\Http\Request;
+use App\Models\CategorySecondary;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
@@ -16,24 +18,16 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function filter($catMain, $catSec = null)
-    {
-        if ($catSec === null) {
 
-            $products = Product::where('categoryMain', '=', $catMain)->get();
-        } else {
-            $products = Product::where('categorySecondary', '=', $catSec)->get();
-        }
-
-        return view('home', compact('products'));
-    }
 
     public function index()
     {
+        $user = Auth::user();
+        
         /*  $products = Product::all(); */
-        $products = Product::orderBy('id', 'desc')->take(12)->get();
+        $products = Product::orderBy('id', 'desc')->take(15)->get();
 
-        return view('home', compact('products'));
+        return view('home', compact('products', 'user'));
     }
 
     /**
@@ -61,7 +55,12 @@ class ProductController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'price' => $request->price,
-            'author' => $request->author,
+            'author1' => $request->author1,
+            'author2' => $request->author2,
+            'author3' => $request->author3,
+            'author4' => $request->author4,
+            'author5' => $request->author5,
+            'author6' => $request->author6,
             'editorial' => $request->editorial,
             'isAvailable' => $request->isAvailable,
             'canReserve' => $request->canReserve,
@@ -74,7 +73,9 @@ class ProductController extends Controller
             'image3' => $request->image3,
             'dateSale' => $request->dateSale,
             'format' => $request->format,
-            'tag' => $request->tag,
+            'tag1' => $request->tag1,
+            'tag2' => $request->tag2,
+            'tag3' => $request->tag3,
             'pages' => $request->pages
         ]);
 
@@ -156,7 +157,11 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
+
         return redirect()->route('home');
+        //return redirect()->back();
+
+
     }
 
     /**
@@ -170,17 +175,48 @@ class ProductController extends Controller
         Product::destroy($id);
 
         return redirect()->route('home');
+
     }
 
     public function search(Request $request)
     {
 
         $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author1', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author2', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author3', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author4', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author5', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author6', 'like', '%' . $request->input('query') . '%')
             ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
             ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
             ->get();
 
         return view('search', compact('products'));
+    }
+
+    public function filter($catMain, $catSec = null)
+    {
+        if ($catSec === null) {
+
+            $products = Product::where('categoryMain', '=', $catMain)->get();
+        } else {
+            $products = Product::where('categorySecondary', '=', $catSec)->get();
+        }
+
+        return view('home', compact('products'));
+    }
+
+    public function viewByAuthor($author)
+    {
+
+        $products = Product::filterAuthor($author);
+        return view('home', compact('products'));
+    }
+
+    public function viewByTag($tag)
+    {
+        $products = Product::filterTag($tag);
+        return view('home', compact('products'));
     }
 }

@@ -1,57 +1,107 @@
-<div class="mx-3 d-flex justify-content-center">
+<div class="container-fluid navInicio">
     <nav class="navbar navbar-expand-lg navbar-light p-0">
-        <div class="container-fluid">
+        <div class="container-fluid navbar d-flex justify-content-space-between">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/home.png'); ?>" alt="">
-                            Inicio
-                        </button>
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item text-reset" role="presentation">
+                        <a class="text-decoration-none text-reset" href="https://www.hangarrebelde.com/" target="_blank">
+                            <button class="nav-link text-reset p-0 px-2 py-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/home.png'); ?>" alt="">
+                                    Inicio
+                            </button>
+                        </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/calendario.png'); ?>" alt="">
-                            Calendario
-                        </button>
+                    <li class="nav-item mx-2" role="presentation">
+                        <a class="text-decoration-none text-reset" href="https://www.hangarrebelde.com/eventos/" target="_blank">
+                            <button class="nav-link text-reset p-0 px-2 py-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/calendario.png'); ?>" alt="">
+                                    Calendario
+                            </button>
+                        </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/torneo.png'); ?>" alt="">
-                            Torneos
-                        </button>
+                    <li class="nav-item mx-2" role="presentation">
+                        <a class="text-decoration-none text-reset" href="https://www.hangarrebelde.com/" target="_blank">
+                            <button class="nav-link text-reset p-0 px-2 py-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/torneo.png'); ?>" alt="">
+                                    Torneos
+                            </button>
+                        </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/news.png'); ?>" alt="">
-                            Noticias
-                        </button>
+                    <li class="nav-item mx-2" role="presentation">
+                        <a class="text-decoration-none text-reset" href="#" target="_blank">
+                            <button class="nav-link text-reset p-0 px-2 py-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/news.png'); ?>" alt="">
+                                    Noticias
+                            </button>
+                        </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/tienda-b.png'); ?>" alt="">
-                            Tienda
-                        </button>
+                    <li class="nav-item mx-2" role="presentation">
+                        <a class="text-decoration-none text-reset" href="{{ route('home') }}">
+                            <button class="nav-link active text-reset p-0 px-2 py-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/tienda-b.png'); ?>" alt="">
+                                    Tienda
+                            </button>
+                        </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-reset fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/aboutUs.png'); ?>" alt="">
-                            Sobre Nosotros
+                    <li class="nav-item mx-2" role="presentation">
+                        <a class="text-decoration-none text-reset" href="https://www.hangarrebelde.com/#historia" target="_blank">
+                            <button class="nav-link text-reset p-0 px-2 py-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/aboutUs.png'); ?>" alt="">
+                                    Sobre Nosotros
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse p-0 d-flex justify-content-flex-end" id="navbarSupportedContent">
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item  me-2" role="presentation">
+                        <form class="d-flex align-items-center" action="{{route('search')}}">
+                            <div class="form-group ct-search">
+                                <input type="text" name="query" class="form-control search-box-w" placeholder="Buscar">
+                            </div>
+                            <button class="btn-carrito position-relative" type="submit" class="btn btn-default">
+                                <img class="imgcarrito" src="<?php echo asset('storage/img/lupa.png'); ?>" alt="">
+                            </button>
+                        </form>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                        <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#">
+                        <button class="btn-products position-relative">
+                            (12) 034,21€
                         </button>
                     </li>
                 </ul>
-                {{-- <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-                </div> --}}
             </div>
-
+        </div>
+    </nav>
+    <nav class="navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs p-0 mx-4 mt-3 rounded"  style="background-color: #FF8300">
+        <div class="d-sm-flex flex-row bd-highlight mb-3 p-2">
+            <ul class="nav nav-pills text-decoation-none" id="pills-tab" role="tablist">
+                <li class="nav-item fs-6" type="button">
+                <a class="text-decoation-none text-reset d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comics americano</a>
+                </li>
+                <li class="nav-item fs-6 mx-2" type="button">
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comics Marvel</a>
+                </li>
+                <li class="nav-item fs-6 mx-2" type="button">
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comics DC</a>
+                </li>
+                <li class="nav-item fs-6 mx-2" type="button">
+                    <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comics Europeo</a>
+                </li>
+                <li class="nav-item fs-6 mx-2" type="button">
+                    <a class=" text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comics Español</a>
+                </li>
+                <li class="nav-item fs-6 mx-2" type="button">
+                    <a class=" navbar-nav text-reset d-flex flex-wrap listCat" href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </div>
