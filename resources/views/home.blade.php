@@ -12,7 +12,7 @@
         </div>
         <div class="d-flex flex-wrap row justify-content-center">
             @foreach ($products as $product)
-                <div class="ct-product m-3">
+                <div class="ct-product m-lg-4 m-3">
                     <div class="ct-img">
                         <a href="{{ route('show', ['id' => $product->id]) }}">
                             <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">

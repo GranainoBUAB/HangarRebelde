@@ -53,12 +53,8 @@
     color: $colorOrange;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+.nav-link.active, .show > .nav-link{
     background-color: $colorOrange !important;
-}
-
-.ct-search {
-    margin: 0px !important;
 }
 
 .icoCardHeader {

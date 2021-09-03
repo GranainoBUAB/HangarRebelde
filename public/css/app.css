@@ -54,12 +54,8 @@
   color: #FF8300;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-link.active, .show > .nav-link {
   background-color: #FF8300 !important;
-}
-
-.ct-search {
-  margin: 0px !important;
 }
 
 .icoCardHeader {
@@ -231,16 +227,6 @@
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
-.listCat {
-  color: #FF8300 !important;
-}
-
-@media screen and (max-width: 375px) {
-  .listCat {
-    color: #FF8300 !important;
-    flex-wrap: row wrap;
-  }
-}
 .container {
   justify-content: space-between;
   width: 100%;
