@@ -25,7 +25,7 @@ class ProductController extends Controller
         $user = Auth::user();
         
         /*  $products = Product::all(); */
-        $products = Product::orderBy('id', 'desc')->take(15)->get();
+        $products = Product::orderBy('id', 'desc')->take(12)->get();
 
         return view('home', compact('products', 'user'));
     }
