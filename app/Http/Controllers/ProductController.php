@@ -25,7 +25,7 @@ class ProductController extends Controller
         $user = Auth::user();
         
         /*  $products = Product::all(); */
-        $products = Product::orderBy('id', 'desc')->take(12)->get();
+        $products = Product::orderBy('id', 'desc')->take(10)->get();
 
         return view('home', compact('products', 'user'));
     }
@@ -79,6 +79,7 @@ class ProductController extends Controller
             'pages' => $request->pages
         ]);
 
+        
 
         if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
@@ -158,7 +159,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Updated');
         //return redirect()->back();
 
 
