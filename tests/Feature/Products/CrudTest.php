@@ -18,7 +18,8 @@ class CrudTest extends TestCase
      * @return void
      */
 
-    public function test_list_of_products_can_be_retrived(){
+    public function test_list_of_products_can_be_retrived()
+    {
 
         $this->withoutExceptionHandling();
 
@@ -31,8 +32,21 @@ class CrudTest extends TestCase
             
     }
 
-    public function test_a_product_can_be_created(){
+    public function test_single_product_can_be_retrived()
+    {
+        $this->withoutExceptionHandling();
 
+        $products = Product::factory(2)->create();
+        
+        $product = $products[1];
+        $response = $this->get(route('show', $product->id));
+        
+        $response->assertOk()
+            ->assertSee($product->title);
+    }
+
+    public function test_a_product_can_be_created()
+    {
         $this->withoutExceptionHandling();
 
         $user = User::factory()->create(['isAdmin'=>true]);
@@ -70,13 +84,12 @@ class CrudTest extends TestCase
 
         $this->assertCount(1, Product::all());
 
-        
         $this->assertDatabaseCount('products',1);  */
         
     }
 
-    public function test_a_product_can_be_deleted(){
-
+    public function test_a_product_can_be_deleted()
+    {
         $this->withoutExceptionHandling();
 
         $product = Product::factory()->create();
@@ -96,7 +109,9 @@ class CrudTest extends TestCase
         $this->assertCount(0, Product::all());
     }
 
-    public function test_a_product_can_be_updated(){
+    public function test_a_product_can_be_updated()
+    {
+        $this->withoutExceptionHandling();
 
         $product = Product::factory()->create();
 
@@ -110,7 +125,7 @@ class CrudTest extends TestCase
 
         $this->assertCount(1, Product::all());
 
-        $response = $this->patch((route('update', $product->id)), [
+        $response = $this->patch(route('update', $product->id), [
             'title'=> 'Update Title',
         ]);
     
