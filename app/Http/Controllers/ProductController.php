@@ -81,22 +81,8 @@ class ProductController extends Controller
 
 
         if ($request->hasFile('image1')) {
-        // Get filename with the extension
-        $filenameWithExt = $request->file('image1')->getClientOriginalName();
-        // Get just filename
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        // Get just ext
-        $extension = $request->file('image1')->getClientOriginalExtension();
-        // Filename to store
-        $fileNameToStore= 'img/'.$filename.'.'.$extension;
-        // Upload Image
-        $path = $request->file('image1')->storeAs('public/img', $fileNameToStore);
-        }
-        
-
-        /* if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
-        } */
+        } 
 
         if ($request->hasFile('image2')) {
             $product['image2'] = $request->file('image2')->store('img', 'public');
@@ -106,10 +92,7 @@ class ProductController extends Controller
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
 
-        if($request->hasFile('image1')){
-            $product->image1 = $fileNameToStore;
-        }
-
+        
         $product->save();
         return redirect()->route('home');
     }
@@ -153,27 +136,11 @@ class ProductController extends Controller
     {
         $changesProduct = request()->except(['_token', '_method']);
 
-        
         if ($request->hasFile('image1')) {
-            $product = Product::findOrFail($id);
-            // Get filename with the extension
-            $filenameWithExt = $request->file('image1')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('image1')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'.'.$extension;
-            // Upload Image
-            $changesProduct['image1'] = $request->file('image1')->storeAs('img', $fileNameToStore);
-            }
-        
-        
-        /* if ($request->hasFile('image1')) {
             $product = Product::findOrFail($id);
             Storage::delete('public/' . $product->image);
             $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
-        } */
+        } 
 
         if ($request->hasFile('image2')) {
             $product = Product::findOrFail($id);
@@ -187,20 +154,13 @@ class ProductController extends Controller
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
 
-        if($request->hasFile('image1')){
-            $product = Product::findOrFail($id);
-            $product->image1 = $fileNameToStore;
-        }
-
-
+    
         Product::where('id', '=', $id)->update($changesProduct);
 
         $product = Product::findOrFail($id);
 
-
         return redirect()->route('home')->with('success', 'Updated');
         //return redirect()->back();
-
 
     }
 
