@@ -49,8 +49,8 @@ class CrudTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $user = User::factory()->create(['isAdmin'=>true]);
-        $this->actingAs($user);
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
         
         $response = $this->post(route('store') , [
             'title' => 'new title',
@@ -71,20 +71,28 @@ class CrudTest extends TestCase
 
         $this->assertCount(1, Product::all());
 
-        $this->assertEquals(Product::first()->title,'new title');
-
-        /* $user = User::factory()->create(['isAdmin'=>true]);
-        $this->actingAs($user);
+        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
         
-        $product = Product::factory()->create();
-
-        $response = $this->post(route('store'), [$product]???);
-
-        $response->assertStatus(200);
+        $response = $this->post(route('store') , [
+            'title' => 'new title userNoAdmin',
+            'description' => 'new description ',
+            'price' => 'new price',
+            'author1' => 'new author1',
+            'editorial' => 'new editorial',
+            'isAvailable' => true,
+            'canReserve' => true,
+            'isbn' => 'new isbn',
+            'categoryMain' => 'new categoryMain',
+            'image1' => 'new image1',
+            'dateSale' => 'new dateSale',
+            'format' => 'new format',
+            'tag1' => 'new tag1',
+            'pages' => 'new pages'
+        ]);
 
         $this->assertCount(1, Product::all());
 
-        $this->assertDatabaseCount('products',1);  */
         
     }
 
@@ -94,18 +102,18 @@ class CrudTest extends TestCase
 
         $product = Product::factory()->create();
 
-        $response = $this->get('/');
-        //dd($response);
-        $response->assertOk();
-
-        $user = User::factory()->create(['isAdmin'=>true]);
+        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
     
-        $this->actingAs($user);
-
-        $this->assertCount(1, Product::all());
+        $this->actingAs($userNoAdmin);
         
         $response = $this->delete(route('delete', $product->id));
-        //dd($response);
+        $this->assertCount(1, Product::all());
+
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+    
+        $this->actingAs($userAdmin);
+        
+        $response = $this->delete(route('delete', $product->id));
         $this->assertCount(0, Product::all());
     }
 
@@ -115,18 +123,25 @@ class CrudTest extends TestCase
 
         $product = Product::factory()->create();
 
-        $response = $this->get('/');
-        //dd($response);
-        $response->assertOk();
-
-        $user = User::factory()->create(['isAdmin'=>true]);
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
     
-        $this->actingAs($user);
-
+        $this->actingAs($userAdmin);
+        
         $this->assertCount(1, Product::all());
 
         $response = $this->patch(route('update', $product->id), [
             'title'=> 'Update Title',
+        ]);
+    
+        $this->assertEquals(Product::first()->title,'Update Title');
+
+        $this->actingAs($userNoAdmin);
+        
+        $this->assertCount(1, Product::all());
+
+        $response = $this->patch(route('update', $product->id), [
+            'title'=> 'Update Title by User NoAdmin',
         ]);
     
         $this->assertEquals(Product::first()->title,'Update Title');
