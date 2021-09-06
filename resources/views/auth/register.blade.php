@@ -7,29 +7,30 @@
     <div class="row justify-content-center">
         <div class="col-md-8 ">
             <div class="card">
-                <div class="card-header text-md-center">{{ __('Register') }}</div>
+                <div class="card-header text-md-center">{{ __('Registro de Usuario') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         @method('patch')
-                        <div class="form-group row ">
-                            <label for="name" class="border col-md-4 col-form-label text-md-center">{{ __('Nombre') }}</label>
+                        <div class="form-group mb-6 ">
+                            <label for="name" class="border col-md-4 col-form-label text-md-center mb-3 ">{{ __('Nombre') }}</label>
 
-                            <div class="col-md-8 ">
-                                <input id="surname" type="text" class=" form-control @error('surname') is-invalid @enderror" name="name" value="{{ old('Apellidos') }}" required autocomplete="name" autofocus>
+                            <div class="col-md-16 ">
+                                <input id="name" type="text" class=" form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('surname')
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="surname" class="border col-md-4 col-form-label text-md-center" >{{ __('Apellidos') }}</label>
 
-                            <div class="col-md-8 m-0">
+                        <div class="form-group mb-6">
+                            <label for="surname" class="border col-md-4 col-form-label text-md-center mb-3" >{{ __('Apellidos') }}</label>
+
+                            <div class="col-md-16">
                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" surname="surname" value="{{ old('surname') }}" required autocomplete="region" autofocus>
 
                                 @error('surname')
@@ -40,10 +41,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group row ">
-                            <label for="email" class="border col-md-4 col-form-label text-md-center ">{{ __('E-Mail') }}</label>
+                        <div class="form-group mb-6 ">
+                            <label for="email" class="border col-md-4 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
 
-                            <div class="col-md-8">
+                            <div class="col-md-16">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')

@@ -422,6 +422,12 @@ hr {
   font-size: 30px;
 }
 
+.card-body {
+  background-color: #626261;
+  display: flex;
+  justify-content: center;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
