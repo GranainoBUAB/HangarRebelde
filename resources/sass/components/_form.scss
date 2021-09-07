@@ -47,15 +47,14 @@
     color:black;
     background:$colorOrange !important;
     font-size: 30px;
+    opacity: 0.9;
 }
 
-.card-body{
+.card-body-form{
     background-color:$colorGrey;
-    display: flex;
+   
     justify-content: center;
 }
 
-label{
-
-
+label{ color: white; border: 1px solid $colorOrange;  border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%;
 }

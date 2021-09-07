@@ -420,12 +420,22 @@ hr {
   color: black;
   background: #FF8300 !important;
   font-size: 30px;
+  opacity: 0.9;
 }
 
-.card-body {
+.card-body-form {
   background-color: #626261;
-  display: flex;
   justify-content: center;
+}
+
+label {
+  color: white;
+  border: 1px solid #FF8300;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 /*!
