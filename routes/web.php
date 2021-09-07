@@ -4,6 +4,7 @@ use App\Models\Product;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 
 
@@ -45,4 +46,6 @@ Route::get('/filter/{catMain}/{catSub?}', [ProductController::class, 'filter'])-
 Route::get('/viewByAuthor/{author}', [ProductController::class, 'viewByAuthor'])->name('viewByAuthor');
 Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('viewByTag');
 
+//Cart Routes
 
+Route::get('/cart/{user_id}', [CartController::class, 'getCart'])->name('getCart');
