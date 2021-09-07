@@ -47,12 +47,14 @@
     color:black;
     background:$colorOrange !important;
     font-size: 30px;
+    opacity: 0.9;
 }
 
 .card-body-form{
-    background-color:$colorGrey !important;
-    display: flex;
+    background-color:$colorGrey;
+   
     justify-content: center;
 }
 
-
+label{ color: white; border: 1px solid $colorOrange;  border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%;
+}
