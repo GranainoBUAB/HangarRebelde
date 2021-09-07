@@ -74,12 +74,12 @@
         </div>
 
         <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="email" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
+            <label for="phone" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Telefono de contacto') }}</label>
 
             <div class="col-md-16">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" phone="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
-                @error('email')
+                @error('phone')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -87,15 +87,22 @@
             </div>
         </div>
 
-        
+         <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="password" class="  col-md-8 col-form-label text-md-center mb-3">{{ __('Contraseña') }}</label>
 
-        <div class="form-group m-5 d-flex justify-content-center row">
-                <label for="password-confirm" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('Confirmar contraseña') }}</label>
+            <div class="col-md-16">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                <div class="col-md-16">
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
         </div>
+
+
+
     </div>
 
     <div class="form-right">
@@ -161,12 +168,12 @@
         </div>
 
         <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="password" class="  col-md-8 col-form-label text-md-center mb-3">{{ __('Contraseña') }}</label>
+            <label for="email" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
 
             <div class="col-md-16">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                @error('password')
+                @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -175,18 +182,14 @@
         </div>
 
         <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="phone" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Telefono de contacto') }}</label>
+            <label for="password-confirm" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('Confirmar contraseña') }}</label>
 
             <div class="col-md-16">
-                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" phone="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-
-                @error('phone')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
         </div>
+    </div>
+
+        
 
     </div>
 </div>
