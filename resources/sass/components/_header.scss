@@ -23,7 +23,6 @@
 }
 
 .btn-carrito {
-    width: 85px;
     height: 35px;
     margin: 4px;
     border-radius: 5px;
@@ -32,7 +31,7 @@
 }
 
 .btn-products{
-    width: 96px;
+    width: 70px;
     height: 35px;
     margin: 2px;
     border-radius: 5px;
@@ -69,11 +68,21 @@
 }
 
 @media screen and (max-width: $breakpointTable){
+    .navInicio{
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
     .letrasSinFondo{
         display: block;
     }
 
     .logo{
         display: none;
+    }
+    .inputSearch{
+        width: 6.25rem !important;
+    }
+    .btn-carrito{
+        width: 70px;
     }
 }
