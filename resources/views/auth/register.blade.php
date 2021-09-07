@@ -29,19 +29,7 @@
             </div>
         </div>
 
-        <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="surname" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Apellidos') }}</label>
-
-            <div class="col-md-16">
-                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" surname="surname" value="{{ old('surname') }}" required autocomplete="region" autofocus>
-
-                @error('surname')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
+       
 
         <div class="form-group m-5 d-flex justify-content-center row">
             <label for="dni" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('DNI o NIE') }}</label>
@@ -50,59 +38,6 @@
                 <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" dni="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
 
                 @error('dni')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="email" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
-
-            <div class="col-md-16">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="password" class="  col-md-8 col-form-label text-md-center mb-3">{{ __('Contraseña') }}</label>
-
-            <div class="col-md-16">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group m-5 d-flex justify-content-center row">
-                <label for="password-confirm" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('Confirmar contraseña') }}</label>
-
-                <div class="col-md-16">
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-            </div>
-        </div>
-    </div>
-
-    <div class="form-right">
-
-        <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="zipCode" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Código Postal') }}</label>
-
-            <div class="col-md-16">
-                <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" zipCode="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
-
-                @error('zipCode')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -125,20 +60,6 @@
         </div>
 
         <div class="form-group m-5 d-flex justify-content-center row">
-            <label for="city" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Ciudad') }}</label>
-
-            <div class="col-md-16">
-                <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
-
-                @error('city')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group m-5 d-flex justify-content-center row">
             <label for="region" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Provincia') }}</label>
 
             <div class="col-md-16">
@@ -153,12 +74,99 @@
         </div>
 
         <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="email" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
+
+            <div class="col-md-16">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        
+
+        <div class="form-group m-5 d-flex justify-content-center row">
+                <label for="password-confirm" class=" col-md-8 col-form-label text-md-center mb-3">{{ __('Confirmar contraseña') }}</label>
+
+                <div class="col-md-16">
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-right">
+
+        <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="surname" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Apellidos') }}</label>
+
+            <div class="col-md-16">
+                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" surname="surname" value="{{ old('surname') }}" required autocomplete="region" autofocus>
+
+                @error('surname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="zipCode" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Código Postal') }}</label>
+
+            <div class="col-md-16">
+                <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" zipCode="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
+
+                @error('zipCode')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        
+
+        <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="city" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('Ciudad') }}</label>
+
+            <div class="col-md-16">
+                <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
+
+                @error('city')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        
+
+        <div class="form-group m-5 d-flex justify-content-center row">
             <label for="country" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('País') }}</label>
 
             <div class="col-md-16">
                 <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
 
                 @error('country')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="password" class="  col-md-8 col-form-label text-md-center mb-3">{{ __('Contraseña') }}</label>
+
+            <div class="col-md-16">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
