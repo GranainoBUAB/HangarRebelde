@@ -5,7 +5,7 @@
 <br>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 ">
+        <div class="col-md-4 ">
             <div class="card">
                 <div class="card-header text-md-center">{{ __('Registro de Usuario') }}</div>
 
@@ -14,9 +14,9 @@
                         @csrf
                         @method('patch')
                         <div class="form-group mb-6 ">
-                            <label for="name" class="border col-md-4 col-form-label text-md-center mb-3 ">{{ __('Nombre') }}</label>
+                            <label for="name" class="border col-md-8 col-form-label text-md-center mb-3 ">{{ __('Nombre') }}</label>
 
-                            <div class="col-md-16 ">
+                            <div class="col-md-32 ">
                                 <input id="name" type="text" class=" form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-group mb-6">
-                            <label for="surname" class="border col-md-4 col-form-label text-md-center mb-3" >{{ __('Apellidos') }}</label>
+                            <label for="surname" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Apellidos') }}</label>
 
                             <div class="col-md-16">
                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" surname="surname" value="{{ old('surname') }}" required autocomplete="region" autofocus>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group mb-6 ">
-                            <label for="email" class="border col-md-4 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
+                            <label for="email" class="border col-md-8 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-16">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -55,10 +55,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class=" border col-md-4 col-form-label text-md-center">{{ __('Contraseña') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="password" class=" border col-md-8 col-form-label text-md-center mb-3">{{ __('Contraseña') }}</label>
 
-                            <div class="col-md-8">
+                            <div class="col-md-16">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -69,17 +69,18 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="border col-md-4 col-form-label text-md-center">{{ __('Confirmar contraseña') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="password-confirm" class="border col-md-8 col-form-label text-md-center mb-3">{{ __('Confirmar contraseña') }}</label>
 
-                            <div class="col-md-8">
+                            <div class="col-md-16">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="dni" class="border col-md-4 col-form-label text-md-center" >{{ __('DNI o NIE') }}</label>
 
-                            <div class="col-md-8 m-0">
+                        </div>
+                        <div class="form-group mb-6">
+                            <label for="dni" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('DNI o NIE') }}</label>
+
+                            <div class="col-md-16">
                                 <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" dni="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
 
                                 @error('dni')
@@ -89,10 +90,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="phone" class="border col-md-4 col-form-label text-md-center" >{{ __('Telefono de contacto') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="phone" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Telefono de contacto') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" phone="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                                 @error('phone')
@@ -102,10 +103,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="zipCode" class="border col-md-4 col-form-label text-md-center" >{{ __('Código Postal') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="zipCode" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Código Postal') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" zipCode="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
 
                                 @error('zipCode')
@@ -115,10 +116,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="address" class="border col-md-4 col-form-label text-md-center" >{{ __('Dirección') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="address" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Dirección') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" address="address" value="{{ old('address') }}" required autocomplete="region" autofocus>
 
                                 @error('address')
@@ -129,10 +130,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group row ">
-                            <label for="city" class="border col-md-4 col-form-label text-md-center" >{{ __('Ciudad') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="city" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Ciudad') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
 
                                 @error('city')
@@ -142,10 +143,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="region" class="border col-md-4 col-form-label text-md-center" >{{ __('Provincia') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="region" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Provincia') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
 
                                 @error('region')
@@ -155,10 +156,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="country" class="border col-md-4 col-form-label text-md-center" >{{ __('País') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="country" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('País') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
 
                                 @error('country')
@@ -168,10 +169,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="notes" class="border col-md-4 col-form-label text-md-center" >{{ __('Comentario') }}</label>
+                        <div class="form-group mb-6">
+                            <label for="notes" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Comentario') }}</label>
 
-                            <div class="col-md-8 m-0">
+                            <div class="col-md-16">
                                 <input id="notes" type="text" class="form-control @error('notes') is-invalid @enderror" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
 
                                 @error('notes')
