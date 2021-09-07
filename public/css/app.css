@@ -422,8 +422,8 @@ hr {
   font-size: 30px;
 }
 
-.card-body {
-  background-color: #626261;
+.card-body-form {
+  background-color: #626261 !important;
   display: flex;
   justify-content: center;
 }

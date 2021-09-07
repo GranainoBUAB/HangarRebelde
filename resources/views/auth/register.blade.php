@@ -5,18 +5,20 @@
 <br>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4 ">
+        <div class="col-md-8 ">
             <div class="card">
                 <div class="card-header text-md-center">{{ __('Registro de Usuario') }}</div>
 
-                <div class="card-body">
+                <div class="card-body-form">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         @method('patch')
-                        <div class="form-group mb-6 ">
+
+                    <form class="form-inline" role="form">
+                        <div class="form-group mb-6 form-inline" role="form">
                             <label for="name" class="border col-md-8 col-form-label text-md-center mb-3 ">{{ __('Nombre') }}</label>
 
-                            <div class="col-md-32 ">
+                            <div class="col-md-16 ">
                                 <input id="name" type="text" class=" form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -26,7 +28,9 @@
                                 @enderror
                             </div>
                         </div>
+                 
 
+                    
                         <div class="form-group mb-6">
                             <label for="surname" class="border col-md-8 col-form-label text-md-center mb-3" >{{ __('Apellidos') }}</label>
 
@@ -40,6 +44,7 @@
                                 @enderror
                             </div>
                         </div>
+                       
 
                         <div class="form-group mb-6 ">
                             <label for="email" class="border col-md-8 col-form-label text-md-center mb-3">{{ __('E-Mail') }}</label>
