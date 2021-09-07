@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\CategoryMain;                                
+use App\Models\CategoryMain;
 use Illuminate\Http\Request;
 use App\Models\CategorySecondary;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +23,7 @@ class ProductController extends Controller
     public function index()
     {
         $user = Auth::user();
-        
+
         /*  $products = Product::all(); */
         $products = Product::orderBy('id', 'desc')->take(15)->get();
 
