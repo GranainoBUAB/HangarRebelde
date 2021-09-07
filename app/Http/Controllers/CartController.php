@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -15,5 +18,27 @@ class CartController extends Controller
             ->get();
         
         return view('cart', compact('products'));
+    }
+
+    public function addCart($product_id)
+    {
+        $user = Auth::user();
+        //dd($user);
+
+        $product = Product::find($product_id);
+
+        $product->userCarts()->attach($user);
+
+    }
+
+    public function deleteCart($product_id)
+    {
+        $user = Auth::user();
+        //dd($user);
+
+        $product = Product::find($product_id);
+
+        $product->userCarts()->detach($user);
+
     }
 }

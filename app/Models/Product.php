@@ -110,7 +110,7 @@ class Product extends Model
         return ($productsFilteredBytag);
     }
 
-    public function usersCarts()
+    public function userCarts()
     {
         return $this->belongsToMany(User::class, 'carts', 'user_id', 'product_id');
     }

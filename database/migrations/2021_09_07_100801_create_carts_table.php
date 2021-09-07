@@ -19,8 +19,8 @@ class CreateCartsTable extends Migration
             //$table->bigInteger('product_id');
             $table->timestamps();
 
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')/* ->constrained()->onDelete('cascade') */;
+            $table->foreignId('product_id')/* ->constrained()->onDelete('cascade') */;
 
         });
     }
