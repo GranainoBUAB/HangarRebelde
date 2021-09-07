@@ -25,7 +25,7 @@ class ProductController extends Controller
         $user = Auth::user();
 
         /*  $products = Product::all(); */
-        $products = Product::orderBy('id', 'desc')->take(15)->get();
+        $products = Product::orderBy('id', 'desc')->take(10)->get();
 
         return view('home', compact('products', 'user'));
     }
@@ -82,7 +82,7 @@ class ProductController extends Controller
 
         if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
-        }
+        } 
 
         if ($request->hasFile('image2')) {
             $product['image2'] = $request->file('image2')->store('img', 'public');
@@ -92,6 +92,7 @@ class ProductController extends Controller
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
 
+        
         $product->save();
         return redirect()->route('home');
     }
@@ -139,7 +140,7 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             Storage::delete('public/' . $product->image);
             $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
-        }
+        } 
 
         if ($request->hasFile('image2')) {
             $product = Product::findOrFail($id);
@@ -153,14 +154,13 @@ class ProductController extends Controller
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
 
+    
         Product::where('id', '=', $id)->update($changesProduct);
 
         $product = Product::findOrFail($id);
 
-
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Updated');
         //return redirect()->back();
-
 
     }
 
