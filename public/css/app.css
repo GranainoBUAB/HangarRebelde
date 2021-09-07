@@ -421,6 +421,7 @@ hr {
   background: #FF8300 !important;
   font-size: 30px;
   opacity: 0.9;
+  font-weight: 900;
 }
 
 .card-body-form {
