@@ -109,4 +109,9 @@ class Product extends Model
 
         return ($productsFilteredBytag);
     }
+
+    public function usersCarts()
+    {
+        return $this->belongsToMany(User::class, 'carts', 'user_id', 'product_id');
+    }
 }
