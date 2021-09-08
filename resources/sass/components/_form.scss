@@ -6,7 +6,6 @@
 .ct-form{
     margin: 10%;
     width: 80vw;
-
 }
 
 .input-group-text-create{
@@ -28,33 +27,46 @@
 .btn-log{
 
     background-color: $colorOrange !important;
-    color: black !important;
+    color:white !important;
+    margin: 20px;
 }
 
-
-
 .card-header{
-    color:black;
-    background:$colorOrange !important;
-    font-size: 30px;
-    opacity: 0.9;
-    font-weight: 900;
+    width: 100%;
+    background-color:$colorOrange !important ;
+    opacity: 0.8;
+    color: $colorOrange !important;
+    margin: 0;
 }
 
 .card-body-form{
     background-color:white;
     justify-content: center;
+    margin-left: 0;
 }
 
 label{
     color: $colorGrey;
-    border: 1px solid $colorOrange;
-}
 
+}
 
 .side{
     display: flex;
-    margin:30px;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+    margin: 0;
+
+}
+
+input[type=text],[type=email],[type=password]{
+    border: 1px solid $colorOrange !important;
+
+}
+
+.offset-md-4{
+    color: white;
+
 }
 
 
