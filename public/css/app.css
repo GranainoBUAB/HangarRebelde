@@ -428,14 +428,14 @@ label {
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  margin: 0;
+  margin-top: 5%;
 }
 
 input[type=text], [type=email], [type=password] {
   border: 1px solid #FF8300 !important;
 }
 
-.offset-md-4 {
+.offset-md-5 {
   color: white;
 }
 
