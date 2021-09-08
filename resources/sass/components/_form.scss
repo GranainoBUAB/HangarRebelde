@@ -31,17 +31,7 @@
     color: black !important;
 }
 
-.border{
-    border: 6px solid $colorOrange !important;
-    border-radius: 10px;
-    background-color: $colorOrange !important;
-    margin: 0;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    color:white;
-}
+
 
 .card-header{
     color:black;
@@ -52,12 +42,13 @@
 }
 
 .card-body-form{
-    background-color:$colorGrey;
-
+    background-color:white;
     justify-content: center;
 }
 
-label{ color: white; border: 1px solid $colorOrange;  border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%;
+label{
+    color: $colorGrey;
+    border: 1px solid $colorOrange;
 }
 
 

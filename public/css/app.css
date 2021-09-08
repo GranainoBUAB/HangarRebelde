@@ -404,18 +404,6 @@ hr {
   color: black !important;
 }
 
-.border {
-  border: 6px solid #FF8300 !important;
-  border-radius: 10px;
-  background-color: #FF8300 !important;
-  margin: 0;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  color: white;
-}
-
 .card-header {
   color: black;
   background: #FF8300 !important;
@@ -425,18 +413,13 @@ hr {
 }
 
 .card-body-form {
-  background-color: #626261;
+  background-color: white;
   justify-content: center;
 }
 
 label {
-  color: white;
+  color: #626261;
   border: 1px solid #FF8300;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 
 .side {
