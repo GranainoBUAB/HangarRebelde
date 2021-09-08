@@ -4,7 +4,7 @@
     <x-header />
     <x-navbar />
     
-    <div class="d-flex flex-wrap row justify-content-center">
+    <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
                 <a href="{{ route('create') }}">
@@ -12,7 +12,7 @@
                 </a>
             </div>
         @endif
-        <div class="d-flex flex-wrap row justify-content-center">
+        <div class="d-flex flex-wrap row justify-content-center" style="max-width:90rem;">
             @foreach ($products as $product)
                 <div class="ct-product m-lg-4 m-3">
                     <div class="ct-img">
@@ -46,8 +46,6 @@
             @endforeach
         </div>
     </div>
-
-
 
     {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
 
