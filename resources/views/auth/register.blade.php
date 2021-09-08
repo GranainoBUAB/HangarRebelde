@@ -26,12 +26,15 @@
             </div>
         </div>
 
-        <div class="form-group m-3 d-flex justify-content-center row">
+
+
+        <div class="form-group m-5 d-flex justify-content-center row">
+            <label for="dni" class=" col-md-8 col-form-label text-md-center mb-3" >{{ __('DNI o NIE') }}</label>
 
             <div class="col-md-16">
-                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" placeholder="Apellidos" surname="surname" value="{{ old('surname') }}" required autocomplete="region" autofocus>
+                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" dni="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
 
-                @error('surname')
+                @error('dni')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -146,6 +149,9 @@
                 @enderror
             </div>
         </div>
+    </div>
+
+
 
             <div class="form-group m-3 d-flex justify-content-center row">
                 <div class="col-md-16">
