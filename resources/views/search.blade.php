@@ -3,7 +3,7 @@
 @section('content')
     <x-header />
     <x-navbar />
-    <x-categories />
+    {{-- <x-categories /> --}}
 
   <div class="d-flex flex-wrap row justify-content-center">
 
