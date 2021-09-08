@@ -18,7 +18,7 @@ class CartController extends Controller
             ->join('carts', 'products.id', '=', 'carts.product_id')
             ->where('user_id', '=', $user_id)
             ->get();
-        
+
         return view('cart', compact('products'));
     }
 
@@ -29,7 +29,8 @@ class CartController extends Controller
 
         $product = Product::find($product_id);
 
-        $product->userCarts()->attach($user);
+        //$product->userCarts()->attach($user);
+        $user->productsCarts()->attach($product);
 
     }
 

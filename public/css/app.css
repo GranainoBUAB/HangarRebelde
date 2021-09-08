@@ -328,6 +328,7 @@ hr {
   margin-right: 2%;
   margin-top: 0 !important;
   margin-bottom: 1% !important;
+  opacity: inherit !important;
 }
 
 .left-link {
