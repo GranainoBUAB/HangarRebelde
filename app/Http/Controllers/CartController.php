@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function getCart($user_id)
+    public function getCart()
     {
+        $user = Auth::user();
+        $user_id = $user->id;
         $products = DB::table('products')
             ->join('carts', 'products.id', '=', 'carts.product_id')
             ->where('user_id', '=', $user_id)
