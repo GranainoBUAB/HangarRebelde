@@ -76,6 +76,5 @@ class ProductCartTest extends TestCase
         $response->assertStatus(200);
 
         $this->assertDatabaseCount('carts', 0);
-        
     }
 }
