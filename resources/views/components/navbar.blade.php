@@ -1,13 +1,13 @@
-<div class="container-fluid  sticky-top bg-light">
+<div class="container-fluid navInicio sticky-top bg-light p-0">
     <nav class="navbar navbar-expand-lg navbar-light p-0 d-sm-flex justify-content-sm-center">
         <div class="navbar d-flex flex-nowrap">
-            <button class="navbar-toggler me-md-3" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler me-md-3 mb-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav nav-pills mb-3 d-flex flex-nowrap" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-2 d-flex flex-nowrap" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="true" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                             <img class="imgcarrito" src="<?php echo asset('storage/img/home.png'); ?>" alt="">
@@ -39,18 +39,18 @@
                 </ul>
             </div>
             <div class="navbar-collapse p-0 d-flex justify-content-flex-end" id="navbarSupportedContent">
-                <ul class="nav nav-pills d-sm-flex flex-sm-nowrap" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-2 d-flex flex-nowrap" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <form class="d-flex align-items-center inputSearch" action="{{route('search')}}">
                             <div class="form-group ct-search">
                                 <input class="form-control me-1 inputSearch" type="text" placeholder="Buscar" aria-label="Search">
                             </div>
-                            <button class="btn-carrito position-relative" type="submit" class="btn btn-default">
+                            <button class="btn-lupa position-relative" type="submit" class="btn btn-default">
                                 <img class="imgcarrito" src="<?php echo asset('storage/img/lupa.png'); ?>" alt="">
                             </button>
                         </form>
                     </li>
-                    <li class="nav-item me-2" role="presentation">
+                    <li class="nav-item me-2 li-carrito" role="presentation">
                         <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#">
                         <button class="btn-products position-relative">
                             134,21€
@@ -64,7 +64,7 @@
         </div>
     </nav>
     <nav class="navbar-expand-lg navbar-light" >
-        <div class="container-fluid" style="background-color: #FF8300">
+        <div class="container-fluid categories-nav" {{-- style="background-color: #FF8300" --}}>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             CATEGORIAS
             </button>

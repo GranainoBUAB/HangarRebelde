@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.btn-carrito {
+.btn-lupa {
     height: 35px;
     margin: 4px;
     border-radius: 5px;
@@ -66,6 +66,9 @@
     cursor: pointer;
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
+.categories-nav{
+    background-color: $colorOrange;
+}
 
 @media screen and (max-width: $breakpointTable){
     .navInicio{
@@ -81,8 +84,22 @@
     }
     .inputSearch{
         width: 6.25rem !important;
+        margin-left: 5px;
     }
-    .btn-carrito{
+    .btn-lupa {
         width: 70px;
+        margin: 0;
+    }
+    .icoCardHeader{
+        margin-left: 25px;
+    }
+    .li-carrito{
+        margin-left: 36px;
+    }
+    .ul-search{
+        flex-wrap: nowrap;
+    }
+    .categories-nav{
+        background-color:transparent !important;
     }
 }
