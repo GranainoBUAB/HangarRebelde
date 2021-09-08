@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,200&display=swap);
 @charset "UTF-8";
+@font-face {
+  font-family: "Woodstamp";
+  src: local("Woodstamp"), url(/fonts/Woodstamp.otf?797fc51e100c76e17fd793419d091f6f);
+}
 .logo {
   display: block;
   width: 400px;
@@ -52,6 +56,10 @@
   align-items: flex-end;
   color: #FF8300;
   font-weight: bold;
+}
+
+.nav-link {
+  font-family: "Woodstamp";
 }
 
 .nav-link.active, .show > .nav-link {

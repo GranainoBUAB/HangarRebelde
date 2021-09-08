@@ -52,6 +52,9 @@
     color: $colorOrange;
     font-weight: bold;
 }
+.nav-link{
+    font-family: 'Woodstamp';
+}
 
 .nav-link.active, .show > .nav-link{
     background-color: $colorOrange !important;
