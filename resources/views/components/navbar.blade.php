@@ -74,19 +74,21 @@
                         <a class="nav-link active" aria-current="page" aria-selected="true" href="{{ route('home') }}">Novedades</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" aria-selected="false" href="{{ route('filter', ['Comic Americano']) }}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         C. Americanos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="{{ route('filter', ['Comic Americano']) }}">Todos</a></li>
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Marvel</a></li>
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">DC Comics</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" aria-selected="false" href="{{ route('filter', ['Comic Europeo']) }}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         C. Europeo
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo']) }}">Todos</a></li>
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Españoles</a></li>
                         </ul>
                     </li>                    
