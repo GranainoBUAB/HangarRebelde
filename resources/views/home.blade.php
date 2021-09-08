@@ -12,7 +12,7 @@
                 </a>
             </div>
         @endif
-        <div class="d-flex flex-wrap row justify-content-center" style="max-width:90rem;">
+        <div class="d-flex flex-wrap row justify-content-center m-0">
             @foreach ($products as $product)
                 <div class="ct-product m-lg-4 m-3">
                     <div class="ct-img">

@@ -51,7 +51,7 @@
                         </form>
                     </li>
                     <li class="nav-item me-2 li-carrito" role="presentation">
-                        <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#">
+                        <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#{{-- {{route('getCart')}} --}}">
                         <button class="btn-products position-relative">
                             134,21€
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
