@@ -29,7 +29,7 @@ class ProductCartTest extends TestCase
         $user_id = $user->id;
         $this->actingAs($user);
 
-        $product->userCarts()->attach($user);
+        $user->productsCarts()->attach($product);
 
         $response = $this->get(route('getCart'));
 
@@ -49,14 +49,15 @@ class ProductCartTest extends TestCase
 
         $product = Product::factory()->create();
 
-        $user = User::factory()->create();
-        $this->actingAs($user);
+        $user1 = User::factory()->create();
+        $user2 = User::factory()->create();
+        $this->actingAs($user2);
 
         $response = $this->get(route('addCart', $product->id));
         $response->assertStatus(200);
 
         $this->assertDatabaseCount('carts', 1)
-            ->assertDatabaseHas('carts', ['product_id' => 1, 'user_id' => 1]);
+            ->assertDatabaseHas('carts', ['product_id' => 1, 'user_id' => 2]);
     }
 
     public function test_a_product_can_be_removed_from_cart()
