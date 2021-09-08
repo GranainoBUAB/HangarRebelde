@@ -58,10 +58,6 @@
   font-weight: bold;
 }
 
-.nav-link {
-  font-family: "Woodstamp";
-}
-
 .nav-link.active, .show > .nav-link {
   background-color: #FF8300 !important;
 }
