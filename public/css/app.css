@@ -434,6 +434,7 @@ hr {
   .icon_location {
     width: 25px;
     margin-left: 75px;
+    margin-top: 27px;
   }
 
   .text_location {
@@ -515,7 +516,6 @@ hr {
 
 .btn-log {
   background-color: #FF8300 !important;
-  color: white !important;
   margin: 20px;
 }
 
@@ -525,6 +525,7 @@ hr {
   opacity: 0.8;
   color: #FF8300 !important;
   margin: 0;
+  font-size: 50px;
 }
 
 .card-body-form {
@@ -534,7 +535,8 @@ hr {
 }
 
 label {
-  color: #626261;
+  color: white !important;
+  font-family: "woodstamp";
 }
 
 .side {
@@ -549,15 +551,30 @@ input[type=text], [type=email], [type=password] {
   border: 1px solid #FF8300 !important;
 }
 
-.offset-md-5 {
-  color: white;
+.card {
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+a {
+  text-decoration: none;
+  color: #FF8300 !important;
+  padding-top: 27px;
+}
+
+.btn-clic {
+  display: flex;
+  justify-content: center;
+}
+
+.form-check-label {
+  color: black !important;
+  font-family: inherit !important;
 }
 
 @media (min-width: 375px) and (max-width: 558px) {
   .btn-log {
-    background-color: #FF8300 !important;
-    color: white !important;
-    margin: 20px;
+    flex-wrap: wrap;
   }
 }
 /*!

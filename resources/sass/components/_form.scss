@@ -27,7 +27,6 @@
 .btn-log{
 
     background-color: $colorOrange !important;
-    color:white !important;
     margin: 20px;
 }
 
@@ -37,6 +36,7 @@
     opacity: 0.8;
     color: $colorOrange !important;
     margin: 0;
+    font-size: 50px;
 }
 
 .card-body-form{
@@ -46,7 +46,8 @@
 }
 
 label{
-    color: $colorGrey;
+    color:white !important;
+    font-family: 'woodstamp';
 
 }
 
@@ -64,19 +65,40 @@ input[type=text],[type=email],[type=password]{
 
 }
 
-.offset-md-5{
-    color: white;
+.card{
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+a{
+    text-decoration: none;
+    color: $colorOrange !important;
+    padding-top: 27px;
 
 }
+
+.btn-clic{
+display: flex;
+justify-content: center;
+
+}
+.form-check-label{
+    color: black !important;
+    font-family: inherit !important;
+}
+
 
 
 @media (min-width: 375px) and (max-width: 558px){
 
     .btn-log{
 
-        background-color: $colorOrange !important;
-        color:white !important;
-        margin: 20px;
+        flex-wrap: wrap;
     }
+    .btn-clic{
+
+
+    }
+
 }
 

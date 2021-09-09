@@ -8,8 +8,8 @@
         <div class="col-md-8 ">
             <div class="card">
                 <div class="card-header text-md-center">
-                    <label for="register" class=" offset-md-5 col-form-label text-md-center " >{{ __('Registrate') }}</label>
-                        <img class="icons" src="<?php echo asset('storage/img/.jpg')?>" alt="">
+                    <label for="register" class="d-flex justify-content-center mb-0  text-md-center " >{{ __('Registrate') }}</label>
+
                 </div>
 
                 <div class="card-body-form d-flex">
@@ -43,18 +43,6 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group m-3 d-flex justify-content-center row">
-                                        <div class="col-md-16">
                                             <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" placeholder="DNI o NIE" dni="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
 
                                             @error('dni')
@@ -67,9 +55,33 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" placeholder="Código Postal" zipCode="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                            @error('zipCode')
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-3 d-flex justify-content-center row">
+                                        <div class="col-md-16">
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Contraseña" name="password" required autocomplete="new-password">
+
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-3 d-flex justify-content-center row">
+                                        <div class="col-md-16">
+                                            <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Confirmar contraseña" name="password_confirmation" required autocomplete="new-password">
+
+                                            @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -82,6 +94,18 @@
                                             <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Dirección" address="address" value="{{ old('address') }}" required autocomplete="region" autofocus>
 
                                             @error('address')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-3 d-flex justify-content-center row">
+                                        <div class="col-md-16">
+                                            <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" placeholder="Código Postal" zipCode="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
+
+                                            @error('zipCode')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -137,39 +161,17 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group m-3 d-flex justify-content-center row">
-                                        <div class="col-md-16">
-                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Contraseña" name="password" required autocomplete="new-password">
-
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group m-3 d-flex justify-content-center row">
-                                        <div class="col-md-16">
-                                            <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Repetir contraseña" name="password_confirmation" required autocomplete="new-password">
-
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-
                                 </div>
-                                <div class="form-group md-col">
-                                    <div class="offset-md-5">
-                                        <button type="submit" class="btn btn-log d-flex justify-content-center">
+                                <div class="form-group ">
+                                    <div class="btn-clic d-flex">
+                                        <button type="submit" class="btn btn-log ">
                                             {{ __('Register') }}
                                         </button>
+                                        <a href="login" >Estas Registrado?</a>
                                     </div>
+
                                 </div>
+
                             </div>
                         </div>
 
@@ -194,13 +196,14 @@
                         <br>
 
                     </form>
+                    </div>
                 </div>
-            </div>
+            <x-footer />
         </div>
     </div>
 </div>
 <br>
-<x-footer />
+
 @endsection
 
 
