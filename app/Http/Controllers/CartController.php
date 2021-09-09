@@ -29,8 +29,15 @@ class CartController extends Controller
 
         $product = Product::find($product_id);
 
-        //$product->userCarts()->attach($user);
-        $user->productsCarts()->attach($product);
+        if($product->isAvailible())
+        {
+            //$product->userCarts()->attach($user);
+            $user->productsCarts()->attach($product);
+        } else
+        {
+            session()->flash('message', '¡Este producto no está disponible!');
+            return redirect()->route('home');
+        }
 
     }
 

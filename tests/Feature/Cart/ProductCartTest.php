@@ -47,7 +47,7 @@ class ProductCartTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $product = Product::factory()->create();
+        $product = Product::factory()->create(['isAvailable'=>true]);
 
         $user1 = User::factory()->create();
         $user2 = User::factory()->create();
@@ -58,6 +58,21 @@ class ProductCartTest extends TestCase
 
         $this->assertDatabaseCount('carts', 1)
             ->assertDatabaseHas('carts', ['product_id' => 1, 'user_id' => 2]);
+    }
+
+    public function test_product_not_availible_can_not_be_added_to_cart()
+    {
+        $this->withoutExceptionHandling();
+
+        $product = Product::factory()->create(['isAvailable'=>false]);
+
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $response = $this->get(route('addCart', $product->id));
+        $response->assertStatus(200);
+
+        $this->assertDatabaseCount('carts', 0);
     }
 
     public function test_a_product_can_be_removed_from_cart()
