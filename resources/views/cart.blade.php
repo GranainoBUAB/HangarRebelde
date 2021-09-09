@@ -3,113 +3,107 @@
 @section('content')
     <x-header />
     <x-navbar />
-    
-    {{-- @dd($products); --}}
-    <div class="d-flex flex-wrap row justify-content-center">
-        @if(Auth::check() && Auth::user()->isadmin())
-            <div class="position-relative me-4">
-                <a href="{{ route('create') }}">
-                    <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
+
+    <div class="row d-flex flex-md-wrap justify-content-around py-3">
+        <div class="col-lg-6 ms-lg-0">
+            <h2 class="ps-2">Mi Carrito de la compra</h2>
+            
+    @foreach ($products as $product)
+        <hr class="container-fluid me-2 p-0" style="color: #FCE8C2">
+        <div class="card border-light bg-light mb-3 ps-2 pt-3" style="max-width: 700px;">
+            <div class="row g-0 ps-3 me-0">
+                <a class="col-md-2 p-0 p-lg-1" href="{{ route('show', ['id' => $product->id]) }}">
+                    <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="...">
                 </a>
-            </div>
-        @endif
-        <div class="d-flex flex-wrap row justify-content-center">
-            @foreach ($products as $product)
-                <div class="ct-product m-lg-4 m-3">
-                    <div class="ct-img">
-                        <a href="{{ route('show', ['id' => $product->id]) }}">
-                            <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
-                        </a>
-                    </div>
-                    <div class="ct-info d-flex flex-row align-items-center p-1">
-                        <div class="ct-txt d-flex flex-column justify-content-center">
-                            <div class="txtTitle d-flex flex-row align-items-center">
-                                <p class="txtInfoTitle m-0">{{ $product->title }} </p>
-                                <p class="txtPoints m-0">...</p>
-                            </div>
-                            <p class="txtPrice">{{ $product->price }} &#8364</p>
-                        </div>
-                        <div class="separator"></div>
-                        <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
-                    </div>
+                <div class="col-sm-9 px-0">
+                    <div class="card-body p-2">
+                        <h6 class="card-title mb-1">{{ $product->title }}</h6>
+                        <div class="d-flex flex-row flex-wrap align-items-center">
+                            <a href="{{ route('viewByAuthor', ['author'=>$product->author1]) }}" class="text-reset"><p class="authors pb-1 m-0"><small>{{ $product->author1 }}  </small></p></a>
+                            
+                            @if($product->author2)
+                            <a href="{{ route('viewByAuthor', ['author'=>$product->author2]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author2 }} </small> </p></a>
+                            @endif
 
-                    @if(Auth::check() && Auth::user()->isadmin())
-                        <div class="input-group mb-3">
-                            <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                            <form action="{{ url('/delete/'.$product->id)}}" method="post">
-                            @method('delete')
-                            @csrf 
-                                <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
-                            </form>
+                            @if($product->author3)
+                            <a href="{{ route('viewByAuthor', ['author'=>$product->author3]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author3}}  </small></p></a>
+                            @endif
+
+                            @if($product->author4)
+                            <a href="{{ route('viewByAuthor', ['author'=>$product->author4]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author4}}  </small></p></a>
+                            @endif
+
+                            @if($product->author5)
+                            <a href="{{ route('viewByAuthor', ['author'=>$product->author5]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author5}}  </small></p></a>
+                            @endif
+
+                            @if($product->author6)
+                            <a href="{{ route('viewByAuthor', ['author'=>$product->author6]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author6}}  </small></p></a>
+                            @endif
+                            
                         </div>
-                    @endif
+                        <p class="card-text mb-1"><small class="text-muted">ISBN: {{ $product->isbn }}</small></p>
+                        <div class="d-flex flex-nowrap justify-content-between"> 
+                            <select class="form-select p-1" aria-label="Default select example" style="width: 60px; height: 30px;">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <p class="cartPrice mb-2 me-5">{{ $product->price }} &#8364</p>
+                        </div>
+                    </div>
                 </div>
-            @endforeach
+            </div>
         </div>
+    @endforeach
     </div>
-
-
-
-    {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
-
-    {{-- <table class="table">
-        <tbody>
-            <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
-
-            @foreach ($products as $product)
-                <tr>
-                    <td>{{ $product->id }}
-                        <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
-                        <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn btn-primary">Edit</button></a>
-                        <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn btn-danger">Delete</button></a>
-                    </td>
-                    <td>{{ $product->title }}</td>
-                    <td>{{ $product->price }}</td>
-                    <td>{{ $product->author }}</td>
-                    <td>{{ $product->editorial }}</td>
-                    <td>{{ $product->isAvailable }}</td>
-                    <td>{{ $product->canReserve }}</td>
-                    <td>{{ $product->isbn }}</td>
-                    <td>{{ $product->categoryMain }}</td>
-                    <td>{{ $product->categorySecondary }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>{{ $product->rating }}</td>
-                    <td><img src="{{ asset('storage').'/'.$product->image1}}" width=90 alt=""></td>
-                    <td><img src="{{ asset('storage').'/'.$product->image2}}" width=90 alt=""></td>
-                    <td><img src="{{ asset('storage').'/'.$product->image3}}" width=90 alt=""></td>
-                    <td>{{ $product->dateSale }}</td>
-                    <td>{{ $product->format }}</td>
-                    <td>{{ $product->pages }}</td>
-                    <td>{{ $product->tag }}</td>
-
-
-                </tr>
-            @endforeach
-        </tbody>
-    </table> --}}
-
-
-
-
-
-    {{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+        <div class="col-sm-5">
+            <div class="card mt-3" style="background-color: #FCE8C2">
+                <div class="card-header fw-bold">
+                    Resumen
+                </div>
+                <hr class=" mx-1 p-0" style="color: #626261">
+                <div class="card-body p-0">
+                    <ul class="list-group-flush ps-0 ">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+                            Subtotal sin IVA
+                            <span class="badge text-secondary">48.77€</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent ">
+                            IVA
+                            <span class="badge text-secondary">10.89€</span>
+                        </li>
+                    </ul>
+                    <hr class="mx-1 p-0" style="color: #626261">
+                    <ul class="list-group-flush p-0 mb-0">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent fw-bold">
+                            Total
+                            <span class="badge text-secondary">59,66€</span>
+                        </li>
+                    </ul>
+                    <ul class="list-group-flush ps-0">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                            <div>
+                                <div class="form-check" >
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        A domicilio
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Recoger en tienda
+                                    </label>
+                                </div>
+                            </div>    
+                                <span class="btn" type="button" style="background-color: #FF8300;">Continuar</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div> --}}
     <x-footer />
 @endsection

@@ -39,7 +39,7 @@
                 </ul>
             </div>
             <div class="navbar-collapse p-0 d-flex justify-content-flex-end" id="navbarSupportedContent">
-                <ul class="nav nav-pills mb-2 d-flex flex-nowrap" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-2 d-flex flex-wrap" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <form class="d-flex align-items-center inputSearch" action="{{route('search')}}">
                             <div class="form-group ct-search">
@@ -51,8 +51,8 @@
                         </form>
                     </li>
                     <li class="nav-item ms-xl-5 ms-lg-1 me-sm-2 li-carrito" role="presentation">
-                        <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#{{-- {{route('getCart')}} --}}">
-                        <button class="btn-products position-relative">
+                        <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="{{route('getCart')}}">
+                        <button class="btn-products position-relative" href="{{route('getCart')}}">
                             134,21€
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 99+
