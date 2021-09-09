@@ -58,10 +58,9 @@
   font-weight: bold;
 }
 
-.nav-link.active, .show > .nav-link {
-  background-color: #FF8300 !important;
-}
-
+/* .nav-link.active, .show > .nav-link{
+    background-color: $colorOrange !important;
+} */
 .ct-search {
   margin: 0px !important;
 }
@@ -74,7 +73,17 @@
 }
 
 .categories-nav {
-  background-color: #FF8300;
+  border-top: 3px solid #FCE8C2;
+  border-bottom: 3px solid #FCE8C2;
+}
+
+.ct-cat {
+  font-size: 1.5rem;
+  margin-left: 49px;
+  color: #FF8300 !important;
+  padding: 0px !important;
+  font-family: "Woodstamp";
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -113,8 +122,8 @@
     flex-wrap: nowrap;
   }
 
-  .categories-nav {
-    background-color: transparent !important;
+  .dropdown-menu {
+    background-color: #FF8300 !important;
   }
 }
 .ct-product {

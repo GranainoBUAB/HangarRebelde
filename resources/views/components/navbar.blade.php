@@ -10,30 +10,30 @@
                 <ul class="nav nav-pills mb-2 d-flex flex-nowrap justify-content-space-between" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="true" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/home.png'); ?>" alt="">
+                            <img class="imgcarrito" src="<?php echo asset('storage/img/home.svg'); ?>" alt="">
                             Inicio</a>
                     </li>
                     <li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/calendario.png'); ?>" alt="">
+                            <img class="imgcarrito" src="<?php echo asset('storage/img/calendario.svg'); ?>" alt="">
                             Calendario</a>
                     </li>
                     <li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/torneo.png'); ?>" alt="">
+                            <img class="imgcarrito" src="<?php echo asset('storage/img/trofeo.svg'); ?>" alt="">
                             Torneos</a>
                     </li>
                     <li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/news.png'); ?>" alt="">
+                            <img class="imgcarrito" src="<?php echo asset('storage/img/megafono.svg'); ?>" alt="">
                             Noticias</a>
                     </li><li class="nav-item" role="presentation"> 
                         <a href="{{ route('home') }}" class="nav-link active btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/tienda-b.png'); ?>" alt="">
+                            <img class="imgcarrito" src="<?php echo asset('storage/img/tienda.svg'); ?>" alt="">
                             Tienda</a>
                     </li><li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link btn btn-lg text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/aboutUs.png'); ?>" alt="">
+                            <img class="imgcarrito" src="<?php echo asset('storage/img/group.svg'); ?>" alt="">
                             Sobre nosotros</a>
                     </li>
                 </ul>
@@ -71,11 +71,11 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" aria-selected="true" href="{{ route('home') }}">Novedades</a>
+                        <a class="nav-link active ct-cat" aria-current="page" aria-selected="true" href="{{ route('home') }}">Novedades</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        C. Americanos
+                        <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Comics Americanos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Americano']) }}">Todos</a></li>
@@ -84,8 +84,8 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        C. Europeo
+                        <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Comics Europeos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo']) }}">Todos</a></li>
@@ -93,7 +93,7 @@
                         </ul>
                     </li>                    
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" aria-selected="false"  href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
+                        <a class="nav-link ct-cat" aria-current="page" aria-selected="false"  href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
                     </li>
                 </ul>
             </div>
