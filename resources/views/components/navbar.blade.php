@@ -43,7 +43,7 @@
                     <li class="nav-item" role="presentation">
                         <form class="d-flex align-items-center inputSearch" action="{{route('search')}}">
                             <div class="form-group ct-search">
-                                <input class="form-control me-1 inputSearch" type="text" placeholder="Buscar" aria-label="Search">
+                                <input class="form-control me-1 inputSearch" name = "query" type="text" placeholder="Buscar" aria-label="Search">
                             </div>
                             <button class="btn-lupa position-relative" type="submit" class="btn btn-default">
                                 <img class="imgcarrito" src="<?php echo asset('storage/img/lupa.png'); ?>" alt="">
