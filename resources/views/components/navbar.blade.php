@@ -53,9 +53,11 @@
                     <li class="nav-item ms-xl-5 ms-lg-1 me-sm-2 li-carrito" role="presentation">
                         <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="" href="#{{-- {{route('getCart')}} --}}">
                         <button class="btn-products position-relative">
-                            134,21€
+                            {{$sum}}
+                            {{-- 134,21€ --}}
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+
+                            {{$quantity}} 
+                            {{-- 99+ --}}
                             </span>
                         </button>
                     </li>

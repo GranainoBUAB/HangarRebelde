@@ -19,7 +19,10 @@ class CartController extends Controller
             ->where('user_id', '=', $user_id)
             ->get();
 
-        return view('cart', compact('products'));
+        $sumAndQuantity = $this->sumAndQuantity($products);
+        //dd($sumAndQuantity);
+
+        return view('cart', compact('products','sumAndQuantity'));
     }
 
     public function addCart($product_id)
@@ -31,7 +34,8 @@ class CartController extends Controller
 
         //$product->userCarts()->attach($user);
         $user->productsCarts()->attach($product);
-
+        return redirect()->route('getCart');
+        
     }
 
     public function deleteCart($product_id)
@@ -41,7 +45,20 @@ class CartController extends Controller
 
         $product = Product::find($product_id);
 
-        $product->userCarts()->detach($user);
+        //$product->userCarts()->detach($user);
+        $user->productsCarts()->detach($product);
+        return redirect()->route('getCart');
 
+    }
+
+    public function sumAndQuantity($products){
+        $sum = 0;
+        $quantity = 0;
+        foreach ($products as $product) {
+            $sum += $product->price;
+            $quantity += 1;
+        }
+        $result = ['sum'=>$sum, 'quantity'=>$quantity];
+        return ($result);
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
     
     {{-- @dd($products); --}}
     <div class="d-flex flex-wrap row justify-content-center">

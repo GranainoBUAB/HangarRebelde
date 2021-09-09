@@ -2,7 +2,7 @@
 
 @section('content')
     <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
     
     <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
