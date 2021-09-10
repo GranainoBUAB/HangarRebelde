@@ -54,7 +54,7 @@ class ProductCartTest extends TestCase
         $this->actingAs($user2);
 
         $response = $this->get(route('addCart', $product->id));
-        $response->assertStatus(200);
+        $response->assertStatus(302);
 
         $this->assertDatabaseCount('carts', 1)
             ->assertDatabaseHas('carts', ['product_id' => 1, 'user_id' => 2]);
@@ -70,6 +70,7 @@ class ProductCartTest extends TestCase
         $this->actingAs($user);
 
         $response = $this->get(route('addCart', $product->id));
+        $response->assertStatus(302);
 
         $this->assertDatabaseCount('carts', 0);
     }

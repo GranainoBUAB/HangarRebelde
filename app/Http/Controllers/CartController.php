@@ -39,6 +39,8 @@ class CartController extends Controller
             return redirect()->route('home');
         }
 
+        return redirect()->route('home');
+
     }
 
     public function deleteCart($product_id)
