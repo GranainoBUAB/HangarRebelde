@@ -163,3 +163,18 @@
     max-width: 15%;
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
+
+.body-xxl{
+    @media screen and (min-width: $breakpointDesktop){
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    @media screen and (min-width: $breakpointLargeDesktop){
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    @media screen and (min-width: $breakpointExtraLargeDesktop){
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+}

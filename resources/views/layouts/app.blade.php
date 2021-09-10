@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body class="d-flex justify-content-center" style="max-width:90rem;">
+<body class="d-flex justify-content-center body-xxl">
     <div id="app">
 
 
