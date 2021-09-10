@@ -36,7 +36,6 @@ class CartController extends Controller
         } else
         {
             session()->flash('message', '¡Este producto no está disponible!');
-            return redirect()->route('home');
         }
 
         return redirect()->route('home');
