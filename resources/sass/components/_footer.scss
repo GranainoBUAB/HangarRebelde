@@ -11,6 +11,7 @@ hr{
     margin-right: 2%;
     margin-top: 0 !important;
     margin-bottom: 1% !important;
+    opacity: inherit !important;
 }
 
 .left-link{
@@ -22,6 +23,9 @@ hr{
     margin-left: -7%;
     width:65%;
     height: auto;
+    @media screen and (min-width: $breakpointDesktop){
+        max-width: 40%;
+    }
 }
 
 .right-link{
@@ -33,10 +37,16 @@ hr{
     align-self: center;
     width: 24%;
     height: auto;
+    @media screen and (min-width: $breakpointDesktop){
+        max-width: 10%;
+    }
 }
 
 .icon_follow{
     width: 20%;
+    @media screen and (min-width: $breakpointDesktop){
+        max-width: 5%;
+    }
 
 }
 .location{
@@ -52,7 +62,7 @@ hr{
     }
 
     .icon_follow{
-       width:  5%;
+        width:  5%;
 
     }
     .follow{
@@ -70,7 +80,7 @@ hr{
     }
 
     .icon_follow{
-       width:  10%;
+        width:  10%;
     }
 }
 

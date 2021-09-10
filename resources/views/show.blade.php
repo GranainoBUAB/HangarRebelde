@@ -3,7 +3,6 @@
 @section('content')
     <x-header />
     <x-navbar />
-    {{-- <x-categories /> --}}
 
     <div class="container">
         <div class="row justify-content-center">
@@ -148,7 +147,9 @@
                                 <p class="txtPrice">{{ $productrelation->price }} &#8364</p>
                             </div>
                             <div class="separator"></div>
-                            <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
+                                <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                            </a>
                         </div>
                     </div>
                 @endforeach

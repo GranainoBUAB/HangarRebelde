@@ -3,16 +3,28 @@
 @section('content')
     <x-header />
     <x-navbar />
+
+    <!-- flash message -->
+    <div class="flex justify-center pt-8">
+        @if (session()->has('message'))
+        <div class="alert">
+            {{ session('message') }}
+            <a href="{{ route('home') }}">
+                <button type="text" class="btn-products position-relative">X</button>
+            </a>
+        </div>
+        @endif
+    </div>
     
-    <div class="d-flex flex-wrap row justify-content-center">
+    <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
                 <a href="{{ route('create') }}">
-                    <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
+                    <button type="text" class="btn createbtn ms-3">Crear nuevo Comic</button>
                 </a>
             </div>
         @endif
-        <div class="d-flex flex-wrap row justify-content-center">
+        <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
             @foreach ($products as $product)
                 <div class="ct-product m-lg-4 m-3">
                     <div class="ct-img">
@@ -23,13 +35,14 @@
                     <div class="ct-info d-flex flex-row align-items-center p-1">
                         <div class="ct-txt d-flex flex-column justify-content-center">
                             <div class="txtTitle d-flex flex-row align-items-center">
-                                <p class="txtInfoTitle m-0">{{ $product->title }} </p>
-                                <p class="txtPoints m-0">...</p>
+                                <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
                         </div>
                         <div class="separator"></div>
-                        <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
+                                <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                            </a>
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
@@ -46,8 +59,6 @@
             @endforeach
         </div>
     </div>
-
-
 
     {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
 

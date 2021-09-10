@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create(['isAdmin'=>true, 'name' => 'admin', 'surname' => 'admin', 'email' => 'admin@admin.com']);
 
+        User::factory()->create(['name' => 'user1', 'surname' => 'user1', 'email' => 'user1@user.com']);
+
+        User::factory()->create(['name' => 'user2', 'surname' => 'user2', 'email' => 'user2@user.com']);
+
         Product::factory()->create([
             'title'  => 'EL IMPARABLE SPIDERMAN 01 (Serie bimestral)',
             'price'  => '3.33',

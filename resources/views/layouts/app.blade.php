@@ -22,11 +22,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body>
+<body class="d-flex justify-content-center body-xxl">
     <div id="app">
-       
 
-        <main class="py-4">
+
+        <main class="p-2">
             @yield('content')
         </main>
     </div>
