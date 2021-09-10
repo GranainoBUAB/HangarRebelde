@@ -10,7 +10,7 @@
         <div class="alert">
             {{ session('message') }}
             <a href="{{ route('home') }}">
-                <button type="text" class="btn-products position-relative">Borrar</button>
+                <button type="text" class="btn-products position-relative">X</button>
             </a>
         </div>
         @endif
@@ -40,9 +40,9 @@
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
                         </div>
                         <div class="separator"></div>
-                            {{-- <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> --}} 
+                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
                                 <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
-                            {{-- </a> --}}
+                            </a>
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
