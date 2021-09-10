@@ -83,7 +83,7 @@
 .ct-cat {
   font-size: 1.5rem;
   margin-left: 49px;
-  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%) !important;
+  color: #FF8300 !important;
   padding: 0px !important;
   font-family: "Woodstamp";
   letter-spacing: 0.1rem;
