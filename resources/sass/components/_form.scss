@@ -24,3 +24,80 @@
     color: white !important;
     width: 150px;
 }
+.btn-log{
+
+    background-color: $colorOrange !important;
+    margin: 20px;
+}
+
+.card-header{
+    width: 100%;
+    background-color:$colorOrange !important ;
+    opacity: 0.8;
+    color: $colorOrange !important;
+    margin: 0;
+    font-size: 50px;
+}
+
+.card-body-form{
+    background-color:white;
+    justify-content: center;
+    margin-left: 0;
+}
+
+label{
+    color:white !important;
+    font-family: 'woodstamp';
+
+}
+
+.side{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+input[type=text],[type=email],[type=password]{
+    border: 1px solid $colorOrange !important;
+
+}
+
+.card{
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+a{
+    text-decoration: none;
+    color: $colorOrange !important;
+    padding-top: 27px;
+
+}
+
+.btn-clic{
+display: flex;
+justify-content: center;
+margin-left: 8%;
+
+}
+.form-check-label{
+    color: black !important;
+    font-family: inherit !important;
+}
+
+@media (min-width: 375px) and (max-width: 558px){
+
+    .btn-log{
+
+        flex-wrap: wrap;
+    }
+    .btn-clic{
+    margin-left: 54px;
+    margin-right: 15px;
+
+    }
+
+}
