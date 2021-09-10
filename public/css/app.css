@@ -97,6 +97,7 @@
 
   .letrasSinFondo {
     display: block;
+    margin-bottom: 15px;
   }
 
   .logo {
@@ -327,7 +328,7 @@
 }
 
 .icoCard {
-  max-width: 15%;
+  max-width: 60%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
