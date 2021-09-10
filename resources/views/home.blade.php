@@ -3,18 +3,30 @@
 @section('content')
     <x-header />
     <x-navbar />
+
+    <!-- flash message -->
+    <div class="flex justify-center pt-8">
+        @if (session()->has('message'))
+        <div class="alert">
+            {{ session('message') }}
+            <a href="{{ route('home') }}">
+                <button type="text" class="btn-products position-relative">Borrar</button>
+            </a>
+        </div>
+        @endif
+    </div>
     
     <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
                 <a href="{{ route('create') }}">
-                    <button type="text" class="btn createbtn ms-5">Crear nuevo Comic</button>
+                    <button type="text" class="btn createbtn ms-3">Crear nuevo Comic</button>
                 </a>
             </div>
         @endif
-        <div class="d-flex flex-wrap row justify-content-center">
+        <div class="d-flex flex-wrap row justify-content-center my-4">
             @foreach ($products as $product)
-                <div class="ct-product m-lg-5 m-3">
+                <div class="ct-product m-lg-4 m-3">
                     <div class="ct-img">
                         <a href="{{ route('show', ['id' => $product->id]) }}">
                             <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">

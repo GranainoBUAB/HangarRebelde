@@ -114,4 +114,12 @@ class Product extends Model
     {
         return $this->belongsToMany(User::class, 'carts', 'user_id', 'product_id');
     }
+
+    public function isAvailible()
+    {
+        if($this->isAvailable) {
+            return true;
+        }
+        return false;
+    }
 }

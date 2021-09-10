@@ -58,8 +58,10 @@
   font-weight: bold;
 }
 
-.nav-link.active, .show > .nav-link {
-  background-color: #FF8300 !important;
+.nav-link.active, .show > .nav-link .imgcarrito {
+  background-color: transparent !important;
+  border: none !important;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
 .ct-search {
@@ -74,7 +76,17 @@
 }
 
 .categories-nav {
-  background-color: #FF8300;
+  border-top: 3px solid #FCE8C2;
+  border-bottom: 3px solid #FCE8C2;
+}
+
+.ct-cat {
+  font-size: 1.5rem;
+  margin-left: 49px;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%) !important;
+  padding: 0px !important;
+  font-family: "Woodstamp";
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -113,8 +125,11 @@
     flex-wrap: nowrap;
   }
 
-  .categories-nav {
-    background-color: transparent !important;
+  .navbar-toggler {
+    font-family: "Woodstamp";
+    color: #FF8300 !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+    font-size: 1.5rem !important;
   }
 }
 .ct-product {

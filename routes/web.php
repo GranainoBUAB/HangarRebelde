@@ -32,12 +32,12 @@ Auth::routes();
 Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
-Route::post('/products', [ProductController::class, 'store'])->name('store')->middleware(IsAdmin::class);
-Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('delete')->middleware(IsAdmin::class);
-Route::patch('/products/{id}', [ProductController::class, 'update'])->name('update')->middleware(IsAdmin::class);
-Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit')->middleware(IsAdmin::class);
+Route::post('/products', [ProductController::class, 'store'])->name('store')->middleware('isadmin');
+Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('delete')->middleware('isadmin');
+Route::patch('/products/{id}', [ProductController::class, 'update'])->name('update')->middleware('isadmin');
+Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit')->middleware('isadmin');
 
-Route::get('/create', [ProductController::class, 'create'])->name('create')->middleware(IsAdmin::class);
+Route::get('/create', [ProductController::class, 'create'])->name('create')->middleware('isadmin');
 
 Route::get('/search', [ProductController::class, 'search'])->name('search');
 

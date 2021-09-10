@@ -9,7 +9,7 @@
                     <img class="letrasSinFondo" src="<?php echo asset('storage/img/logoLetras.jpg'); ?>" alt="">
                 </a>
             </div>
-            <div class="col logingrid">
+            <div class="col logingrid p-0">
                 <div class="navbar navbar-expand  text-decoration-none">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -27,7 +27,7 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropup">
                             <a id="navbarDropdown" class="nav-link text-reset dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
@@ -48,5 +48,5 @@
             </div>
         </div>
     </div>
-<hr class="container-fluid">
+<hr>
 </header>
