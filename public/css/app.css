@@ -528,6 +528,33 @@ hr {
   width: 150px;
 }
 
+.imgCart {
+  width: 100px;
+  height: auto;
+  border: 3px solid #FF8300;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.bd-example {
+  width: 700px;
+  height: 250px;
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.authors {
+  color: #626261;
+}
+
+.cartPrice {
+  font-size: 1.3rem;
+  color: #FF8300;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
