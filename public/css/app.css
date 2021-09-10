@@ -83,10 +83,18 @@
 .ct-cat {
   font-size: 1.5rem;
   margin-left: 49px;
-  color: #FF8300 !important;
+  color: #FCE8C2 !important;
   padding: 0px !important;
   font-family: "Woodstamp";
   letter-spacing: 0.1rem;
+}
+
+.act {
+  color: #FF8300 !important;
+}
+
+.ct-cat:hover {
+  color: #FF8300 !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -316,7 +324,7 @@
 }
 
 .separator {
-  width: 2px;
+  width: 1.5rem;
   height: 90%;
   background-color: #FF8300;
 }
@@ -593,7 +601,6 @@ input[type=text], [type=email], [type=password] {
 a {
   text-decoration: none;
   color: #FF8300 !important;
-  padding-top: 27px;
 }
 
 .btn-clic {
