@@ -163,7 +163,7 @@
 
                                 </div>
                                 <div class="form-group ">
-                                    <div class="btn-clic d-flex">
+                                    <div class="btn-clic col-md-16 d-flex justify-content-start ">
                                         <button type="submit" class="btn btn-log ">
                                             {{ __('Register') }}
                                         </button>
