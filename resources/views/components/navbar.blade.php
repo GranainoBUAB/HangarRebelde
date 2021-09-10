@@ -1,13 +1,13 @@
 <div class="container-fluid navInicio sticky-top bg-light p-0">
     <nav class="navbar navbar-expand-lg navbar-light p-0 d-flex justify-content-sm-center">
-        <div class="navbar d-flex flex-nowrap w-100">
+        <div class="navbar d-flex flex-wrap flex-lg-nowrap w-100">
             <button class="navbar-toggler me-md-3 mb-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav nav-pills mb-2 d-flex flex-nowrap justify-content-space-between" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-2 d-flex flex-wrap flex-lg-nowrap justify-content-space-between" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="true" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                             <img class="imgcarrito" src="<?php echo asset('storage/img/home.svg'); ?>" alt="https://www.freepik.com">
