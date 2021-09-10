@@ -1,0 +1,26 @@
+.imgCart{
+    width: 100px;
+    height: auto;
+    border: 3px solid #FF8300;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.bd-example {
+    width: 700px;
+    height: 250px;
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.authors{
+    color: $colorGrey;
+}
+
+.cartPrice{
+    font-size: 1.3rem;
+    color: $colorOrange;
+}
