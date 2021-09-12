@@ -2,7 +2,7 @@
 
 @section('content')
     <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <!-- flash message -->
     <div class="flex justify-center pt-8">
@@ -15,7 +15,7 @@
         </div>
         @endif
     </div>
-    
+
     <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
@@ -40,7 +40,7 @@
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
                         </div>
                         <div class="separator"></div>
-                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
+                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                                 <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                             </a>
                     </div>
@@ -50,7 +50,7 @@
                             <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
                             <form action="{{ url('/delete/'.$product->id)}}" method="post">
                             @method('delete')
-                            @csrf 
+                            @csrf
                                 <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
                             </form>
                         </div>

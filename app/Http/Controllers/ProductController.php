@@ -122,6 +122,7 @@ class ProductController extends Controller
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();
         $product = Product::find($id);
+        $sumAndQuantity = sumAndQuantity;
         return view('edit', compact('product', 'categoryMains', 'categorySecondaries'));
     }
 
