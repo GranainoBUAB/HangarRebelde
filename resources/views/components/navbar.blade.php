@@ -10,30 +10,30 @@
                 <ul class="nav nav-pills mb-2 d-flex flex-wrap flex-lg-nowrap justify-content-space-between" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="true" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/home.svg'); ?>" alt="https://www.freepik.com">
+                            <img class="imgcarrito" src="{{url('/img/home.svg')}}" alt="https://www.freepik.com">
                             Inicio</a>
                     </li>
                     <li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/calendario.svg'); ?>" alt="https://www.flaticon.es/autores/srip">
+                            <img class="imgcarrito" src="{{url('/img/calendario.svg')}}"  alt="https://www.flaticon.es/autores/srip">
                             Calendario</a>
                     </li>
                     <li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/trofeo.svg'); ?>" alt="https://www.freepik.com">
+                            <img class="imgcarrito" src="{{url('/img/trofeo.svg')}}"  alt="https://www.freepik.com">
                             Torneos</a>
                     </li>
                     <li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/megafono.svg'); ?>" alt="https://www.flaticon.es/autores/good-ware">
+                            <img class="imgcarrito" src="{{url('/img/megafono.svg')}}"  alt="https://www.flaticon.es/autores/good-ware">
                             Noticias</a>
                     </li><li class="nav-item" role="presentation"> 
                         <a href="{{ route('home') }}" class="nav-link active text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/tienda.svg'); ?>" alt="https://www.flaticon.es/autores/nikita-golubev">
+                            <img class="imgcarrito" src="{{url('/img/tienda.svg')}}"  alt="https://www.flaticon.es/autores/nikita-golubev">
                             Tienda</a>
                     </li><li class="nav-item" role="presentation"> 
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="<?php echo asset('storage/img/group.svg'); ?>" alt="https://www.freepik.com">
+                            <img class="imgcarrito" src="{{url('/img/group.svg')}}" alt="https://www.freepik.com">
                             Sobre nosotros</a>
                     </li>
                 </ul>
@@ -46,13 +46,13 @@
                                 <input class="form-control me-1 inputSearch" name = "query" type="text" placeholder="Buscar" aria-label="Search">
                             </div>
                             <button class="btn-lupa position-relative" type="submit" class="btn btn-default">
-                                <img class="imgcarrito" src="<?php echo asset('storage/img/lupa.png'); ?>" alt="">
+                                <img class="imgcarrito" src="{{url('/img/lupa.png')}}" alt="">
                             </button>
                         </form>
                     </li>
                     <li class="nav-item ms-xl-3 ms-lg-1 me-sm-2 li-carrito" role="presentation">
                         <a href="{{ route('getCart') }}">
-                            <img class="icoCardHeader" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="">
+                            <img class="icoCardHeader" src="{{url('/img/shopping-cart.svg')}}" alt="">
                         </a>
                         <button class="btn-products position-relative">
                             134,21€

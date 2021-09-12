@@ -5,8 +5,8 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="{{ route('home') }}">
-                    <img class="logo" src="{{url('/img/logo.png')}}" {{-- src="<?php echo asset('storage/img/logo.png'); ?>" --}} alt="">
-                    <img class="letrasSinFondo" src="{{url('/img/logoLetras.jpg')}}" {{-- src="<?php echo asset('public/logoLetras.jpg'); ?>" --}} alt="">
+                    <img class="logo" src="{{url('/img/logo.png')}}" alt="">
+                    <img class="letrasSinFondo" src="{{url('/img/logoLetras.jpg')}}" alt="">
                 </a>
             </div>
             <div class="col logingrid p-0">
