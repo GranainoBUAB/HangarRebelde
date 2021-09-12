@@ -37,7 +37,13 @@
                             <div class="txtTitle d-flex flex-row align-items-center">
                                 <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
+                            @if ($product->isAvailable == 1)
+                                <p class="txtTitle">Disponible</p>
+                            @else
+                                <p class="txtTitle">No Disponible</p>
+                            @endif
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
+
                         </div>
                         <div class="separator"></div>
                             <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">

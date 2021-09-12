@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +18,9 @@ class CartController extends Controller
         $products = DB::table('products')
             ->join('carts', 'products.id', '=', 'carts.product_id')
             ->where('user_id', '=', $user_id)
-            ->get(); 
-        $sumAndQuantity = $this->sumAndQuantity(/* $products */);
-        return view('cart', compact('products','sumAndQuantity'));
+            ->get();
+        $sumAndQuantity = Cart::sumAndQuantity();
+        return view('cart', compact('products', 'sumAndQuantity'));
     }
 
     public function addCart($product_id)
@@ -29,12 +30,10 @@ class CartController extends Controller
 
         $product = Product::find($product_id);
 
-        if($product->isAvailible())
-        {
+        if ($product->isAvailible()) {
             //$product->userCarts()->attach($user);
             $user->productsCarts()->attach($product);
-        } else
-        {
+        } else {
             session()->flash('message', '¡Este producto no está disponible!');
         }
 
@@ -54,8 +53,9 @@ class CartController extends Controller
         return redirect()->route('getCart');
     }
 
-    public function sumAndQuantity(/* $products */){
-        $user = Auth::user();
+    /* public function sumAndQuantity()
+    {
+         $user = Auth::user();
         $user_id = $user->id;
         $products = DB::table('products')
             ->join('carts', 'products.id', '=', 'carts.product_id')
@@ -68,7 +68,7 @@ class CartController extends Controller
             $sum += $product->price;
             $quantity += 1;
         }
-        $result = ['sum'=>$sum, 'quantity'=>$quantity];
+        $result = ['sum' => $sum, 'quantity' => $quantity];
         return ($result);
-    }
+    } */
 }
