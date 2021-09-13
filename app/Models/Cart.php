@@ -12,20 +12,24 @@ class Cart extends Model
     use HasFactory;
 
     static function sumAndQuantity(){
-        $user = Auth::user();
-        $user_id = $user->id;
-        $products = DB::table('products')
-            ->join('carts', 'products.id', '=', 'carts.product_id')
-            ->where('user_id', '=', $user_id)
-            ->get();
-
         $sum = 0;
         $quantity = 0;
-        foreach ($products as $product) {
-            $sum += $product->price;
-            $quantity += 1;
+
+        if (Auth::check()){
+            $user = Auth::user();
+            $user_id = $user->id;
+            $products = DB::table('products')
+                ->join('carts', 'products.id', '=', 'carts.product_id')
+                ->where('user_id', '=', $user_id)
+                ->get();
+
+            foreach ($products as $product) {
+                $sum += $product->price;
+                $quantity += 1;
+            }
         }
-        $result = ['sum'=>$sum, 'quantity'=>$quantity];
+
+         $result = ['sum'=>$sum, 'quantity'=>$quantity];
         return ($result);
     }
 }

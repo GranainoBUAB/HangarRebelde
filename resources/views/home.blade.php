@@ -37,18 +37,19 @@
                             <div class="txtTitle d-flex flex-row align-items-center">
                                 <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
-                            @if ($product->isAvailable == 1)
-                                <p class="txtTitle">Disponible</p>
-                            @else
-                                <p class="txtTitle">No Disponible</p>
-                            @endif
+                            
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
 
                         </div>
                         <div class="separator"></div>
-                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
+                            @if ($product->isAvailable == 1)
+                                <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                                 <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                             </a>
+                            @else
+                                <p>NO</p>
+                            @endif
+                            
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
