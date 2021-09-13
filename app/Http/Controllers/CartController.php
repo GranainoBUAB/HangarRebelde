@@ -49,7 +49,8 @@ class CartController extends Controller
 
         $product = Product::find($product_id);
 
-        $product->userCarts()->detach($user);
+        $user->productsCarts()->detach($product);
 
+        return redirect()->route('home');
     }
 }
