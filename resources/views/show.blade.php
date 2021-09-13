@@ -21,7 +21,6 @@
                         <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
                         @endif
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
-                        {{-- <button type="text" class="input-group-text ml-3">Añadir al carrito</button></a> --}}
                         <img class="icoCardShow m-1 mb-2" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                         {{-- @if($product->canReserve) --}}
                         {{-- <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6> --}}
