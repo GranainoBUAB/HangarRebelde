@@ -15,7 +15,7 @@
                 <div class="card-body-form d-flex">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        @method('patch')
+                        {{-- @method('patch') --}}
                             <div class="side">
                                 <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16 ">
