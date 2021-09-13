@@ -54,12 +54,14 @@
                         <a href="{{ route('getCart') }}">
                             <img class="icoCardHeader" src="{{url('/img/shopping-cart.svg')}}" alt="">
                         </a>
-                        <button class="btn-products position-relative">
-                            134,21€
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+
-                            </span>
-                        </button>
+                        <a href="{{ route('getCart') }}">
+                            <button class="btn-products position-relative">
+                                134,21€
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                </span>
+                            </button>
+                        </a>
                     </li>
                 </ul>
             </div>
