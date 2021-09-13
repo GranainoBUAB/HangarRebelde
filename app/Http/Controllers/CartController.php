@@ -51,6 +51,6 @@ class CartController extends Controller
 
         $user->productsCarts()->detach($product);
 
-        return redirect()->route('home');
+        return redirect()->route('getCart');
     }
 }
