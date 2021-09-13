@@ -150,7 +150,7 @@
 }
 
 .separator {
-    width: 2px;
+    width: 1.5rem;
     height: 90%;
     background-color: $colorOrange;
     @media screen and (min-width: $breakpointLaptop){
@@ -160,7 +160,7 @@
 }
 
 .icoCard {
-    max-width: 15%;
+    max-width: 60%;
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 

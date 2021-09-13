@@ -60,7 +60,7 @@
     </div>
         <div class="col-sm-5">
             <div class="card mt-3" style="background-color: #FCE8C2">
-                <div class="card-header fw-bold">
+                <div class="fw-bold">
                     Resumen
                 </div>
                 <hr class=" mx-1 p-0" style="color: #626261">
