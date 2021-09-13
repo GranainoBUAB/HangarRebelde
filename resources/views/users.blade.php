@@ -4,14 +4,59 @@
     <x-header />
     <div class="d-flex flex-wrap row justify-content-center"  data-bs-spy="scroll">
         <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
-            @foreach ($users as $user)
-                <ul>
-                    <li>{{ $user->name }}</li>
-                    <li>{{ $user->surname }}</li>
-                    <li>{{ $user->email }}</li>
-                </ul>
-            @endforeach
+        @if($users->isNotEmpty())
+            
+        @endif
+            <table class="table">
+                <thead>
+                <tr>
+                   {{--  <th scope="col">#</th> --}}
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">APELLIDO</th>
+                    <th scope="col">EMAIL</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($users as $user)
 
+                <tr>
+                    {{-- <th scope="row">1</th> --}}
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->surname }}</td>
+                    <td>{{ $user->email }}</td>
+                </tr>
+                @endforeach
+                </tbody>
+            </table>
+        
+       
+        
+       
+           
+           
+           
+           
+           
+           
+            {{--  <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">EMAIL</th>
+                    </tr>
+            
+            @foreach ($users as $user)
+                
+                    <tr>
+                        <th>{{ $user->name }}</th>
+                        <th>{{ $user->surname }}</th>
+                        <th>{{ $user->email }}</th>
+                    </tr>
+                </thead>    
+            </table>    
+            @endforeach
+ --}}
 
 
 
