@@ -199,7 +199,9 @@ class ProductController extends Controller
             ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
             ->get();
 
-        return view('search', compact('products'));
+        $sumAndQuantity = Cart::sumAndQuantity();
+
+        return view('search', compact('products', 'sumAndQuantity'));
     }
 
     public function filter($catMain, $catSec = null)

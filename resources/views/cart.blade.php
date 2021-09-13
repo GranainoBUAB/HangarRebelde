@@ -68,11 +68,11 @@
                     <ul class="list-group-flush ps-0 ">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
                             Subtotal sin IVA
-                            <span class="badge text-secondary">{{$sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.038)}}€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04)}}€</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent ">
                             IVA
-                            <span class="badge text-secondary">{{$sumAndQuantity['sum']*0.038}}€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum']*0.04}}€</span>
                         </li>
                     </ul>
                     <hr class="mx-1 p-0" style="color: #626261">
