@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <div class="row d-flex flex-md-wrap justify-content-around py-3">
@@ -105,5 +104,4 @@
             </div>
         </div>
     </div>
-    <x-footer />
 @endsection
