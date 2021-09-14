@@ -44,7 +44,7 @@
                             @if ($product->isAvailable == 1)
 
                                 <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
-                                    <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                                    <img class="icoCard m-1" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                                 </a>
                             @else
                                 <p>NO</p>
