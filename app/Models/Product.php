@@ -88,12 +88,13 @@ class Product extends Model
 
     static function filterAuthor($author)
     {
-        $productsFilteredByAuthor = Product::where('author1', 'like', '%' . $author . '%')
-            ->orWhere('author2', 'like', '%' . $author . '%')
-            ->orWhere('author3', 'like', '%' . $author . '%')
-            ->orWhere('author4', 'like', '%' . $author . '%')
-            ->orWhere('author5', 'like', '%' . $author . '%')
-            ->orWhere('author6', 'like', '%' . $author . '%')
+        /* $productsFilteredByAuthor = Product::where('author1', 'like', '%' . $author . '%') */
+        $productsFilteredByAuthor = Product::where('author1', $author)
+            ->orWhere('author2', $author)
+            ->orWhere('author3', $author)
+            ->orWhere('author4', $author)
+            ->orWhere('author5', $author)
+            ->orWhere('author6', $author)
             ->get();
 
         return ($productsFilteredByAuthor);

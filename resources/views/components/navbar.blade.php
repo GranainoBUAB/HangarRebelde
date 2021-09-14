@@ -13,25 +13,25 @@
                             <img class="imgcarrito" src="{{url('/img/home.svg')}}" alt="https://www.freepik.com">
                             Inicio</a>
                     </li>
-                    <li class="nav-item" role="presentation"> 
+                    <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/calendario.svg')}}"  alt="https://www.flaticon.es/autores/srip">
                             Calendario</a>
                     </li>
-                    <li class="nav-item" role="presentation"> 
+                    <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/trofeo.svg')}}"  alt="https://www.freepik.com">
                             Torneos</a>
                     </li>
-                    <li class="nav-item" role="presentation"> 
+                    <li class="nav-item" role="presentation">
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/megafono.svg')}}"  alt="https://www.flaticon.es/autores/good-ware">
                             Noticias</a>
-                    </li><li class="nav-item" role="presentation"> 
+                    </li><li class="nav-item" role="presentation">
                         <a href="{{ route('home') }}" class="nav-link active text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/tienda.svg')}}"  alt="https://www.flaticon.es/autores/nikita-golubev">
                             Tienda</a>
-                    </li><li class="nav-item" role="presentation"> 
+                    </li><li class="nav-item" role="presentation">
                         <a href="#" class="nav-link text-decoration-none text-reset" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/group.svg')}}" alt="https://www.freepik.com">
                             Sobre nosotros</a>
@@ -54,12 +54,14 @@
                         <a href="{{ route('getCart') }}">
                             <img class="icoCardHeader" src="{{url('/img/shopping-cart.svg')}}" alt="">
                         </a>
-                        <button class="btn-products position-relative">
-                            134,21€
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+
-                            </span>
-                        </button>
+                        <a href="{{ route('getCart') }}">
+                            <button class="btn-products position-relative">
+                                {{$sum}}€
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{$quantity}}     {{-- 99+ --}}
+                                </span>
+                            </button>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -77,7 +79,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Comics Americanos
+                        Comic Americano
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Americano']) }}">Todos</a></li>
@@ -87,15 +89,15 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Comics Europeos
+                        Comic Europeo
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo']) }}">Todos</a></li>
-                            <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Españoles</a></li>
+                            <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Español</a></li>
                         </ul>
-                    </li>                    
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link ct-cat" aria-current="page" aria-selected="false"  href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
+                        <a class="nav-link ct-cat" aria-current="page" aria-selected="false"  href="{{ route('filter', ['Comic Manga']) }}">Comic Manga</a>
                     </li>
                 </ul>
             </div>
@@ -105,22 +107,22 @@
         <div class="d-sm-flex flex-row bd-highlight mb-3 p-2">
             <ul class="nav nav-pills text-decoation-none" id="pills-tab" role="tablist">
                 <li class="nav-item fs-6" type="button">
-                <a class="text-decoation-none text-reset d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comics americano</a>
+                <a class="text-decoation-none text-reset d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comic americano</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comics Marvel</a>
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comic Marvel</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comics DC</a>
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comic DC</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                    <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comics Europeo</a>
+                    <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comic Europeo</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                    <a class=" text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comics Español</a>
+                    <a class=" text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comic Español</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                    <a class=" navbar-nav text-reset d-flex flex-wrap listCat" href="">Comics Manga</a>
+                    <a class=" navbar-nav text-reset d-flex flex-wrap listCat" href="">Comic Manga</a>
                 </li>
             </ul>
         </div>

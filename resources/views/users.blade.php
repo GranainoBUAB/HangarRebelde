@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
     <div class="d-flex flex-wrap row justify-content-center"  data-bs-spy="scroll">
         <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
         @if($users->isNotEmpty())

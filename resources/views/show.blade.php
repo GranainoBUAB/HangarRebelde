@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -27,12 +26,12 @@
                         <h6 class="extraShow font-weight-bold mx-2"> | </h6>
                         <button type="text" class="input-group-text ml-3 mb-3">Reservar</button></a>
                         {{-- @endif --}}
-                        
+
                     </div>
                     <h6 class="card-title font-weight-bold mt-3">Autores:</h6>
                     <div class="d-flex flex-row flex-wrap align-items-center">
                         <a href="{{ route('viewByAuthor', ['author'=>$product->author1]) }}" class="text-reset"><h6 class="extraShow mr-1">{{ $product->author1 }}  </h6></a>
-                        
+
                         @if($product->author2)
 
                         <a href="{{ route('viewByAuthor', ['author'=>$product->author2]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author2 }}  </h6></a>
@@ -62,7 +61,7 @@
                         <a href="{{ route('viewByAuthor', ['author'=>$product->author6]) }}" class="text-reset"><h6 class="extraShow mr-1">,  {{ $product->author6}}  </h6></a>
 
                         @endif
-                        
+
                     </div>
                     <p class="card-title">{{ $product->author }}</p>
                     <h6 class="card-title font-weight-bold">Editorial:</h6>
@@ -113,7 +112,7 @@
                     <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
                     <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
                     @method('delete')
-                    @csrf 
+                    @csrf
                         <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
                     </form>
                 </div>
@@ -146,7 +145,7 @@
                                 <p class="txtPrice">{{ $productrelation->price }} &#8364</p>
                             </div>
                             <div class="separator"></div>
-                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
+                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                                 <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                             </a>
                         </div>
@@ -155,6 +154,4 @@
             </div>
         </div>
     </div>
-    <x-footer />
-
 @endsection

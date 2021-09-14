@@ -95,7 +95,7 @@
 
 .ct-info {
     @include ctInfo;
-    border: 3px solid #FF8300;
+    border: 3px solid $colorOrange;
     border-radius: 0px 0px 10px 10px;
     border-top: none;
 }
