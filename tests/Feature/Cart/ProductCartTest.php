@@ -88,8 +88,8 @@ class ProductCartTest extends TestCase
 
         $this->assertDatabaseCount('carts', 1);
 
-        $response = $this->get(route('deleteCart', $product->id));
-        $response->assertStatus(200);
+        $response = $this->delete(route('deleteCart', $product->id));
+        $response->assertStatus(302);
 
         $this->assertDatabaseCount('carts', 0);
     }

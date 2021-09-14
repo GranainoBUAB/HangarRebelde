@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<x-header />
 <br>
 <div class="container">
     <div class="row justify-content-center">
@@ -224,7 +223,6 @@
                     </form>
                     </div>
                 </div>
-            <x-footer />
         </div>
     </div>
 </div>

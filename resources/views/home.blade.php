@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <!-- flash message -->
     <div class="flex justify-center pt-8">
@@ -15,7 +14,7 @@
         </div>
         @endif
     </div>
-    
+
     <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
@@ -37,12 +36,19 @@
                             <div class="txtTitle d-flex flex-row align-items-center">
                                 <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
+                            
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
+
                         </div>
                         <div class="separator"></div>
-                            <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
+                            @if ($product->isAvailable == 1)
+                                <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                                 <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                             </a>
+                            @else
+                                <p>NO</p>
+                            @endif
+                            
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
@@ -50,7 +56,7 @@
                             <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
                             <form action="{{ url('/delete/'.$product->id)}}" method="post">
                             @method('delete')
-                            @csrf 
+                            @csrf
                                 <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
                             </form>
                         </div>
@@ -59,47 +65,6 @@
             @endforeach
         </div>
     </div>
-
-    {{-- NO BORRAR - MANTENERLO COMO REFERENCIA --}}
-
-    {{-- <table class="table">
-        <tbody>
-            <a href="{{ route('create') }}"><button type="text" class="btn btn-primary">Create</button></a>
-
-            @foreach ($products as $product)
-                <tr>
-                    <td>{{ $product->id }}
-                        <a href="{{ route('show', ['id'=>$product->id]) }}"><button type="submit" class="btn btn-primary">Show</button></a>
-                        <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="btn btn-primary">Edit</button></a>
-                        <a href="{{ route('delete',['id'=>$product->id]) }}"><button type="submit" class="btn btn-danger">Delete</button></a>
-                    </td>
-                    <td>{{ $product->title }}</td>
-                    <td>{{ $product->price }}</td>
-                    <td>{{ $product->author }}</td>
-                    <td>{{ $product->editorial }}</td>
-                    <td>{{ $product->isAvailable }}</td>
-                    <td>{{ $product->canReserve }}</td>
-                    <td>{{ $product->isbn }}</td>
-                    <td>{{ $product->categoryMain }}</td>
-                    <td>{{ $product->categorySecondary }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>{{ $product->rating }}</td>
-                    <td><img src="{{ asset('storage').'/'.$product->image1}}" width=90 alt=""></td>
-                    <td><img src="{{ asset('storage').'/'.$product->image2}}" width=90 alt=""></td>
-                    <td><img src="{{ asset('storage').'/'.$product->image3}}" width=90 alt=""></td>
-                    <td>{{ $product->dateSale }}</td>
-                    <td>{{ $product->format }}</td>
-                    <td>{{ $product->pages }}</td>
-                    <td>{{ $product->tag }}</td>
-
-
-                </tr>
-            @endforeach
-        </tbody>
-    </table> --}}
-
-
-
 
 
     {{-- <div class="container">
@@ -121,5 +86,6 @@
         </div>
     </div>
 </div> --}}
-    <x-footer />
+
+
 @endsection

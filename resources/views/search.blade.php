@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
     {{-- <x-categories /> --}}
 
   <div class="d-flex flex-wrap row justify-content-center">
@@ -23,7 +22,7 @@
                     <p class="txtPrice">{{ $product->price }} &#8364</p>
                 </div>
                 <div class="separator"></div>
-                <a href="{{ route('addCart', ['product_id'=>$product->id]) }}"> 
+                <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                     <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                 </a>
             </div>
@@ -31,6 +30,4 @@
 
     @endforeach
 </div>
-
-  <x-footer/>
 @endsection
