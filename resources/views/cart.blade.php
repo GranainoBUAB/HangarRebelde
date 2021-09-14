@@ -2,7 +2,7 @@
 
 @section('content')
     <x-header />
-    <x-navbar />
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <div class="py-3">
         {{-- <div class="row-lg-6 ms-lg-0"> --}}
@@ -23,7 +23,7 @@
                         <h6 class="card-title mb-1">{{ $product->title }}</h6>
                         <div class="d-flex flex-row flex-wrap align-items-center">
                             <a href="{{ route('viewByAuthor', ['author'=>$product->author1]) }}" class="text-reset"><p class="authors pb-1 m-0"><small>{{ $product->author1 }}  </small></p></a>
-                            
+
                             @if($product->author2)
                             <a href="{{ route('viewByAuthor', ['author'=>$product->author2]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author2 }} </small> </p></a>
                             @endif
@@ -43,10 +43,10 @@
                             @if($product->author6)
                             <a href="{{ route('viewByAuthor', ['author'=>$product->author6]) }}" class="text-reset"><p class="authors pb-1 m-0">,<small>  {{ $product->author6}}  </small></p></a>
                             @endif
-                            
+
                         </div>
                         <p class="card-text mb-1"><small class="text-muted">ISBN: {{ $product->isbn }}</small></p>
-                        <div class="d-flex flex-nowrap justify-content-between"> 
+                        <div class="d-flex flex-nowrap justify-content-between">
                             <select class="form-select p-1" aria-label="Default select example" style="width: 60px; height: 30px;">
                                 <option selected value="1">1</option>
                                 <option value="2">2</option>
@@ -95,18 +95,18 @@
                     <ul class="list-group-flush ps-0 ">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
                             Subtotal sin IVA
-                            <span class="badge text-secondary">48.77€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04)}}€</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent ">
                             IVA
-                            <span class="badge text-secondary">10.89€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum']*0.04}}€</span>
                         </li>
                     </ul>
                     <hr class="mx-1 p-0" style="color: #626261">
                     <ul class="list-group-flush p-0 mb-0">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent fw-bold">
                             Total
-                            <span class="badge text-secondary">59,66€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum']}}€</span>
                         </li>
                     </ul>
                     <ul class="list-group-flush ps-0">
@@ -124,7 +124,7 @@
                                         Recoger en tienda
                                     </label>
                                 </div>
-                            </div>    
+                            </div>
                                 <span class="btn" type="button" style="background-color: #FF8300;">Continuar</span>
                         </li>
                     </ul>

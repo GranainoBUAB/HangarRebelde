@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\CategoryMain;
 use Illuminate\Http\Request;
@@ -26,8 +27,12 @@ class ProductController extends Controller
 
         /*  $products = Product::all(); */
         $products = Product::orderBy('id', 'desc')->take(10)->get();
+        $sumAndQuantity = Cart::sumAndQuantity();
 
-        return view('home', compact('products', 'user'));
+        return view('home', compact('products', 'user', 'sumAndQuantity'));
+
+
+        /* return view('cart', compact('products', 'sumAndQuantity')); */
     }
 
     /**
@@ -82,7 +87,7 @@ class ProductController extends Controller
 
         if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
-        } 
+        }
 
         if ($request->hasFile('image2')) {
             $product['image2'] = $request->file('image2')->store('img', 'public');
@@ -92,7 +97,7 @@ class ProductController extends Controller
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
 
-        
+
         $product->save();
         return redirect()->route('home');
     }
@@ -108,7 +113,9 @@ class ProductController extends Controller
         $product = Product::find($id);
         /* var_dump($product->id); */
         $productrelations = $product->productRelationed($product);
-        return view('show', compact('product', 'productrelations'));
+        $sumAndQuantity = Cart::sumAndQuantity();
+
+        return view('show', compact('product', 'productrelations', 'sumAndQuantity'));
     }
 
     /**
@@ -122,6 +129,7 @@ class ProductController extends Controller
         $categoryMains = CategoryMain::all();
         $categorySecondaries = CategorySecondary::all();
         $product = Product::find($id);
+
         return view('edit', compact('product', 'categoryMains', 'categorySecondaries'));
     }
 
@@ -140,7 +148,7 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             Storage::delete('public/' . $product->image);
             $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
-        } 
+        }
 
         if ($request->hasFile('image2')) {
             $product = Product::findOrFail($id);
@@ -154,7 +162,7 @@ class ProductController extends Controller
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
 
-    
+
         Product::where('id', '=', $id)->update($changesProduct);
 
         $product = Product::findOrFail($id);
@@ -175,7 +183,6 @@ class ProductController extends Controller
         Product::destroy($id);
 
         return redirect()->route('home');
-
     }
 
     public function search(Request $request)
@@ -192,7 +199,9 @@ class ProductController extends Controller
             ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
             ->get();
 
-        return view('search', compact('products'));
+        $sumAndQuantity = Cart::sumAndQuantity();
+
+        return view('search', compact('products', 'sumAndQuantity'));
     }
 
     public function filter($catMain, $catSec = null)
@@ -203,20 +212,22 @@ class ProductController extends Controller
         } else {
             $products = Product::where('categorySecondary', '=', $catSec)->get();
         }
-
-        return view('home', compact('products'));
+        $sumAndQuantity = Cart::sumAndQuantity();
+        return view('home', compact('products','sumAndQuantity'));
     }
 
     public function viewByAuthor($author)
     {
 
         $products = Product::filterAuthor($author);
-        return view('home', compact('products'));
+        $sumAndQuantity = Cart::sumAndQuantity();
+        return view('home', compact('products','sumAndQuantity'));
     }
 
     public function viewByTag($tag)
     {
         $products = Product::filterTag($tag);
-        return view('home', compact('products'));
+        $sumAndQuantity = Cart::sumAndQuantity();
+        return view('home', compact('products','sumAndQuantity'));
     }
 }
