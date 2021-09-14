@@ -186,10 +186,10 @@
                                     </div>
 
                                 </div>
-                                <div class="form-group ">
+                                <div class="fform-group m-3 d-flex justify-content-center row">
                                     <div class="btn-clic col-md-16 d-flex justify-content-start ">
                                         <button type="submit" class="btn btn-log ">
-                                            {{ __('Register') }}
+                                            {{ __('Registrarse') }}
                                         </button>
                                         <a href="login" >¿Ya estás Registrado? Inicia sesión aqui</a>
                                     </div>
