@@ -9,35 +9,38 @@
         @endif
             <table class="table">
                 <thead>
-                <tr>
-                   {{--  <th scope="col">#</th> --}}
-                    <th scope="col">NOMBRE</th>
-                    <th scope="col">APELLIDO</th>
-                    <th scope="col">EMAIL</th>
-                </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">APELLIDO</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">D.N.I</th>
+                        <th scope="col">TELEFONO</th>
+                        <th scope="col">DIRECCION</th>
+                        <th scope="col">CIUDAD</th>
+                        <th scope="col">PROVINCIA</th>
+                        <th scope="col">PAIS</th>
+                    </tr>
                 </thead>
                 <tbody>
                 @foreach ($users as $user)
 
-                <tr>
-                    {{-- <th scope="row">1</th> --}}
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->surname }}</td>
-                    <td>{{ $user->email }}</td>
-                </tr>
+                    <tr>
+                    <th scope="row">{{ $user->id}}</th>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->surname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->dni }}</td>
+                        <td>{{ $user->phone }}</td>
+                        <td>{{ $user->address }}</td>
+                        <td>{{ $user->city }}</td>
+                        <td>{{ $user->region }}</td>
+                        <td>{{ $user->country }}</td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>
         
-       
-        
-       
-           
-           
-           
-           
-           
-           
             {{--  <table class="table">
                 <thead>
                     <tr>
