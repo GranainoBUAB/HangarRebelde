@@ -89,6 +89,18 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
+                                            <input id="membership-number" type="text" class="form-control @error('membership') is-invalid @enderror" placeholder="Número de socio" name="membership_number" required autocomplete="membership_number">
+
+                                            @error('membership')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-3 d-flex justify-content-center row">
+                                        <div class="col-md-16">
                                             <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Dirección" address="address" value="{{ old('address') }}" required autocomplete="region" autofocus>
 
                                             @error('address')
@@ -149,7 +161,19 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Telefono" phone="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Teléfono  Movil" phone="phone1" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
+                                            @error('phone')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-3 d-flex justify-content-center row">
+                                        <div class="col-md-16">
+                                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Otro Teléfono " phone="phone2" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                                             @error('phone')
                                                 <span class="invalid-feedback" role="alert">
@@ -160,14 +184,16 @@
                                     </div>
 
                                 </div>
-                                <div class="form-group ">
-                                    <div class="btn-clic col-md-16 d-flex justify-content-start ">
+                                <div class="form-group m-3">
+                                    <div class="btn-clic col-md-16">
                                         <button type="submit" class="btn btn-log ">
-                                            {{ __('Register') }}
+                                            {{ __('Registrarse') }}
                                         </button>
-                                        <a href="login" >Estas Registrado?</a>
-                                    </div>
+                                        <div class="text-login">
+                                            <a href="login" >¿Ya estás Registrado? Inicia sesión</a>
+                                        </div>
 
+                                    </div>
                                 </div>
 
                             </div>
