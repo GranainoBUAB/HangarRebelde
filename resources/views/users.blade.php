@@ -21,7 +21,7 @@
                         <th scope="col">CIUDAD</th>
                         <th scope="col">PROVINCIA</th>
                         <th scope="col">PAIS</th>
-                        <th scope="col">COMENTARIO</th>
+                        {{-- <th scope="col">COMENTARIO</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,7 @@
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
-                        <td>{{ $user->notes }}</td>
+                        {{-- <td>{{ $user->notes }}</td> --}}
                         
                     </tr>
                 @endforeach

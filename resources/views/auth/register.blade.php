@@ -31,7 +31,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" placeholder="Apellido" name="surname" value="{{ old('surname') }}" required autocomplete="surname">
+                                            <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" placeholder="Apellido" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
                                             @error('surname')
                                                 <span class="invalid-feedback" role="alert">
@@ -43,9 +43,9 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="dnif" type="text" class="form-control @error('dnif') is-invalid @enderror" placeholder="DNI o NIE" dnif="dnif" value="{{ old('dnif') }}" required autocomplete="dnif">
+                                            <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" placeholder="DNI o NIE" name="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
 
-                                            @error('dnif')
+                                            @error('dni')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -55,7 +55,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Contraseña" name="password" required autocomplete="new-password">
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Contraseña" name="password" required autocomplete="new-password" autofocus>
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Confirmar contraseña" name="password_confirmation" required autocomplete="new-password">
+                                            <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Confirmar contraseña" name="password_confirmation" required autocomplete="new-password" autofocus>
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -91,7 +91,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Dirección" address="address" value="{{ old('address') }}" required autocomplete="region" autofocus>
+                                            <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Dirección" name="address" value="{{ old('address') }}" required autocomplete="region" autofocus>
 
                                             @error('address')
                                                 <span class="invalid-feedback" role="alert">
@@ -103,7 +103,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" placeholder="Código Postal" zipCode="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
+                                            <input id="zipCode" type="text" class="form-control @error('zipCode') is-invalid @enderror" placeholder="Código Postal" name="zipCode" value="{{ old('zipCode') }}" required autocomplete="zipCode" autofocus>
 
                                             @error('zipCode')
                                                 <span class="invalid-feedback" role="alert">
@@ -115,7 +115,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" placeholder="Ciudad" city="city" value="{{ old('city') }}" required autocomplete="region" autofocus>
+                                            <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" placeholder="Ciudad" name="city" value="{{ old('city') }}" required autocomplete="region" autofocus>
 
                                             @error('city')
                                                 <span class="invalid-feedback" role="alert">
@@ -127,7 +127,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" placeholder="Provincia" region="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
+                                            <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" placeholder="Provincia" name="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
 
                                             @error('region')
                                                 <span class="invalid-feedback" role="alert">
@@ -139,7 +139,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" placeholder="País" country="country" value="{{ old('country') }}" required autocomplete="region" autofocus>
+                                            <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" placeholder="País" name="country" value="{{ old('country') }}" required autocomplete="region" autofocus>
 
                                             @error('country')
                                                 <span class="invalid-feedback" role="alert">
@@ -151,7 +151,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Telefono" phone="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Telefono" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                                             @error('phone')
                                                 <span class="invalid-feedback" role="alert">
@@ -160,7 +160,7 @@
                                             @enderror
                                         </div>
                                     </div>
-
+                                    
                                 </div>
                                 <div class="form-group ">
                                     <div class="btn-clic col-md-16 d-flex justify-content-start ">
