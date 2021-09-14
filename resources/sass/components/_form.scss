@@ -1,6 +1,11 @@
 .input-group-text{
-    background-color: $colorOrange !important;
-    color: white !important;
+    background-color: $colorOrangeLight !important;
+    color: black !important;
+    border: 1px solid $colorOrange !important;
+}
+
+textarea{
+    border: 1px solid $colorOrange !important;
 }
 
 .ct-form{
@@ -24,9 +29,26 @@
     width: 150px;
 }
 .btn-log{
-
     background-color: $colorOrange !important;
     margin: 20px;
+}
+
+.bt-create{
+    background-color: $colorOrange !important;
+    color: black !important;
+}
+
+.bt-create:hover{
+    background-color: #b35c00 !important;
+}
+
+.bt-cancel:hover{
+    background-color: #40403f !important;
+}
+
+.bt-cancel{
+    background-color: $colorGrey !important;
+    color: white !important;
 }
 
 .card-header{
@@ -58,6 +80,10 @@ label{
 }
 
 input[type=text],[type=email],[type=password]{
+    border: 1px solid $colorOrange !important;
+}
+
+.input-select{
     border: 1px solid $colorOrange !important;
 }
 
@@ -105,8 +131,11 @@ margin-left: 6%;
         .btn-clic{
             margin-left: 13%;
     }
+}
+
+.ct-create{
+    width: 100vw;
+    @media screen and (min-width: $breakpointLaptop){
+        width: 55vw !important;
     }
-
-
-
-
+}
