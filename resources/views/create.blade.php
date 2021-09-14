@@ -59,7 +59,6 @@
 
         <div class="input-group mb-3 d-flex align-items-center" >
           <span class="input-group-text mr-3" id="inputGroup-sizing-default">Stock</span>
-          {{-- <input type="text" name="isAvailable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
           <input type="radio" class="ml-2" name="isAvailable" value="1">
           <span class="ml-2">Disponible</span>
 
@@ -103,7 +102,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-                <input  type="file" class="form-control input-select" name="image1" id="image1">
+          <input  type="file" class="form-control input-select" name="image1" id="image1">
         </div>
 
         <div class="input-group mb-3">
