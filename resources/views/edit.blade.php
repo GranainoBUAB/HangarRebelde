@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- <x-navbar /> --}}
 
-<div class = "ct-form d-flex justify-content-center">
 <form method="post" action="{{route('update', $product->id)}}" enctype="multipart/form-data">
-@method('patch')
-    @csrf
+  @method('patch')
+  @csrf
+  <div class="container ct-create">
+    <div class="card-header my-4"><label for="" class="d-flex justify-content-center text-md-right">{{ __('Editar Producto') }}</label></div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
             <input type="text" name="title" value="{{$product->title}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -57,12 +57,10 @@
           <input type="text" name="editorial" value="{{$product->editorial}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-          {{-- <input type="text" name="isAvailable" value="{{$product->isAvailable}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
           <input type="radio" class="ml-2" name="isAvailable" value="1">
           <span class="ml-2">Disponible</span>
-
           <input type="radio" class="ml-2" name="isAvailable" value="0">
           <span class="ml-2">No Disponible</span>
         </div>
@@ -78,8 +76,8 @@
         </div>
 
         <div class="input-group mb-3">
-          <label class="input-group-text">Categoría Principal</label>
-          <select class="form-control" name="categoryMain" value="{{$product->categoryMain}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text">Categoría Principal</span>
+          <select class="form-control input-select" name="categoryMain" value="{{$product->categoryMain}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categoryMains as $categoryMain)
             <option>{{ $categoryMain->category }}</option>
             @endforeach
@@ -87,8 +85,13 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categoría Secundaria</span>
-          <input type="text" name="categorySecondary" value="{{$product->categorySecondary}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text">Categoría Secundaria</span>
+          <select class="form-control input-select" name="categorySecondary" value="{{$product->categorySecondary}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @foreach ($categorySecondaries as $categorySecondary)
+            <option>{{ $categorySecondary->category }}</option>
+            @endforeach
+            <option></option>
+          </select>
         </div>
 
        {{--  <div class="input-group mb-3">
@@ -99,22 +102,22 @@
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
           {{-- {{$product->image1}} --}}
-          <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-          <input type="file" name="image1" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <img class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+          <input type="file" name="image1" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
           {{-- {{$product->image2}} --}}
-          <img class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-          <input type="file" name="image2" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <img class="input-select" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
+          <input type="file" name="image2" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
           {{-- {{$product->image3}} --}}
-          <img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
-          <input type="file" name="image3" value="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <img class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+          <input type="file" name="image3" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -147,11 +150,10 @@
           <input type="text" name="pages" value="{{$product->pages}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="input-group mb-3">
-          <button type="submit" class="btn btn-success">Validar</button>
-          <button type="submit" class="btn btn-danger ml-3">Cancelar</button>
+        <div>
+          <button type="submit" class="btn bt-create">Validar</button>
+          <button type="submit" class="btn bt-cancel ml-3">Cancelar</button>
         </div>
-      </div>
-  </form>
-</div>
+  </div>   
+</form>
 @endsection

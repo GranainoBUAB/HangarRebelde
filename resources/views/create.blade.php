@@ -1,19 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<x-header />
-{{-- <x-navbar /> --}}
 
-<div class = "ct-form d-flex justify-content-center">
 <form method="post" action="{{route('store')}}" enctype="multipart/form-data">
     @csrf
-    <div>
-      <h5>Formulario para crear un nuevo Comic</h5>
+    <div class="container ct-create">
+    <div class="card-header my-4"><label for="" class="d-flex justify-content-center text-md-right">{{ __('Crear Producto') }}</label></div>
+
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
             <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-
+        
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
           <textarea type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></textarea>
@@ -61,7 +59,6 @@
 
         <div class="input-group mb-3 d-flex align-items-center" >
           <span class="input-group-text mr-3" id="inputGroup-sizing-default">Stock</span>
-          {{-- <input type="text" name="isAvailable" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
           <input type="radio" class="ml-2" name="isAvailable" value="1">
           <span class="ml-2">Disponible</span>
 
@@ -80,8 +77,8 @@
         </div>
 
         <div class="input-group mb-3">
-          <label class="input-group-text">Categoría Principal</label>
-          <select class="form-control" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text">Categoría Principal</span>
+          <select class="form-control input-select" name="categoryMain" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categoryMains as $categoryMain)
             <option>{{ $categoryMain->category }}</option>
             @endforeach
@@ -89,8 +86,8 @@
         </div>
 
         <div class="input-group mb-3">
-          <label class="input-group-text">Categoría Secundaria</label>
-          <select class="form-control" name="categorySecondary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text">Categoría Secundaria</span>
+          <select class="form-control input-select" name="categorySecondary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             @foreach ($categorySecondaries as $categorySecondary)
             <option>{{ $categorySecondary->category }}</option>
             @endforeach
@@ -105,19 +102,17 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-      
-                <input  type="file" class="form-control" name="image1" id="image1">
-            </div>
+          <input  type="file" class="form-control input-select" name="image1" id="image1">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
-          <input type="file" name="image2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="file" name="image2" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
-          <input type="file" name="image3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="file" name="image3" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -149,13 +144,11 @@
           <span class="input-group-text" id="inputGroup-sizing-default">Num páginas</span>
           <input type="text" name="pages" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-      <div class="input-group mb-3">
-        <button type="submit" class="btn btn-success">Crear</button>
-        <button type="submit" class="btn btn-danger ml-3">Cancelar</button>
+      <div>
+        <button type="submit" class="btn bt-create">Crear</button>
+        <button type="submit" class="btn bt-cancel ml-3">Cancelar</button>
       </div>
     </div>
+</form>
 
-  </form>
-</div>
-  <x-footer/>
-@endsection
+  @endsection
