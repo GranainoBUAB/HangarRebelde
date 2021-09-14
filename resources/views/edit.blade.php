@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<x-header />
 {{-- <x-navbar /> --}}
 
 <div class = "ct-form d-flex justify-content-center">
@@ -155,5 +154,4 @@
       </div>
   </form>
 </div>
-  <x-footer/>
 @endsection
