@@ -14,7 +14,9 @@
                         <th scope="col">APELLIDO</th>
                         <th scope="col">EMAIL</th>
                         <th scope="col">D.N.I</th>
+                        <th scope="col">Nº DE SOCIO</th>
                         <th scope="col">TELEFONO</th>
+                        <th scope="col">OTRO TELEFONO</th>
                         <th scope="col">DIRECCION</th>
                         <th scope="col">C.P</th>
                         <th scope="col">CIUDAD</th>
@@ -32,7 +34,9 @@
                         <td>{{ $user->surname }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->dni }}</td>
-                        <td>{{ $user->phone }}</td>
+                        <td>{{ $user->membership_number }}</td>
+                        <td>{{ $user->phone1 }}</td>
+                        <td>{{ $user->phone2 }}</td>
                         <td>{{ $user->address }}</td>
                         <td>{{ $user->zipCode }}</td>
                         <td>{{ $user->city }}</td>
