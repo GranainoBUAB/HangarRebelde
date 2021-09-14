@@ -4,7 +4,7 @@
     border-radius: 10px;
     @media screen and (min-width: $breakpointTable) {
         width: 30vw;
-        border: 5px solid #FF8300;
+        border: 5px solid $colorOrange;
         border-radius: 15px;
     }
     @media screen and (min-width: $breakpointDesktop){
