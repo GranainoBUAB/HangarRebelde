@@ -8,7 +8,6 @@
             <div class="card">
                 <div class="card-header text-md-center">
                     <label for="register" class="d-flex justify-content-center mb-0  text-md-center " >{{ __('Registrate') }}</label>
-
                 </div>
 
                 <div class="card-body-form d-flex">
@@ -201,7 +200,6 @@
     </div>
 </div>
 <br>
-
 @endsection
 
 
