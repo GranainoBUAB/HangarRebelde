@@ -50,4 +50,4 @@ Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('v
 
 Route::get('/cart', [CartController::class, 'getCart'])->name('getCart')->middleware('auth');
 Route::get('/cart/add/{product_id}', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
-Route::delete('/cart/delete/{product_id}', [CartController::class, 'deleteCart'])->name('deleteCart')->middleware('auth');
+Route::get('/cart/remove/{product_id}', [CartController::class, 'removeCart'])->name('removeCart')->middleware('auth');
