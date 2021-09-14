@@ -42,7 +42,7 @@ class CartController extends Controller
 
     }
 
-    public function deleteCart($product_id)
+    public function removeCart($product_id)
     {
         $user = Auth::user();
         //dd($user);
