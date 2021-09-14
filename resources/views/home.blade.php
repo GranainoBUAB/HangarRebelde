@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
+    {{-- <x-header /> --}}
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <!-- flash message -->
