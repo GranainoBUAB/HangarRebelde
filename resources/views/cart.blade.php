@@ -50,6 +50,11 @@
                                 <option value="4">4</option>
                             </select>
                             <p class="cartPrice mb-2 me-5">{{ $product->price }} &#8364</p>
+                            <form action="{{ url('/cart/delete/'.$product->id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')" value="Eliminar">
+                                </form>
                         </div>
                     </div>
                 </div>
