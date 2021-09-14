@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py3 bg-light">
+<footer class="footer mt-auto py-3 bg-light">
 
 <hr>
 <div class="container d-flex">
