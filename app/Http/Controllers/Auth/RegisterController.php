@@ -76,6 +76,7 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'region' => $data['region'],
             'country' => $data['country'],
+            
         ]);
     }
 }
