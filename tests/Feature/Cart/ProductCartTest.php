@@ -88,7 +88,7 @@ class ProductCartTest extends TestCase
 
         $this->assertDatabaseCount('carts', 1);
 
-        $response = $this->get(route('removeCart', $product->id));
+        $response = $this->delete(route('removeCart', $product->id));
         $response->assertStatus(302);
 
         $this->assertDatabaseCount('carts', 0);

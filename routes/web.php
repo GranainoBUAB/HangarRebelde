@@ -49,5 +49,5 @@ Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('v
 //Cart Routes
 
 Route::get('/cart', [CartController::class, 'getCart'])->name('getCart')->middleware('auth');
-Route::get('/cart/add/{product_id}', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
-Route::get('/cart/remove/{product_id}', [CartController::class, 'removeCart'])->name('removeCart')->middleware('auth');
+Route::get('/cart/{product_id}', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
+Route::delete('/cart/{product_id}', [CartController::class, 'removeCart'])->name('removeCart')->middleware('auth');

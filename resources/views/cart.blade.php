@@ -12,13 +12,12 @@
         <hr class="container-fluid me-2 p-0" style="color: #FCE8C2">
         <div class="card border-light bg-light mb-3 ps-2 pt-3" style="max-width: 700px;">
             <div class="row g-0 ps-3 me-0">
-                <a class="col-md-2 p-0 p-lg-1" href="{{ route('show', ['id' => $product->id]) }}">
+                <a class="col-md-2 p-0 p-lg-1" href="{{ route('show', ['id' => $product->product_id]) }}">
                     <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="...">
                 </a>
                 <div class="col-sm-9 px-0">
                     <div class="card-body p-2">
                         <h6 class="card-title mb-1">{{ $product->title }}</h6>
-                        <h6 class="card-title mb-1">{{ $product->id }}</h6>
                         <div class="d-flex flex-row flex-wrap align-items-center">
                             <a href="{{ route('viewByAuthor', ['author'=>$product->author1]) }}" class="text-reset"><p class="authors pb-1 m-0"><small>{{ $product->author1 }}  </small></p></a>
 
@@ -52,15 +51,11 @@
                                 <option value="4">4</option>
                             </select>
                             <p class="cartPrice mb-2 me-5">{{ $product->price }} &#8364</p>
-                            {{-- <a href="{{route('removeCart', $product->id)}}">
-                                <button type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')">Eliminar</button>
-                            </a> --}}
-
-                            <div class="position-relative me-4">
-                                <a href="{{route('removeCart', $product->id)}}">
-                                    <button type="submit" class="btn createbtn ms-3">Eliminar</button>
-                                </a>
-                            </div>
+                            <form action="{{route('removeCart', $product->product_id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')" value="Eliminar">
+                            </form>
                         </div>
                     </div>
                 </div>
