@@ -531,8 +531,13 @@ hr {
 }
 
 .input-group-text {
-  background-color: #FF8300 !important;
-  color: white !important;
+  background-color: #ffb566 !important;
+  color: black !important;
+  border: 1px solid #FF8300 !important;
+}
+
+textarea {
+  border: 1px solid #FF8300 !important;
 }
 
 .ct-form {
@@ -559,6 +564,24 @@ hr {
 .btn-log {
   background-color: #FF8300 !important;
   margin: 20px;
+}
+
+.bt-create {
+  background-color: #FF8300 !important;
+  color: black !important;
+}
+
+.bt-create:hover {
+  background-color: #b35c00 !important;
+}
+
+.bt-cancel:hover {
+  background-color: #40403f !important;
+}
+
+.bt-cancel {
+  background-color: #626261 !important;
+  color: white !important;
 }
 
 .card-header {
@@ -593,6 +616,10 @@ input[type=text], [type=email], [type=password] {
   border: 1px solid #FF8300 !important;
 }
 
+.input-select {
+  border: 1px solid #FF8300 !important;
+}
+
 .card {
   margin-bottom: 10%;
   margin-top: 10%;
@@ -624,6 +651,15 @@ a {
     margin-right: 15px;
   }
 }
+.ct-create {
+  width: 100vw;
+}
+@media screen and (min-width: 1200px) {
+  .ct-create {
+    width: 55vw !important;
+  }
+}
+
 .imgCart {
   width: 100px;
   height: auto;
