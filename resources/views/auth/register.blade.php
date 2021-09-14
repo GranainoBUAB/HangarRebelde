@@ -43,9 +43,9 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" placeholder="DNI o NIE" dni="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus>
+                                            <input id="dnif" type="text" class="form-control @error('dnif') is-invalid @enderror" placeholder="DNI o NIE" dnif="dnif" value="{{ old('dnif') }}" required autocomplete="dnif">
 
-                                            @error('dni')
+                                            @error('dnif')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

@@ -40,6 +40,7 @@
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
                         <td>{{ $user->notes }}</td>
+                        
                     </tr>
                 @endforeach
                 </tbody>
