@@ -17,9 +17,11 @@
                         <th scope="col">D.N.I</th>
                         <th scope="col">TELEFONO</th>
                         <th scope="col">DIRECCION</th>
+                        <th scope="col">C.P</th>
                         <th scope="col">CIUDAD</th>
                         <th scope="col">PROVINCIA</th>
                         <th scope="col">PAIS</th>
+                        <th scope="col">COMENTARIO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,9 +35,11 @@
                         <td>{{ $user->dni }}</td>
                         <td>{{ $user->phone }}</td>
                         <td>{{ $user->address }}</td>
+                        <td>{{ $user->zipCode }}</td>
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
+                        <td>{{ $user->notes }}</td>
                     </tr>
                 @endforeach
                 </tbody>
