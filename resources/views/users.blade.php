@@ -84,8 +84,7 @@
                                 <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
                             </a>
                     </div>
-                 --}}
+                --}}
         </div>
-    <x-footer />
     @endsection
     
