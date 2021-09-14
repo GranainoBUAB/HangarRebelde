@@ -42,14 +42,15 @@ class CartController extends Controller
 
     }
 
-    public function deleteCart($product_id)
+    public function removeCart($product_id)
     {
         $user = Auth::user();
         //dd($user);
 
         $product = Product::find($product_id);
 
-        $product->userCarts()->detach($user);
+        $user->productsCarts()->detach($product);
+
         return redirect()->route('getCart');
     }
 

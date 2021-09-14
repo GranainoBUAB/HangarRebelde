@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
     {{-- <x-categories /> --}}
 
@@ -31,6 +30,4 @@
 
     @endforeach
 </div>
-
-  <x-footer/>
 @endsection

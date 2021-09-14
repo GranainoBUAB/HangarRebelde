@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-header />
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
     <div class="py-3">
@@ -15,7 +14,7 @@
 
         <div class="card border-light bg-light mb-3 ps-2 pt-3" style="max-width: 500px;">
             <div class="row g-0 ps-3 me-0">
-                <a class="col-md-2 p-0 p-lg-1" href="{{ route('show', ['id' => $product->id]) }}">
+                <a class="col-md-2 p-0 p-lg-1" href="{{ route('show', ['id' => $product->product_id]) }}">
                     <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="...">
                 </a>
                 <div class="col-sm-9 px-0">
@@ -54,6 +53,11 @@
                                 <option value="4">4</option>
                             </select>
                             <p class="cartPrice mb-2 me-5">{{ $product->price }} &#8364</p>
+                            <form action="{{route('removeCart', $product->product_id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')" value="Eliminar">
+                            </form>
                         </div>
                     </div>
                     <!-- Button trigger modal -->
@@ -132,5 +136,4 @@
             </div>
         {{-- </div> --}}
     </div>
-    <x-footer />
 @endsection

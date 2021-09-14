@@ -79,7 +79,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Comics Americanos
+                        Comic Americano
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Americano']) }}">Todos</a></li>
@@ -89,15 +89,15 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Comics Europeos
+                        Comic Europeo
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo']) }}">Todos</a></li>
-                            <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Españoles</a></li>
+                            <li><a class="dropdown-item" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Español</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ct-cat" aria-current="page" aria-selected="false"  href="{{ route('filter', ['Comic Manga']) }}">Comics Manga</a>
+                        <a class="nav-link ct-cat" aria-current="page" aria-selected="false"  href="{{ route('filter', ['Comic Manga']) }}">Comic Manga</a>
                     </li>
                 </ul>
             </div>
@@ -107,22 +107,22 @@
         <div class="d-sm-flex flex-row bd-highlight mb-3 p-2">
             <ul class="nav nav-pills text-decoation-none" id="pills-tab" role="tablist">
                 <li class="nav-item fs-6" type="button">
-                <a class="text-decoation-none text-reset d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comics americano</a>
+                <a class="text-decoation-none text-reset d-flex listCat" aria-current="page" href="{{ route('filter', ['Comic Americano']) }}">Comic americano</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comics Marvel</a>
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic Marvel']) }}">Comic Marvel</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comics DC</a>
+                <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Americano', 'Comic DC']) }}">Comic DC</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                    <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comics Europeo</a>
+                    <a class="text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo']) }}">Comic Europeo</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                    <a class=" text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comics Español</a>
+                    <a class=" text-reset d-flex listCat" href="{{ route('filter', ['Comic Europeo', 'Comic Español']) }}">Comic Español</a>
                 </li>
                 <li class="nav-item fs-6 mx-2" type="button">
-                    <a class=" navbar-nav text-reset d-flex flex-wrap listCat" href="">Comics Manga</a>
+                    <a class=" navbar-nav text-reset d-flex flex-wrap listCat" href="">Comic Manga</a>
                 </li>
             </ul>
         </div>
