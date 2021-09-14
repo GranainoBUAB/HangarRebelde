@@ -53,16 +53,20 @@
 
                         <div class="form-group row mb-0">
                             <div class="">
-                                <button type="submit" class="btn btn-log d-flex ">
-                                    {{ __('Login') }}
+                                <button type="submit" class="btn btn-log d-flex ms-0">
+                                    {{ __('Iniciar Sesión') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Ha olvidado su contraseña?') }}
+                                    <a class="btn btn-link ps-0" href="{{ route('password.request') }}">
+                                        {{ __('¿Ha olvidado su contraseña?') }}
                                     </a>
                                 @endif
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <a href="register" >¿Aún no tienes cuenta? Resgístrate aqui</a>
                         </div>
                     </form>
                 </div>
