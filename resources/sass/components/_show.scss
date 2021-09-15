@@ -12,6 +12,15 @@
     }
 }
 
+@mixin icoCardShow {
+    width: 10%;
+    @media screen and (min-width: $breakpointLaptop){
+        width: 4%;
+    }
+}
+
+
+
 .ct-infoShow {
     width: 80%;
 }
@@ -36,9 +45,10 @@
 }
 
 .icoCardShow {
-    width: 10%;
-    filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
-    @media screen and (min-width: $breakpointLaptop){
-        width: 4%;
-    }
+    @include icoCardShow;
+    filter: $filterSVGOrange;
+}
+
+.icoCartNoAvailable {
+    @include icoCardShow;
 }

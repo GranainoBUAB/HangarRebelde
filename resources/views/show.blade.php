@@ -16,11 +16,14 @@
                         <p class="card-title extraShow font-weight-bold txtPriceShow">{{ $product->price }} &#8364 </p>
                         @if($product->isAvailable)
                         <h6 class="extraShow font-weight-bold mx-2"> | Disponible: Sí</h6>
-                        @else
-                        <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
-                        @endif
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
                         <img class="icoCardShow m-1 mb-2" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
+                        @else
+                        <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
+                        <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
+                        <img class="icoCartNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
+                        @endif
+
                         {{-- @if($product->canReserve) --}}
                         {{-- <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6> --}}
                         <h6 class="extraShow font-weight-bold mx-2"> | </h6>
