@@ -1,6 +1,6 @@
 @mixin imgShow {
     width: 70vw;
-    border: 3px solid #FF8300;
+    border: 3px solid $colorOrange;
     border-radius: 10px;
     @media screen and (min-width: $breakpointTable) {
         width: 30vw;
@@ -36,6 +36,9 @@
 }
 
 .icoCardShow {
-    width: 4%;
+    width: 10%;
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+    @media screen and (min-width: $breakpointLaptop){
+        width: 4%;
+    }
 }
