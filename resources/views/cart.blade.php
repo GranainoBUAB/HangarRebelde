@@ -7,7 +7,7 @@
             <h4 class="ps-2 ms-3 pt-3">Mi carrito de la compra</h4>
         </div>
         
-    <div class="mt-md-3 ms-3">
+    <div class="mt-md-3 ms-3 d-flex flex-wrap">
     @foreach ($products as $product)
 
         <div class="card border-light bg-light mb-3 ps-2 mt-3 card-cart">
@@ -76,18 +76,18 @@
                     <ul class="list-group-flush ps-0 ">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
                             Subtotal sin IVA
-                            <span class="badge text-secondary">{{ number_format($sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04), 2)}}€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04)}}€</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent ">
                             IVA
-                            <span class="badge text-secondary">{{ number_format($sumAndQuantity['sum']*0.04, 2)}}€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum']*0.04}}€</span>
                         </li>
                     </ul>
                     <hr class="line-sum mx-1 p-0">
                     <ul class="list-group-flush p-0 mb-0">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent fw-bold">
                             Total
-                            <span class="badge text-secondary">{{ number_format($sumAndQuantity['sum'], 2)}}€</span>
+                            <span class="badge text-secondary">{{$sumAndQuantity['sum']}}€</span>
                         </li>
                     </ul>
                     <ul class="list-group-flush ps-0">
