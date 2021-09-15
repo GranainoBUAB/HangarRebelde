@@ -1,3 +1,11 @@
+.card-cart{
+    width: 40vw !important;
+}
+
+.card-title{
+    height: 30px;
+}
+
 .imgCart{
     width: 100px;
     height: auto;
@@ -5,22 +13,60 @@
     border-radius: 10px 10px 10px 10px;
 }
 
-.bd-example {
-    width: 700px;
-    height: 250px;
-    padding: 1.5rem;
-    margin-right: 0;
-    margin-left: 0;
-    border-width: 1px;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
+.line{
+    background-color: $colorLight;
+}
+
+.div-authors{
+    height: 50px;
 }
 
 .authors{
     color: $colorGrey;
 }
 
+.form-select{
+    width: 60px; 
+    height: 30px;
+}
+
 .cartPrice{
     font-size: 1.3rem;
     color: $colorOrange;
+}
+
+.btn-trash{
+    border: none;
+    width: 55px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-trash{
+    width: 55%;
+}
+
+.summary{
+    width: 600px;
+    border: 3px solid $colorOrange  !important;
+}
+
+.line-sum{
+    color: $colorGrey;
+    opacity: 0.25;
+}
+
+.btn-continue{
+    background-color: $colorOrange !important;
+}
+
+@media screen and (max-width: $breakpointPhone){
+    .card-cart{
+        max-width: 350px;
+    }
+    .imgCart{
+        width: 80px;
+    }
 }
