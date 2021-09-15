@@ -45,7 +45,7 @@
 
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
                         </div>
-                        
+
                         <div class="separator"></div>
                             @if ($product->isAvailable == 1)
                                 <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
