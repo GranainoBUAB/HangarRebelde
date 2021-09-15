@@ -24,7 +24,7 @@
                         {{-- @if($product->canReserve) --}}
                         {{-- <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6> --}}
                         <h6 class="extraShow font-weight-bold mx-2"> | </h6>
-                        <button type="text" class="input-group-text ml-3 mb-3">Reservar</button></a>
+                        <button type="text" class="input-group-text ml-2">Reservar</button></a>
                         {{-- @endif --}}
 
                     </div>
