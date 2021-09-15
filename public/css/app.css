@@ -89,10 +89,9 @@
   letter-spacing: 0.1rem;
 }
 
-.act {
-  color: #FF8300 !important;
-}
-
+/* .act{
+    color: $colorOrange !important;
+} */
 .ct-cat:hover {
   color: #FF8300 !important;
 }
@@ -324,20 +323,25 @@
 }
 
 .separator {
-  width: 1.5rem;
+  width: 2px;
   height: 90%;
+  margin: 3%;
   background-color: #FF8300;
 }
 @media screen and (min-width: 1200px) {
   .separator {
-    max-width: 2px;
-    max-height: 90%;
+    width: 4px;
+    height: 90%;
   }
 }
 
 .icoCard {
-  max-width: 60%;
+  width: 70%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.icoCardNoAvailable {
+  width: 50%;
 }
 
 @media screen and (min-width: 1440px) {
@@ -531,6 +535,15 @@ hr {
 }
 @media screen and (min-width: 1200px) {
   .icoCardShow {
+    width: 4%;
+  }
+}
+
+.icoCartNoAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCartNoAvailable {
     width: 4%;
   }
 }
