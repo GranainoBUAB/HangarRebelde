@@ -162,7 +162,7 @@
                                         <div class="col-md-16">
                                             <input id="phone1" type="text" class="form-control @error('phone1') is-invalid @enderror" placeholder="Teléfono  Movil" name="phone1" value="{{ old('phone1') }}" required autocomplete="phone1" autofocus>
 
-                                            @error('phone')
+                                            @error('phone1')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -174,7 +174,7 @@
                                         <div class="col-md-16">
                                             <input id="phone2" type="text" class="form-control @error('phone2') is-invalid @enderror" placeholder="Otro Teléfono " name="phone2" value="{{ old('phone2') }}" required autocomplete="phone2" autofocus>
 
-                                            @error('phone')
+                                            @error('phone2')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

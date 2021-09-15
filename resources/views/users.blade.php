@@ -49,25 +49,6 @@
                 </tbody>
             </table>
         
-            {{--  <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">APELLIDO</th>
-                        <th scope="col">EMAIL</th>
-                    </tr>
-            
-            @foreach ($users as $user)
-                
-                    <tr>
-                        <th>{{ $user->name }}</th>
-                        <th>{{ $user->surname }}</th>
-                        <th>{{ $user->email }}</th>
-                    </tr>
-                </thead>    
-            </table>    
-            @endforeach
- --}}
 
 
 
