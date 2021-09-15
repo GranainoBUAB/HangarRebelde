@@ -9,22 +9,22 @@
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
-            <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
         
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
-          <textarea type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></textarea>
+          <textarea type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required></textarea>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
-          <input type="text" name="price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required="true">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Autor 1</span>
-          <input type="text" name="author1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="author1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
         <div class="input-group mb-3">
@@ -59,7 +59,7 @@
 
         <div class="input-group mb-3 d-flex align-items-center" >
           <span class="input-group-text mr-3" id="inputGroup-sizing-default">Stock</span>
-          <input type="radio" class="ml-2" name="isAvailable" value="1">
+          <input type="radio" class="ml-2" name="isAvailable" value="1" required>
           <span class="ml-2">Disponible</span>
 
           <input type="radio" class="ml-2" name="isAvailable" value="0">
@@ -68,7 +68,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="text" name="canReserve" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="canReserve" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
         <div class="input-group mb-3">
@@ -102,7 +102,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
-          <input  type="file" class="form-control input-select" name="image1" id="image1">
+          <input  type="file" class="form-control input-select" name="image1" id="image1" required>
         </div>
 
         <div class="input-group mb-3">
@@ -122,7 +122,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Formato</span>
-          <input type="text" name="format" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="format" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
         <div class="input-group mb-3">
@@ -142,7 +142,7 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Num páginas</span>
-          <input type="text" name="pages" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" name="pages" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
       <div>
         <button type="submit" class="btn bt-create">Crear</button>
