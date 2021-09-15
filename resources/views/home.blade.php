@@ -44,18 +44,16 @@
                             </div>
 
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
-
                         </div>
+                        
                         <div class="separator"></div>
                             @if ($product->isAvailable == 1)
-
                                 <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                                     <img class="icoCard m-1" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                                 </a>
                             @else
-                                <p>NO</p>
+                                <img class="icoCardNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                             @endif
-
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
