@@ -20,11 +20,11 @@
                         <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
                         @endif
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
-                        <img class="icoCardShow m-1 mb-2" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                        <img class="icoCardShow m-1 mb-2" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                         {{-- @if($product->canReserve) --}}
                         {{-- <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6> --}}
                         <h6 class="extraShow font-weight-bold mx-2"> | </h6>
-                        <button type="text" class="input-group-text ml-3 mb-3">Reservar</button></a>
+                        <button type="text" class="input-group-text ml-2">Reservar</button></a>
                         {{-- @endif --}}
 
                     </div>
@@ -146,7 +146,7 @@
                             </div>
                             <div class="separator"></div>
                             <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
-                                <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
+                                <img class="icoCard m-1" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                             </a>
                         </div>
                     </div>

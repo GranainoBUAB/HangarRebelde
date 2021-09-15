@@ -526,13 +526,23 @@ hr {
 }
 
 .icoCardShow {
-  width: 4%;
+  width: 10%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShow {
+    width: 4%;
+  }
 }
 
 .input-group-text {
-  background-color: #FF8300 !important;
-  color: white !important;
+  background-color: #ffb566 !important;
+  color: black !important;
+  border: 1px solid #FF8300 !important;
+}
+
+textarea {
+  border: 1px solid #FF8300 !important;
 }
 
 .ct-form {
@@ -559,6 +569,24 @@ hr {
 .btn-log {
   background-color: #FF8300 !important;
   margin: 20px;
+}
+
+.bt-create {
+  background-color: #FF8300 !important;
+  color: black !important;
+}
+
+.bt-create:hover {
+  background-color: #b35c00 !important;
+}
+
+.bt-cancel:hover {
+  background-color: #40403f !important;
+}
+
+.bt-cancel {
+  background-color: #626261 !important;
+  color: white !important;
 }
 
 .card-header {
@@ -593,6 +621,10 @@ input[type=text], [type=email], [type=password] {
   border: 1px solid #FF8300 !important;
 }
 
+.input-select {
+  border: 1px solid #FF8300 !important;
+}
+
 .card {
   margin-bottom: 10%;
   margin-top: 10%;
@@ -604,9 +636,7 @@ a {
 }
 
 .btn-clic {
-  display: flex;
-  justify-content: center;
-  margin-left: 8%;
+  margin-left: 6%;
 }
 
 .form-check-label {
@@ -614,16 +644,37 @@ a {
   font-family: inherit !important;
 }
 
-@media (min-width: 375px) and (max-width: 558px) {
-  .btn-log {
+.text-login {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 375px) {
+  .btn-clic {
+    justify-content: start;
+    margin-left: 11%;
     flex-wrap: wrap;
   }
-
+}
+@media screen and (min-width: 768px) {
   .btn-clic {
-    margin-left: 54px;
-    margin-right: 15px;
+    margin-left: 20%;
   }
 }
+@media screen and (min-width: 1200px) {
+  .btn-clic {
+    margin-left: 13%;
+  }
+}
+.ct-create {
+  width: 100vw;
+}
+@media screen and (min-width: 1200px) {
+  .ct-create {
+    width: 55vw !important;
+  }
+}
+
 .card-cart {
   width: 40vw !important;
 }
