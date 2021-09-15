@@ -3,16 +3,15 @@
 @section('content')
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
-    <div class="py-3">
-        {{-- <div class="row-lg-6 ms-lg-0"> --}}
+        <div class="row-lg-4 ms-md-0">
             <h2 class="ps-2">Mi Carrito de la compra</h2>
             <hr class="container-fluid me-2 p-0" style="color: #FCE8C2">
-    </div>
+        </div>
     
-    <div class="row row-cols-1 row-cols-2 g-4" style="width: 1000px">
+    <div class="row row-cols-1 row-cols-sm-1 g-4 mt-md-3 ms-3 d-flex justify-content-center">
     @foreach ($products as $product)
 
-        <div class="card border-light bg-light mb-3 ps-2 pt-3" style="max-width: 500px;">
+        <div class="card border-light bg-light mb-3 ps-2 mt-3" style="max-width: 500px;">
             <div class="row g-0 ps-3 me-0">
                 <a class="col-md-2 p-0 p-lg-1" href="{{ route('show', ['id' => $product->product_id]) }}">
                     <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="...">
@@ -48,6 +47,7 @@
                         <div class="d-flex flex-nowrap justify-content-between">
                             <select class="form-select p-1" aria-label="Default select example" style="width: 60px; height: 30px;">
                                 <option selected value="1">1</option>
+                                <option value="0">0</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -56,42 +56,19 @@
                             <form action="{{route('removeCart', $product->product_id)}}" method="post">
                                 @method('delete')
                                 @csrf
-                                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')" value="Eliminar">
+                                    <input type="submit" class="btn ml-2 border-light bg-light" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')" value="🗑️">
                             </form>
                         </div>
                     </div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Eliminar
-                    </button>
                     
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            ¿Seguro que quieres eliminar este producto?
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondarye" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-danger">eliminar</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        {{-- </div> --}}
+        </div>
     @endforeach
-    </div>
-
-        {{-- <div class="row-sm-5"> --}}
-            <div class="card mt-3" style="background-color: #FCE8C2">
-                <div class="fw-bold">
+    
+        <div class="row-5 row-sm-4">
+            <div class="card mt-3 p-2" style="border-color: #FF8300;">
+                <div class="fw-bold ms-2">
                     Resumen
                 </div>
                 <hr class=" mx-1 p-0" style="color: #626261">
@@ -134,6 +111,6 @@
                     </ul>
                 </div>
             </div>
-        {{-- </div> --}}
+        </div>
     </div>
 @endsection
