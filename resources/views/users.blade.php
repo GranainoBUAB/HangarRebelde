@@ -29,7 +29,8 @@
                 @foreach ($users as $user)
 
                     <tr>
-                    <th scope="row">{{ $user->id}}</th>
+                    <th scope="row">{{ $user->id}}<a href="{{ route('delete', $user->id) }}"><button type="delete"
+                        class="btn btn-primary">Eliminar</button></a></th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->surname }}</td>
                         <td>{{ $user->email }}</td>
@@ -48,7 +49,6 @@
                 @endforeach
                 </tbody>
             </table>
-        
 
 
 
