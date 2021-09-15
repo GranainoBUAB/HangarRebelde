@@ -341,7 +341,7 @@
 }
 
 .icoCardNoAvailable {
-  width: 50%;
+  width: 20%;
 }
 
 @media screen and (min-width: 1440px) {
@@ -721,7 +721,6 @@ a {
   color: #FF8300;
 }
 
-/* JOSE MIGUEL BORRA ESTO  */
 .btn-trash {
   border: none;
   width: 55px;
