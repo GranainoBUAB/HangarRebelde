@@ -688,6 +688,14 @@ a {
   }
 }
 
+.card-cart {
+  width: 40vw !important;
+}
+
+.card-title {
+  height: 30px;
+}
+
 .imgCart {
   width: 100px;
   height: auto;
@@ -695,19 +703,21 @@ a {
   border-radius: 10px 10px 10px 10px;
 }
 
-.bd-example {
-  width: 700px;
-  height: 250px;
-  padding: 1.5rem;
-  margin-right: 0;
-  margin-left: 0;
-  border-width: 1px;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+.line {
+  background-color: #FCE8C2;
+}
+
+.div-authors {
+  height: 50px;
 }
 
 .authors {
   color: #626261;
+}
+
+.form-select {
+  width: 60px;
+  height: 30px;
 }
 
 .cartPrice {
@@ -715,6 +725,42 @@ a {
   color: #FF8300;
 }
 
+.btn-trash {
+  border: none;
+  width: 55px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-trash {
+  width: 55%;
+}
+
+.summary {
+  width: 600px;
+  border: 3px solid #FF8300 !important;
+}
+
+.line-sum {
+  color: #626261;
+  opacity: 0.25;
+}
+
+.btn-continue {
+  background-color: #FF8300 !important;
+}
+
+@media screen and (max-width: 375px) {
+  .card-cart {
+    max-width: 350px;
+  }
+
+  .imgCart {
+    width: 80px;
+  }
+}
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

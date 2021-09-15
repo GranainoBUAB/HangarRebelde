@@ -22,6 +22,12 @@
                     <button type="text" class="btn createbtn ms-3">Crear nuevo Comic</button>
                 </a>
             </div>
+            <br>
+            <div class="position-relative me-4">
+                <a href="{{ route('getUser') }}">
+                    <button type="text" class="btn createbtn ms-3">Perfil de usuarios</button>
+                </a>
+            </div>
         @endif
         <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
             @foreach ($products as $product)
@@ -36,7 +42,7 @@
                             <div class="txtTitle d-flex flex-row align-items-center">
                                 <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
-                            
+
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
                         </div>
                         
