@@ -146,7 +146,7 @@
         </div>
       <div>
         <button type="submit" class="btn bt-create">Crear</button>
-        <button type="submit" class="btn bt-cancel ml-3">Cancelar</button>
+        <button type="submit" class="btn bt-cancel ml-3" onclick="window.location='{{route('home')}}';return false;">Cancelar</button>
       </div>
     </div>
 </form>

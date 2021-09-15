@@ -42,7 +42,7 @@
                             <div class="txtTitle d-flex flex-row align-items-center">
                                 <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
-                            
+
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
 
                         </div>
@@ -55,7 +55,7 @@
                             @else
                                 <p>NO</p>
                             @endif
-                            
+
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
