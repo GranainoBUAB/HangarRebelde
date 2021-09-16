@@ -536,6 +536,15 @@ hr {
   }
 }
 
+.icoCardShowAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShowAvailable {
+    width: 4%;
+  }
+}
+
 .icoCartNoAvailable {
   width: 10%;
 }

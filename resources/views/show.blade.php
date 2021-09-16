@@ -17,7 +17,11 @@
                         @if($product->isAvailable)
                         <h6 class="extraShow font-weight-bold mx-2"> | Disponible: Sí</h6>
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
-                        <img class="icoCardShow m-1 mb-2" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
+                        
+                        <a class="icoCardShowAvailable" href="{{ route('addCart', ['product_id'=>$product->id]) }}">
+                            <img class="icoCard m-1 mb-2" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
+                        </a>
+                        
                         @else
                         <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
