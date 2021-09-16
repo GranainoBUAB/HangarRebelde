@@ -89,9 +89,6 @@
   letter-spacing: 0.1rem;
 }
 
-/* .act{
-    color: $colorOrange !important;
-} */
 .ct-cat:hover {
   color: #FF8300 !important;
 }
@@ -192,6 +189,11 @@
 @media screen and (min-width: 1200px) {
   .ct-info {
     max-width: 12.25rem;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .ct-info {
+    height: 3.2vw;
   }
 }
 
@@ -324,15 +326,10 @@
 
 .separator {
   width: 2px;
-  height: 90%;
+  height: 2rem;
   margin: 3%;
   background-color: #FF8300;
-}
-@media screen and (min-width: 1200px) {
-  .separator {
-    width: 4px;
-    height: 90%;
-  }
+  color: transparent;
 }
 
 .icoCard {
@@ -341,7 +338,7 @@
 }
 
 .icoCardNoAvailable {
-  width: 50%;
+  width: 20%;
 }
 
 @media screen and (min-width: 1440px) {
@@ -539,6 +536,15 @@ hr {
   }
 }
 
+.icoCardShowAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShowAvailable {
+    width: 4%;
+  }
+}
+
 .icoCartNoAvailable {
   width: 10%;
 }
@@ -721,7 +727,6 @@ a {
   color: #FF8300;
 }
 
-/* JOSE MIGUEL BORRA ESTO  */
 .btn-trash {
   border: none;
   width: 55px;
@@ -758,6 +763,16 @@ a {
     width: 80px;
   }
 }
+.btn-deleteAllProducts {
+  border: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF8300;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

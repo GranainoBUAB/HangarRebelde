@@ -6,7 +6,30 @@
         <div class="ms-md-0 mt-3">
             <h4 class="ps-2 ms-3 pt-3">Mi carrito de la compra</h4>
         </div>
-        
+
+        <div class="ps-2 ms-3">
+            <a href="{{ route('home') }}">Seguir comprando</a>
+        </div>
+
+        <!-- flash message -->
+        <div>
+            @if (session()->has('message'))
+            <div class="alert">
+                {{ session('message') }}
+            </div>
+            @endif
+        </div>
+
+        @if ($products->count() > 0) 
+            <div class="ps-2 ms-3">
+                <form action="{{route('deleteAllProducts')}}" method="post">
+                    @method('delete')
+                    @csrf
+                    <button class="btn-deleteAllProducts bg-light p-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar todos los productos del carrito? ">Vaciar mi carrito</button>
+                </form>
+            </div>
+        @endif
+
     <div class="mt-md-3 ms-3 d-flex flex-wrap">
     @foreach ($products as $product)
 
@@ -59,13 +82,13 @@
                             </form>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <hr class="line container-fluid me-2 p-0">
         </div>
     @endforeach
-    
+
         <div class="row-5 row-sm-4">
             <div class="card summary mt-3 p-2 ">
                 <div class="fw-bold ms-2">
@@ -76,18 +99,18 @@
                     <ul class="list-group-flush ps-0 ">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
                             Subtotal sin IVA
-                            <span class="badge text-secondary">{{$sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04)}}€</span>
+                            <span class="badge text-secondary">{{ number_format($sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04),2)}}€</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent ">
                             IVA
-                            <span class="badge text-secondary">{{$sumAndQuantity['sum']*0.04}}€</span>
+                            <span class="badge text-secondary">{{number_format($sumAndQuantity['sum']*0.04,2)}}€</span>
                         </li>
                     </ul>
                     <hr class="line-sum mx-1 p-0">
                     <ul class="list-group-flush p-0 mb-0">
                         <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent fw-bold">
                             Total
-                            <span class="badge text-secondary">{{$sumAndQuantity['sum']}}€</span>
+                            <span class="badge text-secondary">{{number_format($sumAndQuantity['sum'],2)}}€</span>
                         </li>
                     </ul>
                     <ul class="list-group-flush ps-0">

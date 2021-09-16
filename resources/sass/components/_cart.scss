@@ -31,8 +31,6 @@
     color: $colorOrange;
 }
 
-/* JOSE MIGUEL BORRA ESTO  */
-
 .btn-trash{
     border: none;
     width: 55px;
@@ -67,4 +65,14 @@
     .imgCart{
         width: 80px;
     }
+}
+
+.btn-deleteAllProducts{
+    border: none;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $colorOrange;
 }

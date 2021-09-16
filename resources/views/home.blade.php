@@ -42,17 +42,17 @@
                             <div class="txtTitle d-flex flex-row align-items-center">
                                 <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                             </div>
-
                             <p class="txtPrice">{{ $product->price }} &#8364</p>
                         </div>
-                        
-                        <div class="separator"></div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="separator">|</div>
+                        </div>
                             @if ($product->isAvailable == 1)
                                 <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
-                                    <img class="icoCard m-1" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
+                                    <img class="icoCard ml-2" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                                 </a>
                             @else
-                                <img class="icoCardNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
+                                <img class="icoCardNoAvailable ml-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                             @endif
                     </div>
 
