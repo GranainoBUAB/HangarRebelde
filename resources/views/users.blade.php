@@ -19,6 +19,7 @@
                         <th scope="col">Ciudad</th>
                         <th scope="col">Provincia</th>
                         <th scope="col">País</th>
+                        <th scope="col">Reserva</th>
                         <th scope="col">Editar Usuario</th>
                     </tr>
                 </thead>
@@ -38,6 +39,7 @@
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
+                        <td>{{ $user->canReserve }}</td>
                         
                         <td> @if(Auth::check() && Auth::user()->isadmin())
                             <div class="d-flex flex-row align-items-center justify-content-center">

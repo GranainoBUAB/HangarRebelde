@@ -58,10 +58,14 @@
         </div>
 
 
-        {{-- <div class="input-group mb-3">
+        <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="text" name="canReserve" value="{{$user->canReserve}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div> --}}
+          <input type="radio" class="ml-2" name="canReserve" value="1" required autocomplete="isAvailable" autofocus>
+          <span class="ml-2">Sí</span>
+
+          <input type="radio" class="ml-2" name="canReserve" value="0" required autocomplete="isAvailable" autofocus>
+          <span class="ml-2">No</span>
+        </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">País</span>
