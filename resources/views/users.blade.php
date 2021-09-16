@@ -3,9 +3,6 @@
 @section('content')
     <div class="d-flex justify-content-center" data-bs-spy="scroll">
         <div class="d-flex justify-content-center my-4 px-xxl-5">
-        @if($users->isNotEmpty())
-            
-        @endif
             <table class="table table-sm table-hover text-center tb-usersAdmin">
                 <thead>
                     <tr class="table-warning">
@@ -28,7 +25,6 @@
                 </thead>
                 <tbody>
                 @foreach ($users as $user)
-
                 
                     <tr class="">
                     <th scope="row">{{ $user->id}}</th>
@@ -44,10 +40,11 @@
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
+                        
                         <td> @if(Auth::check() && Auth::user()->isadmin())
                             <div class="input-group mb-3">
                             <a href="{{ route('editUser', ['id'=>$user->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                            
+
                                 <form action="{{ route('destroyUsers', ['id'=>$user->id]) }}" method="post">
                                 @method('delete')
                                 @csrf

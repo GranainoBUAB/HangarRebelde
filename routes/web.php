@@ -57,7 +57,7 @@ Route::get('users', [UserController::class, 'getUser'])->name('getUser');
 
 Route::delete('users/delete/{id}', [UserController::class, 'destroyUsers'])->name('destroyUsers')->middleware('isadmin');
 
-Route::get('/updateUsers/{id}', [UserController::class, 'updateUsers'])->name('updateUsers')->middleware('isadmin');
+Route::patch('/updateUsers/{id}', [UserController::class, 'updateUsers'])->name('updateUsers')->middleware('isadmin');
 
 Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin');
 

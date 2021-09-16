@@ -11,6 +11,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
+
         return view('users', compact('users'));
     }
 
@@ -23,27 +24,28 @@ class UserController extends Controller
 
     }
 
-    public function updateUsers(Request $request, $id)
+    
+    public function editUser($id)
     {
-        $user = User::whereId($id);
-        
-        $user->update([
-            "name" => $user->title,
-            "surname" => $user->description,
-            "email" => $user->date,
-            "name" => $user->name,
-            "email" => $request->comments,
-            "dni" => $newImage,
-        ]);
+
+        $user = User::find($id);
+        return view('editUser', compact('user'));
     }
 
 
-    
-        public function editUser($id)
-        {
-            return view('editUser');
-        }
-    
+    public function updateUsers(Request $request, $id)
+    {
+
+        $updateUser = request()->except(['_token', '_method']);
+
+
+        User::where('id', '=', $id)->update($updateUser);
+
+        User::findOrFail($id);
+
+        return redirect()->route('getUser');
+
+    }
 
 };
 
