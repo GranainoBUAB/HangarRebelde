@@ -21,6 +21,10 @@
     @media screen and (min-width: $breakpointLaptop){
         max-width: 12.25rem;
     }
+    @media screen and (min-width: $breakpointExtraLargeDesktop){
+        height: 3.2vw;
+    }
+
 }
 
 @mixin ctText {
@@ -151,13 +155,10 @@
 
 .separator {
     width: 2px;
-    height: 90%;
+    height: 2rem;
     margin: 3%;
     background-color: $colorOrange;
-    @media screen and (min-width: $breakpointLaptop){
-        width: 4px;
-        height: 90%;
-    }
+    color: transparent;
 }
 
 .icoCard {
