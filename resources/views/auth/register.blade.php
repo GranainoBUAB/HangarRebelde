@@ -88,7 +88,7 @@
 
                                     <div class="form-group m-3 d-flex justify-content-center row">
                                         <div class="col-md-16">
-                                            <input id="membership_number" type="text" class="form-control @error('membership_number') is-invalid @enderror" placeholder="Número de socio" name="membership_number" value="{{ old('membership_number') }}" required autocomplete="membership_number" autofocus>
+                                            <input id="membership_number" type="text" class="form-control @error('membership_number') is-invalid @enderror" placeholder="Número de socio" name="membership_number" value="{{ old('membership_number') }}" autocomplete="membership_number" autofocus>
 
                                             @error('membership')
                                                 <span class="invalid-feedback" role="alert">
