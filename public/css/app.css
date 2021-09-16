@@ -194,6 +194,11 @@
     max-width: 12.25rem;
   }
 }
+@media screen and (min-width: 1800px) {
+  .ct-info {
+    height: 3.2vw;
+  }
+}
 
 .ct-txt {
   width: 28vw;
@@ -324,15 +329,10 @@
 
 .separator {
   width: 2px;
-  height: 90%;
+  height: 2rem;
   margin: 3%;
   background-color: #FF8300;
-}
-@media screen and (min-width: 1200px) {
-  .separator {
-    width: 4px;
-    height: 90%;
-  }
+  color: transparent;
 }
 
 .icoCard {
