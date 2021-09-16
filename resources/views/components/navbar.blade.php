@@ -56,7 +56,7 @@
                         </a>
                         <a href="{{ route('getCart') }}">
                             <button class="btn-products position-relative">
-                                {{$sum}}€
+                                {{number_format($sum,2)}}€
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                     {{$quantity}}     {{-- 99+ --}}
                                 </span>

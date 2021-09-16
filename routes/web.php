@@ -49,4 +49,8 @@ Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('v
 Route::get('/cart', [CartController::class, 'getCart'])->name('getCart')->middleware('auth');
 Route::get('/cart/{product_id}', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
 Route::delete('/cart/{product_id}', [CartController::class, 'removeCart'])->name('removeCart')->middleware('auth');
+Route::get('/incrementProductInCart/{product_id}', [CartController::class, 'incrementProductInCart'])->name('incrementProductInCart');
+Route::get('/decrementProductInCart/{product_id}/{quantity}', [CartController::class, 'decrementProductInCart'])->name('decrementProductInCart');
+
 Route::get('users', [UserController::class, 'getUser'])->name('getUser');
+

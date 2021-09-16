@@ -51,7 +51,13 @@
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
+                            
+                            <a href="{{ route('decrementProductInCart', ['product_id'=>$product->product_id, 'quantity'=>$product->quantity]) }}">➖</a>
+                            <p class="cartPrice m-2">{{ $product->quantity }} </p>
+                            <a href="{{ route('incrementProductInCart', ['product_id'=>$product->product_id]) }}">➕</a>
+                            
                             <p class="cartPrice m-2">{{ $product->price }} &#8364</p>
+                            
                             <form action="{{route('removeCart', $product->product_id)}}" method="post">
                                 @method('delete')
                                 @csrf
