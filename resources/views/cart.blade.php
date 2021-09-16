@@ -7,6 +7,28 @@
             <h4 class="ps-2 ms-3 pt-3">Mi carrito de la compra</h4>
         </div>
 
+        <!-- flash message -->
+        <div class="ms-md-0 mt-3">
+            @if (session()->has('message'))
+            <div class="alert">
+                {{ session('message') }}
+            </div>
+            <div>
+                <a href="{{ route('home') }}">
+                Clique aquí para seguir comprando
+                </a>
+            </div>
+            @endif
+        </div>
+
+        <div class="ms-md-0 mt-3">
+            <form action="{{route('deleteAllProducts')}}" method="post">
+                @method('delete')
+                @csrf
+                <button class="btn-deleteAllProducts bg-light" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar todos los productos del carrito? ">Vaciar mi carrito</button>
+            </form>
+        </div>
+
     <div class="mt-md-3 ms-3 d-flex flex-wrap">
     @foreach ($products as $product)
 
