@@ -93,4 +93,24 @@ class ProductCartTest extends TestCase
 
         $this->assertDatabaseCount('carts', 0);
     }
+
+    public function test_all_products_can_be_removed_from_cart()
+    {
+        $this->withoutExceptionHandling();
+
+        $product = Product::factory()->create();
+
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $product->userCarts()->attach($user);
+        $product->userCarts()->attach($user);
+
+        $this->assertDatabaseCount('carts', 2);
+
+        $response = $this->delete(route('deleteAllProducts'));
+        $response->assertStatus(302);
+
+        $this->assertDatabaseCount('carts', 0);
+    }
 }
