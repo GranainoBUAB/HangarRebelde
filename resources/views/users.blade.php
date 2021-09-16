@@ -23,12 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-<<<<<<< HEAD
-                @foreach ($users as $user)
-                
-=======
                 @foreach ($users as $user)                
->>>>>>> f4d6d0c374483a44da8a386cd512dd8ff68600ac
                     <tr class="">
                     <th scope="row">{{ $user->id}}</th>
                         <td>{{ $user->name }}</td>
