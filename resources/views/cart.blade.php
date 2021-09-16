@@ -25,7 +25,7 @@
                 <form action="{{route('deleteAllProducts')}}" method="post">
                     @method('delete')
                     @csrf
-                    <button class="btn-deleteAllProducts bg-light p-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar todos los productos del carrito? ">Vaciar mi carrito</button>
+                    <button class="btn-deleteAllProducts bg-light p-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar todos los productos del carrito?')">Vaciar mi carrito</button>
                 </form>
             </div>
         @endif
