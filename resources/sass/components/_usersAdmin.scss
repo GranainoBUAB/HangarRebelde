@@ -1,0 +1,13 @@
+.table-warning, .table-warning > th, .table-warning > td{
+    background-color: black !important;
+    color: white !important;
+}
+
+.tb-usersAdmin{
+    @media screen and (min-width: $breakpointPhone){
+        font-size: 8px;
+    }
+    @media screen and (min-width: $breakpointMiddle){
+        font-size: 15px;
+    }
+}
