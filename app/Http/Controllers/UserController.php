@@ -29,13 +29,21 @@ class UserController extends Controller
         
         $user->update([
             "name" => $user->title,
-            "surname" => $request->description,
-            "email" => $request->date,
-            "name" => $request->name,
+            "surname" => $user->description,
+            "email" => $user->date,
+            "name" => $user->name,
             "email" => $request->comments,
             "dni" => $newImage,
         ]);
     }
 
-}
+
+    
+        public function editUser($id)
+        {
+            return view('editUser');
+        }
+    
+
+};
 
