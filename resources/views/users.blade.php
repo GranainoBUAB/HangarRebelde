@@ -33,7 +33,7 @@
                     
                         @if(Auth::check() && Auth::user()->isadmin())
                         <div class="input-group mb-3">
-                        {{--  <a href="{{ route('edit', ['id'=>$user->id]) }}"><button type="text" class="input-group-text">Editar</button></a> --}}
+                        <a href="{{ route('updateUsers', ['id'=>$user->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
                             <form action="{{ route('destroyUsers', ['id'=>$user->id]) }}" method="post">
                             @method('delete')
                             @csrf

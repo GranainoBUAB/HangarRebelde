@@ -23,5 +23,15 @@ class UserController extends Controller
 
     }
 
+    public function updateUsers(Request $request, $id)
+    {
+        $user = request()->except(['_token', '_method']);
+
+        User::where('id', '=', $id)->update ([$id]);
+
+        $user = User::findOrFail($id); 
+ 
+        return redirect()->route('users')->with('success', 'Updated');
+    }
 
 }
