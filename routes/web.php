@@ -44,12 +44,16 @@ Route::get('/filter/{catMain}/{catSub?}', [ProductController::class, 'filter'])-
 Route::get('/viewByAuthor/{author}', [ProductController::class, 'viewByAuthor'])->name('viewByAuthor');
 Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('viewByTag');
 
-/* //Cart Routes */
+/* Cart Routes */
 
 Route::get('/cart', [CartController::class, 'getCart'])->name('getCart')->middleware('auth');
 Route::get('/cart/{product_id}', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
 Route::delete('/cart/{product_id}', [CartController::class, 'removeCart'])->name('removeCart')->middleware('auth');
+Route::delete('/all/cart', [CartController::class, 'deleteAllProducts'])->name('deleteAllProducts')->middleware('auth');
 
 /* //Users Routes */
+
 Route::get('users', [UserController::class, 'getUser'])->name('getUser');
 Route::delete('users/delete/{id}', [UserController::class, 'destroyUser'])->name('destroyUser')->middleware('isadmin');
+
+

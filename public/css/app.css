@@ -89,10 +89,6 @@
   letter-spacing: 0.1rem;
 }
 
-.act {
-  color: #FF8300 !important;
-}
-
 .ct-cat:hover {
   color: #FF8300 !important;
 }
@@ -193,6 +189,11 @@
 @media screen and (min-width: 1200px) {
   .ct-info {
     max-width: 12.25rem;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .ct-info {
+    height: 3.2vw;
   }
 }
 
@@ -324,20 +325,20 @@
 }
 
 .separator {
-  width: 1.5rem;
-  height: 90%;
+  width: 2px;
+  height: 2rem;
+  margin: 3%;
   background-color: #FF8300;
-}
-@media screen and (min-width: 1200px) {
-  .separator {
-    max-width: 2px;
-    max-height: 90%;
-  }
+  color: transparent;
 }
 
 .icoCard {
-  max-width: 60%;
+  width: 70%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.icoCardNoAvailable {
+  width: 20%;
 }
 
 @media screen and (min-width: 1440px) {
@@ -535,6 +536,24 @@ hr {
   }
 }
 
+.icoCardShowAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShowAvailable {
+    width: 4%;
+  }
+}
+
+.icoCartNoAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCartNoAvailable {
+    width: 4%;
+  }
+}
+
 .input-group-text {
   background-color: #ffb566 !important;
   color: black !important;
@@ -675,6 +694,10 @@ a {
   }
 }
 
+.card-cart {
+  width: 40vw !important;
+}
+
 .imgCart {
   width: 100px;
   height: auto;
@@ -682,23 +705,71 @@ a {
   border-radius: 10px 10px 10px 10px;
 }
 
-.bd-example {
-  width: 700px;
-  height: 250px;
-  padding: 1.5rem;
-  margin-right: 0;
-  margin-left: 0;
-  border-width: 1px;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+.line {
+  background-color: #FCE8C2;
+}
+
+.div-authors {
+  height: 50px;
 }
 
 .authors {
   color: #626261;
 }
 
+.form-select {
+  width: 60px;
+  height: 30px;
+}
+
 .cartPrice {
   font-size: 1.3rem;
+  color: #FF8300;
+}
+
+.btn-trash {
+  border: none;
+  width: 55px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-trash {
+  width: 55%;
+}
+
+.summary {
+  width: 600px;
+  border: 3px solid #FF8300 !important;
+}
+
+.line-sum {
+  color: #626261;
+  opacity: 0.25;
+}
+
+.btn-continue {
+  background-color: #FF8300 !important;
+}
+
+@media screen and (max-width: 375px) {
+  .card-cart {
+    max-width: 350px;
+  }
+
+  .imgCart {
+    width: 80px;
+  }
+}
+.btn-deleteAllProducts {
+  border: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #FF8300;
 }
 
