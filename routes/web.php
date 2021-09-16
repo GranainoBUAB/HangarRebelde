@@ -54,6 +54,6 @@ Route::delete('/all/cart', [CartController::class, 'deleteAllProducts'])->name('
 /* //Users Routes */
 
 Route::get('users', [UserController::class, 'getUser'])->name('getUser');
-Route::delete('users/delete/{id}', [UserController::class, 'destroyUser'])->name('destroyUser')->middleware('isadmin');
+Route::delete('/users/delete/{id}', [UserController::class, 'destroyUsers'])->name('destroyUsers')->middleware('isadmin');
 
 

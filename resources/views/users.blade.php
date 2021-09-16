@@ -31,13 +31,16 @@
                     <tr>
                     <th scope="row">{{ $user->id}}
                     
-                        <form action="{{url('/user/'.$user->id)}}" method="POST">
+                        @if(Auth::check() && Auth::user()->isadmin())
+                        <div class="input-group mb-3">
+                        {{--  <a href="{{ route('edit', ['id'=>$user->id]) }}"><button type="text" class="input-group-text">Editar</button></a> --}}
+                            <form action="{{ route('destroyUsers', ['id'=>$user->id]) }}" method="post">
+                            @method('delete')
                             @csrf
-                            {{ method_field('DELETE') }}
-
-                            <input type="submit" onclick="return confirm('Quieres Borrar?')" value="Borrar">
-    
-                        </form>
+                                <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario? {{ $user->name }}')" value="Eliminar">
+                            </form>
+                        </div>
+                    @endif
                     
                     </th>
                         <td>{{ $user->name }}</td>
@@ -58,27 +61,6 @@
                 @endforeach
                 </tbody>
             </table>
-
-
-
-                    {{-- <div class="ct-img">
-                        <a href="{{ route('show', ['id' => $user->id]) }}">
-                            <img class="imgCard" src="{{ asset('storage') . '/' . $user->name }}" alt="">
-                        </a>
-                    </div>
-                    <div class="ct-info d-flex flex-row align-items-center p-1">
-                        <div class="ct-txt d-flex flex-column justify-content-center">
-                            <div class="txtTitle d-flex flex-row align-items-center">
-                                <p class="txtInfoTitle text-truncate m-0">{{ $user->surname }} </p>
-                            </div>
-                            <p class="txtPrice">{{ $user->surname }} &#8364</p>
-                        </div>
-                        <div class="separator"></div>
-                            <a href="{{ route('addCart', ['product_id'=>$user->email]) }}"> 
-                                <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
-                            </a>
-                    </div>
-                --}}
         </div>
     @endsection
     
