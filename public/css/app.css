@@ -568,6 +568,15 @@ hr {
   }
 }
 
+.icoCardShowAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShowAvailable {
+    width: 4%;
+  }
+}
+
 .icoCartNoAvailable {
   width: 10%;
 }
@@ -790,6 +799,32 @@ a {
     width: 80px;
   }
 }
+.btn-deleteAllProducts {
+  border: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF8300;
+}
+
+.table-warning, .table-warning > th, .table-warning > td {
+  background-color: black !important;
+  color: white !important;
+}
+
+@media screen and (min-width: 375px) {
+  .tb-usersAdmin {
+    font-size: 8px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tb-usersAdmin {
+    font-size: 15px;
+  }
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
