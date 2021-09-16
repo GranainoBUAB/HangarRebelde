@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <a href="register" >¿Aún no tienes cuenta? Resgístrate aqui</a>
+                            <a href="register" >¿Aún no tienes cuenta? Regístrate aqui</a>
                         </div>
                     </form>
                 </div>
