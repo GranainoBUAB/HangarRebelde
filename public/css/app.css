@@ -536,6 +536,15 @@ hr {
   }
 }
 
+.icoCardShowAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShowAvailable {
+    width: 4%;
+  }
+}
+
 .icoCartNoAvailable {
   width: 10%;
 }
@@ -754,6 +763,16 @@ a {
     width: 80px;
   }
 }
+.btn-deleteAllProducts {
+  border: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF8300;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

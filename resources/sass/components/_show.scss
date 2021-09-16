@@ -47,6 +47,10 @@
     filter: $filterSVGOrange;
 }
 
+.icoCardShowAvailable {
+    @include icoCardShow;
+}
+
 .icoCartNoAvailable {
     @include icoCardShow;
 }
