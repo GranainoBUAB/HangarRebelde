@@ -10,7 +10,7 @@
                 </a>
             </div>
             <div class="col logingrid p-0">
-                <div class="navbar navbar-expand  text-decoration-none">
+                <div class="navbar navbar-expand  text-decoration-none ps-0 pe-3 pe-lg-4">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -18,12 +18,12 @@
                         @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link text-reset" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                                <a class="nav-link text-reset p-1 li-login" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                         @endif
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link text-reset" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                <a class="nav-link text-reset p-1 li-login" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             </li>
                         @endif
                     @else
