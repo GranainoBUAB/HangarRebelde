@@ -22,15 +22,24 @@
                         <th scope="col">CIUDAD</th>
                         <th scope="col">PROVINCIA</th>
                         <th scope="col">PAIS</th>
-                        {{-- <th scope="col">COMENTARIO</th> --}}
+                        <th scope="col">COMENTARIO</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($users as $user)
 
                     <tr>
-                    <th scope="row">{{ $user->id}}<a href="{{ route('delete', $user->id) }}"><button type="delete"
-                        class="btn btn-primary">Eliminar</button></a></th>
+                    <th scope="row">{{ $user->id}}
+                    
+                        <form action="{{url('/user/'.$user->id)}}" method="POST">
+                            @csrf
+                            {{ method_field('DELETE') }}
+
+                            <input type="submit" onclick="return confirm('Quieres Borrar?')" value="Borrar">
+    
+                        </form>
+                    
+                    </th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->surname }}</td>
                         <td>{{ $user->email }}</td>
@@ -43,7 +52,7 @@
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
-                        {{-- <td>{{ $user->notes }}</td> --}}
+                        <td>{{ $user->notes }}</td>
                         
                     </tr>
                 @endforeach

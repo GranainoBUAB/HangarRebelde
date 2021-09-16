@@ -14,11 +14,12 @@ class UserController extends Controller
         return view('users', compact('users'));
     }
 
-    public function destroyUser($id)
+    public function destroyUsers($id)
     {
+        
         User::destroy($id);
 
-        return redirect()->route('users');
+        return redirect('users');
     }
 
 
