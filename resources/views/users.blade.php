@@ -19,13 +19,16 @@
                         <th scope="col">Ciudad</th>
                         <th scope="col">Provincia</th>
                         <th scope="col">País</th>
-                        <th scope="col"></th>
-                        {{-- <th scope="col">Comentario</th> --}}
+                        <th scope="col">Editar Usuario</th>
                     </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                 @foreach ($users as $user)
                 
+=======
+                @foreach ($users as $user)                
+>>>>>>> f4d6d0c374483a44da8a386cd512dd8ff68600ac
                     <tr class="">
                     <th scope="row">{{ $user->id}}</th>
                         <td>{{ $user->name }}</td>
@@ -42,22 +45,22 @@
                         <td>{{ $user->country }}</td>
                         
                         <td> @if(Auth::check() && Auth::user()->isadmin())
-                            <div class="input-group mb-3">
-                            <a href="{{ route('editUser', ['id'=>$user->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-
+                            <div class="d-flex flex-row align-items-center justify-content-center">
+                            <a href="{{ route('editUser', ['id'=>$user->id]) }}"><img class="icoAdmin" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
                                 <form action="{{ route('destroyUsers', ['id'=>$user->id]) }}" method="post">
                                 @method('delete')
                                 @csrf
-                                    <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario? {{ $user->name }}')" value="Eliminar">
+                                <button class="btn px-2 py-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario? {{ $user->name }}')"><img class="icoAdmin" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
                                 </form>
                             </div>
-                        @endif</td>
-                    
-                        
+                        @endif</td>    
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
     @endsection
+
+
+
     
