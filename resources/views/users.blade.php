@@ -6,9 +6,9 @@
         @if($users->isNotEmpty())
             
         @endif
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
-                    <tr>
+                    <tr class="table-warning">
                         <th scope="col">#</th>
                         <th scope="col">NOMBRE</th>
                         <th scope="col">APELLIDO</th>
@@ -28,7 +28,7 @@
                 <tbody>
                 @foreach ($users as $user)
 
-                    <tr>
+                    <tr class="table-hover">
                     <th scope="row">{{ $user->id}}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->surname }}</td>
