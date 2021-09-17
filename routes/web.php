@@ -50,6 +50,11 @@ Route::get('/viewByTag/{tag}', [ProductController::class, 'viewByTag'])->name('v
 Route::get('/cart', [CartController::class, 'getCart'])->name('getCart')->middleware('auth');
 Route::get('/cart/{product_id}', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
 Route::delete('/cart/{product_id}', [CartController::class, 'removeCart'])->name('removeCart')->middleware('auth');
+Route::get('/incrementProductInCart/{product_id}', [CartController::class, 'incrementProductInCart'])->name('incrementProductInCart');
+Route::get('/decrementProductInCart/{product_id}/{quantity}', [CartController::class, 'decrementProductInCart'])->name('decrementProductInCart');
+
+Route::get('users', [UserController::class, 'getUser'])->name('getUser');
+
 Route::delete('/all/cart', [CartController::class, 'deleteAllProducts'])->name('deleteAllProducts')->middleware('auth');
 
 /* //Users Routes */
@@ -69,6 +74,4 @@ Route::get('/profile/{id}', [ProfileController::class, 'getMyProfile'])->name('m
 Route::patch('/updateProfile/{id}', [ProfileController::class, 'updateMyProfile'])->name('updateMyProfile')->middleware('auth');
 
 Route::get('/editProfile/{id}', [ProfileController::class, 'editMyProfile'])->name('editMyProfile')->middleware('auth');
-
-
 
