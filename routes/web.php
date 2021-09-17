@@ -5,8 +5,9 @@ use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,4 +67,11 @@ Route::patch('/updateUsers/{id}', [UserController::class, 'updateUsers'])->name(
 
 Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin');
 
+/* Profile Routes */
+
+Route::get('/profile/{id}', [ProfileController::class, 'getMyProfile'])->name('myProfile')->middleware('auth');
+
+Route::patch('/updateProfile/{id}', [ProfileController::class, 'updateMyProfile'])->name('updateMyProfile')->middleware('auth');
+
+Route::get('/editProfile/{id}', [ProfileController::class, 'editMyProfile'])->name('editMyProfile')->middleware('auth');
 
