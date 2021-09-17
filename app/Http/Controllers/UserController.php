@@ -9,8 +9,7 @@ class UserController extends Controller
 {
     public function getUser()
     {
-        $users = User::all();
-
+        $users = User::where('isAdmin', '=' , false)->get();
 
         return view('users', compact('users'));
     }
