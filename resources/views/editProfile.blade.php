@@ -13,7 +13,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+          <span class="input-group-text" id="inputGroup-sizing-default">Apellidos</span>
           <textarea type="text" name="surname"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">{{$user->surname}}</textarea>
         </div>
 
@@ -50,6 +50,11 @@
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Ciudad</span>
           <input type="text" name="city" value="{{$user->city}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Provincia</span>
+          <input type="text" name="region" value="{{$user->region}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
