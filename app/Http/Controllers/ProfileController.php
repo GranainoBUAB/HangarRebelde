@@ -34,20 +34,13 @@ class ProfileController extends Controller
 
         User::where('id', '=', $id)->update($updateMyProfile);
 
-        User::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        return redirect()->route('profile');
-
-    }
-
-    public function destroyProfile($id)
-    {
-        
-        User::destroy($id);
-
-        return back();
+        return redirect()->route('myProfile', ['id'=>$user->id]);
 
     }
+
+    
     
     
 }

@@ -10,7 +10,6 @@
                         <th scope="col">Apellido</th>
                         <th scope="col">e-mail</th>
                         <th scope="col">DNI</th>
-                        <th scope="col"># Socio</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Otro Teléfono</th>
                         <th scope="col">Direccón</th>
@@ -18,8 +17,7 @@
                         <th scope="col">Ciudad</th>
                         <th scope="col">Provincia</th>
                         <th scope="col">País</th>
-                        <th scope="col">Reserva</th>
-                        <th scope="col">Editar Usuario</th>
+                        <th scope="col">Editar Perfil</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +27,6 @@
                         <td>{{ $user->surname }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->dni }}</td>
-                        <td>{{ $user->membership_number }}</td>
                         <td>{{ $user->phone1 }}</td>
                         <td>{{ $user->phone2 }}</td>
                         <td>{{ $user->address }}</td>
@@ -37,20 +34,10 @@
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
-                        @if($user->canReserve)
-                            <td>Sí</td>
-                        @else
-                            <td>No</td>
-                        @endif
                         @if(Auth::check())
                             <td> 
                                 <div class="d-flex flex-row align-items-center justify-content-center">
                                 <a href="{{ route('editMyProfile', ['id'=>$user->id]) }}"><img class="icoAdmin" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
-                                    <form action="{{ route('destroyProfile', ['id'=>$user->id]) }}" method="post">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="btn px-2 py-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario? {{ $user->name }}')"><img class="icoAdmin" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
-                                    </form>
                                 </div>
                             </td> 
                         @endif   

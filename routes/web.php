@@ -70,6 +70,5 @@ Route::patch('/updateProfile/{id}', [ProfileController::class, 'updateMyProfile'
 
 Route::get('/editProfile/{id}', [ProfileController::class, 'editMyProfile'])->name('editMyProfile')->middleware('auth');
 
-Route::delete('profile/delete/{id}', [ProfileController::class, 'destroyProfile'])->name('deleteMyProfile')->middleware('auth');
 
 
