@@ -39,18 +39,23 @@
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
-                        <td>{{ $user->canReserve }}</td>
-                        
-                        <td> @if(Auth::check() && Auth::user()->isadmin())
-                            <div class="d-flex flex-row align-items-center justify-content-center">
-                            <a href="{{ route('editUser', ['id'=>$user->id]) }}"><img class="icoAdmin" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
-                                <form action="{{ route('destroyUsers', ['id'=>$user->id]) }}" method="post">
-                                @method('delete')
-                                @csrf
-                                <button class="btn px-2 py-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario? {{ $user->name }}')"><img class="icoAdmin" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
-                                </form>
-                            </div>
-                        @endif</td>    
+                        @if($user->canReserve)
+                            <td>Sí</td>
+                        @else
+                            <td>No</td>
+                        @endif
+                        @if(Auth::check() && Auth::user()->isadmin())
+                            <td> 
+                                <div class="d-flex flex-row align-items-center justify-content-center">
+                                <a href="{{ route('editUser', ['id'=>$user->id]) }}"><img class="icoAdmin" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
+                                    <form action="{{ route('destroyUsers', ['id'=>$user->id]) }}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn px-2 py-0" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario? {{ $user->name }}')"><img class="icoAdmin" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
+                                    </form>
+                                </div>
+                            </td> 
+                        @endif   
                     </tr>
                 @endforeach
                 </tbody>
