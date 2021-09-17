@@ -63,15 +63,15 @@ Route::get('users', [UserController::class, 'getUser'])->name('getUser');
 
 Route::delete('users/delete/{id}', [UserController::class, 'destroyUsers'])->name('destroyUsers')->middleware('isadmin');
 
-Route::patch('/updateUsers/{id}', [UserController::class, 'updateUsers'])->name('updateUsers')->middleware('isadmin');
+Route::patch('/update_users/{id}', [UserController::class, 'updateUsers'])->name('updateUsers')->middleware('isadmin');
 
-Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin');
+Route::get('/edit_user/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin');
 
 /* Profile Routes */
 
 Route::get('/profile/{id}', [ProfileController::class, 'getMyProfile'])->name('myProfile')->middleware('auth');
 
-Route::patch('/updateProfile/{id}', [ProfileController::class, 'updateMyProfile'])->name('updateMyProfile')->middleware('auth');
+Route::patch('/update_profile/{id}', [ProfileController::class, 'updateMyProfile'])->name('updateMyProfile')->middleware('auth');
 
-Route::get('/editProfile/{id}', [ProfileController::class, 'editMyProfile'])->name('editMyProfile')->middleware('auth');
+Route::get('/edit_profile/{id}', [ProfileController::class, 'editMyProfile'])->name('editMyProfile')->middleware('auth');
 
