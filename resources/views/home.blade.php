@@ -59,7 +59,7 @@
                     @if(Auth::check() && Auth::user()->isadmin())
                         <div class="input-group mb-3">
                             <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                            <form action="{{ url('/delete/'.$product->id)}}" method="post">
+                            <form action="{{ url('users/delete/'.$product->id)}}" method="post">
                             @method('delete')
                             @csrf
                                 <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
