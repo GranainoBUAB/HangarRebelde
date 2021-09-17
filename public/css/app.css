@@ -109,13 +109,17 @@
   }
 
   .inputSearch {
-    width: 6.25rem !important;
+    width: 150px !important;
     margin-left: 5px;
+  }
+
+  .ct-search {
+    width: 150px !important;
   }
 
   .btn-lupa {
     width: 70px;
-    margin: 0;
+    margin-left: 8px;
   }
 
   .icoCardHeader {
@@ -135,6 +139,34 @@
     color: #FF8300 !important;
     border-color: rgba(0, 0, 0, 0) !important;
     font-size: 1.5rem !important;
+  }
+
+  .li-item {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .li-login {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .li-item {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .li-login {
+    font-size: 12px;
+  }
+
+  .ct-search {
+    width: 150px !important;
+  }
+
+  .inputSearch {
+    width: 150px !important;
+    margin-left: 5px;
   }
 }
 .ct-product {
@@ -703,6 +735,10 @@ a {
   height: auto;
   border: 3px solid #FF8300;
   border-radius: 10px 10px 10px 10px;
+}
+
+.title-cart {
+  height: 33px;
 }
 
 .line {
