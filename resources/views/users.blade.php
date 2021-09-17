@@ -6,7 +6,6 @@
             <table class="table table-sm table-hover text-center tb-usersAdmin">
                 <thead>
                     <tr class="table-warning">
-                        {{-- <th scope="col">#</th> --}}
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">e-mail</th>
@@ -26,7 +25,6 @@
                 <tbody>
                 @foreach ($users as $user)                
                     <tr class="">
-                    {{-- <th scope="row">{{ $user->id}}</th> --}}
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->surname }}</td>
                         <td>{{ $user->email }}</td>
