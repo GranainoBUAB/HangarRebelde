@@ -53,6 +53,11 @@
         </div>
 
         <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Provincia</span>
+          <input type="text" name="region" value="{{$user->region}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">País</span>
           <input type="text" name="country" value="{{$user->country}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
