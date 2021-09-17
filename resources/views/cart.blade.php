@@ -3,7 +3,7 @@
 @section('content')
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
-        <div class="ms-md-0 mt-3">
+        <div class="title ms-md-0 mt-3">
             <h4 class="ps-2 ms-3 pt-3">Mi carrito de la compra</h4>
         </div>
 

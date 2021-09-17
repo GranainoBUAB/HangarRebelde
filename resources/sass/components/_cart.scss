@@ -62,15 +62,6 @@
     background-color: $colorOrange !important;
 }
 
-@media screen and (max-width: $breakpointPhone){
-    .card-cart{
-        max-width: 350px;
-    }
-    .imgCart{
-        width: 80px;
-    }
-}
-
 .btn-deleteAllProducts{
     border: none;
     width: auto;
@@ -79,4 +70,24 @@
     justify-content: center;
     align-items: center;
     color: $colorOrange;
+}
+
+@media screen and (max-width: $breakpointPhone){
+    .title{
+        width: 350px !important;
+    }
+
+    .card-cart{
+        max-width: 350px;
+    }
+
+    .imgCart{
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: $breakpointTable){
+    .title{
+        width: 760px;
+    }
 }
