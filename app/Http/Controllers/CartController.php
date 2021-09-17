@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\User;
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -92,6 +93,24 @@ class CartController extends Controller
         }
 
         $this->incrementProductInCart($product->id);
-        return;
+        return redirect()->route('getCart');
+    }
+
+    public function deleteAllProducts()
+    {
+        /* if () {
+
+        } else {
+            Session::flash('message', "No hay productos en su carrito de compra");
+        } */
+
+        $user_id = auth()->id();
+
+        DB::table('carts')
+            ->where('user_id', $user_id)
+            ->delete();
+
+        Session::flash('message', "¡No hay productos en su carrito de compra!");
+        return back();
     }
 }

@@ -78,15 +78,10 @@
     font-size: 1.5rem;
     margin-left: 49px;
     color: $colorOrangeLight !important;
-    //filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%) !important;
     padding: 0px !important;
     font-family: 'Woodstamp';
     letter-spacing: 0.1rem;
 }
-
-/* .act{
-    color: $colorOrange !important;
-} */
 
 .ct-cat:hover{
     color: $colorOrange !important;
@@ -107,12 +102,15 @@
         display: none;
     }
     .inputSearch{
-        width: 6.25rem !important;
+        width: 150px !important;
         margin-left: 5px;
+    }
+    .ct-search{
+        width: 150px !important;
     }
     .btn-lupa {
         width: 70px;
-        margin: 0;
+        margin-left: 8px;
     }
     .icoCardHeader{
         margin-left: 25px;
@@ -128,5 +126,32 @@
         color: $colorOrange !important;
         border-color: rgba(0, 0, 0, 0) !important;
         font-size: 1.5rem !important;
+    }
+    .li-item{
+        width: 150px;
+        margin-bottom: 15px;
+    }
+    .li-login{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: $breakpointPhone){
+    .li-item{
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .li-login{
+        font-size: 12px;
+    }
+
+    .ct-search{
+        width: 150px !important;
+    }
+
+    .inputSearch{
+        width: 150px !important;
+        margin-left: 5px;
     }
 }

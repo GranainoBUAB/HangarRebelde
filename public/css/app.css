@@ -89,9 +89,6 @@
   letter-spacing: 0.1rem;
 }
 
-/* .act{
-    color: $colorOrange !important;
-} */
 .ct-cat:hover {
   color: #FF8300 !important;
 }
@@ -112,13 +109,17 @@
   }
 
   .inputSearch {
-    width: 6.25rem !important;
+    width: 150px !important;
     margin-left: 5px;
+  }
+
+  .ct-search {
+    width: 150px !important;
   }
 
   .btn-lupa {
     width: 70px;
-    margin: 0;
+    margin-left: 8px;
   }
 
   .icoCardHeader {
@@ -138,6 +139,34 @@
     color: #FF8300 !important;
     border-color: rgba(0, 0, 0, 0) !important;
     font-size: 1.5rem !important;
+  }
+
+  .li-item {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .li-login {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .li-item {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .li-login {
+    font-size: 12px;
+  }
+
+  .ct-search {
+    width: 150px !important;
+  }
+
+  .inputSearch {
+    width: 150px !important;
+    margin-left: 5px;
   }
 }
 .ct-product {
@@ -192,6 +221,11 @@
 @media screen and (min-width: 1200px) {
   .ct-info {
     max-width: 12.25rem;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .ct-info {
+    height: 3.2vw;
   }
 }
 
@@ -324,15 +358,10 @@
 
 .separator {
   width: 2px;
-  height: 90%;
+  height: 2rem;
   margin: 3%;
   background-color: #FF8300;
-}
-@media screen and (min-width: 1200px) {
-  .separator {
-    width: 4px;
-    height: 90%;
-  }
+  color: transparent;
 }
 
 .icoCard {
@@ -539,6 +568,15 @@ hr {
   }
 }
 
+.icoCardShowAvailable {
+  width: 10%;
+}
+@media screen and (min-width: 1200px) {
+  .icoCardShowAvailable {
+    width: 4%;
+  }
+}
+
 .icoCartNoAvailable {
   width: 10%;
 }
@@ -699,6 +737,10 @@ a {
   border-radius: 10px 10px 10px 10px;
 }
 
+.title-cart {
+  height: 33px;
+}
+
 .line {
   background-color: #FCE8C2;
 }
@@ -757,6 +799,32 @@ a {
     width: 80px;
   }
 }
+.btn-deleteAllProducts {
+  border: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF8300;
+}
+
+.table-warning, .table-warning > th, .table-warning > td {
+  background-color: black !important;
+  color: white !important;
+}
+
+@media screen and (min-width: 375px) {
+  .tb-usersAdmin {
+    font-size: 8px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tb-usersAdmin {
+    font-size: 15px;
+  }
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

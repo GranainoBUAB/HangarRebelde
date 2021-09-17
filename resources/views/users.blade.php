@@ -1,34 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="d-flex flex-wrap row justify-content-center"  data-bs-spy="scroll">
-        <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
+    <div class="d-flex justify-content-center" data-bs-spy="scroll">
+        <div class="d-flex justify-content-center my-4 px-xxl-5">
         @if($users->isNotEmpty())
             
         @endif
-            <table class="table">
+            <table class="table table-sm table-hover text-center tb-usersAdmin">
                 <thead>
-                    <tr>
+                    <tr class="table-warning">
                         <th scope="col">#</th>
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">APELLIDO</th>
-                        <th scope="col">EMAIL</th>
-                        <th scope="col">D.N.I</th>
-                        <th scope="col">Nº DE SOCIO</th>
-                        <th scope="col">TELEFONO</th>
-                        <th scope="col">OTRO TELEFONO</th>
-                        <th scope="col">DIRECCION</th>
-                        <th scope="col">C.P</th>
-                        <th scope="col">CIUDAD</th>
-                        <th scope="col">PROVINCIA</th>
-                        <th scope="col">PAIS</th>
-                        {{-- <th scope="col">COMENTARIO</th> --}}
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">e-mail</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col"># Socio</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Otro Teléfono</th>
+                        <th scope="col">Direccón</th>
+                        <th scope="col">C.P.</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Provincia</th>
+                        <th scope="col">País</th>
+                        {{-- <th scope="col">Comentario</th> --}}
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($users as $user)
 
-                    <tr>
+                    <tr class="">
                     <th scope="row">{{ $user->id}}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->surname }}</td>
@@ -48,28 +48,6 @@
                 @endforeach
                 </tbody>
             </table>
-        
-
-
-
-                    {{-- <div class="ct-img">
-                        <a href="{{ route('show', ['id' => $user->id]) }}">
-                            <img class="imgCard" src="{{ asset('storage') . '/' . $user->name }}" alt="">
-                        </a>
-                    </div>
-                    <div class="ct-info d-flex flex-row align-items-center p-1">
-                        <div class="ct-txt d-flex flex-column justify-content-center">
-                            <div class="txtTitle d-flex flex-row align-items-center">
-                                <p class="txtInfoTitle text-truncate m-0">{{ $user->surname }} </p>
-                            </div>
-                            <p class="txtPrice">{{ $user->surname }} &#8364</p>
-                        </div>
-                        <div class="separator"></div>
-                            <a href="{{ route('addCart', ['product_id'=>$user->email]) }}"> 
-                                <img class="icoCard m-1" src="<?php echo asset('storage/img/shopping-cart.svg'); ?>" alt="Flaticon">
-                            </a>
-                    </div>
-                --}}
         </div>
     @endsection
     

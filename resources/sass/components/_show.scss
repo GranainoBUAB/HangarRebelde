@@ -19,8 +19,6 @@
     }
 }
 
-
-
 .ct-infoShow {
     width: 80%;
 }
@@ -47,6 +45,10 @@
 .icoCardShow {
     @include icoCardShow;
     filter: $filterSVGOrange;
+}
+
+.icoCardShowAvailable {
+    @include icoCardShow;
 }
 
 .icoCartNoAvailable {

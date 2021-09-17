@@ -9,6 +9,10 @@
     border-radius: 10px 10px 10px 10px;
 }
 
+.title-cart{
+    height: 33px;
+}
+
 .line{
     background-color: $colorLight;
 }
@@ -65,4 +69,14 @@
     .imgCart{
         width: 80px;
     }
+}
+
+.btn-deleteAllProducts{
+    border: none;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $colorOrange;
 }
