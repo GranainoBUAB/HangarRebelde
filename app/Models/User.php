@@ -33,6 +33,7 @@ class User extends Authenticatable
         'region',
         'country',
         'notes',
+        'canReserve',
 
         'deliveryName',
         'deliverySurname',

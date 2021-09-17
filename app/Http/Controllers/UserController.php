@@ -9,10 +9,42 @@ class UserController extends Controller
 {
     public function getUser()
     {
-        $users = User::all();
+        $users = User::where('isAdmin', '=' , false)->get();
 
         return view('users', compact('users'));
     }
 
+    public function destroyUsers($id)
+    {
+        
+        User::destroy($id);
 
-}
+        return back();
+
+    }
+
+    
+    public function editUser($id)
+    {
+
+        $user = User::find($id);
+        return view('editUser', compact('user'));
+    }
+
+
+    public function updateUsers(Request $request, $id)
+    {
+
+        $updateUser = request()->except(['_token', '_method']);
+
+
+        User::where('id', '=', $id)->update($updateUser);
+
+        User::findOrFail($id);
+
+        return redirect()->route('getUser');
+
+    }
+
+};
+
