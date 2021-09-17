@@ -42,12 +42,10 @@
                                 </form>
                             </div>
                         </li>
-                        <a  class="nav-link text-reset" href="{{ route('myProfile', ['id'=>Auth::user()->id]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Mi Perfil
-                        </a>
                         <li>
-
-
+                            <a  class="nav-link text-reset" href="{{ route('myProfile', ['id'=>Auth::user()->id]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Mi Perfil
+                            </a>
                         </li>
                     @endguest
                     </ul>
