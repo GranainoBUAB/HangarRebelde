@@ -11,11 +11,12 @@ class Cart extends Model
 {
     use HasFactory;
 
-    static function sumAndQuantity(){
+    static function sumAndQuantity()
+    {
         $sum = 0;
         $quantity = 0;
 
-        if (Auth::check()){
+        if (Auth::check()) {
             $user = Auth::user();
             $user_id = $user->id;
             $products = DB::table('products')
@@ -24,12 +25,12 @@ class Cart extends Model
                 ->get();
 
             foreach ($products as $product) {
-                $sum += $product->price;
-                $quantity += 1;
+                $sum += $product->price * $product->quantity;
+                $quantity += $product->quantity;
             }
         }
 
-        $result = ['sum'=>$sum, 'quantity'=>$quantity];
+        $result = ['sum' => $sum, 'quantity' => $quantity];
         return ($result);
     }
 }
