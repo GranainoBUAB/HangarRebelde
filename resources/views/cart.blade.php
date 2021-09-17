@@ -20,7 +20,7 @@
             @endif
         </div>
 
-        @if ($products->count() > 0) 
+        @if ($products->count() > 0)
             <div class="ps-2 ms-3">
                 <form action="{{route('deleteAllProducts')}}" method="post">
                     @method('delete')
@@ -67,20 +67,20 @@
                         </div>
                         <p class="card-text mb-1"><small class="text-muted">ISBN: {{ $product->isbn }}</small></p>
                         <div class="d-flex flex-nowrap justify-content-between align-items-center">
-                            <select class="form-select p-1" aria-label="Default select example">
+                            {{-- <select class="form-select p-1" aria-label="Default select example">
                                 <option selected value="1">1</option>
                                 <option value="0">0</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
-                            </select>
-                            
+                            </select> --}}
+
                             <a href="{{ route('decrementProductInCart', ['product_id'=>$product->product_id, 'quantity'=>$product->quantity]) }}">➖</a>
                             <p class="cartPrice m-2">{{ $product->quantity }} </p>
                             <a href="{{ route('incrementProductInCart', ['product_id'=>$product->product_id]) }}">➕</a>
-                            
+
                             <p class="cartPrice m-2">{{ $product->price }} &#8364</p>
-                            
+
                             <form action="{{route('removeCart', $product->product_id)}}" method="post">
                                 @method('delete')
                                 @csrf
