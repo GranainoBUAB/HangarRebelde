@@ -28,11 +28,11 @@
                         <img class="icoCartNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                         @endif
 
-                        {{-- @if($product->canReserve) --}}
+                        @if($product->canReserve && Auth::check() && Auth::user()->canReserve)
                         {{-- <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6> --}}
                         <h6 class="extraShow font-weight-bold mx-2"> | </h6>
                         <button type="text" class="input-group-text ml-2">Reservar</button></a>
-                        {{-- @endif --}}
+                        @endif
 
                     </div>
                     <h6 class="card-title font-weight-bold mt-3">Autores:</h6>

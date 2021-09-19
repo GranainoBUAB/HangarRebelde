@@ -65,9 +65,12 @@
           <span class="ml-2">No Disponible</span>
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="text" name="canReserve" value="{{$product->canReserve}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="radio" class="ml-2" name="canReserve" value="1">
+          <span class="ml-2">Disponible</span>
+          <input type="radio" class="ml-2" name="canReserve" value="0">
+          <span class="ml-2">No Disponible</span>
         </div>
 
         <div class="input-group mb-3">
