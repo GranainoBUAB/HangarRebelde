@@ -23,13 +23,13 @@
                         </div>
 
                         <div class="d-flex flex-column align-items-center mt-3">
-                            <img class="icoProfile" src="{{url('/img/phone.svg')}}" alt="Freepik">
+                            <img class="icoProfile" src="{{url('/img/phone.svg')}}" alt="Gregor Cresnar">
                             <p class="m-0">{{$user->phone1}}</p>
                             <p class="m-0">{{$user->phone2}}</p>
                         </div>
 
                         <div class="d-flex flex-column align-items-center my-3">
-                            <img class="icoProfile" src="{{url('/img/location.svg')}}" alt="Freepik">
+                            <img class="icoProfile" src="{{url('/img/location.svg')}}" alt="Vitaly Gorbachev">
                             <p class="m-0">{{$user->address}}</p>
                             <p class="m-0">{{$user->city}}, {{$user->region}} - {{$user->country}} ({{$user->zipCode}})</p>
                         </div>
