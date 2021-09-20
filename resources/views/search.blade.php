@@ -16,12 +16,11 @@
             <div class="ct-info d-flex flex-row align-items-center p-1">
                 <div class="ct-txt d-flex flex-column justify-content-center">
                     <div class="txtTitle d-flex flex-row align-items-center">
-                        <p class="txtInfoTitle m-0">{{ $product->title }} </p>
-                        <p class="txtPoints m-0">...</p>
+                        <p class="txtInfoTitle text-truncate m-0">{{ $product->title }} </p>
                     </div>
                     <p class="txtPrice">{{ $product->price }} &#8364</p>
                 </div>
-                <div class="separator"></div>
+                <div class="separator">|</div>
                 <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                     <img class="icoCard m-1" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                 </a>

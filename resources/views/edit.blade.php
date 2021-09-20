@@ -59,15 +59,32 @@
 
         <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-          <input type="radio" class="ml-2" name="isAvailable" value="1">
-          <span class="ml-2">Disponible</span>
-          <input type="radio" class="ml-2" name="isAvailable" value="0">
-          <span class="ml-2">No Disponible</span>
+          @if ($product->isAvailable === 1)
+            <input type="radio" class="ml-2" name="isAvailable" value="1" checked>
+            <span class="ml-2">Disponible</span>
+            <input type="radio" class="ml-2" name="isAvailable" value="0">
+            <span class="ml-2">No Disponible</span>
+          @else
+            <input type="radio" class="ml-2" name="isAvailable" value="1">
+            <span class="ml-2">Disponible</span>
+            <input type="radio" class="ml-2" name="isAvailable" value="0" checked>
+            <span class="ml-2">No Disponible</span>
+          @endif
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="text" name="canReserve" value="{{$product->canReserve}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          @if ($product->canReserve === 1)
+            <input type="radio" class="ml-2" name="canReserve" value="1" checked>
+            <span class="ml-2">Sí</span>
+            <input type="radio" class="ml-2" name="canReserve" value="0">
+            <span class="ml-2">No</span>
+          @else
+            <input type="radio" class="ml-2" name="canReserve" value="1">
+            <span class="ml-2">Sí</span>
+            <input type="radio" class="ml-2" name="canReserve" value="0" checked>
+            <span class="ml-2">No</span>
+          @endif
         </div>
 
         <div class="input-group mb-3">
