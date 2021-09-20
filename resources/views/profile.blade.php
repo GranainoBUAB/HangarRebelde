@@ -6,10 +6,19 @@
             <div class="container ct-create">
                 <div class="card-header my-4"><label for="" class="d-flex justify-content-center text-md-right">{{ __('Mi Perfil') }}</label></div>
 
+
+
                     <div class="d-flex flex-row mb-3">
                         <a href="{{ route('editMyProfile', ['id'=>$user->id]) }}"><img class="icoAdmin" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
                     </div>
-                    <div class="input-group mb-3">
+                    
+                    <div>
+                        <h5>Bienvenido a tu perfil {{$user->name}} {{$user->surname}}</h5>
+
+                    </div>
+                    
+
+                    <!-- <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
                         <span type="text" name="name" value="{{$user->name}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">{{$user->name}}</span>
                     </div>
@@ -62,7 +71,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">País</span>
                         <span type="text" name="country" value="{{$user->country}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">{{$user->country}}</span>
-                    </div>
+                    </div> -->
         
             
             
