@@ -58,7 +58,7 @@ class CartController extends Controller
             ->where('product_id', $product_id)
             ->increment('quantity', 1);
 
-        return redirect()->route('incrementProductInCart');
+        return redirect()->route('getCart');
     }
 
     public function decrementProductInCart($product_id, $quantity)
@@ -91,7 +91,7 @@ class CartController extends Controller
         if ($products->count() === 0) {
             $user->productsCarts()->attach($product);
         }
-
+        
         $this->incrementProductInCart($product->id);
         return redirect()->route('getCart');
     }
