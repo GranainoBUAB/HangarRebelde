@@ -169,6 +169,21 @@
     margin-left: 5px;
   }
 }
+@media screen and (min-width: 992px) {
+  .icoCardHeader {
+    margin-right: 10px;
+    margin-top: 7px;
+  }
+
+  li.nav-item {
+    display: flex;
+  }
+
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .ct-product {
   width: auto;
   height: auto;
