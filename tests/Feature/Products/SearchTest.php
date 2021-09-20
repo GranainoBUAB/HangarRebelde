@@ -28,15 +28,23 @@ class SearchTest extends TestCase
     }
 
 
-    /*  public function test_return_product_found_by_title()
+    public function test_search_return_product_found_by_title()
     {
-        $product = Product::factory()->create(['title'=>'superman']);
-        $product = Product::factory()->create(['title'=>'spiderman']);
+        Product::factory()->create(['title'=>'superman']);
+        
 
-        
-        
-        $response = $this->get(route('search', [input('query')=>'superman']));
-        $response->assertViewHas('superman');
-        
-    } */
+        $this->get(route('search', ['search' => 'superman']))
+        ->assertSuccessful()
+        ->assertSee('superman');
+    }
+
+    public function test_search_return_product_found_by_author()
+    {
+        $product = Product::factory()->create(['author1'=>'william']);
+        //dd($product);
+
+        $this->get(route('search', ['search' => 'william']))
+        ->assertSuccessful();
+        //->assertSee('norma');
+    }
 }
