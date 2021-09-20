@@ -33,13 +33,13 @@
     <div class="mt-md-3 ms-3 d-flex flex-wrap">
     @foreach ($products as $product)
 
-        <div class="card border-light bg-light mb-3 ps-2 mt-3 card-cart">
+        <div class="card border-light bg-light mb-3 px-2 mt-3 card-cart">
             <div class="row g-0 ps-3 me-0">
-                <a class="col-md-2 p-0 pt-lg-2" href="{{ route('show', ['id' => $product->product_id]) }}">
+                <a class="col-md-3 p-0" href="{{ route('show', ['id' => $product->product_id]) }}">
                     <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="...">
                 </a>
                 <div class="col-sm-9 px-0">
-                    <div class="card-body p-2">
+                    <div class="card-body p-0">
                         <h6 class="card-title title-cart mb-1">{{ $product->title }}</h6>
                         <div class="d-flex flex-row flex-wrap align-items-center pb-2 div-authors">
                             <a href="{{ route('viewByAuthor', ['author'=>$product->author1]) }}" class="text-reset"><p class="authors m-0"><small>{{ $product->author1 }}  </small></p></a>
@@ -67,27 +67,22 @@
                         </div>
                         
                         <p class="card-text mb-1"><small class="text-muted">ISBN: {{ $product->isbn }}</small></p>
+                        
                         <div class="d-flex flex-nowrap justify-content-between align-items-center">
-                            {{-- <select class="form-select p-1" aria-label="Default select example">
-                                <option selected value="1">1</option>
-                                <option value="0">0</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select> --}}
+                            <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                                <a class="d-flex justify-content-center align-items-center ct-counter" href="{{ route('decrementProductInCart', ['product_id'=>$product->product_id, 'quantity'=>$product->quantity]) }}"><img src="{{url('/img/less.svg')}}" alt="subtract products"></a>
+                                <p class="cartPrice m-2">{{ $product->quantity }} </p>
+                                <a class="d-flex justify-content-center align-items-center ct-counter" href="{{ route('incrementProductInCart', ['product_id'=>$product->product_id]) }}"><img src="{{url('/img/plus.svg')}}" alt="add products"></a>
 
-                            <a href="{{ route('decrementProductInCart', ['product_id'=>$product->product_id, 'quantity'=>$product->quantity]) }}">➖</a>
-                            <p class="cartPrice m-2">{{ $product->quantity }} </p>
-                            <a href="{{ route('incrementProductInCart', ['product_id'=>$product->product_id]) }}">➕</a>
-
+                                <form action="{{route('removeCart', $product->product_id)}}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                        <button class="btn-trash bg-light ml-2" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')"><img class="img-trash"  src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
+                                </form>
+                            </div>
                             <p class="cartPrice m-2">{{ $product->price }} &#8364</p>
-
-                            <form action="{{route('removeCart', $product->product_id)}}" method="post">
-                                @method('delete')
-                                @csrf
-                                    <button class="btn-trash bg-light" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')"><img class="img-trash"  src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
-                            </form>
                         </div>
+
                     </div>
 
                 </div>
@@ -98,7 +93,7 @@
     </div>
 
     <div class="row-5 row-sm-4 ms-3">
-        <div class="card summary mt-3 p-2 ">
+        <div class="card summary mt-5 p-2 ">
             <div class="fw-bold ms-2">
                 Resumen
             </div>
@@ -137,7 +132,7 @@
                                 </label>
                             </div>
                         </div>
-                            <span class="btn  btn-continue" type="button">Continuar</span>
+                            <span class="btn btn-continue align-self-end" type="button">Continuar</span>
                     </li>
                 </ul>
             </div>
