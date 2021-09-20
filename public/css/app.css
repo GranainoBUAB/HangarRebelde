@@ -380,7 +380,7 @@
 }
 
 .icoCard {
-  width: 70%;
+  width: 100%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
@@ -574,7 +574,7 @@ hr {
 }
 
 .icoCardShow {
-  width: 10%;
+  width: 6%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 @media screen and (min-width: 1200px) {
@@ -584,7 +584,7 @@ hr {
 }
 
 .icoCardShowAvailable {
-  width: 10%;
+  width: 6%;
 }
 @media screen and (min-width: 1200px) {
   .icoCardShowAvailable {
@@ -593,7 +593,7 @@ hr {
 }
 
 .icoCartNoAvailable {
-  width: 10%;
+  width: 6%;
 }
 @media screen and (min-width: 1200px) {
   .icoCartNoAvailable {
