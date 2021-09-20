@@ -761,7 +761,7 @@ a {
 }
 
 .imgCart {
-  width: 100px;
+  width: 105px;
   height: auto;
   border: 3px solid #FF8300;
   border-radius: 10px 10px 10px 10px;
@@ -807,7 +807,7 @@ a {
 }
 
 .summary {
-  width: 600px;
+  width: 39vw;
   border: 3px solid #FF8300 !important;
 }
 
@@ -837,6 +837,13 @@ a {
   justify-content: center;
   align-items: center;
   color: #FF8300;
+}
+
+.ct-counter {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #FF8300;
+  border-radius: 4px;
 }
 
 .table-warning, .table-warning > th, .table-warning > td {
