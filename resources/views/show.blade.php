@@ -21,11 +21,11 @@
                         <a class="icoCardShowAvailable" href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                             <img class="icoCard m-1 mb-2" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                         </a>
-                        
+
                         @else
                         <h6 class="extraShow font-weight-bold mx-2"> | No Disponible: No</h6>
                         <h6 class="extraShow font-weight-bold mx-2"> | Añadir al carrito</h6>
-                        <img class="icoCartNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
+                        <img class="icoCardShowNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                         @endif
 
                         @if($product->canReserve && Auth::check() && Auth::user()->canReserve)
