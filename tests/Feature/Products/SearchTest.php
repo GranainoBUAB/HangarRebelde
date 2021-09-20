@@ -23,14 +23,15 @@ class SearchTest extends TestCase
     {
         $response = $this->get(route('search'));
         
-        $response->assertOk();
+        $response->assertStatus(200);
 
     }
 
 
     /*  public function test_return_product_found_by_title()
     {
-        $products = Product::factory()->create(['title'=>'superman']);
+        $product = Product::factory()->create(['title'=>'superman']);
+        $product = Product::factory()->create(['title'=>'spiderman']);
 
         
         
