@@ -66,9 +66,13 @@
           <span class="ml-2">No Disponible</span>
         </div>
 
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="text" name="canReserve" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required autocomplete="canReserve" autofocus>
+        <div class="input-group mb-3 d-flex align-items-center" >
+          <span class="input-group-text mr-3" id="inputGroup-sizing-default">Reserva</span>
+          <input type="radio" class="ml-2" name="canReserve" value="1" required autocomplete="canReserve" autofocus>
+          <span class="ml-2">Sí</span>
+
+          <input type="radio" class="ml-2" name="canReserve" value="0" required autocomplete="canReserve" autofocus>
+          <span class="ml-2">No</span>
         </div>
 
         <div class="input-group mb-3">

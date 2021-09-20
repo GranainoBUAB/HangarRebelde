@@ -59,13 +59,11 @@ Route::delete('/all/cart', [CartController::class, 'deleteAllProducts'])->name('
 
 /* //Users Routes */
 
-Route::get('users', [UserController::class, 'getUser'])->name('getUser');
-
+Route::get('users', [UserController::class, 'getUser'])->name('getUser')->middleware('isadmin');
 Route::delete('users/delete/{id}', [UserController::class, 'destroyUsers'])->name('destroyUsers')->middleware('isadmin');
-
 Route::patch('/update_users/{id}', [UserController::class, 'updateUsers'])->name('updateUsers')->middleware('isadmin');
-
 Route::get('/edit_user/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin');
+Route::get('/searchUsers', [UserController::class, 'searchUsers'])->name('searchUsers');
 
 /* Profile Routes */
 

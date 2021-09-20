@@ -76,6 +76,23 @@ class CartController extends Controller
     }
 
 
+    public function deleteAllProducts()
+    {
+        /* if () {
+
+        } else {
+            Session::flash('message', "No hay productos en su carrito de compra");
+        } */
+
+        $user_id = auth()->id();
+
+        DB::table('carts')
+            ->where('user_id', $user_id)
+            ->delete();
+
+        Session::flash('message', "¡No hay productos en su carrito de compra!");
+        return back();
+    }
 
     private function addProductInCart($product)
     {
@@ -96,21 +113,4 @@ class CartController extends Controller
         return redirect()->route('getCart');
     }
 
-    public function deleteAllProducts()
-    {
-        /* if () {
-
-        } else {
-            Session::flash('message', "No hay productos en su carrito de compra");
-        } */
-
-        $user_id = auth()->id();
-
-        DB::table('carts')
-            ->where('user_id', $user_id)
-            ->delete();
-
-        Session::flash('message', "¡No hay productos en su carrito de compra!");
-        return back();
-    }
 }

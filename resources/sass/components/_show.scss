@@ -12,8 +12,21 @@
     }
 }
 
-@mixin icoCardShow {
+@mixin icoCardShowAvailable {
     width: 10%;
+    @media screen and (min-width: $breakpointMiddle){
+        width: 7%;
+    }
+    @media screen and (min-width: $breakpointLaptop){
+        width: 5%;
+    }
+}
+
+@mixin icoCardShowNoAvailable {
+    width: 7%;
+    @media screen and (min-width: $breakpointMiddle){
+        width: 6%;
+    }
     @media screen and (min-width: $breakpointLaptop){
         width: 4%;
     }
@@ -43,14 +56,14 @@
 }
 
 .icoCardShow {
-    @include icoCardShow;
+    @include icoCardShowAvailable;
     filter: $filterSVGOrange;
 }
 
 .icoCardShowAvailable {
-    @include icoCardShow;
+    @include icoCardShowAvailable;
 }
 
-.icoCartNoAvailable {
-    @include icoCardShow;
+.icoCardShowNoAvailable {
+    @include icoCardShowNoAvailable;
 }

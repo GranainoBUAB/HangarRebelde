@@ -59,15 +59,32 @@
 
         <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-          <input type="radio" class="ml-2" name="isAvailable" value="1">
-          <span class="ml-2">Disponible</span>
-          <input type="radio" class="ml-2" name="isAvailable" value="0">
-          <span class="ml-2">No Disponible</span>
+          @if ($product->isAvailable === 1)
+            <input type="radio" class="ml-2" name="isAvailable" value="1" checked>
+            <span class="ml-2">Disponible</span>
+            <input type="radio" class="ml-2" name="isAvailable" value="0">
+            <span class="ml-2">No Disponible</span>
+          @else
+            <input type="radio" class="ml-2" name="isAvailable" value="1">
+            <span class="ml-2">Disponible</span>
+            <input type="radio" class="ml-2" name="isAvailable" value="0" checked>
+            <span class="ml-2">No Disponible</span>
+          @endif
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="text" name="canReserve" value="{{$product->canReserve}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          @if ($product->canReserve === 1)
+            <input type="radio" class="ml-2" name="canReserve" value="1" checked>
+            <span class="ml-2">Sí</span>
+            <input type="radio" class="ml-2" name="canReserve" value="0">
+            <span class="ml-2">No</span>
+          @else
+            <input type="radio" class="ml-2" name="canReserve" value="1">
+            <span class="ml-2">Sí</span>
+            <input type="radio" class="ml-2" name="canReserve" value="0" checked>
+            <span class="ml-2">No</span>
+          @endif
         </div>
 
         <div class="input-group mb-3">
@@ -102,22 +119,22 @@
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
           {{-- {{$product->image1}} --}}
-          <img class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-          <input type="file" name="image1" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <img id="uploadPreview1" class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+          <input id="uploadImage1" type="file" name="image1" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onchange="previewImage(1);">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
           {{-- {{$product->image2}} --}}
-          <img class="input-select" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-          <input type="file" name="image2" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <img id="uploadPreview2" class="input-select" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
+          <input id="uploadImage2" type="file" name="image2" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onchange="previewImage(2);">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
           {{-- {{$product->image3}} --}}
-          <img class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
-          <input type="file" name="image3" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <img id="uploadPreview3" class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+          <input id="uploadImage3" type="file" name="image3" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onchange="previewImage(3);">
         </div>
 
         <div class="input-group mb-3">
@@ -156,4 +173,17 @@
         </div>
   </div>   
 </form>
+
+<script>
+
+function previewImage(nb) {        
+    var reader = new FileReader();         
+    reader.readAsDataURL(document.getElementById('uploadImage'+nb).files[0]);         
+    reader.onload = function (e) {             
+        document.getElementById('uploadPreview'+nb).src = e.target.result;         
+    };     
+}
+
+</script>
+
 @endsection
