@@ -59,6 +59,13 @@
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+.navbar-toggler{
+    font-family: $fontPrincipal;
+    color: $colorOrange !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+    font-size: 1.5rem !important;
+}
+
 .ct-search {
     margin: 0px !important;
 }
@@ -121,12 +128,7 @@
     .ul-search{
         flex-wrap: nowrap;
     }
-    .navbar-toggler{
-        font-family: $fontPrincipal;
-        color: $colorOrange !important;
-        border-color: rgba(0, 0, 0, 0) !important;
-        font-size: 1.5rem !important;
-    }
+
     .li-item{
         width: 150px;
         margin-bottom: 15px;
@@ -155,3 +157,19 @@
         margin-left: 5px;
     }
 }
+
+@media screen and (min-width: $breakpointMiddle){
+
+    .icoCardHeader{
+    margin-right: 10px;
+    margin-top: 7px;
+    }
+    li.nav-item {
+    display: flex;
+    }
+    .navbar{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    }
+    
