@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
                 <div class="ct-imgShow">
-                    <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                    <img id="img" class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
                 </div>
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
                     <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
@@ -82,9 +82,9 @@
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
                     <div class="d-flex flex-row mt-3">
-                        <img id="uploadPreview1" class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="" onclick="previewImage(1);">
-                        <img id="uploadPreview2" class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="" onclick="previewImage(2);">
-                        <img id="uploadPreview3" class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="" onclick="previewImage(3);">
+                        <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="" onclick="changeImage('{{ asset('storage') . '/' . $product->image1 }}')">
+                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="" onclick="changeImage('{{ asset('storage') . '/' . $product->image2 }}')">
+                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="" onclick="changeImage('{{ asset('storage') . '/' . $product->image3 }}')">
                         <div class="d-flex flex-column justify-content-end">
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold mx-2">Formato:</h6>
@@ -164,12 +164,8 @@
 
     <script>
 
-        function previewImage(nb) {        
-            /* var reader = new FileReader();         
-            reader.readAsDataURL(document.getElementById('uploadImage'+nb).files[0]);  */        
-            reader.onload = function (e) {             
-                document.getElementById('uploadPreview'+nb).src = e.target.result;         
-            };     
+    function changeImage(a) {
+            document.getElementById("img").src=a.src;
         }
         
     </script>
