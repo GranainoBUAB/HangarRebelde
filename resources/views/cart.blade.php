@@ -65,9 +65,9 @@
                             @endif
 
                         </div>
-                        
+
                         <p class="card-text mb-1"><small class="text-muted">ISBN: {{ $product->isbn }}</small></p>
-                        
+
                         <div class="d-flex flex-nowrap justify-content-between align-items-center">
                             <div class="d-flex flex-nowrap justify-content-between align-items-center">
                                 <a class="d-flex justify-content-center align-items-center ct-counter" href="{{ route('decrementProductInCart', ['product_id'=>$product->product_id, 'quantity'=>$product->quantity]) }}"><img src="{{url('/img/less.svg')}}" alt="subtract products"></a>
@@ -80,7 +80,7 @@
                                         <button class="btn-trash bg-light ml-2" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')"><img class="img-trash"  src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
                                 </form>
                             </div>
-                            <p class="cartPrice m-2">{{ number_format($product->price, 2) }} &#8364</p>
+                            <p class="cartPrice m-2">{{ number_format($product->price * $product->quantity,2) }} &#8364</p>
                         </div>
 
                     </div>
