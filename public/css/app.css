@@ -64,6 +64,13 @@
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+.navbar-toggler {
+  font-family: "Woodstamp";
+  color: #FF8300 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  font-size: 1.5rem !important;
+}
+
 .ct-search {
   margin: 0px !important;
 }
@@ -132,13 +139,6 @@
 
   .ul-search {
     flex-wrap: nowrap;
-  }
-
-  .navbar-toggler {
-    font-family: "Woodstamp";
-    color: #FF8300 !important;
-    border-color: rgba(0, 0, 0, 0) !important;
-    font-size: 1.5rem !important;
   }
 
   .li-item {
@@ -380,7 +380,7 @@
 }
 
 .icoCard {
-  width: 100%;
+  width: 70%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
@@ -574,29 +574,44 @@ hr {
 }
 
 .icoCardShow {
-  width: 6%;
+  width: 10%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+@media screen and (min-width: 992px) {
+  .icoCardShow {
+    width: 7%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .icoCardShow {
-    width: 4%;
+    width: 5%;
   }
 }
 
 .icoCardShowAvailable {
-  width: 6%;
+  width: 10%;
+}
+@media screen and (min-width: 992px) {
+  .icoCardShowAvailable {
+    width: 7%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .icoCardShowAvailable {
-    width: 4%;
+    width: 5%;
   }
 }
 
-.icoCartNoAvailable {
-  width: 6%;
+.icoCardShowNoAvailable {
+  width: 7%;
+}
+@media screen and (min-width: 992px) {
+  .icoCardShowNoAvailable {
+    width: 6%;
+  }
 }
 @media screen and (min-width: 1200px) {
-  .icoCartNoAvailable {
+  .icoCardShowNoAvailable {
     width: 4%;
   }
 }
