@@ -30,10 +30,10 @@
             </div>
         @endif
 
-    <div class="mt-md-3 ms-3 d-flex flex-wrap">
+    <div class="mt-md-3 ms-3 d-flex flex-wrap justify-content-between">
     @foreach ($products as $product)
 
-        <div class="card border-light bg-light mb-3 px-2 mt-3 card-cart">
+        <div class="card border-light bg-light mb-3 px-2 mt-3 card-cart col-12 col-lg-6">
             <div class="row g-0 ps-3 me-0">
                 <a class="col-md-3 p-0" href="{{ route('show', ['id' => $product->product_id]) }}">
                     <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="...">
@@ -80,7 +80,7 @@
                                         <button class="btn-trash bg-light ml-2" type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto del carrito? {{ $product->title }}')"><img class="img-trash"  src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik"></button>
                                 </form>
                             </div>
-                            <p class="cartPrice m-2">{{ $product->price }} &#8364</p>
+                            <p class="cartPrice m-2">{{ number_format($product->price, 2) }} &#8364</p>
                         </div>
 
                     </div>
