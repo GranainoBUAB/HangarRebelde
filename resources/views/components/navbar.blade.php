@@ -32,9 +32,9 @@
                             <img class="imgcarrito" src="{{url('/img/tienda.svg')}}"  alt="https://www.flaticon.es/autores/nikita-golubev">
                             Tienda</a>
                     </li><li class="nav-item li-item" role="presentation">
-                        <a href="#" class="nav-link text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito" src="{{url('/img/group.svg')}}" alt="https://www.freepik.com">
-                            Sobre nosotros</a>
+                        <a href="#" class="nav-link d-flex flex-wrap text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                            <img class="imgcarrito mr-1" src="{{url('/img/group.svg')}}" alt="https://www.freepik.com">
+                            <span class="responsive-text">Sobre nosotros</span></a>
                     </li>
                 </ul>
             </div>
