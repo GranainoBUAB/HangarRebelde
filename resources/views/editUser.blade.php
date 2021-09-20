@@ -60,11 +60,17 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-          <input type="radio" class="ml-2" name="canReserve" value="1">
+          @if ($user->canReserve === 1)
+          <input type="radio" class="ml-2" name="canReserve" value="1" cheked>
           <span class="ml-2">Sí</span>
-
           <input type="radio" class="ml-2" name="canReserve" value="0">
           <span class="ml-2">No</span>
+          @else
+          <input type="radio" class="ml-2" name="canReserve" value="1" >
+          <span class="ml-2">Sí</span>
+          <input type="radio" class="ml-2" name="canReserve" value="0" cheked>
+          <span class="ml-2">No</span>
+          @endif
         </div>
 
         <div class="input-group mb-3">

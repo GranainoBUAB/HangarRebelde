@@ -125,15 +125,15 @@
     text-overflow: ellipsis;
     overflow: hidden;
     @media screen and (min-width: $breakpointDesktop){
-        max-width: 8.5rem;
-        height: 1.25rem;
+        max-width: 136px;
+        height: 20px;
     }
 }
 
 .txtTitle {
     @include txtTitle;
     @media screen and (min-width: $breakpointDesktop){
-        max-width: 8.1rem;
+        max-width: 136px;
     }
 }
 

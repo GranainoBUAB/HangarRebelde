@@ -59,7 +59,7 @@ Route::delete('/all/cart', [CartController::class, 'deleteAllProducts'])->name('
 
 /* //Users Routes */
 
-Route::get('users', [UserController::class, 'getUser'])->name('getUser');
+Route::get('users', [UserController::class, 'getUser'])->name('getUser')->middleware('isadmin');
 
 Route::delete('users/delete/{id}', [UserController::class, 'destroyUsers'])->name('destroyUsers')->middleware('isadmin');
 

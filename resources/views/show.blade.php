@@ -28,11 +28,13 @@
                         <img class="icoCartNoAvailable m-1 mb-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                         @endif
 
-                        {{-- @if($product->canReserve) --}}
-                        {{-- <h6 class="extraShow font-weight-bold mx-2"> | Reservar</h6> --}}
-                        <h6 class="extraShow font-weight-bold mx-2"> | </h6>
-                        <button type="text" class="input-group-text ml-2">Reservar</button></a>
-                        {{-- @endif --}}
+                        @if($product->canReserve === 1)
+                        <h6 class="extraShow font-weight-bold mx-2 d-block"> | </h6>
+                        <button type="text" class="input-group-text ml-2 d-block">Reservar</button></a>
+                        @else
+                        <h6 class="extraShow font-weight-bold mx-2 d-none"> | </h6>
+                        <button type="text" class="input-group-text ml-2 d-none">Reservar</button></a>
+                        @endif
 
                     </div>
                     <h6 class="card-title font-weight-bold mt-3">Autores:</h6>
@@ -146,12 +148,11 @@
                         <div class="ct-info d-flex flex-row align-items-center p-1">
                             <div class="ct-txt d-flex flex-column justify-content-center">
                                 <div class="txtTitle d-flex flex-row align-items-center">
-                                    <p class="txtInfoTitle m-0">{{ $productrelation->title }} </p>
-                                    <p class="txtPoints m-0">...</p>
+                                    <p class="txtInfoTitle text-truncate m-0">{{ $productrelation->title }} </p>
                                 </div>
                                 <p class="txtPrice">{{ $productrelation->price }} &#8364</p>
                             </div>
-                            <div class="separator"></div>
+                            <div class="separator">|</div>
                             <a href="{{ route('addCart', ['product_id'=>$product->id]) }}">
                                 <img class="icoCard m-1" src="{{url('/img/shopping-cart.svg')}}" alt="Flaticon">
                             </a>

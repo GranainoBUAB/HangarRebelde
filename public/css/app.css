@@ -295,8 +295,8 @@
 }
 @media screen and (min-width: 1440px) {
   .txtInfoTitle {
-    max-width: 8.5rem;
-    height: 1.25rem;
+    max-width: 136px;
+    height: 20px;
   }
 }
 
@@ -319,7 +319,7 @@
 }
 @media screen and (min-width: 1440px) {
   .txtTitle {
-    max-width: 8.1rem;
+    max-width: 136px;
   }
 }
 
