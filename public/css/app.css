@@ -64,6 +64,13 @@
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+.navbar-toggler {
+  font-family: "Woodstamp";
+  color: #FF8300 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  font-size: 1.5rem !important;
+}
+
 .ct-search {
   margin: 0px !important;
 }
@@ -132,13 +139,6 @@
 
   .ul-search {
     flex-wrap: nowrap;
-  }
-
-  .navbar-toggler {
-    font-family: "Woodstamp";
-    color: #FF8300 !important;
-    border-color: rgba(0, 0, 0, 0) !important;
-    font-size: 1.5rem !important;
   }
 
   .li-item {
