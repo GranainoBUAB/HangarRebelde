@@ -171,4 +171,5 @@ function previewImage(nb) {
 }
 
 </script>
+
 @endsection

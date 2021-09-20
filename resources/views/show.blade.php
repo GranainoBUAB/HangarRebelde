@@ -82,9 +82,9 @@
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
                     <div class="d-flex flex-row mt-3">
-                        <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+                        <img id="uploadPreview1" class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="" onclick="previewImage(1);">
+                        <img id="uploadPreview2" class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="" onclick="previewImage(2);">
+                        <img id="uploadPreview3" class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="" onclick="previewImage(3);">
                         <div class="d-flex flex-column justify-content-end">
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold mx-2">Formato:</h6>
@@ -161,4 +161,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        function previewImage(nb) {        
+            /* var reader = new FileReader();         
+            reader.readAsDataURL(document.getElementById('uploadImage'+nb).files[0]);  */        
+            reader.onload = function (e) {             
+                document.getElementById('uploadPreview'+nb).src = e.target.result;         
+            };     
+        }
+        
+    </script>
+
 @endsection
