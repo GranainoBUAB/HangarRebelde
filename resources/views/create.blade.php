@@ -68,9 +68,9 @@
 
         <div class="input-group mb-3 d-flex align-items-center">
           <span class="input-group-text" id="inputGroup-sizing-default">Reserva</span>
-            <input type="radio" class="ml-2" name="canReserve" value="1" checked>
+            <input type="radio" class="ml-2" name="canReserve" value="1" required autocomplete="canReserve" autofocus checked>
             <span class="ml-2">Sí</span>
-            <input type="radio" class="ml-2" name="canReserve" value="0">
+            <input type="radio" class="ml-2" name="canReserve" value="0" required autocomplete="canReserve" autofocus >
             <span class="ml-2">No</span>
         </div>
 
