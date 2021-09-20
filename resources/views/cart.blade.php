@@ -65,6 +65,7 @@
                             @endif
 
                         </div>
+                        
                         <p class="card-text mb-1"><small class="text-muted">ISBN: {{ $product->isbn }}</small></p>
                         <div class="d-flex flex-nowrap justify-content-between align-items-center">
                             {{-- <select class="form-select p-1" aria-label="Default select example">

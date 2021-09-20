@@ -76,26 +76,6 @@ class CartController extends Controller
     }
 
 
-
-    private function addProductInCart($product)
-    {
-        $user = Auth::user();
-        $user_id = $user->id;
-
-        $products = DB::table('products')
-            ->join('carts', 'products.id', '=', 'carts.product_id')
-            ->where('user_id', '=', $user_id)
-            ->where('product_id', '=', $product->id)
-            ->get();
-
-        if ($products->count() === 0) {
-            $user->productsCarts()->attach($product);
-        }
-        
-        $this->incrementProductInCart($product->id);
-        return redirect()->route('getCart');
-    }
-
     public function deleteAllProducts()
     {
         /* if () {
@@ -113,4 +93,24 @@ class CartController extends Controller
         Session::flash('message', "¡No hay productos en su carrito de compra!");
         return back();
     }
+
+    private function addProductInCart($product)
+    {
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $products = DB::table('products')
+            ->join('carts', 'products.id', '=', 'carts.product_id')
+            ->where('user_id', '=', $user_id)
+            ->where('product_id', '=', $product->id)
+            ->get();
+
+        if ($products->count() === 0) {
+            $user->productsCarts()->attach($product);
+        }
+
+        $this->incrementProductInCart($product->id);
+        return redirect()->route('getCart');
+    }
+
 }
