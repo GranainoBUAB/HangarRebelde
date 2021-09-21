@@ -82,9 +82,41 @@
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
                     <div class="d-flex flex-row mt-3">
-                        <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+                        <button id ="boton-cambio">
+                            <img src="image1" id="image1" alt="primeraImagen" class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">Cambiar imagen</button>
+
+                        
+                        
+
+                        
+                        <button id ="boton-cambio"><img id="uploadPreview1" class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">Cambiar imagen</button>
+
+                                <script>
+                                    function cambiarImagenJS()
+                                    {
+                                        document.getElementById("uploadImage1"). src="{{ asset('storage') . '/' . $product->image2 }}";
+                                    }
+                                </script> 
+
+
+                        <button id ="boton-cambio"><img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">Cambiar imagen</button>
+
+                       
+
+
+                             {{--        <script>
+                                    $(document).ready(function() {  
+                                        $('#boton-cambio').click(function(){
+                                            $('#cambio').replaceWith('<img id="cambio" src="blue.jpeg" alt="imagen cambiada" width="500" height="400">');
+                                        });
+                                    });
+                                    </script> --}}
+
+
+                               {{--      <button id ="boton-cambio">Seleccionar imagen de portada</button>
+ --}}
+
+                        
                         <div class="d-flex flex-column justify-content-end">
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold mx-2">Formato:</h6>
@@ -125,14 +157,6 @@
                 </div>
             @endif
 
-            <center>
-                <br>
-                <br>
-                <div>
-                    <h2 class="card-title font-weight-bold txtTitleShow">Productos relacionados</h2>
-                </div>
-
-            </center>
             <div class="row justify-content-center">
 
                 @foreach ($productrelations as $productrelation)
