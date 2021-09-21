@@ -14,7 +14,6 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user = User::find($id);
         
-
         return view('profile', compact('user'));
     }
 
@@ -31,16 +30,10 @@ class ProfileController extends Controller
 
         $updateMyProfile = request()->except(['_token', '_method']);
 
-
         User::where('id', '=', $id)->update($updateMyProfile);
 
         $user = User::findOrFail($id);
 
         return redirect()->route('myProfile', ['id'=>$user->id]);
-
     }
-
-    
-    
-    
 }

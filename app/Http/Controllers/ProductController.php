@@ -25,19 +25,12 @@ class ProductController extends Controller
     {
         $user = Auth::user();
 
-        /*  $products = Product::all(); */
         $products = Product::orderBy('id', 'desc')->take(10)->get();
         $sumAndQuantity = Cart::sumAndQuantity();
 
         $products = Product::simplePaginate(10);
 
-
-
         return view('home', compact('products', 'user', 'sumAndQuantity'));
-
-
-
-        /* return view('cart', compact('products', 'sumAndQuantity')); */
     }
 
     /**
