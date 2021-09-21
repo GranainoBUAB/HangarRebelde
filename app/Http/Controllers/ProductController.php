@@ -29,7 +29,12 @@ class ProductController extends Controller
         $products = Product::orderBy('id', 'desc')->take(10)->get();
         $sumAndQuantity = Cart::sumAndQuantity();
 
+        $products = Product::simplePaginate(30);
+
+        
+
         return view('home', compact('products', 'user', 'sumAndQuantity'));
+
 
 
         /* return view('cart', compact('products', 'sumAndQuantity')); */
@@ -208,9 +213,9 @@ class ProductController extends Controller
     {
         if ($catSec === null) {
 
-            $products = Product::where('categoryMain', '=', $catMain)->get();
+            $products = Product::where('categoryMain', '=', $catMain)->simplePaginate(3);
         } else {
-            $products = Product::where('categorySecondary', '=', $catSec)->get();
+            $products = Product::where('categorySecondary', '=', $catSec)->simplePaginate(3);
         }
         $sumAndQuantity = Cart::sumAndQuantity();
         return view('home', compact('products','sumAndQuantity'));
