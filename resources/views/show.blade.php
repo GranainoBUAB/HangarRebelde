@@ -89,8 +89,9 @@
                         
                        {{--  <input value="Mirar Havana" onclick="pausaplay();" type="button"> --}}
                         
-                        <button id ="boton-cambio"><img id="uploadImage2" class="input-select"  src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">Cambiar imagen</button>
+                        <button id ="boton-cambio"><img id="uploadImage2" class="input-select"  src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="" onclick="cambiarImagenJS();">Cambiar imagen</button>
 
+                        
                         
                                 <script>
                                     function cambiarImagenJS()
