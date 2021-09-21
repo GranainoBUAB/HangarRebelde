@@ -49,8 +49,14 @@
 }
 
 .summary{
-    width: 39vw;
+    width: 80vw;
     border: 3px solid $colorOrange  !important;
+    @media screen and (min-width: $breakpointTable){
+        width: 50vw;
+    }
+    @media screen and (min-width: $breakpointLaptop){
+        width: 39vw;
+    }
 }
 
 .line-sum{

@@ -807,8 +807,18 @@ a {
 }
 
 .summary {
-  width: 39vw;
+  width: 80vw;
   border: 3px solid #FF8300 !important;
+}
+@media screen and (min-width: 768px) {
+  .summary {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .summary {
+    width: 39vw;
+  }
 }
 
 .line-sum {
