@@ -51,8 +51,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        $product = Product::create([
+        $product = request()->except('_token');
+        /* $product = Product::create([
             'title' => $request->title,
             'description' => $request->description,
             'price' => $request->price,
@@ -78,8 +78,7 @@ class ProductController extends Controller
             'tag2' => $request->tag2,
             'tag3' => $request->tag3,
             'pages' => $request->pages
-        ]);
-
+        ]); */
 
         if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
@@ -92,9 +91,9 @@ class ProductController extends Controller
         if ($request->hasFile('image3')) {
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
-
-
-        $product->save();
+        
+        Product::create($product);
+        //$product->save();
         return redirect()->route('home');
     }
 
