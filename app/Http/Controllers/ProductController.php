@@ -31,7 +31,7 @@ class ProductController extends Controller
 
         $products = Product::simplePaginate(10);
 
-        
+
 
         return view('home', compact('products', 'user', 'sumAndQuantity'));
 
@@ -183,17 +183,7 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-
-        $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author1', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author2', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author3', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author4', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author5', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author6', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
-            ->get();
+        $products = Product::searchProducts($request);
 
         $sumAndQuantity = Cart::sumAndQuantity();
 
@@ -209,7 +199,7 @@ class ProductController extends Controller
             $products = Product::where('categorySecondary', '=', $catSec)->simplePaginate(2);
         }
         $sumAndQuantity = Cart::sumAndQuantity();
-        return view('home', compact('products','sumAndQuantity'));
+        return view('home', compact('products', 'sumAndQuantity'));
     }
 
     public function viewByAuthor($author)
@@ -217,13 +207,13 @@ class ProductController extends Controller
 
         $products = Product::filterAuthor($author);
         $sumAndQuantity = Cart::sumAndQuantity();
-        return view('home', compact('products','sumAndQuantity'));
+        return view('home', compact('products', 'sumAndQuantity'));
     }
 
     public function viewByTag($tag)
     {
         $products = Product::filterTag($tag);
         $sumAndQuantity = Cart::sumAndQuantity();
-        return view('home', compact('products','sumAndQuantity'));
+        return view('home', compact('products', 'sumAndQuantity'));
     }
 }
