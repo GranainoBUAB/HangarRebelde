@@ -100,7 +100,7 @@
   color: #FF8300 !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .navInicio {
     flex-wrap: nowrap;
     justify-content: center;
@@ -184,6 +184,14 @@
     padding-right: 0;
   }
 }
+.ct-session {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #FF8300;
+  font-weight: bold;
+}
+
 .ct-product {
   width: auto;
   height: auto;
@@ -554,7 +562,7 @@ hr {
 }
 @media screen and (min-width: 1440px) {
   .imgShow {
-    max-width: 15vw;
+    max-width: 20vw;
   }
 }
 
@@ -807,8 +815,18 @@ a {
 }
 
 .summary {
-  width: 39vw;
+  width: 80vw;
   border: 3px solid #FF8300 !important;
+}
+@media screen and (min-width: 768px) {
+  .summary {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .summary {
+    width: 39vw;
+  }
 }
 
 .line-sum {
@@ -886,6 +904,26 @@ a {
 
 .txtMembership {
   color: #FF8300;
+}
+
+.pagination li {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.pagination li .page-link {
+  border-radius: 0.25rem;
+  border: none;
+  min-width: 2.25rem;
+  text-align: center;
+  color: #FF8300;
+}
+
+.pagination li.active .page-link,
+.pagination li .page-link:hover {
+  background-color: #FF8300;
+  color: white !important;
+  font-weight: bold;
 }
 
 /*!

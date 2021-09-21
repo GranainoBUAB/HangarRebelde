@@ -95,7 +95,7 @@
 }
 
 
-@media screen and (max-width: $breakpointTable){
+@media screen and (max-width: $breakpointMiddle){
     .navInicio{
         flex-wrap: nowrap;
         justify-content: center;
@@ -171,5 +171,13 @@
         padding-left: 0;
         padding-right: 0;
     }
-    }
+}
+
+.ct-session{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: $colorOrange;
+    font-weight: bold;
+}
     
