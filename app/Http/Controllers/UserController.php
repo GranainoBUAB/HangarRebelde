@@ -47,21 +47,7 @@ class UserController extends Controller
 
     public function searchUsers(Request $request)
     {
-
-        $users = User::where('name', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('surname', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('email', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('dni', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('phone1', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('phone2', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('membership_number', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('address', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('zipCode', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('city', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('region', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('country', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('notes', 'like', '%' . $request->input('query') . '%')
-            ->get();
+        $users = User::searchUserinList($request);
 
         return view('users', compact('users'));
     }

@@ -28,4 +28,17 @@ class AdminSeeUserProfileTest extends TestCase
 
         $response->assertStatus(200);
     } 
+
+    public function test_user_can_not_see_user_list()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = User::factory()->create();
+    
+        $this->actingAs($user);
+
+        $response = $this->get(route('getUser'));
+
+        $response->assertStatus(302);
+    }
 }
