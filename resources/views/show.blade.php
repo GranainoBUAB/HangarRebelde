@@ -81,23 +81,23 @@
                         <h6 class="extraShow font-weight-bold mx-2"> | Categoría Principal:</h6>
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
-                    <div class="d-flex flex-row mt-3">
-                        <img class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-                        <img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
-                        <div class="d-flex flex-column justify-content-end">
+                    <div class="d-flex flex-wrap flex-row mt-3">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+                        <div class="d-flex flex-column justify-content-end m-1">
                             <div class="d-flex flex-row align-items-center flex-wrap">
-                                <h6 class="extraShow font-weight-bold mx-2">Formato:</h6>
+                                <h6 class="extraShow font-weight-bold">Formato:</h6>
                                 <p class="card-title extraShow">{{ $product->format }}</p>
                             </div>
                             <div class="d-flex flex-row align-items-center flex-wrap">
-                                <h6 class="extraShow font-weight-bold mx-2">Páginas:</h6>
+                                <h6 class="extraShow font-weight-bold">Páginas:</h6>
                                 <p class="card-title extraShow">{{ $product->pages }}</p>
                             </div>
                             <div class="d-flex flex-row align-items-center flex-wrap">
 
                                 @if($product->tag1)
-                                <h6 class="extraShow font-weight-bold mx-2">Etiquetas:</h6>
+                                <h6 class="extraShow font-weight-bold">Etiquetas:</h6>
                                 <a href="{{ route('viewByTag', ['tag'=>$product->tag1]) }}" class="text-reset"><h6 class="extraShow mr-1"> {{ $product->tag1}}  </h6></a>
                                 @endif
 
