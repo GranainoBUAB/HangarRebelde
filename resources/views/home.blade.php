@@ -19,7 +19,7 @@
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
                 <a href="{{ route('create') }}">
-                    <button type="text" class="btn createbtn ms-3">Crear nuevo Comic</button>
+                    <button type="text" class="bt-adm-createProduct">+</button>
                 </a>
             </div>
             <br>

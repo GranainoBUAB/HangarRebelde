@@ -25,10 +25,8 @@ class ProductController extends Controller
     {
         $user = Auth::user();
 
-        $products = Product::orderBy('id', 'desc')->take(10)->get();
+        $products = Product::orderBy('id', 'desc')->take(10)->simplePaginate(10);
         $sumAndQuantity = Cart::sumAndQuantity();
-
-        $products = Product::simplePaginate(10);
 
         return view('home', compact('products', 'user', 'sumAndQuantity'));
     }
