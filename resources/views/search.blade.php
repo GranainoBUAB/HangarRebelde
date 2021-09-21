@@ -4,7 +4,7 @@
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
     {{-- <x-categories /> --}}
 
-  <div class="d-flex flex-wrap row justify-content-center">
+    <div class="d-flex flex-wrap row justify-content-center">
 
     @foreach ($products as $product)
         <div class="ct-product m-3">
