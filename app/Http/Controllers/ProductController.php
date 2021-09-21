@@ -95,7 +95,6 @@ class ProductController extends Controller
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
 
-
         $product->save();
         return redirect()->route('home');
     }
