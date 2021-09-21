@@ -100,7 +100,7 @@
   color: #FF8300 !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .navInicio {
     flex-wrap: nowrap;
     justify-content: center;
@@ -184,6 +184,14 @@
     padding-right: 0;
   }
 }
+.ct-session {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #FF8300;
+  font-weight: bold;
+}
+
 .ct-product {
   width: auto;
   height: auto;
