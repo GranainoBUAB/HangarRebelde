@@ -82,24 +82,27 @@
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
                     <div class="d-flex flex-row mt-3">
-                        <button id ="boton-cambio">
-                            <img src="image1" id="image1" alt="primeraImagen" class="mr-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">Cambiar imagen</button>
 
-                        
-                        
-
-                        
                         <button id ="boton-cambio"><img id="uploadPreview1" class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">Cambiar imagen</button>
 
+                        
+                        
+                       {{--  <input value="Mirar Havana" onclick="pausaplay();" type="button"> --}}
+                        
+                        <button id ="boton-cambio"><img id="uploadImage2" class="input-select"  src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">Cambiar imagen</button>
+
+                        
                                 <script>
                                     function cambiarImagenJS()
                                     {
-                                        document.getElementById("uploadImage1"). src="{{ asset('storage') . '/' . $product->image2 }}";
+                                        document.getElementById("uploadImage2"). src="{{ asset('storage') . '/' . $product->image2 }}";
                                     }
                                 </script> 
 
+                        <input value="" onclick="cambiarImagenJS()" type="button">
 
-                        <button id ="boton-cambio"><img class="mx-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">Cambiar imagen</button>
+                        <button id ="boton-cambio"><img id="uploadPreview3" class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">Cambiar imagen</button>
+
 
                        
 
@@ -114,6 +117,15 @@
 
 
                                {{--      <button id ="boton-cambio">Seleccionar imagen de portada</button>
+ --}}
+
+
+                   {{--                      Imagenes Dev
+
+                    <div class="d-flex flex-wrap flex-row mt-3">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
  --}}
 
                         
