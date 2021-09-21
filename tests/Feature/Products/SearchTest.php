@@ -24,27 +24,15 @@ class SearchTest extends TestCase
         $response = $this->get(route('search'));
         
         $response->assertStatus(200);
-
     }
-
 
     public function test_search_return_product_found_by_title()
     {
         Product::factory()->create(['title'=>'superman']);
         
-
         $this->get(route('search', ['search' => 'superman']))
         ->assertSuccessful()
         ->assertSee('superman');
     }
 
-    public function test_search_return_product_found_by_author()
-    {
-        $product = Product::factory()->create(['author1'=>'william']);
-        //dd($product);
-
-        $this->get(route('search', ['search' => 'william']))
-        ->assertSuccessful();
-        //->assertSee('norma');
-    }
 }

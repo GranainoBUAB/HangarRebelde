@@ -150,31 +150,22 @@ class ProductController extends Controller
         $changesProduct = request()->except(['_token', '_method']);
 
         if ($request->hasFile('image1')) {
-            /* $product = Product::findOrFail($id);
-            Storage::delete('public/' . $product->image); */
             $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
         }
 
         if ($request->hasFile('image2')) {
-            /* $product = Product::findOrFail($id);
-            Storage::delete('public/' . $product->image); */
             $changesProduct['image2'] = $request->file('image2')->store('img', 'public');
         }
 
         if ($request->hasFile('image3')) {
-            /* $product = Product::findOrFail($id);
-            Storage::delete('public/' . $product->image); */
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
-
 
         Product::where('id', '=', $id)->update($changesProduct);
 
         $product = Product::findOrFail($id);
 
         return redirect()->route('home')->with('success', 'Updated');
-        //return redirect()->back();
-
     }
 
     /**
