@@ -554,7 +554,7 @@ hr {
 }
 @media screen and (min-width: 1440px) {
   .imgShow {
-    max-width: 15vw;
+    max-width: 20vw;
   }
 }
 
@@ -896,6 +896,26 @@ a {
 
 .txtMembership {
   color: #FF8300;
+}
+
+.pagination li {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.pagination li .page-link {
+  border-radius: 0.25rem;
+  border: none;
+  min-width: 2.25rem;
+  text-align: center;
+  color: #FF8300;
+}
+
+.pagination li.active .page-link,
+.pagination li .page-link:hover {
+  background-color: #FF8300;
+  color: white !important;
+  font-weight: bold;
 }
 
 /*!
