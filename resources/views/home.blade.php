@@ -19,13 +19,13 @@
         @if(Auth::check() && Auth::user()->isadmin())
             <div class="position-relative me-4">
                 <a href="{{ route('create') }}">
-                    <button type="text" class="btn createbtn ms-3">Crear nuevo Comic</button>
+                    <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-plus" src="{{url('/img/plus.svg')}}" alt="create product button"></button>
                 </a>
             </div>
             <br>
             <div class="position-relative me-4">
                 <a href="{{ route('getUser') }}">
-                    <button type="text" class="btn createbtn ms-3">Perfil de usuarios</button>
+                    <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-plus" src="{{url('/img/createUser.svg')}}" alt="create product button"></button>
                 </a>
             </div>
         @endif
