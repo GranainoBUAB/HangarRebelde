@@ -415,27 +415,6 @@
   }
 }
 
-.bt-adm {
-  background-color: #FF8300;
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0.3rem;
-}
-
-.ct-adm-buttons {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-}
-
-.ico-adm {
-  width: 1.7rem;
-  height: auto;
-  filter: invert(1);
-}
-
 .container {
   justify-content: space-between;
   width: 100%;
@@ -945,6 +924,40 @@ a {
   background-color: #FF8300;
   color: white !important;
   font-weight: bold;
+}
+
+.bt-adm-create {
+  background-color: #FF8300;
+  border: none;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.ico-plus {
+  filter: invert(1);
+}
+
+.bt-adm {
+  background-color: #FF8300;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.3rem;
+}
+
+.ct-adm-buttons {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.ico-adm {
+  width: 1.7rem;
+  height: auto;
+  filter: invert(1);
 }
 
 /*!
