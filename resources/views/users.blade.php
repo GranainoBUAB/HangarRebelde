@@ -2,7 +2,7 @@
 
 @section('content')
     <li class="nav-item" role="presentation">
-        <form class="d-flex align-items-center inputSearch" action="{{route('searchUsers')}}">
+        <form class="d-flex align-items-center inputSearch ml-5" action="{{route('searchUsers')}}">
             <div class="form-group ct-search">
                 <input class="form-control me-1 inputSearch" name = "query" type="text" placeholder="Buscar" aria-label="Search">
             </div>

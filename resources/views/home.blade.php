@@ -17,16 +17,17 @@
 
     <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
-            <div class="position-relative me-4">
-                <a href="{{ route('create') }}">
-                    <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-plus" src="{{url('/img/plus.svg')}}" alt="create product button"></button>
-                </a>
-            </div>
-            <br>
-            <div class="position-relative me-4">
-                <a href="{{ route('getUser') }}">
-                    <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-plus" src="{{url('/img/createUser.svg')}}" alt="create product button"></button>
-                </a>
+            <div class="d-flex justify-content-start align-items-center p-0 mt-5 ml-5">
+                <div class="position-relative me-4">
+                    <a href="{{ route('create') }}">
+                        <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-plus" src="{{url('/img/plus.svg')}}" alt="create product button"></button>
+                    </a>
+                </div>
+                <div class="position-relative me-4">
+                    <a href="{{ route('getUser') }}">
+                        <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-user" src="{{url('/img/user.svg')}}" alt="edit user button"></button>
+                    </a>
+                </div>
             </div>
         @endif
         <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">

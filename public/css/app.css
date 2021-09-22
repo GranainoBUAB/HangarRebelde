@@ -939,9 +939,14 @@ a {
   filter: invert(1);
 }
 
+.ico-user {
+  width: 1.7rem;
+  filter: invert(1);
+}
+
 .bt-adm {
   background-color: #FF8300;
-  border: 2px solid black;
+  border: none;
   border-radius: 5px;
   width: 2.5rem;
   height: 2.5rem;
