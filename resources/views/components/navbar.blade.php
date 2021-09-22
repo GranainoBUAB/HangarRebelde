@@ -9,32 +9,32 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav nav-pills mb-2 d-flex flex-wrap flex-lg-nowrap justify-content-space-between" id="pills-tab" role="tablist">
                     <li class="nav-item li-item" role="presentation">
-                        <a href="#" class="nav-link nav-home text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="true" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                        <a href="#" class="nav-link text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="true" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                             <img class="imgcarrito" src="{{url('/img/home.svg')}}" alt="https://www.freepik.com">
                             Inicio</a>
                     </li>
                     <li class="nav-item li-item" role="presentation">
-                        <a href="#" class="nav-link nav-home text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <a href="#" class="nav-link text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/calendario.svg')}}"  alt="https://www.flaticon.es/autores/srip">
                             Calendario</a>
                     </li>
                     <li class="nav-item li-item" role="presentation">
-                        <a href="#" class="nav-link nav-home text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <a href="#" class="nav-link text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/trofeo.svg')}}"  alt="https://www.freepik.com">
                             Torneos</a>
                     </li>
                     <li class="nav-item li-item" role="presentation">
-                        <a href="#" class="nav-link nav-home text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <a href="#" class="nav-link text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/megafono.svg')}}"  alt="https://www.flaticon.es/autores/good-ware">
                             Noticias</a>
                     </li><li class="nav-item li-item" role="presentation">
-                        <a href="{{ route('home') }}" class="nav-link active nav-home text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <a href="{{ route('home') }}" class="nav-link active text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <img class="imgcarrito" src="{{url('/img/tienda.svg')}}"  alt="https://www.flaticon.es/autores/nikita-golubev">
                             Tienda</a>
                     </li><li class="nav-item li-item" role="presentation">
-                        <a href="#" class="nav-link nav-home d-flex flex-wrap text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img class="imgcarrito mr-1" src="{{url('/img/group.svg')}}" alt="https://www.freepik.com">
-                            <span class="responsive-text">Sobre nosotros</span></a>
+                        <a href="#" class="nav-link text-decoration-none text-reset p-2" tabindex="-1" role="button" aria-disabled="false" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                            <img class="imgcarrito" src="{{url('/img/group.svg')}}" alt="https://www.freepik.com">
+                            Sobre nosotros</a>
                     </li>
                 </ul>
             </div>
@@ -74,8 +74,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item active">
-                        <a class="nav-link ct-cat active" aria-current="page" aria-selected="true" href="{{ route('home') }}">Novedades</a>
+                    <li class="nav-item">
+                        <a class="nav-link ct-cat" aria-current="page" aria-selected="true" href="{{ route('home') }}">Novedades</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ct-cat" aria-selected="false" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

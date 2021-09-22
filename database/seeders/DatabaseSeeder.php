@@ -21,9 +21,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::factory()->create(['isAdmin'=>true, 'name' => 'admin', 'surname' => 'admin', 'email' => 'admin@admin.com']);
+
         User::factory()->create(['name' => 'user1', 'surname' => 'user1', 'email' => 'user1@user.com']);
+
         User::factory()->create(['name' => 'user2', 'surname' => 'user2', 'email' => 'user2@user.com']);
-        User::factory(20)->create();
 
         Product::factory()->create([
             'title'  => 'EL IMPARABLE SPIDERMAN 01 (Serie bimestral)',
@@ -36,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'author6'  => null,
 
             'editorial'  => 'Panini Comics',
-            'isAvailable'  => false,
+            'isAvailable'  => true,
             'canReserve' => true,
             'isbn' => '9770005619002',
             'categoryMain' => 'Comic Americano',
@@ -147,7 +148,7 @@ class DatabaseSeeder extends Seeder
             'author5'  => null,
             'author6'  => null,
             'editorial'  => 'Panini Comics',
-            'isAvailable'  => false,
+            'isAvailable'  => true,
             'canReserve' => true,
             'isbn' => '9788413349411',
             'categoryMain' => 'Comic Americano',
@@ -365,7 +366,7 @@ class DatabaseSeeder extends Seeder
             'author5'  => null,
             'author6'  => null,
             'editorial'  => 'Bruguera',
-            'isAvailable'  => false,
+            'isAvailable'  => true,
             'canReserve' => true,
             'isbn' => '9788402422521',
             'categoryMain' => 'Comic Europeo',
@@ -557,7 +558,7 @@ class DatabaseSeeder extends Seeder
             'author5'  => null,
             'author6'  => null,
             'editorial'  => 'NORMA Editorial',
-            'isAvailable'  => false,
+            'isAvailable'  => true,
             'canReserve' => true,
             'isbn' => '9788467945928',
             'categoryMain' => 'Comic Manga',

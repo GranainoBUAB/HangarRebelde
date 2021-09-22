@@ -3,7 +3,7 @@
 }
 
 .imgCart{
-    width: 105px;
+    width: 100px;
     height: auto;
     border: 3px solid $colorOrange;
     border-radius: 10px 10px 10px 10px;
@@ -49,14 +49,8 @@
 }
 
 .summary{
-    width: 80vw;
+    width: 600px;
     border: 3px solid $colorOrange  !important;
-    @media screen and (min-width: $breakpointTable){
-        width: 50vw;
-    }
-    @media screen and (min-width: $breakpointLaptop){
-        width: 39vw;
-    }
 }
 
 .line-sum{
@@ -85,11 +79,4 @@
     justify-content: center;
     align-items: center;
     color: $colorOrange;
-}
-
-.ct-counter{
-    width: 30px;
-    height: 30px;
-    border: 2px solid $colorOrange;
-    border-radius: 4px;
 }

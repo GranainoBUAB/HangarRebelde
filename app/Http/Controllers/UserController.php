@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,20 +9,21 @@ class UserController extends Controller
 {
     public function getUser()
     {
-        $users = User::where('isAdmin', '=', false)->get();
+        $users = User::where('isAdmin', '=' , false)->get();
 
         return view('users', compact('users'));
     }
 
     public function destroyUsers($id)
     {
-
+        
         User::destroy($id);
 
         return back();
+
     }
 
-
+    
     public function editUser($id)
     {
 
@@ -43,12 +43,8 @@ class UserController extends Controller
         User::findOrFail($id);
 
         return redirect()->route('getUser');
+
     }
 
-    public function searchUsers(Request $request)
-    {
-        $users = User::searchUserinList($request);
-
-        return view('users', compact('users'));
-    }
 };
+

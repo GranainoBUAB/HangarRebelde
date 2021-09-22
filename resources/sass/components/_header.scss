@@ -53,17 +53,10 @@
     font-weight: bold;
 }
 
-.nav-home.active, .show > .nav-home .imgcarrito{
+.nav-link.active, .show > .nav-link .imgcarrito{
     background-color: transparent !important;
     border: none !important;
     filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
-}
-
-.navbar-toggler{
-    font-family: $fontPrincipal;
-    color: $colorOrange !important;
-    border-color: rgba(0, 0, 0, 0) !important;
-    font-size: 1.5rem !important;
 }
 
 .ct-search {
@@ -90,16 +83,12 @@
     letter-spacing: 0.1rem;
 }
 
-ul.navbar-nav li.active{
-    color: red;
-}
-
 .ct-cat:hover{
     color: $colorOrange !important;
 }
 
 
-@media screen and (max-width: $breakpointMiddle){
+@media screen and (max-width: $breakpointTable){
     .navInicio{
         flex-wrap: nowrap;
         justify-content: center;
@@ -132,7 +121,12 @@ ul.navbar-nav li.active{
     .ul-search{
         flex-wrap: nowrap;
     }
-
+    .navbar-toggler{
+        font-family: $fontPrincipal;
+        color: $colorOrange !important;
+        border-color: rgba(0, 0, 0, 0) !important;
+        font-size: 1.5rem !important;
+    }
     .li-item{
         width: 150px;
         margin-bottom: 15px;
@@ -161,27 +155,3 @@ ul.navbar-nav li.active{
         margin-left: 5px;
     }
 }
-
-@media screen and (min-width: $breakpointMiddle){
-
-    .icoCardHeader{
-    margin-right: 10px;
-    margin-top: 7px;
-    }
-    li.nav-item {
-    display: flex;
-    }
-    .navbar{
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.ct-session{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    color: $colorOrange;
-    font-weight: bold;
-}
-    
