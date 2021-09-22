@@ -30,10 +30,8 @@ class Product extends Model
 
     public function productRelationed($product)
     {
-
         $arrayId = array();
         $arrayId[] = $product->id;
-
 
         if ($product->tag3 != null) {
             $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
