@@ -25,38 +25,23 @@ class PaymentController extends Controller
         return view('purchase', compact('products', 'sumAndQuantity'));
     }
 
-    /* public function purchase(Request $request)
-    {   
-        $user_id = auth()->id();
-        $products = $this->cartRepo->getPurchasedProducts($user_id);
-        $total = $this->cartRepo->calculateTotal($products); 
-        $amount = $total * 100; 
-        
-        $this->cartRepo->buyProductsInBasket($user_id);
-        $user = User::find($user_id);
-        $user->id = $user->id;
-        $user->name = $user->name;
-        $user->email = $user->email;
-        $user->password = $user->password;
-        $user->direction = $request->direction;
-        $user->location = $request->location;
-        $user->cardholder = $request->cardholder;
-        
-        $user->save(); 
-        
+    public function purchase()
+    {
+        $this->charge();    
+
         return redirect('/')
         ->with('message' , '¡Compra realizada con éxito, muchas gracias!');
-
-    } */
-
-    public function purchase($token)
+    }
+    
+    
+    
+    private function charge()
     {
-
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $token = $_POST['stripeToken'];
 
-        $charge =Charge::create([
+        $charge = Charge::create([
             "amount" => 1500,
             "currency" => "eur",
             "description" => "Pago en mi tienda",
@@ -64,23 +49,5 @@ class PaymentController extends Controller
         ]);
 
         echo "<pre>", print_r($charge), "</pre>";
-
-
-
-        /* try {
-            $token = $_POST['stripeToken'];
-            Stripe::setApiKey(env('STRIPE_SECRET'));
-            Charge::create ([
-                    "amount" => 1500,
-                    "currency" => "eur",
-                    "source" => $token,
-                    "description" => 'Compra en Hangar Rebelde'
-            ]); 
-        }
-        catch (Exception $e) {
-            $e->getMessage(["Oh no, ha habido un error!"]);
-
-            // return view('cart.purchaseOrder', ["message" => "Oh no, ha habido un error!"]);
-        } */
     }
 }

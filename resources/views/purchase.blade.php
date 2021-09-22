@@ -3,50 +3,19 @@
 @section('content')
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
-      <form action="{{ route('purchase') }}" method="post" id="payment-form">
+      <form class="StripeElement" action="{{ route('purchase') }}" method="post" id="payment-form">
         @method('PUT')
         @csrf
         <div class="form-row">
           <label for="card-element">
             Tarjeta de credito o Debito
           </label>
-          <div id="card-element">
-
-          </div>
-          <div id="card-errors" role="alert">
-
-          </div>
+          <div id="card-element"></div>
+          <div id="card-errors" role="alert"></div>
         </div>
-
         <button>Pagar</button>
       </form>
 
-  <style>
-
-    .StriprElement {
-      background-color: white;
-      height: 40px;
-      padding: 10px 12px;
-      border-radius: 4px;
-      border: 1px solid transparent;
-      box-shadow: 0 1px 3px 0 #e6ebf1;
-      -webkit-transition: box-shadow 50ms ease;
-      transition: box-shadow 150ms ease;
-    }
-
-    .StriprElement--focus {
-      box-shadow: 0 1px 3px 0 #cfd7df;
-    }
-
-    .StriprElement--invalid{
-      border-color: #fa755a;
-    }
-
-    .StriprElement--webkit-autofill {
-      background-color: #fefde5 !important;
-    }
-
-  </style>
 
   <script src="https://js.stripe.com/v3/"></script>
 
