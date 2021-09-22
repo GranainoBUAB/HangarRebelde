@@ -23,7 +23,7 @@
 
   <style>
 
-    .StripeElement {
+    .StriprElement {
       background-color: white;
       height: 40px;
       padding: 10px 12px;
@@ -34,7 +34,7 @@
       transition: box-shadow 150ms ease;
     }
 
-    .StripeElement--focus {
+    .StriprElement--focus {
       box-shadow: 0 1px 3px 0 #cfd7df;
     }
 
@@ -42,7 +42,7 @@
       border-color: #fa755a;
     }
 
-    .StripeElement--webkit-autofill {
+    .StriprElement--webkit-autofill {
       background-color: #fefde5 !important;
     }
 
@@ -52,7 +52,7 @@
 
   <script>
       // Create a Stripe client.
-      var stripe = Stripe('pk_test_51Jb3zRDCxpLzRKrNAvzYMdjEg34nmjGlcFZiCyAeBgwMfNPtRpTTCDLsdFBx8F9EXiGL03SGLr7oswW19TdMHrUv00pSMRCFkz');
+      var stripe = Stripe('{{ env("STRIPE_KEY") }}');
       // Create an instance of Elements.
       var elements = stripe.elements();
       // Custom styling can be passed to options when creating an Element.
