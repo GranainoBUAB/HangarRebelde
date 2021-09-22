@@ -6,9 +6,29 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
+
+
                 <div class="ct-imgShow">
-                    <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                    <a href="{{ route('show', ['id' => $product->id]) }}">
+                    <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" id = 'foto' name="image1" alt=""></a>
+                    <br/>
+                    <br/>
+                    <button type="text" class="input-group-text" onclick = replaceImage();> + Imagenes</button>
+                    
+
+                <script type = "text/javascript">
+
+                function replaceImage()
+                {
+                    var image =  document.getElementById('foto');
+                    image.src = "id"
+                } 
+
+                </script>
+
                 </div>
+
+
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
                     <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
                     <div class="d-flex flex-row flex-wrap align-items-center">
@@ -82,9 +102,29 @@
                         <p class="card-title extraShow">{{ $product->categoryMain }}</p>
                     </div>
                     <div class="d-flex flex-wrap flex-row mt-3">
+
+
                         <img class="m-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+
+
+                        <a href="{{ route('show', ['id' => $product->id]) }}">
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image2 }}"  href="{{ route('show', ['id' => $product->id]) }}" id ='foto2' name="image2" width=90 alt=""></a>
+
+                        <script type = "text/javascript">
+
+                            function replaceImage()
+                            {
+                                var image =  document.getElementById('foto');
+                                image.src = "id"
+                            } 
+            
+                            </script>
+
+
+                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image3 }}" name="image3" width=90 alt="">
+
+
+
                         <div class="d-flex flex-column justify-content-end m-1">
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold">Formato:</h6>
