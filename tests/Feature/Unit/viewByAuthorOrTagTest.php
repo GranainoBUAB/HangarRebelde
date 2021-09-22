@@ -10,11 +10,7 @@ use Tests\TestCase;
 class viewByAuthorOrTagTest extends TestCase
 {
     use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
+
     public function test_returnAllProductContainThisAuthor()
     {
         $product1 = Product::Factory()->create([

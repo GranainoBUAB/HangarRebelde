@@ -26,7 +26,6 @@ class CartController extends Controller
 
     public function addCart($product_id)
     {
-
         $product = Product::find($product_id);
 
         if ($product->isAvailible()) {
@@ -45,8 +44,6 @@ class CartController extends Controller
         $user->productsCarts()->detach($product);
         return redirect()->route('getCart');
     }
-
-
 
     public function incrementProductInCart($product_id)
     {
@@ -75,15 +72,8 @@ class CartController extends Controller
         return redirect()->route('getCart');
     }
 
-
     public function deleteAllProducts()
     {
-        /* if () {
-
-        } else {
-            Session::flash('message', "No hay productos en su carrito de compra");
-        } */
-
         $user_id = auth()->id();
 
         DB::table('carts')
@@ -112,5 +102,4 @@ class CartController extends Controller
         $this->incrementProductInCart($product->id);
         return redirect()->route('getCart');
     }
-
 }

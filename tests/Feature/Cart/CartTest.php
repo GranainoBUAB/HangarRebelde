@@ -13,17 +13,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class CartTest extends TestCase
 {
     use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-
-
     public function test_increment_Product_in_cart()
     {
-        //$this->withoutExceptionHandling();
-
         $product = Product::factory()->create();
         $user = User::factory()->create();
         $user_id = $user->id;
@@ -40,8 +31,6 @@ class CartTest extends TestCase
 
     public function test_decrement_Product_in_cart()
     {
-        //$this->withoutExceptionHandling();
-
         $product = Product::factory()->create();
         $user = User::factory()->create();
         $user_id = $user->id;
@@ -59,8 +48,6 @@ class CartTest extends TestCase
 
     public function test_not_under_1_if_decrement_Product_in_cart()
     {
-        //$this->withoutExceptionHandling();
-
         $product = Product::factory()->create();
         $user = User::factory()->create();
         $user_id = $user->id;
@@ -77,8 +64,6 @@ class CartTest extends TestCase
 
     public function test_calcul_sum_in_cart()
     {
-        //$this->withoutExceptionHandling();
-
         $product1 = Product::factory()->create([
             'price' => 35.00
         ]);
@@ -96,7 +81,6 @@ class CartTest extends TestCase
         $user->productsCarts()->attach($product2);
         $user->productsCarts()->attach($product3);
 
-
         $this->get(route('incrementProductInCart', $product1->id));
         $this->get(route('incrementProductInCart', $product2->id));
         $this->get(route('incrementProductInCart', $product2->id));
@@ -107,18 +91,12 @@ class CartTest extends TestCase
 
         $result = Cart::sumAndQuantity();
 
-
         $this->assertEquals(7, $result['quantity']);
         $this->assertEquals(161, $result['sum']);
-
-        /* $this->get(route('decrementProductInCart', [$product->id, 1]));
-        $this->assertDatabaseHas('carts', ['quantity' => 1]); */
     }
 
     public function test_calcul_quantity_in_cart()
     {
-        //$this->withoutExceptionHandling();
-
         $product1 = Product::factory()->create();
         $product2 = Product::factory()->create();
         $product3 = Product::factory()->create();
@@ -141,6 +119,5 @@ class CartTest extends TestCase
         $result = Cart::sumAndQuantity();
 
         $this->assertEquals(7, $result['quantity']);
-        
     }
 }

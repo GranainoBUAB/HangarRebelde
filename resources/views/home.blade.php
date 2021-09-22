@@ -17,21 +17,22 @@
 
     <div class="d-flex flex-wrap row justify-content-center" data-bs-spy="scroll">
         @if(Auth::check() && Auth::user()->isadmin())
-            <div class="position-relative me-4">
-                <a href="{{ route('create') }}">
-                    <button type="text" class="btn createbtn ms-3">Crear nuevo Comic</button>
-                </a>
-            </div>
-            <br>
-            <div class="position-relative me-4">
-                <a href="{{ route('getUser') }}">
-                    <button type="text" class="btn createbtn ms-3">Perfil de usuarios</button>
-                </a>
+            <div class="d-flex justify-content-start align-items-center p-0 mt-5 ml-5">
+                <div class="position-relative me-4">
+                    <a href="{{ route('create') }}">
+                        <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-plus" src="{{url('/img/plus.svg')}}" alt="create product button"></button>
+                    </a>
+                </div>
+                <div class="position-relative me-4">
+                    <a href="{{ route('getUser') }}">
+                        <button type="text" class="d-flex justify-content-center align-items-center bt-adm-create"><img class="ico-user" src="{{url('/img/user.svg')}}" alt="edit user button"></button>
+                    </a>
+                </div>
             </div>
         @endif
         <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
             @foreach ($products as $product)
-                <div class="ct-product m-lg-4 m-3">
+                <div class="ct-product m-lg-4 m-3 position-relative">
                     <div class="ct-img">
                         <a href="{{ route('show', ['id' => $product->id]) }}">
                             <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
@@ -57,12 +58,14 @@
                     </div>
 
                     @if(Auth::check() && Auth::user()->isadmin())
-                        <div class="input-group mb-3">
-                            <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
+                        <div class="d-flex flex-column ct-adm-buttons">
+                            <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$product->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
                             <form action="{{ route('delete', ['id'=>$product->id])}}" method="post">
                             @method('delete')
                             @csrf
-                                <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
+                                <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')">
+                                    <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
+                                </button>
                             </form>
                         </div>
                     @endif
