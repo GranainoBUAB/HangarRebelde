@@ -37,17 +37,18 @@ class PaymentController extends Controller
     
     private function charge()
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-
         $token = $_POST['stripeToken'];
-
-        $charge = Charge::create([
-            "amount" => 1500,
-            "currency" => "eur",
-            "description" => "Pago en mi tienda",
-            "source" => $token
-        ]);
-
-        echo "<pre>", print_r($charge), "</pre>";
+        try {
+            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Charge::create ([
+                    "amount" => 1500,
+                    "currency" => "eur",
+                    "source" => $token,
+                    "description" => 'Pago en Hangar Rebelde'
+            ]); 
+        }
+        catch (Exception $e) {
+            $e->getMessage(["Oh no, ha habido un error!"]);
+        }
     }
 }
