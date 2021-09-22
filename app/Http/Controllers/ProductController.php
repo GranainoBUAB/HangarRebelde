@@ -34,17 +34,7 @@ class ProductController extends Controller
     {
         $product = request()->except('_token');
 
-        if ($request->hasFile('image1')) {
-            $product['image1'] = $request->file('image1')->store('img', 'public');
-        }
-
-        if ($request->hasFile('image2')) {
-            $product['image2'] = $request->file('image2')->store('img', 'public');
-        }
-
-        if ($request->hasFile('image3')) {
-            $product['image3'] = $request->file('image3')->store('img', 'public');
-        }
+        $product =  $this->storeImages($request, $product);
 
         Product::create($product);
         return redirect()->route('home');
@@ -72,17 +62,7 @@ class ProductController extends Controller
     {
         $changesProduct = request()->except(['_token', '_method']);
 
-        if ($request->hasFile('image1')) {
-            $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
-        }
-
-        if ($request->hasFile('image2')) {
-            $changesProduct['image2'] = $request->file('image2')->store('img', 'public');
-        }
-
-        if ($request->hasFile('image3')) {
-            $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
-        }
+        $changesProduct = $this->storeImages($request, $changesProduct);
 
         Product::where('id', '=', $id)->update($changesProduct);
         $product = Product::findOrFail($id);
@@ -125,5 +105,20 @@ class ProductController extends Controller
         $products = Product::filterTag($tag);
         $sumAndQuantity = Cart::sumAndQuantity();
         return view('home', compact('products', 'sumAndQuantity'));
+    }
+
+    private function storeImages($request, $product)
+    {
+        if ($request->hasFile('image1')) {
+            $product['image1'] = $request->file('image1')->store('img', 'public');
+        }
+        if ($request->hasFile('image2')) {
+            $product['image2'] = $request->file('image2')->store('img', 'public');
+        }
+        if ($request->hasFile('image3')) {
+            $product['image3'] = $request->file('image3')->store('img', 'public');
+        }
+
+        return ($product);
     }
 }
