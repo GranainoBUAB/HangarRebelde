@@ -52,33 +52,6 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = request()->except('_token');
-        /* $product = Product::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'price' => $request->price,
-            'author1' => $request->author1,
-            'author2' => $request->author2,
-            'author3' => $request->author3,
-            'author4' => $request->author4,
-            'author5' => $request->author5,
-            'author6' => $request->author6,
-            'editorial' => $request->editorial,
-            'isAvailable' => $request->isAvailable,
-            'canReserve' => $request->canReserve,
-            'isbn' => $request->isbn,
-            'categoryMain' => $request->categoryMain,
-            'categorySecondary' => $request->categorySecondary,
-            'rating' => $request->rating,
-            'image1' => $request->image1,
-            'image2' => $request->image2,
-            'image3' => $request->image3,
-            'dateSale' => $request->dateSale,
-            'format' => $request->format,
-            'tag1' => $request->tag1,
-            'tag2' => $request->tag2,
-            'tag3' => $request->tag3,
-            'pages' => $request->pages
-        ]); */
 
         if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
@@ -91,9 +64,9 @@ class ProductController extends Controller
         if ($request->hasFile('image3')) {
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
-        
+
         Product::create($product);
-        //$product->save();
+        
         return redirect()->route('home');
     }
 
