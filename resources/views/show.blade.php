@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 @extends('layouts.app')
 
 @section('content')
@@ -14,7 +13,7 @@
                     <button onclick = makeover()> + Imagenes</button>
                 </div>
 
-                 <script type ="text/javascript">
+                <script type ="text/javascript">
 
                         function @makeover()
                         {
