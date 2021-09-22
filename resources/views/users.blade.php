@@ -17,7 +17,7 @@
                 <thead>
                     <tr class="table-warning">
                         <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
+                        <th scope="col">Apellidos</th>
                         <th scope="col">e-mail</th>
                         <th scope="col">DNI</th>
                         <th scope="col">Socio</th>
