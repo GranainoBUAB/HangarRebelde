@@ -58,10 +58,17 @@
   font-weight: bold;
 }
 
-.nav-link.active, .show > .nav-link .imgcarrito {
+.nav-home.active, .show > .nav-home .imgcarrito {
   background-color: transparent !important;
   border: none !important;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.navbar-toggler {
+  font-family: "Woodstamp";
+  color: #FF8300 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  font-size: 1.5rem !important;
 }
 
 .ct-search {
@@ -89,11 +96,15 @@
   letter-spacing: 0.1rem;
 }
 
+ul.navbar-nav li.active {
+  color: red;
+}
+
 .ct-cat:hover {
   color: #FF8300 !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .navInicio {
     flex-wrap: nowrap;
     justify-content: center;
@@ -134,13 +145,6 @@
     flex-wrap: nowrap;
   }
 
-  .navbar-toggler {
-    font-family: "Woodstamp";
-    color: #FF8300 !important;
-    border-color: rgba(0, 0, 0, 0) !important;
-    font-size: 1.5rem !important;
-  }
-
   .li-item {
     width: 150px;
     margin-bottom: 15px;
@@ -169,6 +173,29 @@
     margin-left: 5px;
   }
 }
+@media screen and (min-width: 992px) {
+  .icoCardHeader {
+    margin-right: 10px;
+    margin-top: 7px;
+  }
+
+  li.nav-item {
+    display: flex;
+  }
+
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.ct-session {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #FF8300;
+  font-weight: bold;
+}
+
 .ct-product {
   width: auto;
   height: auto;
@@ -392,11 +419,6 @@
   }
 }
 
-.container {
-  justify-content: space-between;
-  width: 100%;
-}
-
 hr {
   color: #FF8300;
   height: 1px !important;
@@ -407,118 +429,47 @@ hr {
   opacity: inherit !important;
 }
 
-.left-link {
-  width: 40%;
-  margin-right: 10%;
+.icon_arrow {
+  width: 8%;
 }
 
-.icons {
-  margin-left: -7%;
-  width: 65%;
-  height: auto;
-}
-@media screen and (min-width: 1440px) {
-  .icons {
-    max-width: 40%;
-  }
-}
-
-.right-link {
-  margin-left: 10%;
-  width: 300px;
-}
-
-.icon_location {
-  align-self: center;
-  width: 24%;
-  height: auto;
-}
-@media screen and (min-width: 1440px) {
-  .icon_location {
-    max-width: 10%;
-  }
-}
-
-.icon_follow {
-  width: 20%;
-}
-@media screen and (min-width: 1440px) {
-  .icon_follow {
-    max-width: 5%;
-  }
-}
-
-.location {
-  display: flex;
+footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
-  .icon_location {
-    width: 10%;
-  }
-
-  .icons {
-    width: 40%;
-  }
-
-  .icon_follow {
+  .icon_arrow {
     width: 5%;
-  }
-
-  .follow {
-    margin-left: 10%;
   }
 }
 @media (min-width: 960px) and (max-width: 1199px) {
-  .icon_location {
-    width: 15%;
-  }
-
-  .icons {
-    width: 50%;
-  }
-
-  .icon_follow {
-    width: 10%;
-  }
-}
-@media (min-width: 567px) and (max-width: 960px) {
-  .icon_location {
-    width: 15%;
-  }
-
-  .icons {
-    margin-left: 5%;
+  .icon_arrow {
+    width: 7%;
   }
 }
 @media (min-width: 120px) and (max-width: 566px) {
-  .container {
-    margin-left: 40%;
-    justify-content: space-between;
-  }
-
-  .icons {
-    justify-content: space-between;
-    width: 25px;
-    height: auto;
-  }
-
-  .icon_follow {
+  .icon_arrow {
     width: 40%;
-  }
-
-  .icon_location {
-    width: 25px;
-    margin-left: 75px;
-  }
-
-  .text_location {
-    display: none;
   }
 
   .follow {
     display: none;
-    margin-left: 10%;
+  }
+
+  .list-unstyled {
+    flex-wrap: wrap;
+    margin-right: 40px;
+  }
+
+  .location {
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+
+  footer {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .ct-infoShow {
@@ -539,7 +490,7 @@ hr {
 }
 @media screen and (min-width: 1440px) {
   .imgShow {
-    max-width: 15vw;
+    max-width: 20vw;
   }
 }
 
@@ -562,26 +513,41 @@ hr {
   width: 10%;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
+@media screen and (min-width: 992px) {
+  .icoCardShow {
+    width: 7%;
+  }
+}
 @media screen and (min-width: 1200px) {
   .icoCardShow {
-    width: 4%;
+    width: 5%;
   }
 }
 
 .icoCardShowAvailable {
   width: 10%;
 }
+@media screen and (min-width: 992px) {
+  .icoCardShowAvailable {
+    width: 7%;
+  }
+}
 @media screen and (min-width: 1200px) {
   .icoCardShowAvailable {
-    width: 4%;
+    width: 5%;
   }
 }
 
-.icoCartNoAvailable {
-  width: 10%;
+.icoCardShowNoAvailable {
+  width: 7%;
+}
+@media screen and (min-width: 992px) {
+  .icoCardShowNoAvailable {
+    width: 6%;
+  }
 }
 @media screen and (min-width: 1200px) {
-  .icoCartNoAvailable {
+  .icoCardShowNoAvailable {
     width: 4%;
   }
 }
@@ -731,7 +697,7 @@ a {
 }
 
 .imgCart {
-  width: 100px;
+  width: 105px;
   height: auto;
   border: 3px solid #FF8300;
   border-radius: 10px 10px 10px 10px;
@@ -777,8 +743,18 @@ a {
 }
 
 .summary {
-  width: 600px;
+  width: 80vw;
   border: 3px solid #FF8300 !important;
+}
+@media screen and (min-width: 768px) {
+  .summary {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .summary {
+    width: 39vw;
+  }
 }
 
 .line-sum {
@@ -809,6 +785,13 @@ a {
   color: #FF8300;
 }
 
+.ct-counter {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #FF8300;
+  border-radius: 4px;
+}
+
 .table-warning, .table-warning > th, .table-warning > td {
   background-color: black !important;
   color: white !important;
@@ -828,6 +811,47 @@ a {
 .icoAdmin {
   width: 17px;
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.ct-userProfile {
+  border: 1px solid #FF8300;
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+}
+
+.userName {
+  position: absolute;
+  top: 10%;
+  font-weight: bold;
+}
+
+.icoProfile {
+  width: 20px;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.txtMembership {
+  color: #FF8300;
+}
+
+.pagination li {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.pagination li .page-link {
+  border-radius: 0.25rem;
+  border: none;
+  min-width: 2.25rem;
+  text-align: center;
+  color: #FF8300;
+}
+
+.pagination li.active .page-link,
+.pagination li .page-link:hover {
+  background-color: #FF8300;
+  color: white !important;
+  font-weight: bold;
 }
 
 /*!
