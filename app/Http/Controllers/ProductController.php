@@ -13,14 +13,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-
     public function index()
     {
         $user = Auth::user();
@@ -31,11 +23,6 @@ class ProductController extends Controller
         return view('home', compact('products', 'user', 'sumAndQuantity'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $categoryMains = CategoryMain::all();
@@ -43,42 +30,9 @@ class ProductController extends Controller
         return view('create', compact('categoryMains', 'categorySecondaries'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $product = request()->except('_token');
-        /* $product = Product::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'price' => $request->price,
-            'author1' => $request->author1,
-            'author2' => $request->author2,
-            'author3' => $request->author3,
-            'author4' => $request->author4,
-            'author5' => $request->author5,
-            'author6' => $request->author6,
-            'editorial' => $request->editorial,
-            'isAvailable' => $request->isAvailable,
-            'canReserve' => $request->canReserve,
-            'isbn' => $request->isbn,
-            'categoryMain' => $request->categoryMain,
-            'categorySecondary' => $request->categorySecondary,
-            'rating' => $request->rating,
-            'image1' => $request->image1,
-            'image2' => $request->image2,
-            'image3' => $request->image3,
-            'dateSale' => $request->dateSale,
-            'format' => $request->format,
-            'tag1' => $request->tag1,
-            'tag2' => $request->tag2,
-            'tag3' => $request->tag3,
-            'pages' => $request->pages
-        ]); */
 
         if ($request->hasFile('image1')) {
             $product['image1'] = $request->file('image1')->store('img', 'public');
@@ -91,34 +45,20 @@ class ProductController extends Controller
         if ($request->hasFile('image3')) {
             $product['image3'] = $request->file('image3')->store('img', 'public');
         }
-        
+
         Product::create($product);
-        //$product->save();
         return redirect()->route('home');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $product = Product::find($id);
-        /* var_dump($product->id); */
         $productrelations = $product->productRelationed($product);
         $sumAndQuantity = Cart::sumAndQuantity();
 
         return view('show', compact('product', 'productrelations', 'sumAndQuantity'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $categoryMains = CategoryMain::all();
@@ -128,13 +68,6 @@ class ProductController extends Controller
         return view('edit', compact('product', 'categoryMains', 'categorySecondaries'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $changesProduct = request()->except(['_token', '_method']);
@@ -152,38 +85,26 @@ class ProductController extends Controller
         }
 
         Product::where('id', '=', $id)->update($changesProduct);
-
         $product = Product::findOrFail($id);
-
         return redirect()->route('home')->with('success', 'Updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Product::destroy($id);
-
         return redirect()->route('home');
     }
 
     public function search(Request $request)
     {
         $products = Product::searchProducts($request);
-
         $sumAndQuantity = Cart::sumAndQuantity();
-
         return view('search', compact('products', 'sumAndQuantity'));
     }
 
     public function filter($catMain, $catSec = null)
     {
         if ($catSec === null) {
-
             $products = Product::where('categoryMain', '=', $catMain)->simplePaginate(2);
         } else {
             $products = Product::where('categorySecondary', '=', $catSec)->simplePaginate(2);
@@ -194,7 +115,6 @@ class ProductController extends Controller
 
     public function viewByAuthor($author)
     {
-
         $products = Product::filterAuthor($author);
         $sumAndQuantity = Cart::sumAndQuantity();
         return view('home', compact('products', 'sumAndQuantity'));
