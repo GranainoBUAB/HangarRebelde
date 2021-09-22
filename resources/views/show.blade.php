@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 @extends('layouts.app')
 
 @section('content')
@@ -6,9 +7,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
+
+
                 <div class="ct-imgShow">
-                    <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                    <img class="imgShow" id="uploadPreview1" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                    <button onclick = makeover()> + Imagenes</button>
                 </div>
+
+                 <script type ="text/javascript">
+
+                        function @makeover()
+                        {
+                            var elemento = document.getElementById("uploadPreview1");
+
+                            elemento.src = "uploadPreview3";
+                        } 
+                        
+                        
+                        </script> 
+
+
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
                     <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
                     <div class="d-flex flex-row flex-wrap align-items-center">
@@ -83,53 +101,57 @@
                     </div>
                     <div class="d-flex flex-row mt-3">
 
-                        <button id ="boton-cambio"><img id="uploadPreview1" class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">Cambiar imagen</button>
+                        
 
+
+                       {{--  <button onclick = "@makeover()"> + Imagenes</button>
+
+                        <script type ="text/javascript">
+
+                        function @makeover()
+                        {
+                            var elemento = document.getElementById("$product->id;");
+
+                            elemento.src = "$product->image2";
+                        } 
                         
                         
-                       {{--  <input value="Mirar Havana" onclick="pausaplay();" type="button"> --}}
-                        
-                        <button id ="boton-cambio"><img id="uploadImage2" class="input-select"  src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="" onclick="cambiarImagenJS();">Cambiar imagen</button>
-
-                        
-                        
-                                <script>
-                                    function cambiarImagenJS()
-                                    {
-                                        document.getElementById("uploadImage2"). src="{{ asset('storage') . '/' . $product->image2 }}";
-                                    }
-                                </script> 
-
-                        <input value="" onclick="cambiarImagenJS()" type="button">
-
-                        <button id ="boton-cambio"><img id="uploadPreview3" class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">Cambiar imagen</button>
+                        </script> --}}
 
 
+
+
+                        <{{-- img class="m-1" src="{{ asset('storage') . '/' . $product->image2,}}" id ='$product->image2' width=90 alt="" id = "$product->id;"><br/>
+  --}}
                        
+                        <img id="uploadPreview1" class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+                        <button onclick = makeover()> + Imagenes</button>
 
 
-                             {{--        <script>
-                                    $(document).ready(function() {  
-                                        $('#boton-cambio').click(function(){
-                                            $('#cambio').replaceWith('<img id="cambio" src="blue.jpeg" alt="imagen cambiada" width="500" height="400">');
-                                        });
-                                    });
-                                    </script> --}}
 
+                        <img id="uploadPreview2" class="input-select" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
+                        <button onclick = makeover()> + Imagenes</button>
 
-                               {{--      <button id ="boton-cambio">Seleccionar imagen de portada</button>
- --}}
+                       {{--  <script>
 
+                        function makeover()
+                        {
+                            var elemento = document.getElementById("$product->image2");
 
-                   {{--                      Imagenes Dev
-
-                    <div class="d-flex flex-wrap flex-row mt-3">
-                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
-                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
-                        <img class="m-1" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
- --}}
-
+                            elemento.src = "$product->image3";
+                        } 
                         
+                        
+                        </script> --}}
+
+
+
+                       <img id="uploadPreview3" class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+
+
+
+
+
                         <div class="d-flex flex-column justify-content-end">
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold mx-2">Formato:</h6>
