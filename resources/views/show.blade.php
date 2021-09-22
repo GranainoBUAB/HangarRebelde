@@ -20,9 +20,10 @@
 
                 function replaceImage()
                 {
-                    var image =  document.getElementById('foto');
+                    var image =  document.getElementById('foto').innerHTML ="Tú puedes";
                     image.src = "id"
                 } 
+                /* replaceImage(); */
 
                 </script>
 
@@ -115,7 +116,7 @@
                             function replaceImage()
                             {
                                 var image =  document.getElementById('foto');
-                                image.src = "id"
+                                image.src = "$product->id"
                             } 
             
                             </script>
