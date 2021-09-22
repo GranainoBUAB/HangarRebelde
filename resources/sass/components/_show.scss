@@ -8,25 +8,12 @@
         border-radius: 15px;
     }
     @media screen and (min-width: $breakpointDesktop){
-        max-width: 20vw;
+        max-width: 15vw;
     }
 }
 
-@mixin icoCardShowAvailable {
+@mixin icoCardShow {
     width: 10%;
-    @media screen and (min-width: $breakpointMiddle){
-        width: 7%;
-    }
-    @media screen and (min-width: $breakpointLaptop){
-        width: 5%;
-    }
-}
-
-@mixin icoCardShowNoAvailable {
-    width: 7%;
-    @media screen and (min-width: $breakpointMiddle){
-        width: 6%;
-    }
     @media screen and (min-width: $breakpointLaptop){
         width: 4%;
     }
@@ -56,14 +43,14 @@
 }
 
 .icoCardShow {
-    @include icoCardShowAvailable;
+    @include icoCardShow;
     filter: $filterSVGOrange;
 }
 
 .icoCardShowAvailable {
-    @include icoCardShowAvailable;
+    @include icoCardShow;
 }
 
-.icoCardShowNoAvailable {
-    @include icoCardShowNoAvailable;
+.icoCartNoAvailable {
+    @include icoCardShow;
 }

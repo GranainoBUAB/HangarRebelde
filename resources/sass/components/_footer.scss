@@ -1,3 +1,9 @@
+.container{
+justify-content: space-between;
+width: 100%;
+
+}
+
 hr{
     color: $colorOrange;
     height: 1px !important;
@@ -8,47 +14,112 @@ hr{
     opacity: inherit !important;
 }
 
-.icon_arrow{
-    width: 8%;
+.left-link{
+    width: 40%;
+    margin-right: 10%;
 }
 
-footer{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.icons{
+    margin-left: -7%;
+    width:65%;
+    height: auto;
+    @media screen and (min-width: $breakpointDesktop){
+        max-width: 40%;
+    }
+}
+
+.right-link{
+    margin-left: 10%;
+    width: 300px;
+}
+
+.icon_location{
+    align-self: center;
+    width: 24%;
+    height: auto;
+    @media screen and (min-width: $breakpointDesktop){
+        max-width: 10%;
+    }
+}
+
+.icon_follow{
+    width: 20%;
+    @media screen and (min-width: $breakpointDesktop){
+        max-width: 5%;
+    }
+
+}
+.location{
+    display: flex;
 }
 
 @media (min-width: 1200px) and (max-width: 1600px){
-    .icon_arrow{
+    .icon_location{
+        width: 10%;
+    }
+    .icons{
+        width: 40%;
+    }
+
+    .icon_follow{
         width:  5%;
+
+    }
+    .follow{
+        margin-left: 10%;
     }
 }
 
 @media (min-width: 960px) and (max-width: 1199px){
-    .icon_arrow{
-        width:  7%;
+
+    .icon_location{
+        width: 15%;
+    }
+    .icons{
+        width: 50%;
+    }
+
+    .icon_follow{
+        width:  10%;
+    }
+}
+
+@media (min-width: 567px) and (max-width: 960px){
+    .icon_location{
+        width: 15%;
+    }
+    .icons{
+        margin-left: 5%;
     }
 }
 
 @media (min-width: 120px) and (max-width: 566px) {
-    .icon_arrow{
+    .container{
+        margin-left: 40%;
+        justify-content: space-between;
+    }
+
+    .icons{
+        justify-content: space-between;
+        width:25px;
+        height: auto;
+    }
+    .icon_follow{
         width: 40%;
+    }
+
+    .icon_location{
+        width:25px;
+        margin-left: 75px;
+    }
+    .text_location{
+        display: none;
     }
 
     .follow{
         display: none;
-    }
-
-    .list-unstyled{
-        flex-wrap: wrap;
-        margin-right: 40px;
-    }
-    .location{
-        margin-right: 15px;
-        margin-top: 10px;
-    }
-
-    footer{
-        padding-top: 0;
-        padding-bottom: 0;
+        margin-left: 10%;
     }
 }
+
+

@@ -30,13 +30,15 @@ class Product extends Model
 
     public function productRelationed($product)
     {
+        /* $index=0; */
+        do {
+            /* $index++; */
+            $arrayId = array();
+            $arrayId[] = $product->id;
+            $repeat = false;
 
-        $arrayId = array();
-        $arrayId[] = $product->id;
-
-
-        if ($product->tag3 != null) {
-            $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
+            if ($product->tag3 != null){
+                $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag1', 'like', '%' . $product->tag2 . '%')
@@ -46,34 +48,47 @@ class Product extends Model
                 ->orwhere('tag2', 'like', '%' . $product->tag3 . '%')
                 ->orwhere('tag3', 'like', '%' . $product->tag3 . '%')
                 ->inRandomOrder()->take(1)->get();
-        }
-        if ($product->tag3 == null && $product->tag2 != null) {
-            $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
+            }
+            if ($product->tag3 == null && $product->tag2 != null){
+                $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag1', 'like', '%' . $product->tag2 . '%')
                 ->orwhere('tag2', 'like', '%' . $product->tag2 . '%')
                 ->orwhere('tag3', 'like', '%' . $product->tag2 . '%')
                 ->inRandomOrder()->take(1)->get();
-        }
-        if ($product->tag2 == null) {
-            $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
+            }
+            if ($product->tag2 == null){
+                $productrelation1 = Product::where('tag1', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag2', 'like', '%' . $product->tag1 . '%')
                 ->orwhere('tag3', 'like', '%' . $product->tag1 . '%')
                 ->inRandomOrder()->take(1)->get();
-        }
+            }
 
-        $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
-        $productrelation3 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
 
-        $productrelation12 = $productrelation1->concat($productrelation2);
-        $productrelations = $productrelation12->concat($productrelation3);
+            $productrelation2 = Product::where('categorySecondary', 'like', '%' . $product->categorySecondary . '%')->inRandomOrder()->take(1)->get();
+            $productrelation3 = Product::where('categoryMain', 'like', '%' . $product->categoryMain . '%')->inRandomOrder()->take(1)->get();
 
+            $productrelation12 = $productrelation1->concat($productrelation2);
+            $productrelations = $productrelation12->concat($productrelation3);
+
+           /*  foreach ($productrelations as $productrelation) {
+                $lenght = count($arrayId);
+                for ($i = 0; $i != $lenght; $i += 1) {
+                    if ($arrayId[$i] === $productrelation->id) {
+                        $repeat = true;
+                    }
+                }
+                $arrayId[] = $productrelation->id;
+            } */
+        } while ($repeat);
+        /* dd($index); */
         return ($productrelations);
     }
 
     static function filterAuthor($author)
     {
+        /* $productsFilteredByAuthor = Product::where('author1', 'like', '%' . $author . '%') */
         $productsFilteredByAuthor = Product::where('author1', $author)
             ->orWhere('author2', $author)
             ->orWhere('author3', $author)
@@ -84,6 +99,7 @@ class Product extends Model
 
         return ($productsFilteredByAuthor);
     }
+
 
     static function filterTag($tag)
     {
@@ -102,25 +118,9 @@ class Product extends Model
 
     public function isAvailible()
     {
-        if ($this->isAvailable) {
+        if($this->isAvailable) {
             return true;
         }
         return false;
-    }
-
-    static function searchProducts($request)
-    {
-        $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author1', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author2', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author3', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author4', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author5', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('author6', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
-            ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
-            ->get();
-
-        return ($products);
     }
 }

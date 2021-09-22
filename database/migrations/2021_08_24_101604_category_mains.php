@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CategoryMains extends Migration
 {
@@ -19,8 +19,9 @@ class CategoryMains extends Migration
             $table->integer('position');
             $table->string('category', 50);
 
-            $table->timestamps();
             
+
+            $table->timestamps();
         });
     }
 

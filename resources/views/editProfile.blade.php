@@ -13,8 +13,8 @@
         </div>
 
         <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Apellidos</span>
-            <input type="text" name="surname" value="{{$user->surname}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text" id="inputGroup-sizing-default">Apellidos</span>
+          <textarea type="text" name="surname"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">{{$user->surname}}</textarea>
         </div>
 
         <div class="input-group mb-3">

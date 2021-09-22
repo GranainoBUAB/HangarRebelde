@@ -29,12 +29,7 @@ class ProductController extends Controller
         $products = Product::orderBy('id', 'desc')->take(10)->get();
         $sumAndQuantity = Cart::sumAndQuantity();
 
-        $products = Product::simplePaginate(10);
-
-
-
         return view('home', compact('products', 'user', 'sumAndQuantity'));
-
 
 
         /* return view('cart', compact('products', 'sumAndQuantity')); */
@@ -150,22 +145,31 @@ class ProductController extends Controller
         $changesProduct = request()->except(['_token', '_method']);
 
         if ($request->hasFile('image1')) {
+            /* $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image); */
             $changesProduct['image1'] = $request->file('image1')->store('img', 'public');
         }
 
         if ($request->hasFile('image2')) {
+            /* $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image); */
             $changesProduct['image2'] = $request->file('image2')->store('img', 'public');
         }
 
         if ($request->hasFile('image3')) {
+            /* $product = Product::findOrFail($id);
+            Storage::delete('public/' . $product->image); */
             $changesProduct['image3'] = $request->file('image3')->store('img', 'public');
         }
+
 
         Product::where('id', '=', $id)->update($changesProduct);
 
         $product = Product::findOrFail($id);
 
         return redirect()->route('home')->with('success', 'Updated');
+        //return redirect()->back();
+
     }
 
     /**
@@ -183,7 +187,17 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $products = Product::searchProducts($request);
+
+        $products = Product::where('title', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author1', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author2', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author3', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author4', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author5', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('author6', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('isbn', 'like', '%' . $request->input('query') . '%')
+            ->orWhere('editorial', 'like', '%' . $request->input('query') . '%')
+            ->get();
 
         $sumAndQuantity = Cart::sumAndQuantity();
 
@@ -194,12 +208,12 @@ class ProductController extends Controller
     {
         if ($catSec === null) {
 
-            $products = Product::where('categoryMain', '=', $catMain)->simplePaginate(2);
+            $products = Product::where('categoryMain', '=', $catMain)->get();
         } else {
-            $products = Product::where('categorySecondary', '=', $catSec)->simplePaginate(2);
+            $products = Product::where('categorySecondary', '=', $catSec)->get();
         }
         $sumAndQuantity = Cart::sumAndQuantity();
-        return view('home', compact('products', 'sumAndQuantity'));
+        return view('home', compact('products','sumAndQuantity'));
     }
 
     public function viewByAuthor($author)
@@ -207,13 +221,13 @@ class ProductController extends Controller
 
         $products = Product::filterAuthor($author);
         $sumAndQuantity = Cart::sumAndQuantity();
-        return view('home', compact('products', 'sumAndQuantity'));
+        return view('home', compact('products','sumAndQuantity'));
     }
 
     public function viewByTag($tag)
     {
         $products = Product::filterTag($tag);
         $sumAndQuantity = Cart::sumAndQuantity();
-        return view('home', compact('products', 'sumAndQuantity'));
+        return view('home', compact('products','sumAndQuantity'));
     }
 }
