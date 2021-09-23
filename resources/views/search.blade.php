@@ -28,7 +28,7 @@
                         </a>
                     @else
                         <img class="icoCardNoAvailable ml-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
-                     @endif
+                    @endif
                 </div>
 
                 @if(Auth::check() && Auth::user()->isadmin())

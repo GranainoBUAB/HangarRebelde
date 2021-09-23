@@ -21,6 +21,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" href="img/logoLetras.png"> 
+
 </head>
 
 <body class="d-flex justify-content-center body-xxl">

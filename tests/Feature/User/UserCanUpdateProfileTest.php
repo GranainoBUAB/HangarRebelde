@@ -9,11 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class UserCanUpdateProfileTest extends TestCase
 {
     use RefreshDatabase;
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+
     public function test_user_profile_can_be_updated()
     {
         $this->withoutExceptionHandling();
@@ -23,13 +19,10 @@ class UserCanUpdateProfileTest extends TestCase
         $this->actingAs($user);
 
         $response = $this->patch(route('updateMyProfile', $user->id), [
-            'name'=> 'Update Name',
+            'name' => 'Update Name',
         ]);
-    
-        $this->assertEquals(User::first()->name,'Update Name');
-    
-        $this->assertEquals(User::first()->name,'Update Name');
 
-    } 
-
+        $this->assertEquals(User::first()->name, 'Update Name');
+        $this->assertEquals(User::first()->name, 'Update Name');
+    }
 }
