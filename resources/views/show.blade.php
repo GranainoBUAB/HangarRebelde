@@ -20,7 +20,7 @@
 
                 function replaceImage()
                 {
-                    var image =  document.getElementById('foto').innerHTML ="Tú puedes";
+                    var image =  document.getElementById('foto');
                     image.src = "id"
                 } 
                 /* replaceImage(); */
