@@ -33,8 +33,6 @@ class PaymentController extends Controller
         ->with('message' , '¡Compra realizada con éxito, muchas gracias!');
     }
     
-    
-    
     private function charge()
     {
         $token = $_POST['stripeToken'];

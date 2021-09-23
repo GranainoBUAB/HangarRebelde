@@ -13,7 +13,7 @@
           <div id="card-element"></div>
           <div id="card-errors" role="alert"></div>
         </div>
-        <button>Pagar</button>
+        <button class="btn btn-continue align-self-end">Pagar</button>
       </form>
 
 

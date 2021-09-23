@@ -899,6 +899,7 @@ a {
   box-shadow: 0 1px 3px 0 #e6ebf1;
   transition: box-shadow 150ms ease;
   font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
 
 .StripeElement--focus {
@@ -914,8 +915,8 @@ a {
 }
 
 .puechaseTitle {
+  color: black !important;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
 }
 
 /*!
