@@ -192,6 +192,10 @@
   font-weight: bold;
 }
 
+#app {
+  width: 100vw;
+}
+
 .ct-product {
   width: auto;
   height: auto;
