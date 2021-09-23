@@ -19,7 +19,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <p class="px-3">E-Mail Address</p>
+                            <p class="px-3">Dirección de e-mail</p>
 
                             <div class="col px-3">
                                 <input id="email" type="email" class="col form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
