@@ -1,12 +1,15 @@
 .StripeElement {
     background-color: white;
     height: 40px;
+    width: 100%;
     padding: 10px 12px;
     border-radius: 4px;
     border: 1px solid transparent;
     box-shadow: 0 1px 3px 0 #e6ebf1;
     -webkit-transition: box-shadow 50ms ease;
     transition: box-shadow 150ms ease;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .StripeElement--focus {
@@ -19,5 +22,10 @@
 
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
+} 
+
+.puechaseTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
 
