@@ -169,6 +169,36 @@
     margin-left: 5px;
   }
 }
+<<<<<<< HEAD
+=======
+@media screen and (min-width: 992px) {
+  .icoCardHeader {
+    margin-right: 10px;
+    margin-top: 7px;
+  }
+
+  li.nav-item {
+    display: flex;
+  }
+
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.ct-session {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #FF8300;
+  font-weight: bold;
+}
+
+#app {
+  width: 100vw;
+}
+
+>>>>>>> dev
 .ct-product {
   width: auto;
   height: auto;
@@ -830,6 +860,89 @@ a {
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+<<<<<<< HEAD
+=======
+.ct-userProfile {
+  border: 1px solid #FF8300;
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+}
+
+.userName {
+  position: absolute;
+  top: 10%;
+  font-weight: bold;
+}
+
+.icoProfile {
+  width: 20px;
+  filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
+}
+
+.txtMembership {
+  color: #FF8300;
+}
+
+.pagination li {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.pagination li .page-link {
+  border-radius: 0.25rem;
+  border: none;
+  min-width: 2.25rem;
+  text-align: center;
+  color: #FF8300;
+}
+
+.pagination li.active .page-link,
+.pagination li .page-link:hover {
+  background-color: #FF8300;
+  color: white !important;
+  font-weight: bold;
+}
+
+.bt-adm-create {
+  background-color: #FF8300;
+  border: none;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.ico-plus {
+  filter: invert(1);
+}
+
+.ico-user {
+  width: 1.7rem;
+  filter: invert(1);
+}
+
+.bt-adm {
+  background-color: #FF8300;
+  border: none;
+  border-radius: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.3rem;
+}
+
+.ct-adm-buttons {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.ico-adm {
+  width: 1.7rem;
+  height: auto;
+  filter: invert(1);
+}
+
+>>>>>>> dev
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

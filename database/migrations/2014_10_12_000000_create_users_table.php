@@ -40,7 +40,7 @@ class CreateUsersTable extends Migration
             $table->string('deliveryCity')->nullable();
             $table->string('deliveryRegion')->nullable();
             $table->string('deliveryCountry')->nullable();
-            
+
             $table->rememberToken();
             $table->timestamps();
         });
