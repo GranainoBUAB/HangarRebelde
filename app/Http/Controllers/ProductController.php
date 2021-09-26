@@ -85,9 +85,9 @@ class ProductController extends Controller
     public function filter($catMain, $catSec = null)
     {
         if ($catSec === null) {
-            $products = Product::where('categoryMain', '=', $catMain)->simplePaginate(2);
+            $products = Product::where('categoryMain', '=', $catMain)->simplePaginate(5);
         } else {
-            $products = Product::where('categorySecondary', '=', $catSec)->simplePaginate(2);
+            $products = Product::where('categorySecondary', '=', $catSec)->simplePaginate(5);
         }
         $sumAndQuantity = Cart::sumAndQuantity();
         return view('home', compact('products', 'sumAndQuantity'));
