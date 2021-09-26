@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if (!Auth::check() || !Auth::user()->isAdmin())
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
+    @endif
 
     <div class="container">
         <div class="row justify-content-center">
@@ -125,11 +128,13 @@
 
             @if(Auth::check() && Auth::user()->isadmin())
                 <div class="input-group mb-3">
-                    <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
+                    <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$product->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
                     <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
                     @method('delete')
                     @csrf
-                        <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
+                    <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')">
+                        <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
+                    </button>
                     </form>
                 </div>
             @endif
@@ -163,13 +168,16 @@
                             <img class="icoCardNoAvailable ml-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                         @endif
                     </div>
+
                     @if(Auth::check() && Auth::user()->isadmin())
                         <div class="input-group mb-3">
-                            <a href="{{ route('edit', ['id'=>$productrelation->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
+                            <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$productrelation->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></button></a>
                             <form action="{{ route('delete', ['id'=>$productrelation->id])}}" method="post">
                                 @method('delete')
                                 @csrf
-                                <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $productrelation->title }}')" value="Eliminar">
+                                <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $productrelation->title }}')">
+                                    <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
+                                </button>
                             </form>
                         </div>
                     @endif
