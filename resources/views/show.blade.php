@@ -20,7 +20,7 @@
 
                 function replaceImage()
                 {
-                    var image =  document.getElementById('foto');
+                    var image =  document.getElementById('id');
                     image.src = "id"
                 } 
                 /* replaceImage(); */
