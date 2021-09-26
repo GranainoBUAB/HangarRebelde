@@ -4,16 +4,16 @@
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
       <form action="{{ route('purchase') }}" method="post" id="payment-form">
-        @method('PUT')
-        @csrf
-        <div class="form-row">
-          <label class="puechaseTitle" for="card-element">
+      @method('PUT')
+      @csrf
+        <div class="stripe-form m-4">
+          <label class="puechaseTitle mb-4" for="card-element">
             Tarjeta de credito o Debito
           </label>
           <div id="card-element"></div>
           <div id="card-errors" role="alert"></div>
         </div>
-        <button class="btn btn-continue align-self-end">Pagar</button>
+        <button class="btn btn-continue align-self-end ml-4">Pagar</button>
       </form>
 
 
