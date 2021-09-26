@@ -16,8 +16,8 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 # Características generales
 
-[Usuarios no registrados.](#usuarios no registrados)  
-[Usuarios registrados.](#usuarios registrados)  
+[Usuariosnoregistrados.](#usuarios no registrados)  
+[Usuariosregistrados.](#usuarios registrados)  
 [Administrador.](#adminstrador)
 
 ### Usuarios no registrados
@@ -93,14 +93,13 @@ Integrantes:
 - HTML5
 - CSS
 - Bootstrap
+- Sass
 - PHP8
 - MySQL
 - Visual Studio Code
 - XAMPP
 - Laravel
 - Javascript
-- Vue
-- Vuex
 - Trello
 - Miro
 - Figma
