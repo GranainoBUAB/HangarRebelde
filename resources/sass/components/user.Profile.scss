@@ -1,0 +1,20 @@
+.ct-userProfile{
+  border: 1px solid $colorOrange;
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+}
+
+.userName{
+  position: absolute;
+  top: 10%;
+  font-weight: bold;
+}
+
+.icoProfile{
+  width: 20px;
+  filter: $filterSVGOrange;
+}
+
+.txtMembership{
+  color: $colorOrange;
+}
