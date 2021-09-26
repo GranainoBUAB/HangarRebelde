@@ -9,8 +9,8 @@
 ![admin](https://user-images.githubusercontent.com/82060703/134808394-585e301c-d9f8-4edf-acf1-aca70198cbb7.png)
 
 # Contexto del proyecto
-Aplicación creada para atender a la creciente demanda de vendas de un tienda ubicada en Oviedo - España, que vió sus vendas aumentarem significativamete durante la pandemia. 
-Surgió de este modo la necesidad de crear una aplicación sólida y escalable, inicialmente para abarcar su funcionalidad de tiende online y en el futuro complemetar los demas  servicios online que Hangar Rebelde ofrece.
+Aplicación creada para atender a la creciente demanda de ventas de un tienda ubicada en Oviedo - España, que vio sus ventas aumentar significativamente durante la pandemia. 
+Surgió de este modo la necesidad de crear una aplicación sólida y escalable, inicialmente para abarcar su funcionalidad de tiende online y en el futuro complementar los demás servicios online que Hangar Rebelde ofrece.
 
 # Características generales
 
@@ -20,19 +20,19 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 ### Usuarios no registrados
 
--   En la aplicación los usuarios no registrados pueden ver los productos de Hangar Rebelde y sus informaciones detalladas.
--   Navegar por sus categorias.
--   Buscar productos por título, autor, editorial y ISBN.
+-  En la aplicación los usuarios no registrados pueden ver los productos de Hangar Rebelde y sus informaciones detalladas.
+-  Navegar por sus categorías.
+-  Buscar productos por título, autor, editorial y ISBN.
 
 ### Usuarios registrados
 
--   Los usuarios registrados pueden añadir productos a su carrito.
--   Visualizar y editar su perfil con infomaciones personales.
--   Visualizar su carrito de compras con los productos añadidos.
--   Aumentar y disminuir del carrito de compras la cantidad de un mismo producto.
--   Borrar cada producto del carrito de compras.
--   Borrar todos los productos del carrito de compras.
--   Comprar productos
+-  Los usuarios registrados pueden añadir productos a su carrito.
+-  Visualizar y editar su perfil con informaciones personales.
+-  Visualizar su carrito de compras con los productos añadidos.
+-  Aumentar y disminuir del carrito de compras la cantidad de un mismo producto.
+-  Borrar cada producto del carrito de compras.
+-  Borrar todos los productos del carrito de compras.
+-  Comprar productos
 
 ### Adminstrador
 
@@ -49,6 +49,8 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 # Instalación
 
+******************************** clonar el repositorio
+
 `composer install`
 
 `npm install && npm run dev`
@@ -63,7 +65,7 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 ## Running Tests
 
-`php artisan test`
+`php artisan test` o `vendor/bin/phpunit`
 
 ## Metodología de trabajo
 
