@@ -4,17 +4,44 @@
 
 ## La app ecommerce para la tienda de comics
 
+# Vistas
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+![home](https://user-images.githubusercontent.com/82060703/134808302-c93d090b-8efc-4448-b9ef-723e2c12f836.png)
+![show](https://user-images.githubusercontent.com/82060703/134808389-f85eb1a1-a9bd-4539-abef-78d29f4d17dc.png)
+![admin](https://user-images.githubusercontent.com/82060703/134808394-585e301c-d9f8-4edf-acf1-aca70198cbb7.png)
 
-####
+# Contexto del proyecto
+Aplicación creada para atender a la creciente demanda de vendas de un tienda ubicada en Oviedo - España, que vió sus vendas aumentarem significativamete durante la pandemia. 
+Surgió de este modo la necesidad de crear una aplicación sólida y escalable, inicialmente para abarcar su funcionalidad de tiende online y en el futuro complemetar los demas  servicios online que Hangar Rebelde ofrece.
 
+# Características generales
 
-![](public/image/amaso-peque.png)
+[Usuarios no registrados.](#usuarios no registrados)  
+[Usuarios registrados.](#usuarios registrados)  
+[Administrador.](#adminstrador)
 
-# AMASÓ ECOMMERCE
+### Usuarios no registrados
 
-## La app para conectar artesanos y productores locales con sus clientes.
+-   En la aplicación los usuarios no registrados pueden ver los productos de Hangar Rebelde y sus informaciones detalladas.
+-   Navegar por sus categorias.
+-   Buscar productos por título, autor, editorial y ISBN.
+
+### Usuarios registrados
+
+-   Los usuarios registrados pueden añadir productos a su carrito.
+-   Visualizar y editar su perfil con infomaciones personales.
+-   Visualizar su carrito de compras con los productos añadidos.
+-   Aumentar y disminuir del carrito de compras la cantidad de un mismo producto.
+-   Borrar cada producto del carrito de compras.
+-   Borrar todos los productos del carrito de compras.
+-   Comprar productos
+
+### Adminstrador
+
+-   El administrador puede crear un nuevo producto con todas las informaciones necesaria y marcarlo como disponible o no disponible.
+-   Editar las informaciones de un producto y borrar un producto.
+-   Visualizar y editar el perfil de los usuarios, asignando un numero de socio y la posibilidad de hacer una reserva si corresponde.
+-   Eliminar los perfiles de los usuarios.
 
 # Requisitos técnicos
 
@@ -28,7 +55,9 @@
 
 `npm install && npm run dev`
 
-`php artisan migrate`
+`php artisan migrate:fresh --seed`
+
+`php artisan storage:link`
 
 ## Running app
 
@@ -38,56 +67,43 @@
 
 `php artisan test`
 
-## Running PHP Mess Detector
-
-`vendor/bin/phpmd ./app text cleancode,unusedcode,codesize,design,naming`
-
 ## Metodología de trabajo
 
 -   TDD
 -   Agile
 -   Scrum
 -   Pair programming
--   CI/CD
-
-### Kanban link
 
 ### Heroku link
 
-http://amaso.herokuapp.com/
+http:
 
 ### Proyecto creado en equipo durante el Bootcamp Factoria F5.
 
 Integrantes:
 
--   Carmen Pérez.
--   Laura Bassani.
--   Estefanie Garcia L.
--   Joaquim Francès.
+-   Alexandra Galarza
+-   Cris Mouta.
+-   David Sánchez.
+-   Gabriela Baquerizo.
+-   Jose Miguel Quesada.
+-   Snezhanna Stefanova.
 
-Aplicación creada con la idea de poder ofrecer una via digital a los pequeños productores locales que quieren vender sus productos a clientes cercanos.
-
- [Usuarios.](#usuarios)  
- [Artesanos.](#artesanos)  
- [Administradores.](#adminstradores)
-
-### Usuarios
-
--   En la aplicación los usuarios pueden ver tanto los artesanos locales como sus productos.
--   Pueden comprar productos.
--   Pueden acceder a su perfil con el historial de sus compras.
-
-### Artesanos
-
--   Los artesanos pueden subir sus productos para la venta.
--   Editar y eliminar productos.
--   Editar y eliminar su perfil de artesano.
--   Pueden ver sus productos vendidos con los datos del comprador.
-
-### Adminstradores
-
--   Los administradores disponen de un panel de control donde podrán visualizar a los artesanos que se  hayan inscrito en la aplicación.
--   Los administradores pueden eliminar los perfiles de los artesanos.
+## Herramientas y tecnologías utilizadas
+- HTML5
+- CSS
+- Bootstrap
+- PHP8
+- MySQL
+- Visual Studio Code
+- XAMPP
+- Laravel
+- Javascript
+- Vue
+- Vuex
+- Trello
+- Miro
+- Figma
 
 ## Aprendizajes
 
