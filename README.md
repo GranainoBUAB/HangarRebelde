@@ -16,8 +16,8 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 # Características generales
 
-[Usuariosnoregistrados.](#usuariosnoregistrados)  
-[Usuariosregistrados.](#usuariosregistrados)  
+[Usuarios no registrados.](#usuariosnoregistrados)  
+[Usuarios registrados.](#usuariosregistrados)  
 [Administrador.](#adminstrador)
 
 ### Usuarios no registrados
@@ -106,22 +106,20 @@ Integrantes:
 
 ## Aprendizajes
 
--   Plantear un proyecto desde scratch.
 -   Implementar cambios incrementales.
--   Trabajar con CI/CD.
 -   Implementar GitHub Actions.
--   Patrón Repositorio.
+-   Implementar pasarela de pago.
 -   Creación de vistas por componentes.
 
-## Siguientes pasos
+## Próximos pasos
 
-- [x] Incluir una API para la pasarela de pago.
-- [x] Implementar patrón repositorio.
-- [ ] Vincular a cada usuario un carrito que se destruye luego de la compra.
-- [x] Implementar transacciones para las bases de datos.
-- [ ] Utilizar sesiones que reserven los productos durante un tiempo determinado en cada carrito.
-- [ ] Utilizar Docker.
-- [x] Crear las vistas por componentes.
-- [x] Crear perfil del usuario con su historial de compra.
+- [x] Subir a producción (Heroku y/o otro hosting).
+- [x] Conectar la pasarela de pago con nuestro proyecto.
+- [ ] Posibilidad de reservar un producto.
+- [x] Sistema de valoración y comentarios.
+- [ ] Vista de productos más valorados.
+- [ ] Utilizar Interfaces.
+- [x] Utilizar Patrón Repositorio.
+- [x] Inyección de servicios.
 
 
