@@ -29,11 +29,11 @@
                         @endif
 
                         @if($product->canReserve === 1)
-                        <h6 class="extraShow font-weight-bold mx-2 d-block"> | </h6>
-                        <button type="text" class="input-group-text ml-2 d-block">Reservar</button></a>
+                            <h6 class="extraShow font-weight-bold mx-2 d-block"> | </h6>
+                            <button type="text" class="input-group-text ml-2 d-block">Reservar</button></a>
                         @else
-                        <h6 class="extraShow font-weight-bold mx-2 d-none"> | </h6>
-                        <button type="text" class="input-group-text ml-2 d-none">Reservar</button></a>
+                            <h6 class="extraShow font-weight-bold mx-2 d-none"> | </h6>
+                            <button type="text" class="input-group-text ml-2 d-none">Reservar</button></a>
                         @endif
 
                     </div>
