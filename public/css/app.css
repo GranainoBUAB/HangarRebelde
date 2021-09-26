@@ -169,36 +169,10 @@
     margin-left: 5px;
   }
 }
-<<<<<<< HEAD
-=======
-@media screen and (min-width: 992px) {
-  .icoCardHeader {
-    margin-right: 10px;
-    margin-top: 7px;
-  }
-
-  li.nav-item {
-    display: flex;
-  }
-
-  .navbar {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-.ct-session {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  color: #FF8300;
-  font-weight: bold;
-}
-
 #app {
   width: 100vw;
 }
 
->>>>>>> dev
 .ct-product {
   width: auto;
   height: auto;
@@ -860,8 +834,6 @@ a {
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
-<<<<<<< HEAD
-=======
 .ct-userProfile {
   border: 1px solid #FF8300;
   border-radius: 0px 0px 5px 5px;
@@ -942,7 +914,6 @@ a {
   filter: invert(1);
 }
 
->>>>>>> dev
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
