@@ -554,6 +554,11 @@ footer {
   }
 }
 
+.txt-alt {
+  font-size: 10px;
+  color: #ffb566;
+}
+
 .input-group-text {
   background-color: #ffb566 !important;
   color: black !important;
