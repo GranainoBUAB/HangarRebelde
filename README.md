@@ -14,9 +14,9 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 # Características generales
 
-[Usuarios no registrados.](#usuariosnoregistrados)  
-[Usuarios registrados.](#usuariosregistrados)  
-[Administrador.](#adminstrador)
+[Usuariosnoregistrados.](#usuariosnoregistrados)  
+[Usuariosregistrados.](#usuariosregistrados)  
+[Administrador.](#administrador)
 
 ### Usuarios no registrados
 
