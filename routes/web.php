@@ -40,6 +40,7 @@ Route::delete('users/delete/{id}', [UserController::class, 'destroyUsers'])->nam
 Route::patch('/update_users/{id}', [UserController::class, 'updateUsers'])->name('updateUsers')->middleware('isadmin');
 Route::get('/edit_user/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin');
 Route::get('/searchUsers', [UserController::class, 'searchUsers'])->name('searchUsers')->middleware('isadmin');
+Route::get('/users_not_verified', [UserController::class, 'userNotVerified'])->name('userNotVerified')->middleware('isadmin');
 
 /* Profile Routes */
 
