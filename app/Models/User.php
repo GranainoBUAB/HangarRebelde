@@ -29,6 +29,7 @@ class User extends Authenticatable
         'country',
         'notes',
         'canReserve',
+        'verified',
 
         'deliveryName',
         'deliverySurname',

@@ -32,6 +32,8 @@ class CreateUsersTable extends Migration
             $table->string('country')->nullable();
             $table->string('notes')->nullable();
             $table->boolean('canReserve')->nullable();
+            $table->boolean('verified')->default(false);
+            
 
             $table->string('deliveryName')->nullable();
             $table->string('deliverySurname')->nullable();

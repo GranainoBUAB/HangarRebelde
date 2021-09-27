@@ -77,6 +77,21 @@
           <input type="text" name="country" value="{{$user->country}}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
+        <div class="input-group mb-3 d-flex align-items-center">
+            <span class="input-group-text" id="inputGroup-sizing-default">Verificado</span>
+            @if ($user->verified === 1)
+              <input type="radio" class="ml-2" name="verified" value="1" checked>
+              <span class="ml-2">Sí</span>
+              <input type="radio" class="ml-2" name="verified" value="0">
+              <span class="ml-2">No</span>
+            @else
+              <input type="radio" class="ml-2" name="verified" value="1">
+              <span class="ml-2">Sí</span>
+              <input type="radio" class="ml-2" name="verified" value="0" checked>
+              <span class="ml-2">No</span>
+            @endif
+         </div>
+
         <div>
           <button type="submit" class="btn bt-create">Validar</button>
           <button type="submit" class="btn bt-cancel ml-3">Cancelar</button>

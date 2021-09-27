@@ -41,4 +41,11 @@ class UserController extends Controller
         $users = User::searchUserinList($request);
         return view('users', compact('users'));
     }
+    
+    public function userNotVerified()
+    {
+        $users = User::where('verified', '=', false)->get();
+        return view('users', compact('users'));
+    }
+
 };
