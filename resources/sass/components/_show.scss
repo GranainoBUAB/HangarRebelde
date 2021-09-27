@@ -42,7 +42,9 @@
 
 .txtTitleShow {
     color: $colorOrange;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: $fontPrincipal;
+    letter-spacing: 0.05rem;
 }
 
 .txtPriceShow {
@@ -66,4 +68,9 @@
 
 .icoCardShowNoAvailable {
     @include icoCardShowNoAvailable;
+}
+
+.txt-alt{
+    font-size: 10px;
+    color: $colorOrangeLight;
 }

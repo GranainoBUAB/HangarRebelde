@@ -2,9 +2,7 @@
 
 @section('content')
 
-    @if (!Auth::check() || !Auth::user()->isAdmin())
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
-    @endif
     
     <!-- flash message -->
     <div class="flex justify-center pt-8">
@@ -38,7 +36,7 @@
                 <div class="ct-product m-lg-4 m-3 position-relative">
                     <div class="ct-img">
                         <a href="{{ route('show', ['id' => $product->id]) }}">
-                            <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
+                            <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="Portada del comic {{ $product->title }}">
                         </a>
                     </div>
                     <div class="ct-info d-flex flex-row align-items-center p-1">
