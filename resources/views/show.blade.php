@@ -1,19 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-
-    @if (!Auth::check() || !Auth::user()->isAdmin())
-    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
-    @endif
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
-                <div class="ct-imgShow">
+                <div class="position-relative">
+                @if(Auth::check() && Auth::user()->isadmin())
+                <div class="ct-adm-buttons">
+                    <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$product->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
+                    <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
+                    @method('delete')
+                    @csrf
+                    <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')">
+                        <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
+                    </button>
+                    </form>
+                </div>
+            @endif
                     <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="">
                 </div>
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
-                    <h5 class="card-title font-weight-bold txtTitleShow">{{ $product->title }}</h5>
+                    <h5 class="card-title txtTitleShow">{{ $product->title }}</h5>
                     <div class="d-flex flex-row flex-wrap align-items-center">
                         <h6 class="extraShow font-weight-bold mr-2"></h6>
                         <p class="card-title extraShow font-weight-bold txtPriceShow">{{ $product->price }} &#8364 </p>
@@ -126,26 +133,27 @@
                 </div>
             </div>
 
-            @if(Auth::check() && Auth::user()->isadmin())
-                <div class="input-group mb-3">
-                    <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$product->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></a>
-                    <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
-                    @method('delete')
-                    @csrf
-                    <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')">
-                        <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
-                    </button>
-                    </form>
-                </div>
-            @endif
+            
 
             <div class="d-flex justify-content-center align-items-center mt-5">
-                <h2 class="card-title font-weight-bold txtTitleShow">Productos relacionados</h2>
+                <h2 class="card-title txtTitleShow">Productos relacionados</h2>
             </div>
             <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
                 @foreach ($productrelations as $productrelation)
-                <div class="ct-product m-lg-4 m-3">
+                <div class="ct-product m-lg-4 m-3 position-relative">
                     <div class="ct-img">
+                    @if(Auth::check() && Auth::user()->isadmin())
+                        <div class="ct-adm-buttons">
+                            <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$productrelation->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></button></a>
+                            <form action="{{ route('delete', ['id'=>$productrelation->id])}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $productrelation->title }}')">
+                                    <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
+                                </button>
+                            </form>
+                        </div>
+                    @endif
                         <a href="{{ route('show', ['id' => $productrelation->id]) }}">
                             <img class="imgCard" src="{{ asset('storage') . '/' . $productrelation->image1 }}" alt="">
                         </a>
@@ -169,18 +177,7 @@
                         @endif
                     </div>
 
-                    @if(Auth::check() && Auth::user()->isadmin())
-                        <div class="input-group mb-3">
-                            <a class="bt-adm m-1 d-flex justify-content-center align-items-center" href="{{ route('edit', ['id'=>$productrelation->id]) }}"><img class="ico-adm" src="{{url('/img/edit.svg')}}" alt="Pixel perfect"></button></a>
-                            <form action="{{ route('delete', ['id'=>$productrelation->id])}}" method="post">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $productrelation->title }}')">
-                                    <img class="ico-adm" src="{{url('/img/papelera-cerrada.svg')}}" alt="Freepik">
-                                </button>
-                            </form>
-                        </div>
-                    @endif
+                    
                 </div>
                 @endforeach
             </div>

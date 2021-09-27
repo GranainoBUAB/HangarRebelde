@@ -496,7 +496,9 @@ footer {
 
 .txtTitleShow {
   color: #FF8300;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: "Woodstamp";
+  letter-spacing: 0.05rem;
 }
 
 .txtPriceShow {
