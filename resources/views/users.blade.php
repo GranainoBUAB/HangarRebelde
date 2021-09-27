@@ -10,6 +10,11 @@
                 <img class="imgcarrito" src="{{url('/img/lupa.png')}}" alt="">
             </button>
         </form>
+        <form class="d-flex align-items-center inputSearch ml-5" action="{{route('userNotVerified')}}">
+            <button class="btn-lupa position-relative" type="submit" class="btn btn-default">
+                <img class="imgcarrito" src="{{url('/img/lupa.png')}}" alt="">
+            </button>
+        </form>
     </li>
     <div class="d-flex justify-content-center" data-bs-spy="scroll">
         <div class="d-flex justify-content-center my-4 px-xxl-5">
@@ -29,6 +34,7 @@
                         <th scope="col">Provincia</th>
                         <th scope="col">País</th>
                         <th scope="col">Reserva</th>
+                        <th scope="col">Verificado</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -48,6 +54,11 @@
                         <td>{{ $user->region }}</td>
                         <td>{{ $user->country }}</td>
                         @if($user->canReserve)
+                            <td>Sí</td>
+                        @else
+                            <td>No</td>
+                        @endif
+                        @if($user->verified)
                             <td>Sí</td>
                         @else
                             <td>No</td>
