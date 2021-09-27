@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if (!Auth::check() || !Auth::user()->isAdmin())
+    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
+    @endif
+    
     <div class="container">
         <div class="row justify-content-center">
             <div class="d-flex flex-column flex-md-row mt-5 align-items-center align-items-md-start">
