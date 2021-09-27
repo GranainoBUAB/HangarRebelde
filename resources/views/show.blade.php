@@ -105,8 +105,12 @@
                     </div>
                     <div class="d-flex flex-wrap flex-row mt-3">
                         <img class="m-1 txt-alt" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="Portada del comic {{ $product->title }}">
+                        @if($product->image2)
                         <img class="m-1 txt-alt" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="Contraportada del comic {{ $product->title }}">
+                        @endif
+                        @if($product->image3)
                         <img class="m-1 txt-alt" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="Página del comic {{ $product->title }}">
+                        @endif
                         <div class="d-flex flex-column justify-content-end m-1">
                             <div class="d-flex flex-row align-items-center flex-wrap">
                                 <h6 class="extraShow font-weight-bold">Formato:</h6>
