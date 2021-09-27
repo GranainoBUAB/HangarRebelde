@@ -12,7 +12,7 @@ class UserNotVerifiedTest extends TestCase
 
     public function test_user_not_verified()
     {
-        $user1 = User::factory(2)->create();
+        User::factory(2)->create();
         $response = User::userNotVerified();
         $this->assertEquals(2, $response->count());
     }
