@@ -74,12 +74,7 @@ class CartController extends Controller
 
     public function deleteAllProducts()
     {
-        $user_id = auth()->id();
-
-        DB::table('carts')
-            ->where('user_id', $user_id)
-            ->delete();
-
+        Cart::deleteAllProductsInCart();
         Session::flash('message', "¡No hay productos en su carrito de compra!");
         return back();
     }

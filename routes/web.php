@@ -52,5 +52,5 @@ Route::get('/edit_profile/{id}', [ProfileController::class, 'editMyProfile'])->n
 /* Payment Routes */
 
 Route::get('/purchase/order', [PaymentController::class, 'order'])->name('purchaseOrder')->middleware('auth');
-Route::put('/purchase', [PaymentController::class, 'purchase'])->name('purchase')->middleware('auth');
+Route::put('/purchase/{amount}', [PaymentController::class, 'purchase'])->name('purchase')->middleware('auth');
 

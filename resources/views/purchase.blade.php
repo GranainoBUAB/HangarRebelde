@@ -3,7 +3,7 @@
 @section('content')
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
-      <form action="{{ route('purchase') }}" method="post" id="payment-form">
+      <form action="{{ route('purchase', ($sumAndQuantity['sum']*100)) }}" method="post" id="payment-form">
       @method('PUT')
       @csrf
         <div class="stripe-form m-4">

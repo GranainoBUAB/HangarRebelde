@@ -33,4 +33,15 @@ class Cart extends Model
         $result = ['sum' => $sum, 'quantity' => $quantity];
         return ($result);
     }
+
+    static function deleteAllProductsInCart()
+    {   
+        $user_id = auth()->id();
+
+        DB::table('carts')
+            ->where('user_id', $user_id)
+            ->delete();
+
+        return;
+    }
 }

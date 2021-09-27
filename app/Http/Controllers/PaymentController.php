@@ -25,21 +25,21 @@ class PaymentController extends Controller
         return view('purchase', compact('products', 'sumAndQuantity'));
     }
 
-    public function purchase()
+    public function purchase($amount)
     {
-        $this->charge();    
-
-        return redirect('/')
+        $this->charge($amount);    
+        Cart::deleteAllProductsInCart();
+        return redirect()->route('getCart')
         ->with('message' , '¡Compra realizada con éxito, muchas gracias!');
     }
     
-    private function charge()
+    private function charge($amount)
     {
         $token = $_POST['stripeToken'];
         try {
             Stripe::setApiKey(env('STRIPE_SECRET'));
             Charge::create ([
-                    "amount" => 1500,
+                    "amount" => $amount,
                     "currency" => "eur",
                     "source" => $token,
                     "description" => 'Pago en Hangar Rebelde'
