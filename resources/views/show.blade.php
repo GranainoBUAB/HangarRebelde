@@ -20,7 +20,7 @@
                     </form>
                 </div>
             @endif
-                    <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="Contraportada del comic {{ $product->title }}">
+                    <img class="imgShow" src="{{ asset('storage') . '/' . $product->image1 }}" alt="Portada del comic {{ $product->title }}">
                 </div>
                 <div class="card-body p-0 mx-md-4 my-4 my-md-0 ct-infoShow">
                     <h5 class="card-title txtTitleShow">{{ $product->title }}</h5>
@@ -158,7 +158,7 @@
                         </div>
                     @endif
                         <a href="{{ route('show', ['id' => $productrelation->id]) }}">
-                            <img class="imgCard" src="{{ asset('storage') . '/' . $productrelation->image1 }}" alt="Contraportada del comic {{ $productrelation->title }}">
+                            <img class="imgCard" src="{{ asset('storage') . '/' . $productrelation->image1 }}" alt="Portada del comic {{ $productrelation->title }}">
                         </a>
                     </div>
                     <div class="ct-info d-flex flex-row align-items-center p-1">
