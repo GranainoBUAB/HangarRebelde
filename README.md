@@ -116,10 +116,10 @@ Integrantes:
 ## Próximos pasos
 
 - [x] Subir a producción (Heroku y/o otro hosting).
-- [x] Conectar la pasarela de pago con nuestro proyecto.
-- [x] Posibilidad de reservar un producto.
-- [x] Sistema de valoración y comentarios.
-- [x] Vista de productos más valorados.
-- [x] Utilizar Interfaces.
-- [x] Utilizar Patrón Repositorio.
-- [x] Inyección de servicios.
+- [ ] Conectar la pasarela de pago con nuestro proyecto.
+- [ ] Posibilidad de reservar un producto.
+- [ ] Sistema de valoración y comentarios.
+- [ ] Vista de productos más valorados.
+- [ ] Utilizar Interfaces.
+- [ ] Utilizar Patrón Repositorio.
+- [ ] Inyección de servicios.
