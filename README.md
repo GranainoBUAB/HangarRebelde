@@ -14,10 +14,6 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 # Características generales
 
-[Usuariosnoregistrados.](#usuariosnoregistrados)  
-[Usuariosregistrados.](#usuariosregistrados)  
-[Administrador.](#administrador)
-
 ### Usuarios no registrados
 
 -  En la aplicación los usuarios no registrados pueden ver los productos de Hangar Rebelde y sus informaciones detalladas.
@@ -116,7 +112,7 @@ Integrantes:
 ## Próximos pasos
 
 - [x] Subir a producción (Heroku y/o otro hosting).
-- [ ] Conectar la pasarela de pago con nuestro proyecto.
+- [ ] Notificar venda de productos a usuarios y administrador.
 - [ ] Posibilidad de reservar un producto.
 - [ ] Sistema de valoración y comentarios.
 - [ ] Vista de productos más valorados.
