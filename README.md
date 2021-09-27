@@ -2,15 +2,15 @@
 
 ## La app ecommerce para la tienda de comics
 
+# Contexto del proyecto
+Aplicación creada para atender a la creciente demanda de ventas de un tienda ubicada en Oviedo - España, que vio sus ventas aumentar significativamente durante la pandemia. 
+Surgió de este modo la necesidad de crear una aplicación sólida y escalable, inicialmente para abarcar su funcionalidad de tiende online y en el futuro complementar los demás servicios online que Hangar Rebelde ofrece.
+
 # Vistas
 
 ![home](https://user-images.githubusercontent.com/82060703/134808302-c93d090b-8efc-4448-b9ef-723e2c12f836.png)
 ![show](https://user-images.githubusercontent.com/82060703/134808389-f85eb1a1-a9bd-4539-abef-78d29f4d17dc.png)
 ![admin](https://user-images.githubusercontent.com/82060703/134808394-585e301c-d9f8-4edf-acf1-aca70198cbb7.png)
-
-# Contexto del proyecto
-Aplicación creada para atender a la creciente demanda de ventas de un tienda ubicada en Oviedo - España, que vio sus ventas aumentar significativamente durante la pandemia. 
-Surgió de este modo la necesidad de crear una aplicación sólida y escalable, inicialmente para abarcar su funcionalidad de tiende online y en el futuro complementar los demás servicios online que Hangar Rebelde ofrece.
 
 # Características generales
 
