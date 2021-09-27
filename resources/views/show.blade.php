@@ -2,9 +2,7 @@
 
 @section('content')
 
-    @if (!Auth::check() || !Auth::user()->isAdmin())
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
-    @endif
     
     <div class="container">
         <div class="row justify-content-center">

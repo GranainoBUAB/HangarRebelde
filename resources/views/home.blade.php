@@ -2,9 +2,7 @@
 
 @section('content')
 
-    @if (!Auth::check() || !Auth::user()->isAdmin())
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
-    @endif
     
     <!-- flash message -->
     <div class="flex justify-center pt-8">
