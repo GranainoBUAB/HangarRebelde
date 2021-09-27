@@ -59,6 +59,8 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 `php artisan storage:link`
 
+`php artisan vendor:publish --tag=laravel-pagination`
+
 ## Running app
 
 `php artisan serve`
