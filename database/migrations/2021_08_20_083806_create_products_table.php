@@ -34,7 +34,7 @@ class CreateProductsTable extends Migration
             $table->string('image1');
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();
-            $table->string('dateSale')->nullable();
+            $table->date('dateSale')->nullable();
             $table->string('format', 50);
             $table->integer('pages');
             $table->string('tag1')->nullable();
