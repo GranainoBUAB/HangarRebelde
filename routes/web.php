@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 
@@ -33,7 +34,7 @@ Route::get('/decrementProductInCart/{product_id}/{quantity}', [CartController::c
 Route::get('users', [UserController::class, 'getUser'])->name('getUser');
 Route::delete('/all/cart', [CartController::class, 'deleteAllProducts'])->name('deleteAllProducts')->middleware('auth');
 
-/* //Users Routes */
+/* Users Routes */
 
 Route::get('users', [UserController::class, 'getUser'])->name('getUser')->middleware('isadmin');
 Route::delete('users/delete/{id}', [UserController::class, 'destroyUsers'])->name('destroyUsers')->middleware('isadmin');
@@ -47,4 +48,9 @@ Route::get('/users_not_verified', [UserController::class, 'userNotVerified'])->n
 Route::get('/profile/{id}', [ProfileController::class, 'getMyProfile'])->name('myProfile')->middleware('auth');
 Route::patch('/update_profile/{id}', [ProfileController::class, 'updateMyProfile'])->name('updateMyProfile')->middleware('auth');
 Route::get('/edit_profile/{id}', [ProfileController::class, 'editMyProfile'])->name('editMyProfile')->middleware('auth');
+
+/* Payment Routes */
+
+Route::get('/purchase/order', [PaymentController::class, 'order'])->name('purchaseOrder')->middleware('auth');
+Route::put('/purchase/{amount}', [PaymentController::class, 'purchase'])->name('purchase')->middleware('auth');
 

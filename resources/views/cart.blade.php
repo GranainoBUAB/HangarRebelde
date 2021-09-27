@@ -132,7 +132,9 @@
                                 </label>
                             </div>
                         </div>
-                            <span class="btn btn-continue align-self-end" type="button">Continuar</span>
+                            <a href="{{ route('purchaseOrder') }}">
+                                <span class="btn btn-continue align-self-end" type="button">Continuar</span>
+                            </a>
                     </li>
                 </ul>
             </div>
