@@ -39,6 +39,7 @@ class UserFactory extends Factory
             'city' => $this->faker->city(),
             'region' => $this->faker->state(),
             'country' => $this->faker->country(),
+            'verified' => false,
         ];
     }
 

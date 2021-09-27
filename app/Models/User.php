@@ -76,6 +76,11 @@ class User extends Authenticatable
         return($users);
     }
 
+    static function userNotVerified(){
+        $users = User::where('verified', '=', false)->get();
+        return ($users);
+    }
+
     public function productsCarts()
     {
         return $this->belongsToMany(Product::class, 'carts', 'user_id', 'product_id');

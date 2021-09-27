@@ -44,7 +44,7 @@ class UserController extends Controller
     
     public function userNotVerified()
     {
-        $users = User::where('verified', '=', false)->get();
+        $users = User::userNotVerified();
         return view('users', compact('users'));
     }
 
