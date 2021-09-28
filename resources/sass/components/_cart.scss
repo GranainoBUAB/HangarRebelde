@@ -95,5 +95,11 @@
 }
 
 .ct-payment{
-    margin: 6vw 8vw 13vw 8vw;
+    width: 100vw;
+    @media screen and (min-width: $breakpointTable){
+        width: 50vw;
+    }
+    @media screen and (min-width: $breakpointDesktop){
+        width: 50vw;
+    }
 }

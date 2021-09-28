@@ -800,7 +800,17 @@ a {
 }
 
 .ct-payment {
-  margin: 6vw 8vw 13vw 8vw;
+  width: 100vw;
+}
+@media screen and (min-width: 768px) {
+  .ct-payment {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .ct-payment {
+    width: 50vw;
+  }
 }
 
 .table-warning, .table-warning > th, .table-warning > td {

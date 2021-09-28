@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
-
+  <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
+    <div class="d-flex flex-wrap flex-lg-nowrap flex-direction-row justify-content-center align-items-start m-lg-5">
       <form action="{{ route('purchase', ($sumAndQuantity['sum']*100)) }}" method="post" id="payment-form" class="ct-payment">
       @method('PUT')
       @csrf
@@ -16,6 +16,35 @@
         <button class="btn btn-continue align-self-end ml-4">Pagar</button>
       </form>
 
+      <div class="row-5 row-sm-4 ms-3">
+        <div class="card summary mt-5 p-2 ">
+            <div class="fw-bold ms-2">
+                Factura a Pagar
+            </div>
+            <hr class="line-sum mx-1 p-0">
+            <div class="card-body p-0">
+                <ul class="list-group-flush ps-0 ">
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+                        Subtotal sin IVA
+                        <span class="badge text-secondary">{{ number_format($sumAndQuantity['sum'] - ($sumAndQuantity['sum']*0.04),2)}}€</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent ">
+                        IVA
+                        <span class="badge text-secondary">{{number_format($sumAndQuantity['sum']*0.04,2)}}€</span>
+                    </li>
+                </ul>
+                <hr class="line-sum mx-1 p-0">
+                <ul class="list-group-flush p-0 mb-0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent fw-bold">
+                        Total
+                        <span class="badge text-secondary">{{number_format($sumAndQuantity['sum'],2)}}€</span>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+      </div>
+    </div>
 
   <script src="https://js.stripe.com/v3/"></script>
 
