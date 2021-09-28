@@ -3,7 +3,7 @@
 @section('content')
 
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
-    
+
     <!-- flash message -->
     <div class="flex justify-center pt-8">
         @if (session()->has('message'))
@@ -32,6 +32,7 @@
             </div>
         @endif
         <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
+
             @foreach ($products as $product)
                 <div class="ct-product m-lg-4 m-3 position-relative">
                     <div class="ct-img">

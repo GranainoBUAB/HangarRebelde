@@ -78,7 +78,7 @@ class Product extends Model
             ->orWhere('author4', $author)
             ->orWhere('author5', $author)
             ->orWhere('author6', $author)
-            ->get();
+            ->simplePaginate(5);
 
         return ($productsFilteredByAuthor);
     }
@@ -88,7 +88,7 @@ class Product extends Model
         $productsFilteredBytag = Product::where('tag1', 'like', '%' . $tag . '%')
             ->orWhere('tag2', 'like', '%' . $tag . '%')
             ->orWhere('tag3', 'like', '%' . $tag . '%')
-            ->get();
+            ->simplePaginate(5);
 
         return ($productsFilteredBytag);
     }

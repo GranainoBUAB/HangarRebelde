@@ -56,7 +56,7 @@ class ProductController extends Controller
         $product =  $this->storeImages($request, $product);
 
         Product::create($product);
-        
+
         return redirect()->route('home');
     }
 
@@ -149,6 +149,7 @@ class ProductController extends Controller
 
         $products = Product::filterAuthor($author);
         $sumAndQuantity = Cart::sumAndQuantity();
+
         return view('home', compact('products', 'sumAndQuantity'));
     }
 
