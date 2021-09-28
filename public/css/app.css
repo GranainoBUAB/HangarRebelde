@@ -825,7 +825,12 @@ a {
 }
 @media screen and (min-width: 992px) {
   .tb-usersAdmin {
-    font-size: 15px;
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tb-usersAdmin {
+    font-size: 12px !important;
   }
 }
 
