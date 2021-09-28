@@ -113,17 +113,17 @@
                         @endif
                         <div class="d-flex flex-column justify-content-end m-1">
                             <div class="d-flex flex-row align-items-center flex-wrap">
-                                <h6 class="extraShow font-weight-bold">Formato:</h6>
+                                <h6 class="extraShow font-weight-bold">Formato:&nbsp</h6>
                                 <p class="card-title extraShow">{{ $product->format }}</p>
                             </div>
                             <div class="d-flex flex-row align-items-center flex-wrap">
-                                <h6 class="extraShow font-weight-bold">Páginas:</h6>
+                                <h6 class="extraShow font-weight-bold">Páginas:&nbsp</h6>
                                 <p class="card-title extraShow">{{ $product->pages }}</p>
                             </div>
                             <div class="d-flex flex-row align-items-center flex-wrap">
 
                                 @if($product->tag1)
-                                <h6 class="extraShow font-weight-bold">Etiquetas:</h6>
+                                <h6 class="extraShow font-weight-bold">Etiquetas:&nbsp</h6>
                                 <a href="{{ route('viewByTag', ['tag'=>$product->tag1]) }}" class="text-reset"><h6 class="extraShow mr-1"> {{ $product->tag1}}  </h6></a>
                                 @endif
 
