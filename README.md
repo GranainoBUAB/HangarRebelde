@@ -57,7 +57,7 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 `php artisan vendor:publish --tag=laravel-pagination`
 
-`compose require stripe/stripe-php`
+`composer require stripe/stripe-php`
 
 ## Running app
 
