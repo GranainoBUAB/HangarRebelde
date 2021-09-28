@@ -57,6 +57,8 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 `php artisan vendor:publish --tag=laravel-pagination`
 
+`compose require stripe/stripe-php`
+
 ## Running app
 
 `php artisan serve`
@@ -112,7 +114,7 @@ Integrantes:
 ## Próximos pasos
 
 - [x] Subir a producción (Heroku y/o otro hosting).
-- [ ] Notificar venda de productos a usuarios y administrador.
+- [ ] Notificar la compra de productos al usuario y administrador.
 - [ ] Posibilidad de reservar un producto.
 - [ ] Sistema de valoración y comentarios.
 - [ ] Vista de productos más valorados.
