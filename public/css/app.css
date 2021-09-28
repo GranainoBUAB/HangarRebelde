@@ -820,6 +820,10 @@ a {
   filter: invert(55%) sepia(22%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(109%);
 }
 
+.btn-txt {
+  color: #FF8300;
+}
+
 .ct-userProfile {
   border: 1px solid #FF8300;
   border-radius: 0px 0px 5px 5px;

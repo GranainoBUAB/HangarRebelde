@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <li class="nav-item" role="presentation">
-        <form class="d-flex align-items-center inputSearch ml-5" action="{{route('searchUsers')}}">
+    <div class="d-flex flex-direction-row justify-content-center justify-content-md-start align-items-center ml-md-3">
+        <form class="d-flex align-items-center" action="{{route('searchUsers')}}">
             <div class="form-group ct-search">
                 <input class="form-control me-1 inputSearch" name = "query" type="text" placeholder="Buscar" aria-label="Search">
             </div>
             <button class="btn-lupa position-relative" type="submit" class="btn btn-default">
-                <img class="imgcarrito" src="{{url('/img/lupa.png')}}" alt="">
+                <img class="imgcarrito" src="{{url('/img/lupa.png')}}" alt="search button">
             </button>
         </form>
-        <form class="d-flex align-items-center inputSearch ml-5" action="{{route('userNotVerified')}}">
-            <button class="btn-lupa position-relative" type="submit" class="btn btn-default">
-                <img class="imgcarrito" src="{{url('/img/lupa.png')}}" alt="">
+        <form class="d-flex align-items-center" action="{{route('userNotVerified')}}">
+            <button class="d-flex justify-content-center align-items-center bt-adm-create ml-md-5" type="submit" class="btn btn-default">
+                <img class="imgcarrito" src="{{url('/img/userVerify.svg')}}" alt="verify user">
             </button>
         </form>
-    </li>
+</div>
     <div class="d-flex justify-content-center" data-bs-spy="scroll">
         <div class="d-flex justify-content-center my-4 px-xxl-5">
             <table class="table table-sm table-hover text-center tb-usersAdmin">
