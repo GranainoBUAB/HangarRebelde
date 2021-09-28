@@ -3,12 +3,12 @@
 @section('content')
     <x-navbar sum="{{$sumAndQuantity['sum']}}" quantity="{{$sumAndQuantity['quantity']}}"/>
 
-      <form action="{{ route('purchase', ($sumAndQuantity['sum']*100)) }}" method="post" id="payment-form">
+      <form action="{{ route('purchase', ($sumAndQuantity['sum']*100)) }}" method="post" id="payment-form" class="ct-payment">
       @method('PUT')
       @csrf
         <div class="stripe-form m-4">
           <label class="puechaseTitle mb-4" for="card-element">
-            Tarjeta de credito o Debito
+            Tarjeta de crédito o débito
           </label>
           <div id="card-element"></div>
           <div id="card-errors" role="alert"></div>

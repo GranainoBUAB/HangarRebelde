@@ -799,6 +799,10 @@ a {
   border-radius: 4px;
 }
 
+.ct-payment {
+  margin: 6vw 8vw 13vw 8vw;
+}
+
 .table-warning, .table-warning > th, .table-warning > td {
   background-color: black !important;
   color: white !important;
