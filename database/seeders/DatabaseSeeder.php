@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::factory()->create(['isAdmin' => true, 'name' => 'admin', 'surname' => 'admin', 'email' => 'admin@admin.com', 'verified' => true]);
-        User::factory()->create(['name' => 'user1', 'surname' => 'user1', 'email' => 'user1@user.com']);
+        User::factory()->create(['name' => 'user1', 'surname' => 'user1', 'email' => 'user1@user.com', 'canReserve'=> true]);
         User::factory()->create(['name' => 'user2', 'surname' => 'user2', 'email' => 'user2@user.com']);
         User::factory(20)->create(['verified' => true]);
 
@@ -531,7 +531,7 @@ class DatabaseSeeder extends Seeder
             'author6'  => null,
             'editorial'  => 'Ivréa',
             'isAvailable'  => true,
-            'canReserve' => true,
+            'canReserve' => false,
             'isbn' => '9788418837999',
             'categoryMain' => 'Comic Manga',
             'categorySecondary' => '',
@@ -558,7 +558,7 @@ class DatabaseSeeder extends Seeder
             'author6'  => null,
             'editorial'  => 'NORMA Editorial',
             'isAvailable'  => false,
-            'canReserve' => true,
+            'canReserve' => false,
             'isbn' => '9788467945928',
             'categoryMain' => 'Comic Manga',
             'categorySecondary' => '',
