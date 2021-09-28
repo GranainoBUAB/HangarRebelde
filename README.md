@@ -74,17 +74,13 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 -   Scrum
 -   Pair programming
 
-### Heroku link
-
-http:
-
 ### Proyecto creado en equipo durante el Bootcamp Factoria F5.
 
 Integrantes:
 
 -   Alexandra Galarza
--   Cris Mouta.
--   David Sánchez.
+-   Cris Mouta - Scrum master.
+-   David Sánchez - Product Owner.
 -   Gabriela Baquerizo.
 -   Jose Miguel Quesada.
 -   Snezhanna Stefanova.
