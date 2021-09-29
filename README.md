@@ -1,6 +1,7 @@
 <p align="center"><img src="public/img/logo.png" width="400"></p>
 
-## La app ecommerce para la tienda de comics
+## La app ecommerce para la tienda de comics 
+⚠️ la rama master esta corrupta, el proyecto final esta en la dev hasta correction de la master
 
 # Contexto del proyecto
 Aplicación creada para atender a la creciente demanda de ventas de un tienda ubicada en Oviedo - España, que vio sus ventas aumentar significativamente durante la pandemia. 
