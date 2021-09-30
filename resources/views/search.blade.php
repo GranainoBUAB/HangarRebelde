@@ -9,7 +9,7 @@
             <div class="ct-product m-lg-4 m-3 position-relative">
                 <div class="ct-img">
                     <a href="{{ route('show', ['id' => $product->id]) }}">
-                        <img class="imgCard" src="{{ asset('storage') . '/' . $product->image1 }}" alt="Portada del comic {{ $product->title }}">
+                        <img class="imgCard" src="{{url('/img') . '/' . $product->image1 }}" alt="Portada del comic {{ $product->title }}">
                     </a>
                     @if(Auth::check() && Auth::user()->isadmin())
                         <div class="d-flex flex-column ct-adm-buttons">
@@ -42,18 +42,6 @@
                         <img class="icoCardNoAvailable ml-2" src="{{url('/img/cartNoAvailable.svg')}}" alt="Flaticon">
                     @endif
                 </div>
-
-
-               <!--  @if(Auth::check() && Auth::user()->isadmin())
-                    <div class="input-group mb-3">
-                        <a href="{{ route('edit', ['id'=>$product->id]) }}"><button type="text" class="input-group-text">Editar</button></a>
-                        <form action="{{ route('delete', ['id'=>$product->id])}}" method="post">
-                            @method('delete')
-                            @csrf
-                            <input type="submit" class="input-group-text ml-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto? {{ $product->title }}')" value="Eliminar">
-                        </form>
-                    </div>
-                @endif -->
             </div>
         @endforeach
     </div>
