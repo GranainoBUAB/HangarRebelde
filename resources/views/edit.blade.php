@@ -119,21 +119,21 @@
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Portada</span>
           {{-- {{$product->image1}} --}}
-          <img id="uploadPreview1" class="input-select" src="{{ asset('storage') . '/' . $product->image1 }}" width=90 alt="">
+          <img id="uploadPreview1" class="input-select" src="{{url('/img') . '/' . $product->image1}}" width=90 alt="">
           <input id="uploadImage1" type="file" name="image1" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onchange="previewImage(1);">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Contraportada</span>
           {{-- {{$product->image2}} --}}
-          <img id="uploadPreview2" class="input-select" src="{{ asset('storage') . '/' . $product->image2 }}" width=90 alt="">
+          <img id="uploadPreview2" class="input-select" src="{{url('/img') . '/' . $product->image2}}" width=90 alt="">
           <input id="uploadImage2" type="file" name="image2" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onchange="previewImage(2);">
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Imagen Interior</span>
           {{-- {{$product->image3}} --}}
-          <img id="uploadPreview3" class="input-select" src="{{ asset('storage') . '/' . $product->image3 }}" width=90 alt="">
+          <img id="uploadPreview3" class="input-select" src="{{url('/img') . '/' . $product->image3}}" width=90 alt="">
           <input id="uploadImage3" type="file" name="image3" value="" class="form-control input-select" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onchange="previewImage(3);">
         </div>
 
