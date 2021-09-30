@@ -36,7 +36,7 @@
         <div class="card border-light bg-light mb-3 px-2 mt-3 card-cart col-12 col-lg-6">
             <div class="row g-0 ps-3 me-0">
                 <a class="col-md-3 p-0" href="{{ route('show', ['id' => $product->product_id]) }}">
-                    <img src="{{ asset('storage') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="Portada del comic {{ $product->title }}">
+                    <img src="{{url('/img') . '/' . $product->image1 }}" class="img-fluid imgCart rounded" alt="Portada del comic {{ $product->title }}">
                 </a>
                 <div class="col-sm-9 px-0">
                     <div class="card-body p-0">

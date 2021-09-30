@@ -37,8 +37,7 @@
                 <div class="ct-product m-lg-4 m-3 position-relative">
                     <div class="ct-img">
                         <a href="{{ route('show', ['id' => $product->id]) }}">
-                            <img class="imgCard" src="{{url('/') . '/' . $product->image1 }}
-                            " alt="Portada del comic {{ $product->title }}">
+                            <img class="imgCard" src="{{url('/img') . '/' . $product->image1 }}" alt="Portada del comic {{ $product->title }}">
                         </a>
                     </div>
                     <div class="ct-info d-flex flex-row align-items-center p-1">
