@@ -45,6 +45,8 @@ Surgió de este modo la necesidad de crear una aplicación sólida y escalable, 
 
 # Instalación
 
+**** info db
+
 `clonar el repositorio: https://github.com/ProjectComixSix/HangarRebelde.git`
 
 `composer install`
