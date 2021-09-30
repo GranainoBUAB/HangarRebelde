@@ -163,13 +163,13 @@ class ProductController extends Controller
     private function storeImages($request, $product)
     {
         if ($request->hasFile('image1')) {
-            $product['image1'] = $request->file('image1')->store('img', 'public');
+            $product['image1'] = $request->file('image1')->store('/');
         }
         if ($request->hasFile('image2')) {
-            $product['image2'] = $request->file('image2')->store('img', 'public');
+            $product['image2'] = $request->file('image2')->store('/');
         }
         if ($request->hasFile('image3')) {
-            $product['image3'] = $request->file('image3')->store('img', 'public');
+            $product['image3'] = $request->file('image3')->store('/');
         }
 
         return ($product);
